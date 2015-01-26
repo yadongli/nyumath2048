@@ -40,4 +40,5 @@ if __name__ == "__main__" :
     else: # convert all if nothing is supplied
         convertAllNb("hidecode.tpl", True)
 
-    [shutil.copy2(f, '../gh-pages') for f in os.listdir(".") if f.endswith(".html")]
+    [shutil.copy(f, '../gh-pages') for f in os.listdir(".") if f.endswith(".html")]
+    [os.remove(f) for f in os.listdir(".") if f.endswith(".html")]
