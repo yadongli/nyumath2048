@@ -25,7 +25,7 @@ def convertNewNb(tpl, remote) :
     for f in os.listdir(".") :
         if f.endswith(".ipynb") :
             nbt = os.path.getmtime(f)
-            htmlf = "../gh-pages/" + f.replace(".ipynb", ".slides.html")
+            htmlf = f.replace(".ipynb", ".slides.html")
             hashtml = os.path.isfile(htmlf)
             if (not hashtml) or os.path.getmtime(htmlf) < nbt :
                 convert(os.path.splitext(os.path.basename(f))[0], tpl, remote)
@@ -52,4 +52,3 @@ if __name__ == "__main__" :
         convertNewNb("hidecode.tpl", True)
 
     [shutil.copy(f, '../gh-pages') for f in os.listdir(".") if f.endswith(".html")]
-    [os.remove(f) for f in os.listdir(".") if f.endswith(".html")]
