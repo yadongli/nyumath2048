@@ -78,7 +78,7 @@ Reveal.initialize({
      // width: 100%,
      // height: 100%,
      // margin: 0,
-     theme: 'sky', // available themes are in /css/theme
+     theme: 'white', // available themes are in /css/theme
 });
 
 </script>
