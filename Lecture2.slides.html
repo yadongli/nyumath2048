@@ -3076,8 +3076,8 @@ OI4Tcv4fZBfi/BFKi6kAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Correlation and covariance matrix of weekly returns.</p>
 <ul>
-<li>Correlation and covariance matrix of weekly returns.</li>
 <li>Why don&#39;t we correlate the price themselves?</li>
 </ul>
 </div>
@@ -4500,7 +4500,7 @@ In&nbsp;[18]:
 <p>Suppose there are $n$ risky assets on the market, with random return vector of $\bs r$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\boldsymbol w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
-<li>$\bs w^T r$ is the portfolio&#39;s return</li>
+<li>$\bs w^T \bs r$ is the portfolio&#39;s return</li>
 <li>$\sigma^2 = \boldsymbol w^TV\boldsymbol w$: the variance of its return</li>
 </ul>
 </li>
@@ -4523,8 +4523,7 @@ In&nbsp;[18]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="optimal-portfolio-and-sharp-ratio">Optimal Portfolio and Sharp Ratio</h2>
-<h3 id="excess-return-forecast">Excess return forecast</h3>
+<h2 id="excess-return-forecast">Excess return forecast</h2>
 <ul>
 <li>$\boldsymbol f = \mathbb{E}[\bs r] - r_0$ is a vector of excess return forecast of all assets<ul>
 <li>$r_0$ is the risk free rate</li>
@@ -4537,13 +4536,6 @@ In&nbsp;[18]:
 </ul>
 </li>
 </ul>
-<h3 id="optimal-portfolio">Optimal portfolio</h3>
-<p>Gien the view $\boldsymbol f$, the optimal portfolio $\boldsymbol w$ to express the view is:</p>
-<ul>
-<li>minimize the variance (risk): $\boldsymbol w^TV\boldsymbol w$</li>
-<li>while preserving an unit excess return: $\boldsymbol w^T \boldsymbol f = 1$</li>
-</ul>
-<p>which gives the highest Sharp ratio under the view $\boldsymbol f$.</p>
 </div>
 </div>
 </div></section><section>
@@ -4553,11 +4545,38 @@ In&nbsp;[18]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="optimal-portfolio-and-sharp-ratio">Optimal portfolio and Sharp Ratio</h2>
+<p>Gien the view $\boldsymbol f$, the optimal portfolio $\boldsymbol w$ to express the view is:</p>
+<ul>
+<li>minimize the variance (risk): $\boldsymbol w^TV\boldsymbol w$</li>
+<li>while preserving an unit excess return: $\boldsymbol w^T \boldsymbol f = 1$</li>
+</ul>
+<p>which gives the highest Sharp ratio under the view $\boldsymbol f$.</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Why we take the covariance matrix $V$ as a constant, but treat expected return $\bs f$ as a variable?</p>
+</div>
+</div>
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="characteristic-portfolio">Characteristic portfolio</h2>
 <p>The optimal portfolio can be solved analytically using Lagrange multiplier and matrix calculus:</p>
 <p>$$\begin{array}
-\\  &amp; L &amp;= \bs w^TV \boldsymbol w - 2 \lambda (\boldsymbol f^T \boldsymbol w - 1) \\
-&amp; \frac{\partial L}{\partial \boldsymbol w} &amp;= 2 V \boldsymbol w - 2 \lambda \boldsymbol f = 0 \\
+\\  &amp; l &amp;= \bs w^TV \boldsymbol w - 2 \lambda (\boldsymbol f^T \boldsymbol w - 1) \\
+&amp; \frac{\partial l}{\partial \boldsymbol w} &amp;= 2 V \boldsymbol w - 2 \lambda \boldsymbol f = 0 \\
 \end{array}$$
 $$ V \boldsymbol w - \lambda \boldsymbol f = 0 \iff \boldsymbol w = \lambda V^{-1} \boldsymbol f $$</p>
 <p>plug it into $\bs f^T \bs w = 1$:</p>
