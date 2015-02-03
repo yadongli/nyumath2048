@@ -4409,14 +4409,13 @@ In&nbsp;[18]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="notation-and-definitions">Notation and definitions</h2>
-<h3 id="scalar-function">Scalar function</h3>
+<h2 id="scalar-function">Scalar function</h2>
 <p>$$f(\boldsymbol x) = f(x_1, ..., x_n)$$</p>
 <ul>
 <li>Derivative to vector (Gradient): $\frac{\partial f}{\partial \boldsymbol x} = \nabla f = [\frac{\partial f}{\partial x_1}, ..., \frac{\partial f}{\partial x_1}]$</li>
 <li>Note that $\frac{\partial f}{\partial \boldsymbol x}$ is a <strong>row vector</strong>, whenever the vector or matrix appears in the denominator of differentiation, the result is transposed.</li>
 </ul>
-<h3 id="vector-function">Vector function</h3>
+<h2 id="vector-function">Vector function</h2>
 <p>$$\boldsymbol{ y(x) } = [y_1(\boldsymbol x), ..., y_n(\boldsymbol x)]^T$$</p>
 <ul>
 <li>Deriative to vector (Jacobian matrix): $\frac{\partial \boldsymbol y}{\partial \boldsymbol x} = \left(\frac{\partial{y_i}}{\partial x_j}\right)$<ul>
@@ -4497,7 +4496,7 @@ In&nbsp;[18]:
 <ul>
 <li>Powerful mean/variance portfolio theory can be expressed succinctly using linear algebra and matrix calculus. </li>
 </ul>
-<h2 id="definitions">Definitions</h2>
+<h3 id="definitions">Definitions</h3>
 <p>Suppose there are $n$ risky assets on the market, with random return vector of $\bs r$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\boldsymbol w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
@@ -4606,11 +4605,15 @@ $$\boldsymbol w = \frac{V^{-1}\boldsymbol f}{\boldsymbol f^T V^{-1} \boldsymbol 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="implied-view-of-a-portfolio-">Implied view of a portfolio:</h2>
+<h2 id="implied-view-of-a-portfolio">Implied view of a portfolio</h2>
 <ul>
 <li>From any portfolio, we can backout its implied excess return forecast $\boldsymbol f$</li>
 <li>The implied forecast is nothing but the betas to the portfolio</li>
 <li>Consider the market portfolio: the market collectively believe that $\boldsymbol {f = \beta_m}$ (CAPM)</li>
+</ul>
+<p>The implied view is a much better estimate of the return than from historical data.</p>
+<ul>
+<li>How many years of historical data you need to reliably estimate expected returns?</li>
 </ul>
 </div>
 </div>
@@ -5706,7 +5709,7 @@ In&nbsp;[32]:
 </ul>
 <p>Homework:</p>
 <ul>
-<li>Bindel and Goodman: Problem 4.4, 4.8</li>
+<li>Bindel and Goodman: Problem 4.4, 4.7, 4.8</li>
 <li>Complete <a href="http://yadongli.github.io/nyumath2048">homework set 2</a></li>
 </ul>
 </div>
