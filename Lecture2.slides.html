@@ -1785,7 +1785,7 @@ $(document).ready(function(){
 <p>$$
 \renewcommand{bs}{\boldsymbol}
 \begin{matrix}
-\boldsymbol u = \left(
+\bs u = \left(
 \begin{matrix}
 u_1 \\
 u_2 \\
@@ -1794,7 +1794,7 @@ u_n
 \end{matrix}
 \right) 
 \hspace{2cm}
-\boldsymbol v = \left(
+\bs v = \left(
 \begin{matrix}
 v_1 \\
 v_2 \\
@@ -1806,13 +1806,13 @@ v_n
 $$</p>
 <h2 id="basic-vector-operations">Basic vector operations</h2>
 <ul>
-<li>Vector addition: $\boldsymbol{w = u + v}$</li>
-<li>Scalar multiplication: $\boldsymbol w = a \boldsymbol u$, where $a$ is a scalar</li>
+<li>Vector addition: $\bs{w = u + v}$</li>
+<li>Scalar multiplication: $\bs w = a \bs u$, where $a$ is a scalar</li>
 </ul>
 <h2 id="notation">Notation</h2>
 <ul>
-<li>column vector: $\boldsymbol {u, v, x, \beta}$ </li>
-<li>row vector: $\boldsymbol u^T, \boldsymbol v^T, \boldsymbol x^T, \boldsymbol \beta^T$</li>
+<li>column vector: $\bs {u, v, x, \beta}$ </li>
+<li>row vector: $\bs u^T, \bs v^T, \bs x^T, \bs \beta^T$</li>
 <li>scalar: $a, b, \alpha, \beta$ </li>
 <li>matrix: $A, B, P$</li>
 </ul>
@@ -1827,16 +1827,16 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="vector-addition">Vector addition</h2>
 <ul>
-<li>Associativity: $\boldsymbol{u + (v + w) = (u + v) + w}$</li>
-<li>Cumutativity: $\boldsymbol{u + v = v + u}$</li>
-<li>Identity: $\boldsymbol{v + 0 = v}$ for $\forall \boldsymbol{v}$</li>
-<li>Inverse: for $\forall \boldsymbol{v}$, exists an $-\boldsymbol{v}$, so that $\boldsymbol{v + (-v) = 0}$ </li>
-<li>Distributivity: $a \boldsymbol{(u + v)} = a \boldsymbol{u} + a \boldsymbol v, (a+b) \boldsymbol v = a \boldsymbol v + b \boldsymbol v$</li>
+<li>Associativity: $\bs{u + (v + w) = (u + v) + w}$</li>
+<li>Cumutativity: $\bs{u + v = v + u}$</li>
+<li>Identity: $\bs{v + 0 = v}$ for $\forall \bs{v}$</li>
+<li>Inverse: for $\forall \bs{v}$, exists an $-\bs{v}$, so that $\bs{v + (-v) = 0}$ </li>
+<li>Distributivity: $a \bs{(u + v)} = a \bs{u} + a \bs v, (a+b) \bs v = a \bs v + b \bs v$</li>
 </ul>
 <h2 id="scalar-multiplication">Scalar multiplication</h2>
 <ul>
-<li>Associativity: $a(b \boldsymbol v) = (ab)\boldsymbol v$</li>
-<li>Identity: $1 \boldsymbol v = \boldsymbol v$, for $\forall \boldsymbol v$</li>
+<li>Associativity: $a(b \bs v) = (ab)\bs v$</li>
+<li>Identity: $1 \bs v = \bs v$, for $\forall \bs v$</li>
 </ul>
 </div>
 </div>
@@ -1866,10 +1866,10 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="linear-combination">Linear combination</h2>
 <ul>
-<li>$\boldsymbol v = a_1 \boldsymbol v_1 + a_2 \boldsymbol v_2 + ... + a_n \boldsymbol v_n$</li>
-<li>Linear combinations of vectors form a subspace $\Omega_v = \text{span}(\boldsymbol{v_1, v_2, ... v_n}) \subset \Omega$</li>
-<li>Linear independence: $\boldsymbol {v = 0} \iff a_k = 0$ for $\forall k$ </li>
-<li>Basis: any set of linearly independent $\boldsymbol v_i$ that spans $\Omega_v$</li>
+<li>$\bs v = a_1 \bs v_1 + a_2 \bs v_2 + ... + a_n \bs v_n$</li>
+<li>Linear combinations of vectors form a subspace $\Omega_v = \text{span}(\bs{v_1, v_2, ... v_n}) \subset \Omega$</li>
+<li>Linear independence: $\bs {v = 0} \iff a_k = 0$ for $\forall k$ </li>
+<li>Basis: any set of linearly independent $\bs v_i$ that spans $\Omega_v$</li>
 <li>Dimension of $\Omega_v$ is the number of vectors in (any of) its basis</li>
 </ul>
 </div>
@@ -1883,11 +1883,11 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="inner-product">Inner product</h2>
 <ul>
-<li>$\langle \boldsymbol u, a \boldsymbol v_1 + b \boldsymbol v_2 \rangle = a \langle \boldsymbol{u, v_1} \rangle + a \langle \boldsymbol{u, v_2} \rangle$ </li>
-<li>$\langle \boldsymbol{u, v} \rangle = \langle \boldsymbol{v, u} \rangle^c$ </li>
-<li>$\langle \boldsymbol{u, u} \rangle \ge 0$ </li>
-<li>$\langle \boldsymbol{u, u} \rangle = 0 \iff u = 0$ </li>
-<li>$\boldsymbol {u, v}$ othogonal if $\langle \boldsymbol{u, v} \rangle = 0$ </li>
+<li>$\langle \bs u, a \bs v_1 + b \bs v_2 \rangle = a \langle \bs{u, v_1} \rangle + a \langle \bs{u, v_2} \rangle$ </li>
+<li>$\langle \bs{u, v} \rangle = \langle \bs{v, u} \rangle^c$ </li>
+<li>$\langle \bs{u, u} \rangle \ge 0$ </li>
+<li>$\langle \bs{u, u} \rangle = 0 \iff u = 0$ </li>
+<li>$\bs {u, v}$ othogonal if $\langle \bs{u, v} \rangle = 0$ </li>
 </ul>
 </div>
 </div>
@@ -1900,7 +1900,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="dot-product">Dot product</h2>
 <ul>
-<li>the standard inner product: $\boldsymbol{u \cdot v} = \sum_{k=1}^n u_k^c v_k$  </li>
+<li>the standard inner product: $\bs{u \cdot v} = \sum_{k=1}^n u_k^c v_k$  </li>
 <li>the magnitude of a vector $\bs b$ is $\vert b \vert = \sqrt{\bs b \cdot \bs b}$</li>
 <li>the projection of vector $\bs a$ to the direction of vector $\bs b$ is: $ a_1 = \frac{\bs a \cdot \bs b}{\vert b \vert} = \vert \bs a \vert \cos(\theta) $</li>
 </ul>
@@ -1943,7 +1943,7 @@ a_{m1} &amp; a_{m2} &amp; . &amp; a_{mn}
 <center><img src="img/matrixprod.png"></center>
 
 <p>$$\begin{array}
-\\ \boldsymbol u = A \boldsymbol v &amp;\iff u_i = \sum_{j=1}^{n} a_{ij}v_j \\
+\\ \bs u = A \bs v &amp;\iff u_i = \sum_{j=1}^{n} a_{ij}v_j \\
 C = AB &amp;\iff c_{ik} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 \end{array}$$</p>
 </div>
@@ -1958,10 +1958,10 @@ C = AB &amp;\iff c_{ik} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 <h2 id="matrix-represents-linear-transformation">Matrix represents linear transformation</h2>
 <p>Linear function on vectors:</p>
 <ul>
-<li>$L(\boldsymbol{u + v}) = L(\boldsymbol u) + L(\boldsymbol v)$ </li>
-<li>$L(a \boldsymbol v) = a L(\boldsymbol v)$ </li>
+<li>$L(\bs{u + v}) = L(\bs u) + L(\bs v)$ </li>
+<li>$L(a \bs v) = a L(\bs v)$ </li>
 </ul>
-<p>Any linear transformation bewteen finite dimensional vector space can be represented by a matrix multiplication, therefore we can write $L \boldsymbol u$ instead of $L(\boldsymbol u)$.</p>
+<p>Any linear transformation bewteen finite dimensional vector space can be represented by a matrix multiplication, therefore we can write $L \bs u$ instead of $L(\bs u)$.</p>
 </div>
 </div>
 </div></section><section>
@@ -2027,7 +2027,7 @@ C = AB &amp;\iff c_{ik} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="linear-system">Linear system</h2>
 <ul>
-<li>In matrix form, a linear system is $A \boldsymbol {x = y}$</li>
+<li>In matrix form, a linear system is $A \bs {x = y}$</li>
 <li>It has a unique solution if $A$ is a full rank square matrix</li>
 </ul>
 </div>
@@ -2546,8 +2546,8 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="symmetric-positive-definite-matrix">Symmetric positive definite Matrix</h2>
 <ul>
-<li>$V$ is positive definite if $\boldsymbol x^T V \boldsymbol x &gt; 0$ for $\forall \boldsymbol{x \ne 0}$</li>
-<li>$V$ is semi positive definite if $\boldsymbol x^T V \boldsymbol {x \ge 0}$ for $\forall \boldsymbol{x \ne 0}$</li>
+<li>$V$ is positive definite if $\bs x^T V \bs x &gt; 0$ for $\forall \bs{x \ne 0}$</li>
+<li>$V$ is semi positive definite if $\bs x^T V \bs {x \ge 0}$ for $\forall \bs{x \ne 0}$</li>
 <li>Semi-positive definite does not mean every element in the matrix is positive</li>
 </ul>
 </div>
@@ -2562,7 +2562,7 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 <h2 id="correlation-and-covariance-matrix">Correlation and covariance matrix</h2>
 <p>They are the most important and ubiquitous matrices in quant Finance, </p>
 <ul>
-<li>capturing the linear dependencies of random factors $\renewcommand{bs}{\boldsymbol} \bs r = [r_1, ..., r_n]^T$ </li>
+<li>capturing the linear dependencies of random factors $\bs r = [r_1, ..., r_n]^T$ </li>
 <li>we use $\bar{\bs r} = \mathbb{E}[\bs r]$ to denote their expectations</li>
 </ul>
 <h4 id="covariance-matrix-">Covariance matrix:</h4>
@@ -2575,11 +2575,11 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 <h4 id="correlation-matrix-">Correlation matrix:</h4>
 <ul>
 <li>$C = (\rho_{ij})$, the co-variance matrix of the normalized factors $\bs r = [\frac{r_1}{\sigma_1}, ..., \frac{r_n}{\sigma_n}]^T$</li>
-<li>$V = \boldsymbol \Sigma C \boldsymbol \Sigma $, where $\Sigma$ is a diagonal matrix of $\sigma_i$</li>
+<li>$V = \bs \Sigma C \bs \Sigma $, where $\Sigma$ is a diagonal matrix of $\sigma_i$</li>
 </ul>
 <p>Both of them are symmetric positive semi-definate (SPD):</p>
 <ul>
-<li>$\boldsymbol x^T V \boldsymbol x = \text{cov}[\bs x^T \bs r, \bs x^T \bs r] = \text{var}[\bs x^T \bs r] \ge 0$</li>
+<li>$\bs x^T V \bs x = \text{cov}[\bs x^T \bs r, \bs x^T \bs r] = \text{var}[\bs x^T \bs r] \ge 0$</li>
 </ul>
 </div>
 </div>
@@ -3961,10 +3961,10 @@ $$l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}}\;,\;\;\;A_
 $$</p>
 <ol>
 <li>compute the Cholesky decomposition of the correlation matrix: $C = LL^T$</li>
-<li>draw a n independent normal random number vector $\boldsymbol \epsilon = (\epsilon_1, \epsilon_2, ..., \epsilon_n)^T$, these are the normalized risk factors</li>
-<li>$L\boldsymbol \epsilon$ is the correlated normal random vector, and the correlated Brownian increments is $dw_t = L\boldsymbol \epsilon\sqrt{dt}$</li>
+<li>draw a n independent normal random number vector $\bs \epsilon = (\epsilon_1, \epsilon_2, ..., \epsilon_n)^T$, these are the normalized risk factors</li>
+<li>$L\bs \epsilon$ is the correlated normal random vector, and the correlated Brownian increments is $dw_t = L\bs \epsilon\sqrt{dt}$</li>
 </ol>
-<p>The resulting covariance (correlation) is: $\mathbb{E}[L\boldsymbol \epsilon  (L\boldsymbol \epsilon)^T] = \mathbb{E}[L\boldsymbol{\epsilon  \epsilon}^T L^T] = LL^T = C$ </p>
+<p>The resulting covariance (correlation) is: $\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsilon}^T L^T] = LL^T = C$ </p>
 <ul>
 <li>equivalent results can be obtained by applying Cholesky decomposition on the covariance matrix to draw $\sigma_i dw_i$ directly.</li>
 </ul>
@@ -3988,7 +3988,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>The identical results can be obtained by using cholesky decomposition of the covariance matrix.</li>
-<li>$L \boldsymbol \epsilon$ and $L^T \boldsymbol \epsilon$ are different, which one gives back the intended correlation?</li>
+<li>$L \bs \epsilon$ and $L^T \bs \epsilon$ are different, which one gives back the intended correlation?</li>
 </ul>
 </div>
 </div>
@@ -4917,20 +4917,20 @@ In&nbsp;[57]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="scalar-function">Scalar function</h2>
-<p>$$f(\boldsymbol x) = f(x_1, ..., x_n)$$</p>
+<p>$$f(\bs x) = f(x_1, ..., x_n)$$</p>
 <ul>
-<li>Derivative to vector (Gradient): $\frac{\partial f}{\partial \boldsymbol x} = \nabla f = [\frac{\partial f}{\partial x_1}, ..., \frac{\partial f}{\partial x_1}]$</li>
-<li>Note that $\frac{\partial f}{\partial \boldsymbol x}$ is a <strong>row vector</strong>, whenever the vector or matrix appears in the denominator of differentiation, the result is transposed.</li>
+<li>Derivative to vector (Gradient): $\frac{\partial f}{\partial \bs x} = \nabla f = [\frac{\partial f}{\partial x_1}, ..., \frac{\partial f}{\partial x_1}]$</li>
+<li>Note that $\frac{\partial f}{\partial \bs x}$ is a <strong>row vector</strong>, whenever the vector or matrix appears in the denominator of differentiation, the result is transposed.</li>
 </ul>
 <h2 id="vector-function">Vector function</h2>
-<p>$$\boldsymbol{ y(x) } = [y_1(\boldsymbol x), ..., y_n(\boldsymbol x)]^T$$</p>
+<p>$$\bs{ y(x) } = [y_1(\bs x), ..., y_n(\bs x)]^T$$</p>
 <ul>
-<li>Deriative to vector (Jacobian matrix): $\frac{\partial \boldsymbol y}{\partial \boldsymbol x} = \left(\frac{\partial{y_i}}{\partial x_j}\right)$<ul>
-<li>$\frac{\partial \boldsymbol y}{\partial \boldsymbol x}$ is in the transpose of $\bs y$, ie, with $\boldsymbol y$ rows and $\boldsymbol x$ columns</li>
-<li>$\frac{\partial \boldsymbol y}{\partial \boldsymbol x}\frac{\partial \boldsymbol x}{\partial \boldsymbol y} = I$, even when $\bs x$ and $\bs y$ have different dimension. </li>
+<li>Deriative to vector (Jacobian matrix): $\frac{\partial \bs y}{\partial \bs x} = \left(\frac{\partial{y_i}}{\partial x_j}\right)$<ul>
+<li>$\frac{\partial \bs y}{\partial \bs x}$ is in the transpose of $\bs y$, ie, with $\bs y$ rows and $\bs x$ columns</li>
+<li>$\frac{\partial \bs y}{\partial \bs x}\frac{\partial \bs x}{\partial \bs y} = I$, even when $\bs x$ and $\bs y$ have different dimension. </li>
 </ul>
 </li>
-<li>Derivative to scalar: $\frac{\partial \boldsymbol y}{\partial z} = [\frac{\partial y_1}{\partial z}, ..., \frac{\partial y_n}{\partial z}]^T$<ul>
+<li>Derivative to scalar: $\frac{\partial \bs y}{\partial z} = [\frac{\partial y_1}{\partial z}, ..., \frac{\partial y_n}{\partial z}]^T$<ul>
 <li>remains a column vector</li>
 </ul>
 </li>
@@ -4946,8 +4946,8 @@ In&nbsp;[57]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="vector-differentiation-cheatsheet">Vector differentiation cheatsheet</h2>
 <ul>
-<li>$A, a, b, \boldsymbol c$ are constants (ie, not functions of $\boldsymbol x$)</li>
-<li>$\boldsymbol {u=u(x), v=v(x)}, y=y(\boldsymbol x)$ are functions of $\boldsymbol x$</li>
+<li>$A, a, b, \bs c$ are constants (ie, not functions of $\bs x$)</li>
+<li>$\bs {u=u(x), v=v(x)}, y=y(\bs x)$ are functions of $\bs x$</li>
 </ul>
 <table>
 <thead>
@@ -4959,30 +4959,30 @@ In&nbsp;[57]:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$\frac{\partial(a \boldsymbol u + b \boldsymbol v)}{\partial \boldsymbol x}$</td>
-<td style="text-align:center">a $\frac{\partial{\boldsymbol u}}{\partial \boldsymbol x} + b\frac{\partial{\boldsymbol v}}{\partial \boldsymbol x}$</td>
-<td style="text-align:center">$\frac{\partial{\boldsymbol c}}{\partial \boldsymbol x} = 0I, \frac{\partial{\boldsymbol x}}{\partial \boldsymbol x} = I$</td>
+<td style="text-align:center">$\frac{\partial(a \bs u + b \bs v)}{\partial \bs x}$</td>
+<td style="text-align:center">a $\frac{\partial{\bs u}}{\partial \bs x} + b\frac{\partial{\bs v}}{\partial \bs x}$</td>
+<td style="text-align:center">$\frac{\partial{\bs c}}{\partial \bs x} = 0I, \frac{\partial{\bs x}}{\partial \bs x} = I$</td>
 </tr>
 <tr>
-<td style="text-align:center">$\frac{\partial{A \boldsymbol u}}{\partial \boldsymbol x}$</td>
-<td style="text-align:center">$A\frac{\partial{\boldsymbol u}}{\partial \boldsymbol x}$</td>
-<td style="text-align:center">$\frac{\partial{\boldsymbol A x}}{\partial \boldsymbol x} = A, \frac{\partial{\boldsymbol x^T A}}{\partial \boldsymbol x} = A^T$</td>
+<td style="text-align:center">$\frac{\partial{A \bs u}}{\partial \bs x}$</td>
+<td style="text-align:center">$A\frac{\partial{\bs u}}{\partial \bs x}$</td>
+<td style="text-align:center">$\frac{\partial{\bs A x}}{\partial \bs x} = A, \frac{\partial{\bs x^T A}}{\partial \bs x} = A^T$</td>
 </tr>
 <tr>
-<td style="text-align:center">$\frac{\partial{y \boldsymbol u}}{\partial \boldsymbol x}$</td>
-<td style="text-align:center">$y \frac{\partial{\boldsymbol u}}{\partial \boldsymbol x} + \boldsymbol u \frac{\partial{y}}{\partial \boldsymbol x}$</td>
+<td style="text-align:center">$\frac{\partial{y \bs u}}{\partial \bs x}$</td>
+<td style="text-align:center">$y \frac{\partial{\bs u}}{\partial \bs x} + \bs u \frac{\partial{y}}{\partial \bs x}$</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">$\frac{\partial \boldsymbol{u}^T A \boldsymbol v}{\partial \boldsymbol x} $</td>
-<td style="text-align:center">$\boldsymbol u^T A \frac{\partial{\boldsymbol v}}{\partial \boldsymbol x}  +  \boldsymbol v^T A^T \frac{\partial{\boldsymbol u}}{\partial \boldsymbol x} $</td>
-<td style="text-align:center">$\frac{\partial \boldsymbol{x}^T A \boldsymbol x}{\partial \boldsymbol x} = (\boldsymbol{A + A}^T)x, 
-\frac{\partial \boldsymbol{u^Tv}}{\partial x} =\boldsymbol{u}^T\frac{\partial \boldsymbol{v}}{\partial x} + \boldsymbol{v}^T\frac{\partial \boldsymbol{u}}{\partial x}  $</td>
+<td style="text-align:center">$\frac{\partial \bs{u}^T A \bs v}{\partial \bs x} $</td>
+<td style="text-align:center">$\bs u^T A \frac{\partial{\bs v}}{\partial \bs x}  +  \bs v^T A^T \frac{\partial{\bs u}}{\partial \bs x} $</td>
+<td style="text-align:center">$\frac{\partial \bs{x}^T A \bs x}{\partial \bs x} = (\bs{A + A}^T)x, 
+\frac{\partial \bs{u^Tv}}{\partial x} =\bs{u}^T\frac{\partial \bs{v}}{\partial x} + \bs{v}^T\frac{\partial \bs{u}}{\partial x}  $</td>
 </tr>
 <tr>
-<td style="text-align:center">$\frac{\partial{\boldsymbol g(\boldsymbol u})}{\partial \boldsymbol x}$</td>
-<td style="text-align:center">$\frac{\partial{\boldsymbol g}}{\partial \boldsymbol u} \frac{\partial{\boldsymbol u}}{\partial \boldsymbol x} $</td>
-<td style="text-align:center">chain rules of multiple steps,  $\frac{\partial \boldsymbol y}{\partial \boldsymbol x}\frac{\partial \boldsymbol x}{\partial \boldsymbol y} = I$</td>
+<td style="text-align:center">$\frac{\partial{\bs g(\bs u})}{\partial \bs x}$</td>
+<td style="text-align:center">$\frac{\partial{\bs g}}{\partial \bs u} \frac{\partial{\bs u}}{\partial \bs x} $</td>
+<td style="text-align:center">chain rules of multiple steps,  $\frac{\partial \bs y}{\partial \bs x}\frac{\partial \bs x}{\partial \bs y} = I$</td>
 </tr>
 </tbody>
 </table>
@@ -5006,18 +5006,18 @@ In&nbsp;[57]:
 <h3 id="definitions">Definitions</h3>
 <p>Suppose there are $n$ risky assets on the market, with random return vector of $\bs r$ whose covariance matrix is $V$,</p>
 <ul>
-<li>$\boldsymbol w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
+<li>$\bs w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
 <li>$\bs w^T \bs r$ is the portfolio&#39;s return</li>
-<li>$\sigma^2 = \boldsymbol w^TV\boldsymbol w$: the variance of its return</li>
+<li>$\sigma^2 = \bs w^TV\bs w$: the variance of its return</li>
 </ul>
 </li>
-<li>$\boldsymbol w_b$: a benchmark portfolio, e.g. a sector index<ul>
-<li>$\boldsymbol \beta_b = \frac{V\boldsymbol w_b}{\sigma^2_b} $: the beta vector of individual assets to the benchmark portfolio</li>
-<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\boldsymbol w_b}{\sigma^2_b} = 1$, the benchmark portfolio itself has a beta of 1</li>
+<li>$\bs w_b$: a benchmark portfolio, e.g. a sector index<ul>
+<li>$\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $: the beta vector of individual assets to the benchmark portfolio</li>
+<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = 1$, the benchmark portfolio itself has a beta of 1</li>
 </ul>
 </li>
-<li>$\boldsymbol w_m$: the market portfolio, as defined in CAPM<ul>
-<li>$\boldsymbol \beta_m = \frac{V\boldsymbol w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\boldsymbol w_m$</li>
+<li>$\bs w_m$: the market portfolio, as defined in CAPM<ul>
+<li>$\bs \beta_m = \frac{V\bs w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\bs w_m$</li>
 </ul>
 </li>
 </ul>
@@ -5032,11 +5032,11 @@ In&nbsp;[57]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="excess-return-forecast">Excess return forecast</h2>
 <ul>
-<li>$\boldsymbol f = \mathbb{E}[\bs r] - r_0$ is a vector of excess return forecast of all assets<ul>
+<li>$\bs f = \mathbb{E}[\bs r] - r_0$ is a vector of excess return forecast of all assets<ul>
 <li>$r_0$ is the risk free rate</li>
 </ul>
 </li>
-<li>$\boldsymbol f$ is a view, which can be from:<ul>
+<li>$\bs f$ is a view, which can be from:<ul>
 <li>Fundamental research: earning forcasts, revenue growth etc</li>
 <li>Technical and quantitative analysis</li>
 <li>Your secret trading signal</li>
@@ -5053,12 +5053,12 @@ In&nbsp;[57]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="optimal-portfolio-and-sharp-ratio">Optimal portfolio and Sharp Ratio</h2>
-<p>Gien the view $\boldsymbol f$, the optimal portfolio $\boldsymbol w$ to express the view is:</p>
+<p>Gien the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
 <ul>
-<li>minimize the variance (risk): $\boldsymbol w^TV\boldsymbol w$</li>
-<li>while preserving an unit excess return: $\boldsymbol w^T \boldsymbol f = 1$</li>
+<li>minimize the variance (risk): $\bs w^TV\bs w$</li>
+<li>while preserving an unit excess return: $\bs w^T \bs f = 1$</li>
 </ul>
-<p>which gives the highest Sharp ratio under the view $\boldsymbol f$.</p>
+<p>which gives the highest Sharp ratio under the view $\bs f$.</p>
 </div>
 </div>
 </div><div class="fragment">
@@ -5082,14 +5082,14 @@ In&nbsp;[57]:
 <h2 id="characteristic-portfolio">Characteristic portfolio</h2>
 <p>The optimal portfolio can be solved analytically using Lagrange multiplier and matrix calculus:</p>
 <p>$$\begin{array}
-\\  &amp; l &amp;= \bs w^TV \boldsymbol w - 2 \lambda (\boldsymbol f^T \boldsymbol w - 1) \\
-&amp; \frac{\partial l}{\partial \boldsymbol w} &amp;= 2 V \boldsymbol w - 2 \lambda \boldsymbol f = 0 \\
+\\  &amp; l &amp;= \bs w^TV \bs w - 2 \lambda (\bs f^T \bs w - 1) \\
+&amp; \frac{\partial l}{\partial \bs w} &amp;= 2  \bs w^T V - 2 \lambda \bs f^T = \bs 0^T \\
 \end{array}$$
-$$ V \boldsymbol w - \lambda \boldsymbol f = 0 \iff \boldsymbol w = \lambda V^{-1} \boldsymbol f $$</p>
+$$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 <p>plug it into $\bs f^T \bs w = 1$:</p>
-<p>$$ \boldsymbol f^T(\lambda V^{-1} \boldsymbol f) = 1 \iff \lambda = \frac{1}{\boldsymbol f^T V^{-1} \boldsymbol f}$$
-$$\boldsymbol w = \frac{V^{-1}\boldsymbol f}{\boldsymbol f^T V^{-1} \boldsymbol f}$$</p>
-<p>$\boldsymbol w$ is often called the characteristic portfolio for the return forecast $\boldsymbol f$.</p>
+<p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
+$$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
+<p>$\bs w$ is often called the characteristic portfolio for the return forecast $\bs f$.</p>
 </div>
 </div>
 </div></section><section>
@@ -5100,11 +5100,11 @@ $$\boldsymbol w = \frac{V^{-1}\boldsymbol f}{\boldsymbol f^T V^{-1} \boldsymbol 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="important-characteristic-portfolios">Important characteristic portfolios</h2>
-<h3 id="identical-returns-0-">Identical returns: $\boldsymbol{f = e} = [1, 1, ...., 1]^T$:</h3>
+<h3 id="identical-returns-0-">Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$:</h3>
 <ul>
 <li>A naive view that all assets have the same excess returns (zero information)</li>
-<li>$\boldsymbol e^T\boldsymbol w = 1$ means it is a fully invested portfolio of \$1</li>
-<li>$\boldsymbol w_e = \frac{V^{-1}\boldsymbol e}{\boldsymbol e^TV^{-1}\boldsymbol e}$ has the minimum variance amongst all fully invested portfolio</li>
+<li>$\bs e^T\bs w = 1$ means it is a fully invested portfolio of \$1</li>
+<li>$\bs w_e = \frac{V^{-1}\bs e}{\bs e^TV^{-1}\bs e}$ has the minimum variance amongst all fully invested portfolio</li>
 </ul>
 </div>
 </div>
@@ -5115,10 +5115,10 @@ $$\boldsymbol w = \frac{V^{-1}\boldsymbol f}{\boldsymbol f^T V^{-1} \boldsymbol 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="beta-to-a-benchmark-portfolio-0-">Beta to a benchmark portfolio: $\boldsymbol{f = \beta_b} = \frac{V\boldsymbol w_b}{\sigma_b^2}$:</h3>
+<h3 id="beta-to-a-benchmark-portfolio-0-">Beta to a benchmark portfolio: $\bs{f = \beta_b} = \frac{V\bs w_b}{\sigma_b^2}$:</h3>
 <ul>
-<li>$\boldsymbol{\beta_b w} = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\boldsymbol w_b$</li>
-<li>$\boldsymbol w_{\beta} = \frac{V^{-1}\boldsymbol \beta_b}{\boldsymbol \beta_b^T V^{-1}\boldsymbol \beta_b} = \frac{\boldsymbol w_b}{\boldsymbol{\beta_b^T w_b}} = \boldsymbol w_b$, which is the benchmark portfolio itself</li>
+<li>$\bs{\beta_b w} = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\bs w_b$</li>
+<li>$\bs w_{\beta} = \frac{V^{-1}\bs \beta_b}{\bs \beta_b^T V^{-1}\bs \beta_b} = \frac{\bs w_b}{\bs{\beta_b^T w_b}} = \bs w_b$, which is the benchmark portfolio itself</li>
 <li>the benchmark portfolio itself is the optimal portfolio amongst those with unit beta.</li>
 </ul>
 </div>
@@ -5133,9 +5133,9 @@ $$\boldsymbol w = \frac{V^{-1}\boldsymbol f}{\boldsymbol f^T V^{-1} \boldsymbol 
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="implied-view-of-a-portfolio">Implied view of a portfolio</h2>
 <ul>
-<li>From any portfolio, we can backout its implied excess return forecast $\boldsymbol f$</li>
+<li>From any portfolio, we can backout its implied excess return forecast $\bs f$</li>
 <li>The implied forecast is nothing but the betas to the portfolio</li>
-<li>Consider the market portfolio: the market collectively believe that $\boldsymbol {f = \beta_m}$ (CAPM)</li>
+<li>Consider the market portfolio: the market collectively believe that $\bs {f = \beta_m}$ (CAPM)</li>
 </ul>
 <p>The implied view is a much better estimate of the return than from historical data.</p>
 <ul>
@@ -5762,7 +5762,7 @@ In&nbsp;[65]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="ill-conditioned-linear-system">Ill-conditioned linear system</h2>
-<p>Consider the following linear system $A\boldsymbol x = \boldsymbol y$, and its solution:</p>
+<p>Consider the following linear system $A\bs x = \bs y$, and its solution:</p>
 </div>
 </div>
 </div>
@@ -5809,7 +5809,7 @@ $$\left(\begin{matrix}1.0 & 2.0\\2.0 & 3.999\end{matrix}\right) x=\left(\begin{m
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A small perturbation on vector $\boldsymbol y$:</p>
+<p>A small perturbation on vector $\bs y$:</p>
 </div>
 </div>
 </div><div class="fragment">
@@ -5926,16 +5926,16 @@ $$\left(\begin{matrix}1.0 & 2.0\\2.0 & 4.002\end{matrix}\right) x=\left(\begin{m
 <h2 id="vector-norms">Vector norms</h2>
 <p>is a measure of the magnitude of the vector:</p>
 <ul>
-<li>Positive: $\Vert \boldsymbol u\Vert  \ge 0$, $\Vert \boldsymbol u\Vert  = 0 \iff \boldsymbol{u = 0}$</li>
-<li>Homogeneous: $\Vert a \boldsymbol u \Vert  = |a| \Vert \boldsymbol u\Vert $</li>
-<li>Triangle inequality: $\Vert \boldsymbol u + \boldsymbol v\Vert  \le \Vert \boldsymbol u\Vert  + \Vert \boldsymbol v\Vert $</li>
+<li>Positive: $\Vert \bs u\Vert  \ge 0$, $\Vert \bs u\Vert  = 0 \iff \bs{u = 0}$</li>
+<li>Homogeneous: $\Vert a \bs u \Vert  = |a| \Vert \bs u\Vert $</li>
+<li>Triangle inequality: $\Vert \bs u + \bs v\Vert  \le \Vert \bs u\Vert  + \Vert \bs v\Vert $</li>
 </ul>
 <h2 id="common-vector-norms">Common vector norms</h2>
 <ul>
-<li>L1: $\Vert \boldsymbol u\Vert _1 = \sum_i | u_i |$</li>
-<li>L2 (Euclidean): $\Vert \boldsymbol u\Vert _2 = (\sum u_i^2)^{\frac{1}{2}} = (\boldsymbol u^T \boldsymbol u)^\frac{1}{2}$</li>
-<li>Lp: $\Vert \boldsymbol u\Vert _p = (\sum u_i^p)^{\frac{1}{p}}$</li>
-<li>L${\infty}$: $\Vert \boldsymbol u\Vert _\infty = \max(u_1, u_2, ..., u_n)$</li>
+<li>L1: $\Vert \bs u\Vert _1 = \sum_i | u_i |$</li>
+<li>L2 (Euclidean): $\Vert \bs u\Vert _2 = (\sum u_i^2)^{\frac{1}{2}} = (\bs u^T \bs u)^\frac{1}{2}$</li>
+<li>Lp: $\Vert \bs u\Vert _p = (\sum u_i^p)^{\frac{1}{p}}$</li>
+<li>L${\infty}$: $\Vert \bs u\Vert _\infty = \max(u_1, u_2, ..., u_n)$</li>
 </ul>
 </div>
 </div>
@@ -5966,7 +5966,7 @@ $$\left(\begin{matrix}1.0 & 2.0\\2.0 & 4.002\end{matrix}\right) x=\left(\begin{m
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="matrix-norms">Matrix norms</h2>
 <p>Defined to be the largest amount the linear transformation can stretch a vector:</p>
-<p>$$\Vert A\Vert  = \max_{\boldsymbol u \ne 0}\frac{\Vert A\boldsymbol u\Vert }{\Vert \boldsymbol u\Vert }$$</p>
+<p>$$\Vert A\Vert  = \max_{\bs u \ne 0}\frac{\Vert A\bs u\Vert }{\Vert \bs u\Vert }$$</p>
 <p>The matrix norm definition depends on the vector norms. Only L1 and L$\infty$ matrix norm have analytical formula:</p>
 <ul>
 <li>L1: $\Vert A\Vert _1 = \max_{j} \sum_i |a_{ij}|$</li>
@@ -5975,7 +5975,7 @@ $$\left(\begin{matrix}1.0 & 2.0\\2.0 & 4.002\end{matrix}\right) x=\left(\begin{m
 </ul>
 <h2 id="inequalities-">Inequalities:</h2>
 <ul>
-<li>$\Vert A \boldsymbol u \Vert  \le \Vert A\Vert  \Vert u\Vert $</li>
+<li>$\Vert A \bs u \Vert  \le \Vert A\Vert  \Vert u\Vert $</li>
 <li>$\Vert b A\Vert  = |b| \Vert A\Vert $ </li>
 <li>$\Vert A + B\Vert  \le \Vert A\Vert  + \Vert B\Vert $</li>
 <li>$\Vert AB\Vert  \le \Vert A\Vert \Vert B\Vert$</li>
@@ -5990,19 +5990,19 @@ $$\left(\begin{matrix}1.0 & 2.0\\2.0 & 4.002\end{matrix}\right) x=\left(\begin{m
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="matrix-condition">Matrix condition</h2>
-<p>The propogation of errors in a linear system $\boldsymbol y = A\boldsymbol x$ with invertable $A$:</p>
+<p>The propogation of errors in a linear system $\bs y = A\bs x$ with invertable $A$:</p>
 <ul>
-<li>Consider a perturbation to $\boldsymbol{ x' = x} + d\boldsymbol x$, and corresponding $d \boldsymbol y = A d\boldsymbol x$:</li>
+<li>Consider a perturbation to $\bs{ x' = x} + d\bs x$, and corresponding $d \bs y = A d\bs x$:</li>
 </ul>
 <p>$$\begin{array}\\
-\Vert d \boldsymbol y\Vert &amp;= \Vert A d \boldsymbol x\Vert \le \Vert A\Vert\Vert d \boldsymbol x\Vert 
-= \Vert A\Vert \Vert \boldsymbol x\Vert \frac{\Vert d \boldsymbol x\Vert }{\Vert \boldsymbol x\Vert } \\
- &amp;= \Vert A\Vert \Vert A^{-1} \boldsymbol y\Vert \frac{\Vert d \boldsymbol x\Vert }{\Vert \boldsymbol x\Vert }
-\le \Vert A\Vert \Vert A^{-1} \Vert \Vert \boldsymbol y\Vert \frac{\Vert d \boldsymbol x\Vert }{\Vert \boldsymbol x\Vert }
+\Vert d \bs y\Vert &amp;= \Vert A d \bs x\Vert \le \Vert A\Vert\Vert d \bs x\Vert 
+= \Vert A\Vert \Vert \bs x\Vert \frac{\Vert d \bs x\Vert }{\Vert \bs x\Vert } \\
+ &amp;= \Vert A\Vert \Vert A^{-1} \bs y\Vert \frac{\Vert d \bs x\Vert }{\Vert \bs x\Vert }
+\le \Vert A\Vert \Vert A^{-1} \Vert \Vert \bs y\Vert \frac{\Vert d \bs x\Vert }{\Vert \bs x\Vert }
 \end{array}$$</p>
-<p>$$\frac{\Vert d \boldsymbol y\Vert }{\Vert \boldsymbol y\Vert } \le \Vert A\Vert\Vert A^{-1}\Vert\frac{\Vert d \boldsymbol x\Vert }{\Vert \boldsymbol x\Vert}$$</p>
+<p>$$\frac{\Vert d \bs y\Vert }{\Vert \bs y\Vert } \le \Vert A\Vert\Vert A^{-1}\Vert\frac{\Vert d \bs x\Vert }{\Vert \bs x\Vert}$$</p>
 <ul>
-<li>$k(A) = \Vert A\Vert\Vert A^{-1}\Vert$ is the condition number for the linear system $\boldsymbol y = A\boldsymbol x$, which defines the maximum possible magnification of the relative error.</li>
+<li>$k(A) = \Vert A\Vert\Vert A^{-1}\Vert$ is the condition number for the linear system $\bs y = A\bs x$, which defines the maximum possible magnification of the relative error.</li>
 </ul>
 </div>
 </div>
@@ -6220,8 +6220,8 @@ In&nbsp;[71]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="orthogonal-transformation">Orthogonal transformation</h2>
 <p>Orthogonal transformation is <strong>unconditionally stable</strong>:</p>
-<p>$$\Vert Q \boldsymbol u\Vert_2^2 = (Q \boldsymbol u)^T(Q \boldsymbol u) 
-= \boldsymbol u^T Q^TQ \boldsymbol u = \boldsymbol u^T \boldsymbol u =  \Vert \boldsymbol u \Vert_2^2$$</p>
+<p>$$\Vert Q \bs u\Vert_2^2 = (Q \bs u)^T(Q \bs u) 
+= \bs u^T Q^TQ \bs u = \bs u^T \bs u =  \Vert \bs u \Vert_2^2$$</p>
 <ul>
 <li>therefore by definition: $\Vert Q \Vert_2 = \Vert Q^{-1} \Vert_2 = 1$</li>
 <li>$k(Q) = \Vert Q \Vert_2 \Vert Q^{-1} \Vert_2 = 1$</li>
