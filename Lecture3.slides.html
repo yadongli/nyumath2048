@@ -2411,12 +2411,12 @@ $$\small A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 & -3.8
 </ul>
 <p>$$ H = I - \frac{2\bs{uu}^T}{\bs {(u^T u)^2}}$$</p>
 <ul>
-<li>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \bs e_1$, where $\bs e_1$ can be any vector. </li>
+<li>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \hat{\bs e}_1$, where $\hat{\bs e}_1$ can be any unit vector. </li>
 </ul>
 <center><img src = "img/householder.png" height=300 width=300></center>
 
 <ul>
-<li>It is obvious from the figure that: $\bs u = \bs x - \Vert \bs x \Vert_2 \bs e_1$.</li>
+<li>It is obvious from the figure that: $\bs u = \bs x - \Vert \bs x \Vert_2 \hat{\bs e}_1$.</li>
 </ul>
 </div>
 </div>
@@ -2439,7 +2439,7 @@ $$\small A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 & -3.8
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[22]:
+In&nbsp;[34]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2455,14 +2455,15 @@ In&nbsp;[22]:
     <span class="n">h</span><span class="p">[</span><span class="n">e</span><span class="p">:,</span><span class="n">e</span><span class="p">:]</span> <span class="o">=</span> <span class="n">hs</span>
     <span class="k">return</span> <span class="n">h</span>
 
-<span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;x, u, Q, R&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;x, u, e_1, Q, R&quot;</span><span class="p">)</span>
 <span class="n">xn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;\Vert{x}\Vert_2&quot;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a</span><span class="p">))),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])),</span> 
-                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">xn</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">xn</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">)),</span>
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])),</span>
                 <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
 
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;\;&quot;</span><span class="p">)</span>
@@ -2488,7 +2489,7 @@ In&nbsp;[22]:
 
 
 <div class="output_latex output_subarea ">
-$$\small A=\left(\begin{matrix}5 & 4 & -3 & 2\\4 & 4 & 2 & -1\\-3 & 2 & 3 & 0\\2 & -1 & 0 & -2\end{matrix}\right)\;,\;\;\;x=\left(\begin{matrix}5\\4\\-3\\2\end{matrix}\right)\;,\;\;\;\Vert{x}\Vert_{2}=7.35\;,\;\;\;u=\left(\begin{matrix}-2.35\\4.0\\-3.0\\2.0\end{matrix}\right)$$
+$$\small A=\left(\begin{matrix}5 & 4 & -3 & 2\\4 & 4 & 2 & -1\\-3 & 2 & 3 & 0\\2 & -1 & 0 & -2\end{matrix}\right)\;,\;\;\;x=\left(\begin{matrix}5\\4\\-3\\2\end{matrix}\right)\;,\;\;\;\Vert{x}\Vert_{2}=7.348\;,\;\;\;e_{1}=\left(\begin{matrix}1\\0\\0\\0\end{matrix}\right)\;,\;\;\;u=\left(\begin{matrix}-2.35\\4.0\\-3.0\\2.0\end{matrix}\right)$$
 </div>
 
 </div>
@@ -2667,6 +2668,41 @@ $$</p>
 </div>
 </div>
 </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="top-10-numerical-algorithm-in-the-20th-century">Top 10 numerical algorithm in the 20th century</h2>
+<p>By <a href="https://www.siam.org/pdf/news/637.pdf">SIAM</a>:</p>
+<ol>
+<li>1946, Monte Carlo</li>
+<li>1947, Simplex method for linear programming</li>
+<li>1950, Subspace iteration/conjugate gradient method for solving $A\bs x = \bs y$</li>
+<li>1951, LU decomposition</li>
+<li>1957, Fortran optimized compiler</li>
+<li>1959-1961, QR decomposition/algorithm</li>
+<li>1963, quicksort</li>
+<li>1965, fast fourier transform</li>
+<li>1977, integer relation detection algoirthm</li>
+<li>1987, fast multipole algorithm</li>
+</ol>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-single-out-the-20th-century?">Why single out the 20th century?<a class="anchor-link" href="#Why-single-out-the-20th-century?">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+    </div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
