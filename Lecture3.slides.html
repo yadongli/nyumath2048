@@ -1765,7 +1765,7 @@ $(document).ready(function(){
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[1]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1794,16 +1794,6 @@ In&nbsp;[17]:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Populating the interactive namespace from numpy and matplotlib
-
-</pre>
-</div>
-</div>
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>
-WARNING: pylab import has clobbered these variables: [&apos;rc&apos;, &apos;beta&apos;, &apos;cov&apos;]
-&#96;%matplotlib&#96; prevents importing * from pylab and numpy
 
 </pre>
 </div>
@@ -1932,7 +1922,7 @@ Which can be easily solved using Matrix calculus:</p>
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[2]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1985,17 +1975,17 @@ In&nbsp;[18]:
   <tbody>
     <tr>
       <th>Least square</th>
-      <td>-842.3</td>
-      <td>844.2</td>
-      <td>5.008</td>
-      <td>70.38</td>
+      <td>-1,061</td>
+      <td>1,063</td>
+      <td>4.989</td>
+      <td>69.22</td>
     </tr>
     <tr>
       <th>Ridge regression $\lambda=0.1$</th>
-      <td>0.7935</td>
-      <td>1.203</td>
-      <td>5.008</td>
-      <td>70.62</td>
+      <td>0.7266</td>
+      <td>1.252</td>
+      <td>4.989</td>
+      <td>69.62</td>
     </tr>
   </tbody>
 </table></font></center>
@@ -2127,10 +2117,10 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <p>If $A$ is real and symmetric: $A^* = A$:</p>
 <ul>
 <li>$\Lambda^* = \Lambda$: all eigenvalues are real</li>
-<li>we can consider real eigen vectors only without losing generality (why?)</li>
+<li>we can consider real eigen vectors only without losing generaliy</li>
 <li>$R$ is orthogonal: $(R^{-1})^* = (R^{-1})^T = R \iff RR^T = I$</li>
 <li>$A =  R\Lambda R^T$, this diagonalization is called the eigenvalue decomposition (EVD)</li>
-<li>all eigenvalues are positive if and only if $A$ is symmetric positive definite</li>
+<li>all eigenvalues are positive if and only if $A$ is SPD</li>
 </ul>
 </div>
 </div>
@@ -2153,7 +2143,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 \end{array}$$</p>
 <ul>
 <li>the solution must be an eigenvector </li>
-<li>note that $\bs v_i^T A \bs v_i = \lambda_i$, therefore $\bs v_1$ is the solution because $\lambda_1$ is the largest</li>
+<li>since $\bs v_i^T A \bs v_i = \lambda_i$, $\bs v_1$ is the solution because $\lambda_1$ is the largest</li>
 </ul>
 <p>This process can be repeated to find all eigenvalues and vectors:</p>
 <ul>
@@ -2262,7 +2252,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[7]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2276,7 +2266,7 @@ In&nbsp;[19]:
 <span class="n">Q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s">&#39;Q_0&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s">&#39;R_0&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2315,12 +2305,12 @@ $$\small A=\left(\begin{matrix}5 & 4 & -3 & 2\\4 & 4 & 2 & -1\\-3 & 2 & 3 & 0\\2
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[20]:
+In&nbsp;[6]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2345,7 +2335,7 @@ $$\small Q_{0}=\left(\begin{matrix}-0.68 & -0.297 & -0.611 & 0.276\\-0.544 & -0.
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2356,13 +2346,11 @@ $$\small Q_{0}=\left(\begin{matrix}-0.68 & -0.297 & -0.611 & 0.276\\-0.544 & -0.
 </div>
 </div>
 </div>
-    </div><div class="fragment">
-    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2372,7 +2360,7 @@ In&nbsp;[21]:
     <span class="n">d</span> <span class="o">=</span> <span class="n">qr_next</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     
 <span class="n">An</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s">&#39;A_</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">ii</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">An</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">An</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2397,8 +2385,7 @@ $$\small A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 & -3.8
 </div>
 </div>
 
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2439,7 +2426,7 @@ $$\small A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 & -3.8
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[34]:
+In&nbsp;[10]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2464,7 +2451,7 @@ In&nbsp;[34]:
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a</span><span class="p">))),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])),</span> 
                 <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">xn</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">)),</span>
                 <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])),</span>
-                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;\;&quot;</span><span class="p">)</span>
     
@@ -2472,7 +2459,7 @@ In&nbsp;[34]:
 <span class="n">H1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s">&#39;H_1&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">a1</span> <span class="o">=</span> <span class="n">h1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H1</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> 
-                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2530,7 +2517,7 @@ $$\small H_{1}=\left(\begin{matrix}0.68 & 0.544 & -0.408 & 0.272\\0.544 & 0.073 
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[23]:
+In&nbsp;[11]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2538,14 +2525,14 @@ In&nbsp;[23]:
 <span class="n">H2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s">&#39;H_2&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">a2</span> <span class="o">=</span> <span class="n">h2</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H2</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">h2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> 
-                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H2</span><span class="o">*</span><span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H2</span><span class="o">*</span><span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;\;&quot;</span><span class="p">)</span>
 
 <span class="n">h3</span> <span class="o">=</span> <span class="n">householder</span><span class="p">(</span><span class="n">a2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">H3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s">&#39;H_3&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">a3</span> <span class="o">=</span> <span class="n">h3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H3</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">h3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> 
-                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H3</span><span class="o">*</span><span class="n">H2</span><span class="o">*</span><span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">H3</span><span class="o">*</span><span class="n">H2</span><span class="o">*</span><span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2602,7 +2589,7 @@ $$\small H_{3}=\left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[24]:
+In&nbsp;[12]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2610,7 +2597,7 @@ In&nbsp;[24]:
 <span class="n">r</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
 
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;\small &quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2647,7 +2634,7 @@ $$\small Q=\left(\begin{matrix}0.68 & 0.297 & -0.611 & 0.276\\0.544 & 0.406 & 0.
 <p>given the QR decomposition of $X = QR$:</p>
 <p>$$ \min_{\bs {\beta}} \Vert X \bs{\beta - y} \Vert_2 = \min_{\bs {\beta}} \Vert Q^T X \bs \beta - Q^T \bs y \Vert_2 = \min_{\bs {\beta}} \Vert R \bs \beta - \bs y'\Vert_2$$</p>
 <p>note that $R$ is right trangular, the vector whose norm is to be minimized looks like:</p>
-<p>$$\begin{pmatrix}
+<p>$$\small \begin{pmatrix}
 r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
 0 &amp; r_{22} &amp; \cdots &amp; r_{2n} \\
 \vdots &amp; \ddots &amp; \ddots &amp; \vdots \\
@@ -4727,7 +4714,7 @@ In&nbsp;[28]:
 <h2 id="ir-pca-components">IR PCA components</h2>
 <p>The eigenvectors and percentage explained, </p>
 <ul>
-<li>the first principal component explains more than 95% of the variance in CMT rates.</li>
+<li>the first principal component explains more than 95% of the variance</li>
 <li>the first 3 principal components can be interpreted as level, slope and curvature of the curve</li>
 <li>note that the sign of the PC is insignificant</li>
 </ul>
@@ -6421,7 +6408,7 @@ $$</p>
 <p>Given the SVD decomposition $X = U\Sigma V^T$, the SVD of $X$&#39;s pseudo inverse is:</p>
 <p>$$X^+ = (X^TX)^{-1}X^T = V \Sigma^+ U^T$$</p>
 <p>where $\Sigma^+$ is the pseudo inverse of $\Sigma$, whose diagonal elements are the reciprocals of those in $\Sigma$.</p>
-<p>It is easy to prove by direct computation, the last equation is obviously true, and every step is reversible:</p>
+<p>Proof: the last equation is obviously true, and every step is reversible:</p>
 <p>$$\begin{array}&amp;(X^TX)^{-1}X^T &amp;= V\Sigma^+ U^T \\
 (V \Sigma^T \Sigma V^T)^{-1} V\Sigma^TU^T &amp;= V\Sigma^+ U^T \\
 (V \Sigma^T \Sigma V^T)^{-1} V\Sigma^T\Sigma &amp;= V \Sigma^+\Sigma \\
