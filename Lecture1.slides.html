@@ -2196,7 +2196,7 @@ div.output_prompt {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="ignorance-is-strength">Ignorance is strength</h4>
 <ul>
-<li>Design dumb modules that only does one thing, and one thing really well</li>
+<li>Design dumb modules that only do one thing, and only one thing</li>
 <li>Keep it simple and stupid</li>
 <li>Separation of concerns, modular</li>
 </ul>
@@ -2388,7 +2388,7 @@ div.output_prompt {
 <p>We cover the last category first.</p>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2418,8 +2418,7 @@ div.output_prompt {
 </ul>
 </div>
 </div>
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -3520,7 +3519,7 @@ In&nbsp;[20]:
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">ay</span> 
+
 <span class="k">def</span> <span class="nf">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">:</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)])</span> <span class="o">+</span> <span class="mf">1.</span>
 
@@ -4258,11 +4257,13 @@ $$1$$
 <h2 id="condition-number">Condition number</h2>
 <p>Consider the relative error of a function with multiple arguments: $f = f(x_1, ..., x_n)$:</p>
 <p>\begin{eqnarray} 
+\small
 df &amp;=&amp; \sum_i \frac{\partial f}{\partial x_i} dx_i \\
 \frac{df}{f} &amp;=&amp; \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \frac{dx_i}{x_i}
 \end{eqnarray}</p>
 <p>Assuming input argument&#39;s relative errors are $\epsilon_i$ (could be negative):</p>
 <p>$$
+\small
 \left| \frac{\Delta f}{f} \right| = \left| \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \epsilon_i \right|
 \le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \left|\epsilon_i\right| \le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \epsilon \equiv k(f) \epsilon
 $$</p>
