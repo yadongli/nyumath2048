@@ -2038,7 +2038,7 @@ C = AB &amp;\iff c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[11]:
+In&nbsp;[48]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2080,7 +2080,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[49]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2130,7 +2130,7 @@ $$\small \left(\begin{matrix}2 & 1 & -1\\-6 & -2 & 4\\-2 & 1 & 2\end{matrix}\rig
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[50]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2183,7 +2183,7 @@ $$\small L_{1} \left(\begin{matrix}2 & 1 & -1\\-6 & -2 & 4\\-2 & 1 & 2\end{matri
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[51]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2192,7 +2192,7 @@ In&nbsp;[14]:
 <span class="n">y2</span> <span class="o">=</span> <span class="n">l1</span><span class="o">*</span><span class="n">y</span>
 <span class="n">l2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">a2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">a2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">l2</span><span class="o">*</span><span class="n">a2</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">L2</span><span class="o">*</span><span class="n">a2</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">L2</span><span class="o">*</span><span class="n">y2</span><span class="p">),</span> <span class="s">&quot;\;,\;&quot;</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">l2</span><span class="o">*</span><span class="n">y2</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">\small &quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">L2</span><span class="o">*</span><span class="n">a2</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">L2</span><span class="o">*</span><span class="n">y2</span><span class="p">),</span> <span class="s">&quot;\;,\;&quot;</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">l2</span><span class="o">*</span><span class="n">y2</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2209,7 +2209,7 @@ In&nbsp;[14]:
 
 
 <div class="output_latex output_subarea ">
-$$\\small L_{2} \left(\begin{matrix}2 & 1 & -1\\0 & 1 & 1\\0 & 2 & 1\end{matrix}\right)\left(\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right)=L_{2} \left(\begin{matrix}8\\2\\5\end{matrix}\right)\;,\;\left(\begin{matrix}2 & 1 & -1\\0 & 1 & 1\\0 & 0 & -1\end{matrix}\right)\left(\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right)=\left(\begin{matrix}8\\2\\1\end{matrix}\right)$$
+$$\small L_{2} \left(\begin{matrix}2 & 1 & -1\\0 & 1 & 1\\0 & 2 & 1\end{matrix}\right)\left(\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right)=L_{2} \left(\begin{matrix}8\\2\\5\end{matrix}\right)\;,\;\left(\begin{matrix}2 & 1 & -1\\0 & 1 & 1\\0 & 0 & -1\end{matrix}\right)\left(\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right)=\left(\begin{matrix}8\\2\\1\end{matrix}\right)$$
 </div>
 
 </div>
@@ -2235,7 +2235,7 @@ $$\\small L_{2} \left(\begin{matrix}2 & 1 & -1\\0 & 1 & 1\\0 & 2 & 1\end{matrix}
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[52]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2295,7 +2295,7 @@ $$\small L_{1}=\left(\begin{matrix}1 & 0 & 0\\3 & 1 & 0\\1 & 0 & 1\end{matrix}\r
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[16]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2349,7 +2349,7 @@ $$\small U^{{-1}}=\left(\begin{matrix}\frac{1}{2} & - \frac{1}{2} & -1\\0 & 1 & 
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[54]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2417,7 +2417,7 @@ $$\small L=\left(\begin{matrix}1 & 0 & 0\\-3 & 1 & 0\\-1 & 2 & 1\end{matrix}\rig
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[55]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2467,7 +2467,7 @@ $$\small A=\left(\begin{matrix}0 & 3 & 1 & 2\\4 & 0 & -3 & 1\\-3 & 1 & 0 & 2\\9 
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[56]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2558,7 +2558,7 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 <ul>
 <li>$V = \mathbb{E}[(\bs r - \bar{\bs r})(\bs r - \bar{\bs r})^T] = \mathbb{E}[\bs r \bs r^T] - \bar{\bs r}\bar{\bs r}^T = (\text{cov}(r_i, r_j)) = (\rho_{ij} \sigma_i \sigma_j)$ </li>
 <li><p>Covariance of linear combinations: </p>
-<p>$$\text{cov}(\bs x^T \bs r, \bs y^T \bs r) = \mathbb{E}[(\bs x^T \bs r)(\bs r^T \bs y)] - \mathbb{E}[\bs x^T \bs r]\mathbb{E}[\bs r^T \bs y] = \bs x^T \mathbb{E}[\bs r \bs r^T] \bs y - \bs x^T \bar{\bs r}\bar{\bs r}^T \bs y = \bs x^T V \bs y$</p>
+<p>$$\text{cov}(\bs x^T \bs r, \bs y^T \bs r) = \mathbb{E}[(\bs x^T \bs r)(\bs r^T \bs y)] - \mathbb{E}[\bs x^T \bs r]\mathbb{E}[\bs r^T \bs y] = \bs x^T \mathbb{E}[\bs r \bs r^T] \bs y - \bs x^T \bar{\bs r}\bar{\bs r}^T \bs y = \bs x^T V \bs y$$</p>
 </li>
 </ul>
 </div>
@@ -2596,7 +2596,7 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[20]:
+In&nbsp;[57]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3631,7 +3631,7 @@ MzOzgeNGsJmZmZkNHDeCzczMzGzguBFsZmZmZgPnD7HTH/7w3WUcAAAAAElFTkSuQmCC
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[58]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3759,13 +3759,13 @@ In&nbsp;[21]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[22]:
+In&nbsp;[60]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">lcm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
 <span class="n">lcv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">cv</span><span class="p">)</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;\small&quot;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> 
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> 
                 <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -3783,7 +3783,7 @@ In&nbsp;[22]:
 
 
 <div class="output_latex output_subarea ">
-$$\small\left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 & 0.8611\end{matrix}\right)\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0 & 0.9995 & 0.2878\\0 & 0 & 0.8611\end{matrix}\right)=\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0.03215 & 1.0 & 0.3011\\0.4191 & 0.3011 & 1.0\end{matrix}\right)$$
+$$\small \left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 & 0.8611\end{matrix}\right)\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0 & 0.9995 & 0.2878\\0 & 0 & 0.8611\end{matrix}\right)=\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0.03215 & 1.0 & 0.3011\\0.4191 & 0.3011 & 1.0\end{matrix}\right)$$
 </div>
 
 </div>
@@ -3962,10 +3962,6 @@ $$</p>
 <li>draw a n independent normal random number vector $\bs \epsilon = (\epsilon_1, \epsilon_2, ..., \epsilon_n)^T$, these are the normalized risk factors</li>
 <li>$L\bs \epsilon$ is the correlated normal random vector, and the correlated Brownian increments is $dw_t = L\bs \epsilon\sqrt{dt}$</li>
 </ol>
-<p>The resulting covariance (correlation) is: $\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsilon}^T L^T] = LL^T = C$ </p>
-<ul>
-<li>equivalent results can be obtained by applying Cholesky decomposition on the covariance matrix to draw $\sigma_i dw_i$ directly.</li>
-</ul>
 </div>
 </div>
 </div></section><section>
@@ -4776,6 +4772,15 @@ AElFTkSuQmCC
 </div>
 </div></section><section>
     
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The resulting covariance (correlation) is: $\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsilon}^T L^T] = LL^T = C$ </p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
