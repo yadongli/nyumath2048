@@ -2467,11 +2467,11 @@ $$\small A=\left(\begin{matrix}0 & 3 & 1 & 2\\4 & 0 & -3 & 1\\-3 & 1 & 0 & 2\\9 
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[56]:
+In&nbsp;[61]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="n">Pi</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="n">Pi</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2488,7 +2488,7 @@ In&nbsp;[56]:
 
 
 <div class="output_latex output_subarea ">
-$$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0 & 0 & -3.0 & 1.0\\-3.0 & 1.0 & 0 & 2.0\end{matrix}\right)$$
+$$\small P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0 & 0 & -3.0 & 1.0\\-3.0 & 1.0 & 0 & 2.0\end{matrix}\right)$$
 </div>
 
 </div>
@@ -2542,25 +2542,26 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 </ul>
 </div>
 </div>
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="correlation-and-covariance-matrix">Correlation and covariance matrix</h2>
-<p>They are the most important and ubiquitous matrices in quant Finance, </p>
+<h2 id="covariance-matrix">Covariance matrix</h2>
+<p>The most important and ubiquitous matrices in quant Finance, </p>
 <ul>
 <li>capturing the linear dependencies of random factors $\bs r = [r_1, ..., r_n]^T$ </li>
 <li>we use $\bar{\bs r} = \mathbb{E}[\bs r]$ to denote their expectations</li>
 </ul>
-<h4 id="covariance-matrix-">Covariance matrix:</h4>
-<ul>
-<li>$V = \mathbb{E}[(\bs r - \bar{\bs r})(\bs r - \bar{\bs r})^T] = \mathbb{E}[\bs r \bs r^T] - \bar{\bs r}\bar{\bs r}^T = (\text{cov}(r_i, r_j)) = (\rho_{ij} \sigma_i \sigma_j)$ </li>
-<li><p>Covariance of linear combinations: </p>
-<p>$$\text{cov}(\bs x^T \bs r, \bs y^T \bs r) = \mathbb{E}[(\bs x^T \bs r)(\bs r^T \bs y)] - \mathbb{E}[\bs x^T \bs r]\mathbb{E}[\bs r^T \bs y] = \bs x^T \mathbb{E}[\bs r \bs r^T] \bs y - \bs x^T \bar{\bs r}\bar{\bs r}^T \bs y = \bs x^T V \bs y$$</p>
-</li>
-</ul>
+<p>$$\begin{array}{l}V &amp;= \mathbb{E}[(\bs r - \bar{\bs r})(\bs r - \bar{\bs r})^T] = \mathbb{E}[\bs r \bs r^T] - \bar{\bs r}\bar{\bs r}^T \\
+&amp;= (\text{cov}(r_i, r_j)) = (\rho_{ij} \sigma_i \sigma_j)\end{array}$$</p>
+<p>Covariance of linear combinations: </p>
+<p>$$\begin{array}{l}
+\text{cov}(\bs x^T \bs r, \bs y^T \bs r) &amp;= \mathbb{E}[(\bs x^T \bs r)(\bs r^T \bs y)] - \mathbb{E}[\bs x^T \bs r]\mathbb{E}[\bs r^T \bs y]\\
+&amp;= \bs x^T \mathbb{E}[\bs r \bs r^T] \bs y - \bs x^T \bar{\bs r}\bar{\bs r}^T \bs y = \bs x^T V \bs y
+\end{array}$$</p>
 </div>
 </div>
 </div></section><section>
@@ -2570,12 +2571,12 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="correlation-matrix-">Correlation matrix:</h4>
+<h2 id="correlation-matrix">Correlation matrix</h2>
 <ul>
-<li>$C = (\rho_{ij})$, the co-variance matrix of the normalized factors $\bs r = [\frac{r_1}{\sigma_1}, ..., \frac{r_n}{\sigma_n}]^T$</li>
+<li>$C = (\rho_{ij})$ is the co-variance matrix of the normalized factors $\bs s = [\frac{r_1}{\sigma_1}, ..., \frac{r_n}{\sigma_n}]^T$</li>
 <li>$V = \bs \Sigma C \bs \Sigma $, where $\Sigma$ is a diagonal matrix of $\sigma_i$</li>
 </ul>
-<p>Both of them are symmetric positive semi-definate (SPD):</p>
+<p>Both covariance and correlation matrices are symmetric positive semi-definate (SPD):</p>
 <ul>
 <li>$\bs x^T V \bs x = \text{cov}[\bs x^T \bs r, \bs x^T \bs r] = \text{var}[\bs x^T \bs r] \ge 0$</li>
 </ul>
@@ -2588,7 +2589,7 @@ $$P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1.0 & 2.0\\4.0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="example-weekly-returns">Example: weekly returns</h2>
+<h2 id="example-weekly-rprice-and-returns">Example: weekly rprice and returns</h2>
 </div>
 </div>
 </div>
@@ -3617,7 +3618,8 @@ MzOzgeNGsJmZmZkNHDeCzczMzGzguBFsZmZmZgPnD7HTH/7w3WUcAAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4772,15 +4774,6 @@ AElFTkSuQmCC
 </div>
 </div></section><section>
     
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The resulting covariance (correlation) is: $\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsilon}^T L^T] = LL^T = C$ </p>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
@@ -4874,6 +4867,16 @@ In&nbsp;[27]:
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The resulting covariance (correlation) is: 
+$$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsilon}^T L^T] = LL^T = C$$</p>
+</div>
+</div>
 </div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
@@ -4885,8 +4888,8 @@ In&nbsp;[27]:
 <p>The covariance/correlation matrix are extremely useful, but they are difficult to deal with when their size grows large:</p>
 <ul>
 <li>In practice, we often deal with thousands or tens of thousands risk factors</li>
-<li>The correlation matrix is often easier to work with than the covariance matrix, because it is &quot;normalized&quot;</li>
-<li>In practice, it is very difficult to keep a large correlation matrix semi positive definite (SPD)<ul>
+<li>Correlation matrix is often easier to work with than the covariance matrix, because it is &quot;normalized&quot;</li>
+<li>It is very difficult to keep a large correlation matrix semi positive definite (SPD)<ul>
 <li>Correlation matrix size of a few thousands is the practical limit</li>
 <li>Small changes in isolated values can invalidate the whole correlation matrix</li>
 </ul>
@@ -4921,6 +4924,15 @@ In&nbsp;[27]:
 <li>Derivative to vector (Gradient): $\frac{\partial f}{\partial \bs x} = \nabla f = [\frac{\partial f}{\partial x_1}, ..., \frac{\partial f}{\partial x_1}]$</li>
 <li>Note that $\frac{\partial f}{\partial \bs x}$ is a <strong>row vector</strong>, whenever the vector or matrix appears in the denominator of differentiation, the result is transposed.</li>
 </ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="vector-function">Vector function</h2>
 <p>$$\bs{ y(x) } = [y_1(\bs x), ..., y_n(\bs x)]^T$$</p>
 <ul>
@@ -5000,10 +5012,9 @@ In&nbsp;[27]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="portfolio-optimization">Portfolio optimization</h2>
 <ul>
-<li>Powerful mean/variance portfolio theory can be expressed succinctly using linear algebra and matrix calculus. </li>
+<li>Powerful mean/variance portfolio theory can be expressed succinctly using linear algebra and matrix calculus.</li>
 </ul>
-<h3 id="definitions">Definitions</h3>
-<p>Suppose there are $n$ risky assets on the market, with random return vector of $\bs r$ whose covariance matrix is $V$,</p>
+<p>Suppose there are $n$ risky assets on the market, with random return vector $\bs r$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\bs w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
 <li>$\bs w^T \bs r$ is the portfolio&#39;s return</li>
