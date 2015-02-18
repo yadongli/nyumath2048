@@ -8352,12 +8352,10 @@ In&nbsp;[27]:
 <li>The criteria is which viariable is a natural fit for tension spline&#39;s stretch</li>
 <li>Ideally we want the vairable itself to be continous, but can live with the discontinuities in $f'(t)$ when $\lambda \rightarrow \infty$</li>
 </ul>
-<p>Industry standard:</p>
+<p>Industry standard:
+$$p(t) = e^{-\int_0^t h(s) ds}$$</p>
 <ul>
 <li>build piecewise flat curve in hazard rate $h(t)$ for CDS:</li>
-</ul>
-<p>$$p(t) = e^{-\int_0^t h(s) ds}$$</p>
-<ul>
 <li>where $p(t)$ is the survival probability of the reference entity at time $t$. </li>
 </ul>
 </div>
@@ -10135,7 +10133,7 @@ rMIYY4wxxhgPS46NMcYYY4zxsOTYGGOMMcYYD0uOjTHGGGOM8bDk2BhjjDHGGA9Ljo0xxhhjjPGw
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Iteration is a simple and effective technique to reduce fit error</p>
 <ul>
-<li>take the inaccurate curve as the starting point, and redo the boostrapping</li>
+<li>start with the bootstrapped (inaccurate) curve, redo the boostrapping</li>
 <li>error goes below 1bps after one extra iteration in this example</li>
 <li>simple iteration often outperforms sophisticated optimizers</li>
 </ul>
