@@ -1800,6 +1800,7 @@ WARNING: pylab import has clobbered these variables: [&apos;norm&apos;, &apos;ax
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="lecure-4-rootfinding-and-interpolation">Lecure 4: Rootfinding and Interpolation</h1>
+<h2 id="topics">Topics</h2>
 <ul>
 <li>Root finding</li>
 <li>Interpolation</li>
@@ -8179,7 +8180,7 @@ uNibmZWAi72ZWQm42JuZlYCLvZlZCbjYm5mVgIu9mVkJ/Acj8zaPoRMLpAAAAABJRU5ErkJggg==
 <tbody>
 <tr>
 <td style="text-align:center">primary state variable</td>
-<td style="text-align:center">zero coupon bond price $b(t)$</td>
+<td style="text-align:center">discount factor $b(t)$</td>
 <td style="text-align:center">survival probability $p(t)$</td>
 </tr>
 <tr>
@@ -8377,8 +8378,10 @@ In&nbsp;[62]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a bit strange, why don&#39;t we use a continuous interpolation in $h(t)$, like piece wise linear?
-or even cubic spline?</p>
+<p>this is quite odd, why don&#39;t we use a continuous interpolation in $h(t)$?</p>
+<ul>
+<li>such as piece wise linear or cubic spline?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -10709,7 +10712,7 @@ ERGRiKaGWEREREQimhpiEREREYlo/w+bR7hW8lTciwAAAABJRU5ErkJggg==
 <h2 id="perturbation-locality">Perturbation locality</h2>
 <p>Changes in hazard rates are more localized with larger $\lambda$</p>
 <ul>
-<li>A very desirable property in practice</li>
+<li>A highly desirable property in practice</li>
 </ul>
 </div>
 </div>
@@ -12600,11 +12603,21 @@ McYYD/t/TBGCAPDwz1MAAAAASUVORK5CYII=
 <ul>
 <li>state variables&#39; is the primary determinant of price, such as the cumulative hazard $g(t) = -\log(p(t))$</li>
 <li>the derivatives, like $h(t) = g'(t)$, only changes the prices through its cumulative effects (integral), which leads to zigzags and waves when combined with a continuous interpolation.</li>
-<li>interpolate derivatives + continuous algorithm = spectacular failure</li>
 </ul>
 </div>
 </div>
-</div></section>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>interpolate derivatives + continuous interpolation algorithm = <strong>DISASTER</strong></p>
+</div>
+</div>
+</div>
+    </div></section>
     </section><section>
     <section>
     
