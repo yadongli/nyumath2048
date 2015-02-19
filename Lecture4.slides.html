@@ -5291,9 +5291,9 @@ TkSuQmCC
 <p>$$q_i(x) = a_i + b_i x + c_i x^2 + d_i x^3 \;,\;\; x_i &lt; x &lt; x_{i+1}$$ </p>
 <p>Enforce continuity up to the 2nd derivatives:</p>
 <p>\begin{eqnarray}
-q_i(x_i) &amp;=&amp; q_{i+1}(x_i) \\
-q'_i(x_i) &amp;=&amp; q'_{i+1}(x_i) \\
-q''_i(x_i) &amp;=&amp; q''_{i+1}(x_i)
+q_i(x_{i-1}) &amp;=&amp; q_{i}(x_i) \\
+q'_i(x_{i-1}) &amp;=&amp; q'_{i}(x_i) \\
+q''_i(x_{i-1}) &amp;=&amp; q''_{i}(x_i)
 \end{eqnarray}</p>
 </div>
 </div>
