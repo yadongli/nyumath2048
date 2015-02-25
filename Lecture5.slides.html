@@ -2206,16 +2206,18 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="diagonality">Diagonality</h2>
-<p>The benchmark Jacobian is diagonal by consruction: </p>
+<p>The benchmark Jacobian is diagonal if the relationship btw $\bs b$ and $\bs q$ is one to one</p>
 <ul>
-<li>the relationship of $\bs b$ and $\bs q$ is one to one<ul>
-<li>benchmark quotes are created to convey benchmark prices</li>
+<li>Jacobian $\frac{\partial v}{\partial \bs q}$ requires other elements of $\bs q$ remain constant when perturbing one of them</li>
+<li>other benchmark PVs remain unchanged because their $\bs q$ are hold constant</li>
 </ul>
-</li>
-<li>Jacobian $\frac{\partial v}{\partial \bs q}$ requires other elements of $\bs q$ remain constant when perturbing one of them<ul>
-<li>this holds other benchmark PVs constant</li>
+<p>The $\bs b$ and $\bs q$ are not always one-to-one</p>
+<ul>
+<li>eg, option price depends on both IR and implied vol</li>
+<li>the benchmark quote is not diagonal in this calse</li>
 </ul>
-</li>
+<p>The benchmark Jacobian is diagonal in our example</p>
+<ul>
 <li>the diagonal elements of $\frac{\partial \bs b}{\partial \bs q}$ are the PV01s</li>
 </ul>
 </div>
@@ -2231,7 +2233,6 @@ $$</p>
 <ul>
 <li>e.g., the CDS curve needs to be re-bootstrapped to reprice all benchmark instruments, even if we perturb IR</li>
 <li>survival probability may change, but PVs are kept the same for unperturbed tenors</li>
-<li>beware of the errors in curve building</li>
 </ul>
 </div>
 </div>
