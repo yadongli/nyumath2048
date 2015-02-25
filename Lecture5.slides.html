@@ -2186,9 +2186,6 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="benchmark-jacobian">Benchmark Jacobian</h2>
 <p>$\frac{\partial \bs b}{\partial \bs q}$ is the Jacobian of benchmark instruments over benchmark quotes</p>
-<ul>
-<li>the diagonal elements of $\frac{\partial \bs b}{\partial \bs q}$ are the PV01s</li>
-</ul>
 <p>In this example, the benchmark instrument $\bs b$ includes:</p>
 <ul>
 <li>the standard CDS with 100bps coupon at benchmark tenors</li>
@@ -2216,9 +2213,10 @@ $$</p>
 </ul>
 </li>
 <li>Jacobian $\frac{\partial v}{\partial \bs q}$ requires other elements of $\bs q$ remain constant when perturbing one of them<ul>
-<li>this also holds other benchmark PV constant</li>
+<li>this holds other benchmark PVs constant</li>
 </ul>
 </li>
+<li>the diagonal elements of $\frac{\partial \bs b}{\partial \bs q}$ are the PV01s</li>
 </ul>
 </div>
 </div>
@@ -2657,6 +2655,7 @@ In&nbsp;[5]:
 <p>At its core, it is simply a change in the liquid benchmark instruments.</p>
 <ul>
 <li>the quoting convention change is a side product</li>
+<li>ISDA publishes a one-day-lagged IR curve for the conversion of quoted spreads to PV, to ensure that the quoted spreads and standardised CDS PV has one-to-one dependency</li>
 </ul>
 </div>
 </div>
