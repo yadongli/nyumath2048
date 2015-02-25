@@ -3494,7 +3494,7 @@ In&nbsp;[11]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="be-inclusive">Be inclusive</h2>
+<h2 id="be-all-inclusive">Be all inclusive</h2>
 <p>It is important to include all risk factors in the Jacobian matrix</p>
 <ul>
 <li>a common mistake is to leave out the IR from the Jacobian</li>
@@ -3735,8 +3735,8 @@ In&nbsp;[12]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Yes, just zero out the PVs for the first few PCs of the changes.</li>
-<li>People actually do this in practice, but is it optimal?</li>
+<li>Yes, just zero out the PVs for the first few PCs of the covariance of changes.</li>
+<li>People actually do this in practice</li>
 </ul>
 </div>
 </div>
@@ -3784,9 +3784,6 @@ JVJ^T \bs h = J V \bs d \\
 </ul>
 <p>The Ridge version is:</p>
 <p>$$\bs h = (JVJ^T + \lambda W^T W)^{-1} J V \bs d $$</p>
-<ul>
-<li>can be very useful in practice</li>
-</ul>
 </div>
 </div>
 </div></section><section>
@@ -3804,7 +3801,7 @@ JVJ^T \bs h = J V \bs d \\
 </ul>
 </li>
 <li>Our bank&#39;s system only computes risks to par CDS spreads, but the hedging instruments are the standardised CDS</li>
-<li>The bespoke trade is $10MM notional, 4.5Y maturity and 500bps coupon.</li>
+<li>The bespoke trade is long $10MM, 4.5Y and 500bps</li>
 </ul>
 <p>The Jacobian $J = \frac{\partial \bs u}{\partial \bs q}$ is:</p>
 </div>
