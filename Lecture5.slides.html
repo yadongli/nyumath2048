@@ -1857,22 +1857,33 @@ Populating the interactive namespace from numpy and matplotlib
 </ul>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="deltas-and-gammas">Deltas and gammas</h2>
+<p>The pricing function can be viewed as an interpolator.</p>
+</div>
+</div>
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="greeks">Greeks</h2>
 <p>The following terminologies are often used in practice</p>
 <ul>
-<li>Delta: 1st order derivative to market environments: $\Delta = \frac{\partial v}{\partial \bs m}$<ul>
+<li>Delta: 1st order derivative to market environments: $\bs \delta = \frac{\partial v}{\partial \bs m}$<ul>
 <li>Delta is a vector of size $m$</li>
-<li>Deltas are in the unit of dollar amount</li>
+<li>Deltas are in the unit of currency</li>
 </ul>
 </li>
-<li>Gamma: 2nd order derivaties to market environments: $\Gamma = \frac{\partial \Delta}{\partial \bs m}$<ul>
+<li>Gamma: 2nd order derivaties to market environments: $\Gamma = \frac{\partial \bs \delta}{\partial \bs m}$<ul>
 <li>Gamma is a $m \times m$ matrix that includes all cross gammas</li>
 </ul>
 </li>
@@ -2079,8 +2090,8 @@ In&nbsp;[2]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="why-quote-spreads-">Why quote spreads?</h2>
-<p>The market trade in prices but market participants like to quote spreads:</p>
+<h2 id="why-spreads-">Why spreads?</h2>
+<p>The market trades in prices but market participants communicate in spreads:</p>
 <table>
 <thead>
 <tr>
@@ -2108,7 +2119,7 @@ In&nbsp;[2]:
 </tbody>
 </table>
 <p><strong>PV01</strong> : the ratio of PV changes in bps over 1bps spread change</p>
-<p>The advantages of quoting spread includes:</p>
+<p>The advantages of spread over price includes:</p>
 <ul>
 <li>free of the dirty/clean price ambiguity</li>
 <li>comparable between different instruments</li>
@@ -2130,13 +2141,17 @@ In&nbsp;[2]:
 <p>Given: </p>
 <ul>
 <li>$v$ is the PV of the trade or portfolio to be hedged</li>
-<li>$\bs b$ is a vector of benchmark instruments&#39; PVs per unit notional</li>
-<li>$\bs q$ is the vector of benchmark quotes, e.g. the quoted spreads for CDS, par swaps for rates etc</li>
+<li>$\bs b$ is a vector of benchmark instruments&#39; <strong>PV</strong>s <ul>
+<li>$\bs b$ is usually in unit notional, by convention</li>
 </ul>
-<p>The replicating portfolio $\bs h^T \bs b$ is a portfolio that has identical first order risk to $v$: </p>
-<p>$$\frac{\partial v}{\partial \bs q}  = \frac{\partial (\bs h^T \bs b)}{\partial \bs q} = \bs h^T  \frac{\partial \bs b}{\partial \bs q} $$</p>
-<p>When the $\frac{\partial \bs b}{\partial \bs q}$ is invertable: </p>
-<p>$$\bs h^T = \frac{\partial v}{\partial \bs q} (\frac{\partial \bs b}{\partial \bs q})^{-1} $$</p>
+</li>
+<li>$\bs q$ is the vector of benchmark quotes, usually in <strong>spreads</strong> <ul>
+<li>e.g. the quoted spreads for CDS, par swaps for rates etc</li>
+</ul>
+</li>
+</ul>
+<p>The replicating portfolio $\bs h^T \bs b$ is a benchmark portfolio that has identical first order risk to $v$: </p>
+<p>$$\frac{\partial v}{\partial \bs q}  = \frac{\partial (\bs h^T \bs b)}{\partial \bs q} = \bs h^T  \frac{\partial \bs b}{\partial \bs q} \iff \bs h^T = \frac{\partial v}{\partial \bs q} (\frac{\partial \bs b}{\partial \bs q})^{-1} $$</p>
 </div>
 </div>
 </div></section><section>
@@ -2155,6 +2170,11 @@ $$</p>
 <li>$\frac{\partial \bs b}{\partial \bs q}$ are the Deltas of the benchmark instruments.</li>
 </ul>
 <p>$-\bs h^T \bs b$ is the portfolio to netrualize all the first order risks, commonly referred as the hedging portfolio.</p>
+<ul>
+<li>this equation is the core of a market maker&#39;s operation</li>
+<li>we can trade illiquid instrument and hedge them using liquid benchmarks</li>
+<li>economy of scale, the hedge is only on the portfolio level</li>
+</ul>
 </div>
 </div>
 </div></section><section>
@@ -2189,15 +2209,21 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="diagonality">Diagonality</h2>
-<p>When computing benchmark Jacobian, we <strong>must</strong> re-bootstrap all dependent curves for any perturbations:</p>
+<p>The benchmark Jacobian is diagonal by consruction: </p>
 <ul>
-<li>otherwise it is not a valid Jacobian in multi-variate calculus</li>
+<li>the relationship of $\bs b$ and $\bs q$ is one to one<ul>
+<li>the benchmark quotes are created to communicate benchmark prices</li>
+</ul>
+</li>
+<li>Jacobian $\frac{\partial v}{\partial \bs q}$ requires other elements of $\bs q$ remain constant when perturbing one of them<ul>
+<li>this also holds other benchmark PV constant</li>
+</ul>
+</li>
+</ul>
+<p>When computing benchmark Jacobian numerically, we <strong>must</strong> re-bootstrap all dependent curves for any perturbations:</p>
+<ul>
 <li>e.g., the CDS curve needs to be re-bootstrapped to reprice all benchmark instruments, even if we perturb IR</li>
 <li>survival probability may change, but PVs are kept the same for unperturbed tenors</li>
-</ul>
-<p>The benchmark Jacobian is therefore diagonal by consruction: </p>
-<ul>
-<li>re-bootstraping ensures all off-diagonal elements are 0</li>
 <li>beware of the errors in curve building</li>
 </ul>
 </div>
@@ -2565,7 +2591,7 @@ In&nbsp;[5]:
 </ul>
 <p>Dynamic hedging in practice:</p>
 <ul>
-<li>can&#39;t remove all risks, eg. jump-to-default risk</li>
+<li>can&#39;t possibly remove all risks, eg. jump-to-default risk</li>
 <li>the cost of hedging over time won&#39;t add up to the PV of the instruments</li>
 </ul>
 </div>
@@ -2619,14 +2645,7 @@ In&nbsp;[5]:
 </tr>
 </tbody>
 </table>
-<p>The quoted spread is a convention to convey upfront payment amount:</p>
-<ul>
-<li>It is the flat hazard rate curve that reprices the standardised CDS<ul>
-<li>analogous to the yield to maturity or zero rate in rates</li>
-</ul>
-</li>
-<li>the interest rate curve used for the conversion is published by ISDA</li>
-</ul>
+<p>At its core, it is simply a change in the liquid benchmark instruments.</p>
 </div>
 </div>
 </div></section><section>
@@ -2636,12 +2655,12 @@ In&nbsp;[5]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="hedging-with-bespoke-instruments">Hedging with bespoke instruments</h2>
+<h2 id="real-world-hedging-problem">Real world hedging problem</h2>
 <p>However, your bank&#39;s IT system hasn&#39;t been updated in time (it never does):</p>
 <ul>
-<li>Your end of day valuation batch still build CDS curves from the old-style par CDS instruments</li>
-<li>Your traders have to mark the par spreads instead of the standardised CDS quoted spreads</li>
-<li>Your banks&#39;s risks (deltas) are still computed with regard to par CDS, not the quoted spreads</li>
+<li>Your end of day valuation still builds CDS curves from the par CDS spread</li>
+<li>Your traders have to continue marking the par spreads, even though they trade standardised CDS using quoted spreads</li>
+<li>Your banks&#39;s risks (Deltas) are all computed with regard to par CDS</li>
 </ul>
 </div>
 </div>
@@ -2652,7 +2671,7 @@ In&nbsp;[5]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From your bank&#39;s system point of view (contrary to everyone else in the market): </p>
+<p>From your bank&#39;s system point of view (contrary to the market): </p>
 <ul>
 <li>the par CDS is still the benchmark instruments</li>
 <li>the standardised CDS are the bespoke instruments you now have to hedge your positions with</li>
@@ -2670,11 +2689,12 @@ In&nbsp;[5]:
 <h2 id="par-spread-0-quoted-spread">Par spread $\leftrightarrow$ quoted spread</h2>
 <p>the equivalent par CDS spreads ($\bs p$) and quoted spreads ($\bs q$) are shown below.</p>
 <ul>
-<li>the conversion btw par spreads $\bs p$ and quoted spreads $\bs q$ is easy</li>
-<li>curves built from converted $\bs q$ and $\bs p$ are identical<ul>
+<li>the conversion btw par spreads $\bs p$ and quoted spreads $\bs q$ is easy<ul>
 <li>$\bs q \rightarrow$ CDS curve $\rightarrow \bs p \rightarrow$ CDS Curve</li>
+<li>the last step is done by the end of day official IT system</li>
 </ul>
 </li>
+<li>CDS curves built from converted $\bs q$ and $\bs p$ are identical</li>
 </ul>
 </div>
 </div>
@@ -2774,7 +2794,18 @@ In&nbsp;[6]:
 </div>
 </div>
 
-</div></section><section>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where do the par spread and quoted spread diverge?</p>
+</div>
+</div>
+</div>
+    </div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2985,7 +3016,11 @@ In&nbsp;[8]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The root cause is that the $\frac{\partial \bs b}{\partial \bs p}$ is not a diagonal matrix when $\bs p$ is the par CDS spread, this incorrect procedure ignores all off diagonal elements.</p>
+<p>The root cause is that the $\frac{\partial \bs b}{\partial \bs p}$ is not a diagonal matrix</p>
+<ul>
+<li>$\bs p$ is quotes for par CDS instruments, it is not one to one with $\bs b$, the standardised CDS</li>
+<li>this incorrect procedure ignores all off diagonal elements in $\frac{\partial \bs b}{\partial \bs p}$ </li>
+</ul>
 </div>
 </div>
 </div>
@@ -3444,8 +3479,22 @@ In&nbsp;[11]:
 <p>$$ \frac{\partial v}{\partial{\bs q}} = \frac{\partial v}{\partial \bs p} \frac{\partial \bs p}{\partial \bs b} \frac{\partial \bs b}{\partial \bs q} = \frac{\partial v}{\partial \bs p} \left(\frac{\partial \bs b}{\partial \bs p}\right)^{-1} \frac{\partial \bs b}{\partial \bs q} $$</p>
 <ul>
 <li>simply a change of variables in multi-variate calculus</li>
-<li>the right hand side can be computed without upgrading the system</li>
+<li>the right hand side can be computed without upgrading the system<ul>
+<li>most of the work is in the first factor, as we have many trades in the portfolio.</li>
+<li>the last 2 factors are trivial</li>
 </ul>
+</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="be-inclusive">Be inclusive</h2>
 <p>It is important to include all risk factors in the Jacobian matrix</p>
 <ul>
 <li>a common mistake is to leave out the IR from the Jacobian</li>
