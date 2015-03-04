@@ -3233,6 +3233,7 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>it is prudent to monitor the error of MC error (most people don&#39;t)</li>
+<li>the err of MC err is more pronounced for fat tailed distributions, with large $\beta$</li>
 </ul>
 </div>
 </div>
@@ -3314,7 +3315,7 @@ In&nbsp;[111]:
 <p>Batching is a generic method to estimate MC errors with dependent samples</p>
 <ul>
 <li>Repeat the MC simulation $b$ times, and obtain $\hat{\mu}_i$ for $i = 1 ... b$ <ul>
-<li>each batch has <strong>different</strong> random seeds, everything else equal </li>
+<li>each batch has <strong>different</strong> random seeds, <em>ceteris paribus</em></li>
 </ul>
 </li>
 <li>$\hat{\mu}_i$ are indepent between batches, <ul>
@@ -3757,7 +3758,7 @@ AAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Monte carlo is effective in combating high dimensions:</p>
+<p>Monte Carlo is effective in combating high dimensions:</p>
 <ul>
 <li>the same set of random samples cover all dimensions equally</li>
 </ul>
@@ -3933,7 +3934,7 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="box-muller">Box-muller</h2>
-<p>Normal random number is the most important among all:</p>
+<p>Normal random number is the most important of all:</p>
 <ul>
 <li>most quant Finance models are driven by Brownian motions</li>
 <li>fast and accurate inversion of normal CDF weren&#39;t known till recently</li>
@@ -18106,7 +18107,7 @@ In&nbsp;[128]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[129]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -18653,7 +18654,7 @@ BNXWAAAAAElFTkSuQmCC
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[130]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -18695,7 +18696,7 @@ In&nbsp;[]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[131]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -18719,6 +18720,101 @@ In&nbsp;[]:
 </div>
 </div>
 
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<center><font size=2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Batch 1</th>
+      <th>Batch 2</th>
+      <th>Batch 3</th>
+      <th>Batch 4</th>
+      <th>Batch 5</th>
+      <th>Batch 6</th>
+      <th>Batch 7</th>
+      <th>Batch 8</th>
+      <th>Batch 9</th>
+      <th>Batch 10</th>
+      <th>Batch Mean</th>
+      <th>Batch Std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LSMC - LB</th>
+      <td>6.486</td>
+      <td>6.514</td>
+      <td>6.473</td>
+      <td>6.516</td>
+      <td>6.507</td>
+      <td>6.543</td>
+      <td>6.493</td>
+      <td>6.499</td>
+      <td>6.496</td>
+      <td>6.503</td>
+      <td>6.503</td>
+      <td>0.018</td>
+    </tr>
+    <tr>
+      <th>LSMC</th>
+      <td>6.526</td>
+      <td>6.490</td>
+      <td>6.528</td>
+      <td>6.519</td>
+      <td>6.552</td>
+      <td>6.504</td>
+      <td>6.509</td>
+      <td>6.509</td>
+      <td>6.518</td>
+      <td>6.522</td>
+      <td>6.518</td>
+      <td>0.016</td>
+    </tr>
+    <tr>
+      <th>LSMC - UB</th>
+      <td>6.569</td>
+      <td>6.531</td>
+      <td>6.568</td>
+      <td>6.561</td>
+      <td>6.600</td>
+      <td>6.545</td>
+      <td>6.554</td>
+      <td>6.552</td>
+      <td>6.561</td>
+      <td>6.566</td>
+      <td>6.561</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <th>LSMC err </th>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.012</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table></font></center>
+</div>
+
+</div>
+
+</div>
 </div>
 
 </div></section><section>
