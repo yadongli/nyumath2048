@@ -2380,7 +2380,7 @@ cFA7j7gAAAAASUVORK5CYII=
 <p>$$ \tilde y = \tilde x + \beta (v - \tilde v) $$</p>
 <ul>
 <li>$\tilde v$ is the control variate, which represents the similar vanilla instrument</li>
-<li>$v = \mathbb{E}[\tilde v]$ is the true value of the vanilla instrument, which is known to very high precision (preferrably analytical)</li>
+<li>$v = \mathbb{E}[\tilde v]$ is the true value of the vanilla instrument, which is known to very high precision (e.g. analytical or PDE)</li>
 <li>$\beta$ is a scalar constant, a free parameter</li>
 <li>$\mathbb{E}[\tilde y] = \mathbb{E}[\tilde x]$ by construction</li>
 </ul>
@@ -3663,7 +3663,7 @@ mZmZmVnDORExMzMzM7OG+//BiFOS6CtxNAAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Disclaimer: such dramatic reduction in variance is not typical in pratice.</p>
+<p>Disclaimer: such dramatic reduction in variance is not typical:</p>
 <ul>
 <li>10x - 20x reduction is an exellent result in practice</li>
 </ul>
@@ -9995,7 +9995,7 @@ SUVORK5CYII=
 <p>$$ \small \mathbb E^{\mathbb Q}[x(s)] = \mathbb E^{\mathbb P}[x(s) m(s)]  =\mathbb E^{\mathbb P}[x(s) \mathbb E^{\mathbb P}[m(t) | \mathcal{F}_s]]  = \mathbb E^{\mathbb P}[x(s) m(t)] $$</p>
 <p>therefore under $\mathbb Q$ defined by $\frac{d \mathbb Q}{d \mathbb P} = m(t)$:</p>
 <ul>
-<li>$\frac{x(s)}{\sqrt s} = \frac{w^{\mathbb Q}(s) + \theta s}{\sqrt s} = \frac{w^{\mathbb Q}(s)}{\sqrt s} + \theta \sqrt s$ is standard normal for any $s &lt; t$</li>
+<li>$\frac{x(s)}{\sqrt s} = \frac{1}{\sqrt s}(w^{\mathbb Q}(s) + \theta s)$ is standard normal for any $s &lt; t$</li>
 </ul>
 </div>
 </div>
