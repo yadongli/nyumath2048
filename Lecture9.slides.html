@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Lecture8 slides</title>
+<title>Lecture9 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -1716,6 +1716,26 @@ div.output_prompt {
 </head>
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style type="text/css">
+//div.output_wrapper {
+//  margin-top: 0px;
+//}
+.input_hidden {
+  display: none;
+//  margin-top: 5px;
+}
+</style>
+
+<!-- script>
+$(document).ready(function(){
+  $(".output_wrapper").click(function(){
+      $(this).prev('.input_hidden').slideToggle();
+  });
+})
+</script -->
+
 
 <body>
 <div class="reveal">
@@ -1723,6 +1743,7 @@ div.output_prompt {
 <div style=display:none>
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[1]:
@@ -1746,6 +1767,8 @@ In&nbsp;[1]:
 </div>
 </div>
 
+</div>
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -1763,6 +1786,51 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 
 </div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="lecture-9-linear-programming-and-alm-cash-flow-matching">Lecture 9: Linear Programming and ALM: Cash-Flow Matching</h1>
+<h2 id="topics">Topics</h2>
+<ul>
+<li><p>Linear Programming Theory</p>
+<ul>
+<li>Formulation</li>
+<li>Duality</li>
+<li>Solution Methods<ul>
+<li>Simplex Method</li>
+<li>Primal-Dual Interior-Point Method    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>LP: Asset Liability Manamgement: Cash-Flow Matching</p>
+<ul>
+<li>Basic setup</li>
+<li>Example</li>
+<li>Nonlinear scenario</li>
+<li>Stochastic liabilities</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
     </div></section>
     </section><section>
     <section>
@@ -1772,379 +1840,28 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="lecture-8-optimization">Lecture 8: Optimization</h1>
-<h2 id="topics">Topics</h2>
-<ul>
-<li><p>Introduction</p>
-<ul>
-<li>Formulation</li>
-<li>Types of Optimization Problems</li>
-<li>Basic Concepts</li>
-<li>Optimization Examples in Finance</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Unconstrained Optimization</p>
-<ul>
-<li>Optimality Characterization</li>
-<li>Solution Methods<ul>
-<li>Direct search method</li>
-<li>Descent Methods</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Constrained Optimization<ul>
-<li>General framework</li>
-<li>Duality</li>
-<li>Optimality conditions<ul>
-<li>Why KKT conditions</li>
-</ul>
-</li>
-<li>Solution Methods</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="introduction">Introduction</h1>
-<p>Optimization exists in every field, particularly in finance: most activities in finance revolve around some goals that needed to be optimized, e.g. maximizing profits, minimizing risk, maximizing utility, and minimizing costs etc.</p>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="linear-programming-theory">Linear Programming Theory</h1>
 <h2 id="formulation">Formulation</h2>
-<p>An optimization problem usually involves three elements:</p>
-<ul>
-<li><strong>Objective</strong>: to be optimized: profit, loss, risk, etc</li>
-</ul>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Variables</strong>: numbers of shares in each stock, amount of capital to be invested in each sector, etc</li>
-</ul>
-</div>
-</div>
-</div>
-    </div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Constraints</strong>: some choices are restricted, total risk cannot exceed certain criteria, total amount of capital is limited, etc</li>
-</ul>
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Mathematically,</p>
 <p>$$
 \renewcommand{bx}{\boldsymbol x}
-\Large{ \min_{\bx\in \Psi, \; \Psi\subset \mathbb{R}^n}} f(\bx)
-$$</p>
-<p>where $ f(\bx): \mathbb{R}^n \to \mathbb{R} $ is a scalar <strong>objective function</strong>, $\Psi$ is a subset of $\mathbb{R}^n$ and called the <strong> feasible region</strong>.</p>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>The minimization and maximization problems are equivalent
-$$
-\min_{\bx\in \Psi} f(\bx) = -\max_{\bx\in \Psi} (-f(\bx))
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="types-of-optimization-problems">Types of Optimization Problems</h2>
-<ul>
-<li>If $\Psi = \mathbb{R}^n$, the problem is <strong>unconstrained</strong>, otherwise, it is <strong>constrained</strong></li>
-</ul>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $f(\bx)$ is linear and $\Psi$ is a polyhedron, then <strong>Linear Programming</strong>, otherwise, <strong>Nonlinear Programming</strong></li>
-</ul>
-</div>
-</div>
-</div>
-    </div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $f(\bx)$ is quadratic and $\Psi$ is a polyhedron, then <strong>Quadratic Programming</strong></li>
-</ul>
-</div>
-</div>
-</div>
-    </div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $f(\bx)$ and $\Psi$ are convex, then <strong>Convex Optimization</strong> (of which linear and quadratic programming are special cases)</li>
-</ul>
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $\Psi$ contains discrete variables, then <strong>Discrete Optimization</strong></li>
-</ul>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If only integer variables are allowed, then <strong>Integer Programming</strong>, <strong>Mixed Integer Programming</strong> involves problems in which only some of the variables are constrained to be integers.</li>
-</ul>
-</div>
-</div>
-</div>
-    </div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If the specifications of $f(\bx)$ and $\Psi$ are NOT deterministic, then <strong>Stochastic Programming</strong> </li>
-</ul>
-</div>
-</div>
-</div>
-    </div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Another name you often hear is <strong>Dynamic Programming</strong>, this does not refer to a particular type of optimization problem, rather it is a method for solving an optimization problem by breaking it down to a collection of simpler subproblems, using Bellman&#39;s Principle of Optimality.</li>
-</ul>
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="basic-concepts">Basic Concepts</h2>
-<ul>
-<li><p>A point $\bx^*$ is called a <strong>local minimum</strong>, if $\exists \epsilon &gt; 0$ 
-$$
-f(\bx^*) \leq f(\bx), \forall \bx\in\Psi, s.t. \|  \bx  - \bx^* \| \lt \epsilon.
-$$</p>
-</li>
-<li><p>A point $\bx^*$ is a <strong>global minimum</strong>, if<br>$$
-f(\bx^*) \leq f(\bx), \forall \bx\in\Psi.
-$$</p>
-</li>
-</ul>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Finding a global minimum is considerably harder than a local minimum --- imaging the difference in the difficulties of getting to the top of your neighborhood hill top vs getting to the top of Mt. Everest.</p>
-</li>
-<li><p>With one exception: for convex problems, the local minimum is the also global solution.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $f(\bx)$ is differentiable (i.e. first derivatives exist), then a <strong>necessary condition</strong> for a local minimizer is that $\bx^*$ is a <strong>critical point</strong></li>
-</ul>
-<p>$$
-\renewcommand{bs}{\boldsymbol}{g} (\bx^*) = {\bs\nabla} _\bx f(\bx^*)  = 0
-$$</p>
-<ul>
-<li><p>Clearly, finding the critical points is equivalent to root searching problems you have encountered earlier.</p>
-</li>
-<li><p>On the other hand, observing that solving $f(\bx) = \bs{0}$ is equivalent to</p>
-</li>
-</ul>
-<p>$$
-\min_{\bx}\left[ f(\bx)^T f(\bx)\right],
-$$</p>
-<p>(although this is rarely advised --- doing anything through square or higher power is generally a bad idea --- it  makes the problem harder to solve).</p>
-<ul>
-<li>But this shows the root searching problem and the optimization problem are closely related.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Critical point is only a necessary condition, it&#39;s not sufficient,</li>
-</ul>
-<center><img src = "img/saddle_point_func.png" height=450 width=450></center>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $f(\bx)$ is twice-differentiable (i.e. second derivatives exist), then a <strong>sufficent condition</strong> for a local minimizer is, in addition to being a critical point,  the <strong>Hessian</strong> at $\bx^*$ is positive definite</li>
-</ul>
-<p>$$
-{\bs H} (\bx^*) = {\bs\nabla^2} _\bx f(\bx^*)  \succ 0
-$$</p>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>These are all  natural conclusions from what you are already very familiar with (hopefully!): properties of a quadratic function and the Taylor series for a general (twice-differentiable) function
-$$
-f(\bx^* + \bs\delta x) = f(\bx^*) 
-                       + {\bs\nabla} f(\bx^*)^T {\bs\delta x} 
-                       + \frac{1}{2} {\bs\delta x}^T{\bs\nabla^2} f(\bx^*)  {\bs\delta x}
-                       + {\bs O}(||{\bs\delta x}||^3)
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="optimization-examples-in-finance">Optimization Examples in Finance</h2>
-<h3 id="1-portfolio-optimization">1. Portfolio Optimization</h3>
-<p>$$
+\renewcommand{bs}{\boldsymbol}
 \begin{array}
 \\
-\min_{\bx} &amp; &amp;  \frac{1}{2} \lambda\; \bx^T \Sigma \bx - \mu^T \bx 
+\min_{\bx \in \mathbb{R}^n } &amp; &amp;  z = \bs{c}^T \bx
 \\
-s.t. &amp; &amp; \Sigma x_i = 1
+s.t. &amp; &amp; \bs{A}\bx  \geq \bs{b}
+\\
+     &amp; &amp; x_j \geq 0 \;\; \forall j.
 \end{array}
-$$
-where $\lambda$ is the risk-aversion coefficient, $\mu$ is the expected asset return vector and $\Sigma$ is the covariance matrix. This is a quadratic programming problem.</p>
+$$</p>
+<ul>
+<li><p>Simpler than any other optimization problem</p>
+</li>
+<li><p>With plenty of application (even in Finance)</p>
+</li>
+<li><p>Serve as a good starting point</p>
+</li>
+</ul>
 </div>
 </div>
 </div></section><section>
@@ -2154,18 +1871,29 @@ where $\lambda$ is the risk-aversion coefficient, $\mu$ is the expected asset re
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2-static-asset-liability-management">2. (Static) Asset-Liability Management</h3>
-<p>$$
+<h2 id="duality">Duality</h2>
+<p>Primal (P)
+$$
 \begin{array}
 \\
-\min_{\bx} &amp; &amp;  \Sigma_j x_j P_j
+\min_{\bx \in \mathbb{R}^n } &amp; &amp;  z = \bs{c}^T \bx
 \\
-s.t. &amp; &amp; \Sigma_j x_j C_j(t) \geq L(t) \;\;  \forall t
+s.t. &amp; &amp; \bs{A}\bx  \geq \bs{b}
 \\
-     &amp; &amp; x_j \geq 0 \;\; \forall j
+     &amp; &amp; x_j \geq 0 \;\; \forall j = \overline{1, n}
 \end{array}
+$$</p>
+<p>Dual (D)
 $$
-where $x_j, P_j, C_j(t)$ are the amount, price and cashflow at time $t$ of asset $j$. $L(t)$ is the liability payment at time $t$. This is a linear programming problem.</p>
+\begin{array}
+\\
+\max_{\bs{y} \in \mathbb{R}^m } &amp; &amp;  z = \bs{b}^T \bs{y}
+\\
+s.t. &amp; &amp; \bs{A}^T\bs{y}  \leq \bs{c}
+\\
+     &amp; &amp; y_j \geq 0 \;\; \forall j = \overline{1, m}
+\end{array}
+$$</p>
 </div>
 </div>
 </div></section><section>
@@ -2175,32 +1903,34 @@ where $x_j, P_j, C_j(t)$ are the amount, price and cashflow at time $t$ of asset
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3-volatility-surface-fitting">3. Volatility Surface fitting</h3>
-<p>$$
-\min_{\sigma(S,t)} {\Large\Sigma_j^n} (C(\sigma(S,t),K_j,T_j) - C_j)^2 
+<h3 id="derivation">Derivation</h3>
+<p>Lagrangian:
 $$
-where $\sigma(S,t) &gt; 0$ is the volatility value at the surface point $(S,t)$, $C(\sigma(S,t),K_j,T_j)$ is the standard Black-Scholes formule for European call options, $C_j$ is the market quoted price of the option. This a non-linear optimization problem.</p>
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="unconstrained-optimization">Unconstrained Optimization</h1>
-<ul>
-<li>Unconstrained means:</li>
-</ul>
-<p>$$
-\min_{\bx\in  \mathbb{R}^n} f(\bx)
+\renewcommand{ml}{\mathbb{\mathcal L}}
+\renewcommand{bA}{\boldsymbol A}
+\renewcommand{by}{\boldsymbol y}
+\renewcommand{bb}{\boldsymbol b}
+\renewcommand{bc}{\boldsymbol c}
+\renewcommand{bw}{\boldsymbol w}
+\begin{array}
+\\
+\ml(\bx, \by, \bw) &amp; = &amp; \bc^T \bx + \by^T (\bb-\bA\bx) - \bw^T\bx
+\\
+&amp; = &amp; \by^T\bb + (\bc^T  - \by^T \bA - \bw^T)\bx
+\\
+&amp; &amp; with \;\; \by \geq \bf{0}, \;\;\; \bw \geq \bf{0}
+\end{array}
 $$</p>
-<ul>
-<li>Will be focusing on smooth functions (typically at least twice differentable). The main purpose here is to show the various types of algorithms for solving the unconstrained optimization problems.</li>
-</ul>
+<p>Lagrangian dual function
+$$
+\renewcommand{mD}{\mathbb{\mathcal D}}
+\renewcommand{df}{\hat{f}}
+\df(\by, \bw) = \inf_{\bx\in \mD}\; \ml(\bx, \by, \bw) =\by^T\bb + \inf_{\bx\in\mD}  (\bc^T  - \by^T \bA - \bw^T)\bx
+$$</p>
+<p>But the second term is linear, so the only case where the infimum can be reached is when the slop is zero:
+$$
+\bc  - \bA^T \by = \bw \geq 0
+$$</p>
 </div>
 </div>
 </div></section><section>
@@ -2210,32 +1940,17 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="optimality-characterization">Optimality Characterization</h2>
+<h3 id="duality-theorem-">Duality Theorem:</h3>
 <ul>
-<li>The <strong>necessary condition</strong>: the solution must be a <strong>critical point</strong>:</li>
+<li>If $\bx$ is feasible for (P) and $\bs{y}$ is feasible for (D), then $\bs{c}^T \bx = \bs{b}^T \bs{y}$, 
+and at optimality $\bs{c}^T \bx^* \geq \bs{b}^T \bs{y}^*$ .</li>
 </ul>
-<p>$$
-{\bs g} (\bx^*) = {\bs\nabla} _\bx f(\bx^*)  = 0
-$$</p>
-</div>
-</div>
-</div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The <strong>sufficient condition</strong>: the <strong>Hessian</strong> at the optimal point must be positive definite,</li>
+<li>The quantity: $\bs{c}^T \bx - \bs{b}^T \bs{y}$  is called duality gap. This value is common stopping criteria for Interior LP method.</li>
 </ul>
-<p>$$
-{\bs H} (\bx^*) = {\bs\nabla^2} _\bx f(\bx^*)  \succ 0
-$$</p>
 </div>
 </div>
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2244,19 +1959,16 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="solution-methods">Solution Methods</h2>
 <ul>
-<li>In practice, optimization problems are often solved using an <strong>iterative algorithm</strong>, which searches for a sequence of points,</li>
-</ul>
-<p>$$
-\bx^0, \bx^1, \bx^2, \cdots, \bx^n, \cdots
-$$
-with 
-$$
-f(\bx^{k+1}) &lt; f(\bx^k).
-$$</p>
-<ul>
-<li><p>The algorithm typically stops at $||{\bs\nabla} f(\bx) || &lt; \epsilon $ for some $\epsilon$ small.</p>
+<li><p><strong>Simplex</strong> (Dantzig 1947)</p>
 </li>
-<li><p>No guarantee for finding the global minimum.</p>
+<li><p><strong>Ellipsoid</strong> (Kachian 1979, the first algorithm known to be in <strong>polynomial time</strong>)</p>
+</li>
+<li><p><strong>Interior Point</strong> (Karmakar 1984, first  <strong>practical</strong> polynomial time algorithm)</p>
+<ul>
+<li>Projection method (Karmakar 1984)</li>
+<li>Affine Method (Dikin 1967)</li>
+<li>Log-Barrier Method (many ...)</li>
+</ul>
 </li>
 </ul>
 </div>
@@ -2268,28 +1980,269 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1-direct-search-method">1. Direct Search Method</h3>
 <ul>
-<li><p>Similar in spirit to the Bisection method in one dimemsion. Requires only function evaluations.</p>
+<li><p><strong>Interior Point</strong> method has been extended to NLP problems, has been the focus of research for optimization in the last few decades.</p>
 </li>
-<li><p>Quoting M. Wright: &quot;A direct serach method does not &#39;in its heart&#39; develop an approximate gradient&quot;.</p>
-</li>
-</ul>
-<ul>
-<li><p>Representative: Nelder-Mead Method (or Simplex Search method)</p>
-<ul>
-<li>Searches through the simplex vertices (polytope of N+1 vertices in N dimensions)</li>
-<li>Techniques: reflection - expansion - contraction - reduction</li>
-</ul>
-</li>
-<li><p>Scipy example:</p>
+<li><p>Although asymptotically superior, there is no clear winner between Simplex and Interior Point for LP problems: very much depends on the problem</p>
 </li>
 </ul>
 </div>
 </div>
 </div></section><section>
     
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="simplex-methods">Simplex Methods</h2>
+<ul>
+<li>Optimal points must be at the intersections of constraints:</li>
+</ul>
+<center><img src = "img/LP_GeomView.png" height=600 width=600></center>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="algorithm-simplex-method-">Algorithm (Simplex Method)</h3>
+<ul>
+<li><p>Input
+$$
+\begin{array}
+\\
+\min_{\bx \in \mathbb{R}^n } &amp;   z = \bs{c}^T \bx
+\\
+s.t. &amp; \bx \in \mathcal{P} = \{\bx: \bs{A}\bx  \leq \bs{b}, \bx \geq 0 \}
+\end{array}
+$$</p>
+</li>
+<li><p>Look at the polytope $\mathcal{P}$ as a graph $\mathcal{G} = (V,E)$ with $V$ as vertices and $E$ as edges.</p>
+</li>
+</ul>
+<ul>
+<li><strong>Algorithm</strong><ol>
+<li>Find any vertex $\bs{v}$ in  $\mathcal{P}$;</li>
+<li>While $\exists $ a neighbor $\bs{u}$ of $\bs{v}$ in $\mathcal{G}$ with $\bs{c}^T \bs{u} &lt; \bs{c}^T \bs{v}$, set $\bs{v} = \bs{u}$;</li>
+<li>Output $\bs{v}$</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="primal-dual-interior-point-method">Primal-dual Interior-point Method</h2>
+<ul>
+<li>For convenience, reformulate the LP problme into an equivalent form</li>
+</ul>
+<p>Primal (P)
+$$
+\begin{array}
+\\
+\min_{\bx \in \mathbb{R}^n } &amp; &amp;  \bs{c}^T \bx
+\\
+s.t. &amp; &amp; \bs{A}\bx  = \bs{b}, \;\; \bx \geq \bf{0}
+\end{array}
+$$</p>
+<p>Dual (D)
+$$
+\begin{array}
+\\
+\max_{\bs{y} \in \mathbb{R}^m } &amp; &amp; \bs{b}^T \bs{y}
+\\
+s.t. &amp; &amp; \bs{A}^T\bs{y}  + \bs{s} = \bs{c}, \;\; \bs{s} \geq \bf{0}
+\end{array}
+$$</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>And the optimality (KKT) conditions are</li>
+</ul>
+<p>$$
+\begin{array} 
+\\
+&amp; &amp; \bs{A}^T\bs{y}  + \bs{s} = \bs{c}, 
+\\
+&amp; &amp; \bs{A}\bx  = \bs{b}, 
+\\
+&amp; &amp; \bx\circ \bs{s} = \bf{0}, 
+\\
+&amp; &amp; \bx \geq \bf{0}, \;\; \bs{s} \geq \bf{0}
+\end{array}
+$$</p>
+<p>The third complementary slackness condition relates to the duality gap.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Primal-dual interior-point methods find primal-dual solutions $(\bx^*; \by^*; \bs{s}^*)$ by applying variants of Newton&#39;s method to the first three KKT conditions above, and modifying search directions and step lengths, so that the last KKT condition is strictly satisfied at each iteration.</p>
+<p>Rewrite the KKT conditions as:
+$$
+\begin{matrix}
+\bs{F}(\bx,\by,\bs{s}) = \left[
+\begin{matrix}
+\bs{A}^T\bs{y}  + \bs{s} - \bs{c} \\
+\bs{A}\bx  - \bs{b} \\
+\bs{X} \bs{S} \bs{e}
+\end{matrix}
+\right] = \bs{0}
+\end{matrix}
+$$</p>
+<p>where $\bs{X}, \bs{S}$ are diagonal matrices, and $\bs{e}$ is the vector with all elements equal to 1.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And the search direction is generated by solving,
+$$
+\begin{matrix}
+\bs{F}'(\bx,\by,\bs{s})  \left[
+\begin{matrix}
+\delta\bx \\
+\delta\by \\
+\delta\bs{s}
+\end{matrix}
+\right] = \bs{F}(\bx,\by,\bs{s})
+\end{matrix}
+$$</p>
+<p>Looking for iterates that are strictly feasible, this becomes
+$$
+\begin{matrix}
+\left[
+\begin{matrix}
+0 &amp; \bs{A}^T &amp; \bs{I} \\
+\bs{A}^T &amp; 0 &amp; 0  \\
+\bs{S} &amp; 0 &amp; \bs{X} 
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+\delta\bx \\
+\delta\by \\
+\delta\bs{s}
+\end{matrix}
+\right]
+= \left[
+\begin{matrix}
+\bs{0} \\
+\bs{0} \\
+-\bs{X} \bs{S} \bs{e}
+\end{matrix}
+\right] 
+\end{matrix}
+$$</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Interior-point method, the critical concept is the central path: instead of the third KKT condition, the path of iterative points satisfies,</p>
+<p>$$
+x_i s_i = \tau\gamma, \;\;\; i=1,2,\cdots, n
+$$</p>
+<p>where $\tau\in  [0,1] $ is the centering parameter and $\gamma = \frac{\bs{s}^T\bx}{n}$ is the duality gap parameter.</p>
+<p>With this, the equation for search direction becomes</p>
+<p>$$
+\begin{matrix}
+\left[
+\begin{matrix}
+0 &amp; \bs{A}^T &amp; \bs{I} \\
+\bs{A}^T &amp; 0 &amp; 0  \\
+\bs{S} &amp; 0 &amp; \bs{X} 
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+\delta\bx \\
+\delta\by \\
+\delta\bs{s}
+\end{matrix}
+\right]
+= \left[
+\begin{matrix}
+\bs{0} \\
+\bs{0} \\
+-\bs{X} \bs{S} \bs{e} + \tau\gamma \bs{e}
+\end{matrix}
+\right] \hspace{2in} (*)
+\end{matrix}
+$$</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="-algorithm-primal-dual-interior-point-method-"><strong>Algorithm</strong> (Primal-dual Interior-point method)</h3>
+<ol>
+<li>Determine $(\bx^0, \by^0, \bs{s}^0)$ strictly feasible</li>
+<li>Set k = 0</li>
+<li>Do<ol>
+<li>Set $\tau^k\in [0,1]$ and $\gamma^k = \frac{\bs{s}^T\bx}{n}$</li>
+<li>Solve (*) for $(\delta\bx^k, \delta\by^k, \delta\bs{s}^k)$</li>
+<li>Set $(\bx^{k+1}, \by^{k+1}, \bs{s}^{k+1}) = (\bx^k, \by^k, \bs{s}^k) + \alpha^k(\delta\bx^k, \delta\by^k, \delta\bs{s}^k)$
+choosing $\alpha^k$ so that $(\bx^{k+1}, \bs{s}^{k+1}) \geq 0 $</li>
+<li>k = k + 1</li>
+</ol>
+</li>
+<li>While  $\gamma^k &gt; \epsilon$</li>
+</ol>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Software packages for LP<ul>
+<li>Most optimization packages will have the LP solver implemented, and most likely include both the Simplex and Interior method.</li>
+<li>Scipy just released the first LP solver (in Simplex): Scipy version 0.15.1 (with Numpy version: 1.9.2)</li>
+<li>Here is the code applying the Scipy LP optimizer to the example in the geometric view slide:</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[12]:
@@ -2297,21 +2250,27 @@ In&nbsp;[12]:
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">linprog</span>
 
-<span class="k">def</span> <span class="nf">rosen</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mf">2.0</span><span class="p">)</span><span class="o">**</span><span class="mf">2.0</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mf">2.0</span><span class="p">)</span>
-    
-<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">])</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">rosen</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;nelder-mead&#39;</span><span class="p">,</span>
-                <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;xtol&#39;</span><span class="p">:</span> <span class="mf">1e-8</span><span class="p">,</span> <span class="s">&#39;disp&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">{</span> <span class="s">&#39;disp&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
 
-<span class="k">print</span> <span class="s">&quot;The solution from Nelder-Mead:&quot;</span>
+<span class="k">print</span> <span class="s">&quot;The solution from Scipy Simplex method:&quot;</span>
 <span class="k">print</span>  <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;The Scipy version:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;The Numpy version:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2322,11 +2281,14 @@ In&nbsp;[12]:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Optimization terminated successfully.
-         Current function value: 0.000000
-         Iterations: 650
-         Function evaluations: 1031
-The solution from Nelder-Mead:
-[ 1.  1.  1.  1.  1.  1.]
+         Current function value: -38.000000  
+         Iterations: 2
+The solution from Scipy Simplex method:
+[  4.  10.]
+The Scipy version:
+0.15.1
+The Numpy version:
+1.9.2
 
 </pre>
 </div>
@@ -2342,12 +2304,11 @@ The solution from Nelder-Mead:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="asset-liability-management-cash-flow-matching">Asset Liability Management: Cash-FLow Matching</h2>
 <ul>
-<li><p>Advantages: simple, only function evaulation needed.</p>
+<li><p>Asset Liability Management (ALM) is the practice of managing a business so that decisions and actions taken with respect to assets and liabilities are coordinated. It&#39;s the sound manamegment of the finances to match the asset cash flows with its future liability cash flow needs and capital requirements. </p>
 </li>
-<li><p>Deficiencies: slow, may fail to converge in higher dimensions</p>
-</li>
-<li><p>Suffers from the &quot;curse of dimensionality&quot;</p>
+<li><p>ALM practice now considers a wide range of risks: liquidity, interest rate, equity, currency, legal, etc.</p>
 </li>
 </ul>
 </div>
@@ -2359,34 +2320,11 @@ The solution from Nelder-Mead:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2-descent-methods">2. Descent Methods</h3>
-<p><strong> Algorithm for general descent method </strong></p>
-<ol>
-<li>Given a starting point $ \bx^0$</li>
-<li><p>Repeat</p>
-<ol>
-<li>Determine a descent direction $\delta \bx$;</li>
-<li>Line search. Choose a step size $t &gt; 0$;</li>
-<li>Update. $\bx^{k+1} = \bx^k + t \delta \bx $</li>
-</ol>
-</li>
-<li><p>Until stopping criterion is satisfied</p>
-</li>
-</ol>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The algorithm alternates between two main decisions: determine a descent direction  $\delta \bx$ and choose a step size $t$.</p>
+<p>We will be considering the interest rate risk part of the ALM.</p>
 <ul>
-<li><p>Different ways of choosing the descent direction giving rise to different descent method and convergence rate</p>
+<li><p>ALM usually takes the form of &quot;immunization&quot;: matching the present value, duration and convexity of the liabilities and assets in the portfolio. This is typically done at each time bucket of the planning horizon.</p>
 </li>
-<li><p>The line search method falls into two categories: exact line search and backtracking line search. </p>
+<li><p>Here, we will focus on the form of &quot;dedication&quot;: choose an investment asset portfolio such that, for each period of the planning horizon, the investment cash flow will be sufficient to meet the projected liability cash flows. </p>
 </li>
 </ul>
 </div>
@@ -2398,19 +2336,135 @@ The solution from Nelder-Mead:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2-1-steepest-descent-method">2.1 Steepest Descent Method</h4>
+<h3 id="basic-setup-for-dedication-">Basic Setup for &quot;Dedication&quot;</h3>
+<p>Given:</p>
 <ul>
-<li><p>If the objective function is differentiable, we have
-$$
-f(\bx^k + t \bs\delta x) \approx f(\bx^k) 
-                       +t [ {\bs\nabla} f(\bx^k)^T {\bs\delta x} ]                        
-$$</p>
+<li>$t_k, \;\; k = 1,\cdots, K $ are the time periods</li>
+<li><p>$L_k, \;\; k = 1,\cdots, K $ are the future liability payment at time $t_k$</p>
 </li>
-<li><p>This means choosing <strong>gradient</strong> direction
+<li><p>$P_j, \;\; j = 1,\cdots, N $ are the prices of $N$ investable assets</p>
+</li>
+<li>$C_{j, k}, \;\; j = 1,\cdots, N, \;\; k= 1, \cdots, K $ are the cash flows of asset $j$ at time  period $t_k$</li>
+</ul>
+<p>Assuming:</p>
+<ul>
+<li>$x_j, \;\; j = 1,\cdots, N $ are the amount to be invested in asset $j$</li>
+</ul>
+<p>The problem is to find the asset portfolio such that the total cost
 $$
-\bs\delta x = - {\bs\nabla} f(\bx^k)
+\Sigma_j x_j P_j 
 $$
-will lead to the <strong>steepest</strong> descent at points sufficiently close to $\bx^k$.</p>
+is minimized, while the projected liability cash flows are covered by the cash flows generated by the asset portfolio
+$$
+\Sigma_j x_j C_{j,k} \geq L_k \;\;  k = 1,\cdots,K
+$$
+and $x_j \geq 0$.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="example">Example</h3>
+<ul>
+<li>A pension fund has estimated that for the next 8 years it has the following schedule of benefits to be paid (in $millions ):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Years</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Benefits($millions)</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">20</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The fund&#39;s investment advisors recommended the following set of bonds to invest:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Bonds</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Price</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">99</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">98</td>
+<td style="text-align:center">98</td>
+<td style="text-align:center">104</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">94</td>
+</tr>
+<tr>
+<td style="text-align:center">Coupon(%)</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6.5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">3.5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">Maturity(Years)</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>The bonds all have face values $\$100$, the coupons are annualized percentage.</p>
+</li>
+<li><p>Can you help find the <strong>least cost</strong> portfolio of bonds so that the pension fund can meet its future benefit payments?</p>
 </li>
 </ul>
 </div>
@@ -2422,20 +2476,130 @@ will lead to the <strong>steepest</strong> descent at points sufficiently close 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="lp-formulation-set-up-">LP formulation set up:</h3>
 <ul>
-<li>The line search step size can be done in one-dimensional minimization:
-$$
-t^k = \min_t f(\bx^k + t \bs\delta x) \triangleq \min_t \phi(t).
-$$</li>
+<li>$L_k, k = 1,\cdots, 8 $ are the future benefits (liabilities) payment at year $k$</li>
+<li>$P_i, i = 1,\cdots, 10 $ are the prices of bond $i$</li>
+<li>$C_i, i = 1,\cdots, 10 $ are the coupons of bond $i$</li>
+<li>$M_i, i = 1,\cdots, 10 $ are the maturity of bond $i$</li>
 </ul>
 <ul>
-<li><p>Exact line search (choosing the minimizing $t$ above) leads to zig-zag path towards the minimum: which means slow convergence
-$$
-\phi'(t) = 0 =  [{\bs\nabla} f(\bx^k + t \bs\delta x)]^T \bs\delta x ,
-$$
-(notice the two consecutive search directions will be perpendicular to each other, we&#39;ve met this problem before, what&#39;s the strategy?).</p>
+<li>We will assume the variables are:<ul>
+<li>$x_i, i = 1,\cdots, 10 $ are the amount of bond $i$ to be purchased</li>
+<li>$s_k, k = 1,\cdots, 8 $ are the free cash at the end of year $k$ </li>
+</ul>
 </li>
-<li><p>Convergence: the steepest descent method converges linearly, and it will behave badly if the condition number of the <strong>Hessian</strong> (the second order derivative matrix) is large.</p>
+</ul>
+<p>The LP problem can be formulated as:
+$$
+\begin{array}
+\\
+\min_{\bx} &amp; &amp;  \Sigma_i x_i P_i
+\\
+s.t. &amp; &amp; \Sigma_{i=1,10; M_i\geq k} x_i C_i(t) +100*\Sigma_{i=1,10; M_i= k} x_i - s_k + s_{k-1}= L_k \;\;  k = 1,2,\cdots, 8
+\\
+     &amp; &amp; x_i \geq 0 \;\; i = 1,2,\cdots, 10
+\\
+     &amp; &amp; s_k \geq 0 \;\;  k = 1,2,\cdots, 8
+\end{array}
+$$
+where we assume $s_0 = 0$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[25]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">102</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">100</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mf">6.5</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">9</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">A_eq</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_eq</span><span class="o">=</span><span class="n">b</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">{</span> <span class="s">&#39;disp&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+
+<span class="k">print</span> <span class="s">&quot;The solution from Scipy Simplex method:&quot;</span>
+<span class="k">print</span>  <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Optimization terminated successfully.
+         Current function value: 101.615025  
+         Iterations: 9
+The solution from Scipy Simplex method:
+[  0.04860098   0.2588899    0.           0.           0.14785887
+   0.11377323   0.           0.11401282   0.15313384   0.18691589   0.
+  14.78588715   0.           0.           0.           0.           0.           0.        ]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="extensions-of-the-asset-liability-cash-flow-matching-problem">Extensions of the Asset liability cash flow matching problem</h3>
+<p>The constraint condition can be turned into equality based by assuming the surplus free cash flow at each time period and consider them to be variables</p>
+<ul>
+<li>$s_k, \;\; k = 1,\cdots, K $ are the amount of excess cash after paying the liability</li>
+</ul>
+<p>With that, the constraints are now
+$$
+\Sigma_j x_j C_{j,k} - s_k = L_k, \;\;  k = 1,\cdots,K
+$$
+and $x_j \geq 0, \;\; s_k \geq 0$.</p>
+<p>With these excess cash flows, it is natural and economical that they are re-invested, assuming the return is simply $r$, then the constraints becomes
+$$
+\Sigma_j x_j C_{j,k} - s_k + r * s_{k-1} = L_k, \;\;  k = 1,\cdots,K
+$$
+where we set $s_0 = 0$.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>The setup can be made even more realistic  by allowing the reinvestment return to be time period dependent: $r \rightarrow r_k$</p>
+</li>
+<li><p>In fact, if borrowing is allowed, the constraints $ s_k \geq 0$ for all time periods are unnecessary, except we probably want to keep the excess cash to be positive at the very last time period.</p>
+</li>
+<li><p>Which introduces another dimension: the borrowing rate and lending (re-investment) rate are typically different in real life. </p>
+</li>
+<li><p>In practice, these assumtions (or approximations) can certainly make a big difference in terms of the complexity and realistism of your model (come to think of it, any mathematical model trying to describe a real life problem).</p>
 </li>
 </ul>
 </div>
@@ -2447,40 +2611,18 @@ $$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2-2-newton-s-method">2.2 Newton&#39;s Method</h4>
+<h3 id="undeterministic-future-liabilities-and-asset-returns">Undeterministic future liabilities and asset returns</h3>
 <ul>
-<li><p>If the objective function is twice differentiable, we have with more accuracy
-$$
-f(\bx^k + \bs\delta x) \approx f(\bx^k) 
-                       + {\bs\nabla} f(\bx^k)^T {\bs\delta x}                             
-                       + \frac{1}{2} {\bs\delta x}^T{\bs\nabla^2} f(\bx^k)  {\bs\delta x}
-$$</p>
+<li><p>Cash flow matching so far require the cash flows from the liabilities can be forcasted deterministcally</p>
 </li>
-<li><p>RHS is a quadratic function in ${\bs\delta x}$, so the minimum is achieved at
-$$
-\bs\delta x = - [{\bs\nabla^2} f(\bx^k)]^{-1} {\bs\nabla} f(\bx^k).
-$$</p>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<li><p>This is hardly the case: liabilites of Insurance companies are not fixed:</p>
 <ul>
-<li><p>Convergence of the Newton&#39;s method is rapid in general, and quadratic once entering into the pure Newton phase.</p>
-</li>
-<li><p>Disadvantages of Newton&#39;s method:</p>
-<ul>
-<li>The cost of computing and storing the Hessian can be very high, if not outright prohibitive</li>
-<li>The cost of solving the set of linear equation at the Newton step</li>
+<li>Policyhokders can withdraw cash</li>
+<li>Hurricane frequency and severity are highly unpridictable</li>
+<li>Pension payments are hardly deterministic</li>
 </ul>
 </li>
-<li><p>There are various ways to compute an approximation of the Hessian to substantially reduce the cost of computing the Newton step. This leads to a family of algorithms called <strong>Quasi-Newton methods</strong>.</p>
+<li><p>That leads to:</p>
 </li>
 </ul>
 </div>
@@ -2494,327 +2636,106 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="constrained-optimization">Constrained Optimization</h1>
-<ul>
-<li><p>Now add  constraints.</p>
-</li>
-<li><p>Constrainted problems are much harder: even a seemingly simple Integer Programming problem is <strong>NP-Complete</strong> (i.e. can&#39;t be solved in polynomial time).</p>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="general-framework">General Framework</h2>
-<ul>
-<li>Constrained Optimization Problem</li>
-</ul>
-<p>$$
-\begin{array}
-\\
-\min_{\bx\in \mathbb{R}^n } &amp;  f(\bx) 
-\\
-s.t. &amp;\bs{h}(\bx)  = \bs{0}
-\\
-  &amp;\bs{g}(\bx) \leq \bs{0}
-\end{array}
-$$</p>
-<ul>
-<li><p>Will be focusing on smooth functions (typically at least twice differentable). </p>
-</li>
-<li><p>The goal is to find a local minimum satisfying the constriants.</p>
-</li>
-<li><p>And we will denote the feasible region as domain 
-$\mathcal{D} = \{\bx \in \mathbb{R}^n | \; \bs{h}(\bx)  = \bs{0}, \; \bs{g}(\bx) \leq \bs{0}\}$.</p>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="duality">Duality</h2>
-<ul>
-<li><p>Define the <strong>Lagrangian </strong> as,
-$$
-\renewcommand{ml}{\mathbb{\mathcal L}}
-\renewcommand{bmu}{\boldsymbol{ \mu}}
-\renewcommand{bld}{\boldsymbol{ \lambda}}
-\ml(\bx, \bmu, \bld) = f(\bx) + \bmu^T \bs{h}(\bx) + \bld^T \bs{g}(\bx).
-$$</p>
-<p> Here the vectors $\bmu, \bld$ are called the <strong>dual variables</strong> or <strong>Lagrange Multipliers</strong>.</p>
-</li>
-</ul>
-<ul>
-<li>Further, define the <strong>Lagrangian dual function</strong> as,</li>
-</ul>
-<p>$$
-\renewcommand{mD}{\mathbb{\mathcal D}}
-\renewcommand{df}{\hat{f}}
-\df(\bmu, \bld) = \inf_{\bx\in \mD}\; \ml(\bx, \bmu, \bld) =\inf_{\bx\in\mD} \left( f(\bx) + \bmu^T \bs{h}(\bx) + \bld^T \bs{g}(\bx) \right).
-$$</p>
-<ul>
-<li>The dual function takes the pointwise infimum of a family of affine functions of $(\bmu, \bld)$, it is a concave function.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>If $\bx^*$ is a solution to the original optimization problem (<strong>Primal Problem</strong>), then for $\forall \bld \succeq 0$ and any $\bmu$,</li>
-</ul>
-<p>$$
-\df(\bmu, \bld) \leq f(\bx^*).
-$$</p>
-<pre><code>(HW: prove the above statement).
-</code></pre>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Which leads to the optimization problem (<strong>Dual Problem</strong>)</li>
-</ul>
-<p>$$
-\begin{array}
-\\
-\max_{(\bmu, \bld)} &amp;  \df(\bmu, \bld) 
-\\
-s.t. &amp;\bld \succeq 0
-\end{array}
-$$</p>
-<ul>
-<li>If $(\bmu^*, \bld^*)$ is a solution to the  <strong>Dual Problem</strong>, it&#39;s clear that <strong>the weak duality</strong> holds,</li>
-</ul>
-<p>$$
-\df(\bmu^*, \bld^*) \leq f(\bx^*).
-$$</p>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>However, if the <strong>Primal problem</strong> satisfies certain <strong>constraint qualifications</strong> (such as, convexity or Slater&#39;s condition), then the <strong>strong duality</strong> holds,
-$$
-\df(\bmu^*, \bld^*) = f(\bx^*),
-$$</p>
-<p>  which implies the primal and the dual problems are equivalent.</p>
-</li>
-</ul>
-<ul>
-<li>In the <strong>Maximum Entropy Method</strong> lecture later, this will be explored in greater details.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="optimality-conditions">Optimality Conditions</h2>
-<ul>
-<li><p>From the duality principle, </p>
-<ol>
-<li>$ \bs{\nabla}_{\bx}\ml(\bx^*, \bmu^*, \bld^*) = \bs{0} $, stationality </li>
-<li>$ \bs{h}(\bx^*)  = \bs{0}; \bs{g}(\bx^*) \leq \bs{0} $, feasibility  </li>
-<li>$ \bld^* \succeq \bs{0} $, dual feasibility  (component-wise) </li>
-<li>$ \bld^* \circ \bs{g}(\bx^*) = \bs{0} $, complementary slackness (component-wise)</li>
-<li>$ \bs{\nabla}^2\ml(\bx^*, \bmu^*, \bld^*) \succ 0 $, Hessian positive definite constraints</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>These conditions are called <strong>KKT conditions</strong> (Karush-Kuhn-Tucker) --- the necessary and sufficient conditions for $\bx^*$ to be a local minimizer.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="exploring-the-kkt-conditions-further">Exploring the KKT conditions further</h3>
-<ul>
-<li><p>For the <strong>unconstrained</strong> case, the conditions 2, 3 and 4 drop out, what&#39;s left are:</p>
-<ol>
-<li>$ \bs{\nabla}_{\bx}f(\bx^*) = \bs{0} $, stationality </li>
-<li>$ \bs{\nabla}^2f(\bx^*) \succ 0 $, Hessian positive definite constraints</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>which we are familiar with---the necessary and sufficient condition for $\bx^*$ to be a (local) minimizer.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>For the <strong>equality constrained</strong> case, let&#39;s take a look at the Lagrange function</li>
-</ul>
-<p>$$
-\ml(\bx, \bmu) = f(\bx) + \bmu^T \bs{h}(\bx)
-$$</p>
-<ul>
-<li><p>If we simply consider this as an unconstrained problem with $(\bx, \bmu)$ as the new unknown vector and apply the two conditions in previous slide</p>
-<ol>
-<li>$ \bs{\nabla}_{\bx}\ml(\bx^*, \bmu^*) = \bs{0} $, stationality </li>
-<li>$ \bs{\nabla}_{\bmu}\ml(\bx^*, \bmu^*) = \bs{0} $, stationality </li>
-<li>$ \bs{\nabla}^2_{\bx\bx}\ml(\bx^*, \bmu^*) \succ 0 $, Hessian positive definite constraints</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>Notice the second condition above is simply $\bs{h}(\bx^*)  = \bs{0}$.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>For the <strong>inequality(only) constrained</strong> problems, the answer can be analyzed in two scenarios based on how the local minimizer $\bx^*$ is situated in the feasible region.</li>
-</ul>
-<ul>
-<li><p><strong>Scenario 1</strong>: $\bs{g}(\bx^*) &lt; \bs{0}$,  in this case the point $\bx^*$ is an interior point of the feasible domain and the constraints is called <strong>inactive</strong> and the case simply reduces to the unconstrained case:</p>
-<ol>
-<li>$ \bs{\nabla}_{\bx}f(\bx^*) = \bs{0} $, stationality </li>
-<li>$ \bs{\nabla}^2_{\bx\bx}f(\bx^*) \succ 0 $, Hessian positive definite constraints</li>
-<li>and of course $ \bs{g}(\bx^*) &lt; \bs{0} $,</li>
-</ol>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><strong>Scenario 2</strong>: $\bs{g}(\bx^*) = \bs{0}$,  in this case the point $\bx^*$ is right on the boundary of the feasible domain and the constraints is called <strong>active</strong> and the case reduces to the equality constrained case:</p>
-<ol>
-<li>$ \bs{\nabla}_{\bx}f(\bx^*) + \bld^T \bs{\nabla}_{\bx}\bs{g}(\bx^*) = \bs{0} $, stationality </li>
-<li>$ \bs{\nabla}^2_{\bx\bx}f(\bx^*) \succ 0 $, Hessian positive definite constraints</li>
-<li>$ \bs{g}(\bx^*) = \bs{0} $</li>
-<li>and $ \bld &gt; 0 $ component wise</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>Note the last condition ensures that the decreasing direction of $f(\bx)$ is  strictly pointing outwards of the feasible region.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Best way to visualize the conditions 1 and 4 above is through the followimng example, where</li>
-</ul>
-<p>$$ f(\bx^*) = (x_1 -2)^2 + (x_2 -2)^2, \;\;\; g(\bx^*) = x_1^2 + x_2^2 - 1$$</p>
-<center><img src = "img/KKT_cond_4.PNG" height=650 width=650></center>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="solution-methods">Solution Methods</h2>
-<ul>
-<li>The solution method for the constrained optimization problems are generally an extension of those for unconstrained version. We are not going into great details, but will use the Sequential Quadratic Programming (<strong>SQP</strong>) method as an example.</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>The SQP is a natural extension of the Newton&#39;s Descent method introduced earlier for the unconstrained case: recall that the Newton&#39;s method does a quadratic optimization in each iteration step. For SQP, at each step, the original optimization problem is approximated with</li>
-</ul>
-<p>$$
-\begin{array}
-\\
-\min_{\bx\in \mathbb{R}^n} &amp; {\bs\nabla} f(\bx^k)^T {(\bx - \bx^k)}                             
-                       + \frac{1}{2} {(\bx - \bx^k)}^T{\bs\nabla^2} f(\bx^k)  {(\bx - \bx^k)}
-\\
-s.t. &amp; {\bs\nabla} \bs{h}(\bx^k)^T {(\bx - \bx^k)} + \bs{h}(\bx^k)  = \bs{0}
-\\
-  &amp; {\bs\nabla} \bs{g}(\bx^k)^T {(\bx - \bx^k)} + \bs{g}(\bx^k)  \leq \bs{0}
-\end{array}
-$$</p>
-<ul>
-<li>This is a constrained quadratic programming problem, which is &quot;slightly&quot; easier to deal with than the original problem.</li>
-</ul>
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="homework-">Homework:</h1>
-<ul>
-<li>HW on the slide for Duality</li>
-<li><p>For the portfolio optimization example given earlier, derive the dual problem.</p>
-</li>
-<li><p>Due on Apr 8th, 2015.</p>
-</li>
-</ul>
+<h1 id="homework">Homework</h1>
+<p>Similar to our example in class, here is the table of future liabilities (in $millions ):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Years</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Benefits($millions)</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">29</td>
+<td style="text-align:center">32</td>
+<td style="text-align:center">33</td>
+<td style="text-align:center">34</td>
+</tr>
+</tbody>
+</table>
+<p>And here is the set of bonds that can be invested in:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Bonds</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Price</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">101.625</td>
+<td style="text-align:center">103</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">103</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">101.5</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">102.75</td>
+<td style="text-align:center">103</td>
+<td style="text-align:center">104</td>
+</tr>
+<tr>
+<td style="text-align:center">Coupon(%)</td>
+<td style="text-align:center">1.25</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">1.75</td>
+<td style="text-align:center">2.125</td>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">2.625</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3.125</td>
+<td style="text-align:center">3.5</td>
+<td style="text-align:center">3.75</td>
+<td style="text-align:center">4.5</td>
+</tr>
+<tr>
+<td style="text-align:center">Maturity(Years)</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
+</tr>
+</tbody>
+</table>
+<p>Find the <strong>least cost</strong> portfolio of bonds so that the pension fund can meet its future liabilities. Please show your LP problem set up.</p>
 </div>
 </div>
 </div>
@@ -2878,6 +2799,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 </body>
 
 
+
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
@@ -2906,7 +2828,7 @@ Reveal.initialize({
     controls: true,
 
     // Display a presentation progress bar
-    //progress: true,
+    progress: true,
 
     // Push each slide change to the browser history
     history: false,
@@ -2916,7 +2838,7 @@ Reveal.initialize({
     slideNumber: true,
 
     // Enable touch events for navigation
-    //touch: true,
+    touch: true,
 
     // Enable the slide overview mode
     //overview: true,
@@ -2936,7 +2858,7 @@ Reveal.initialize({
     //autoSlide: 0,
 
     // Enable slide navigation via mouse wheel
-    //mouseWheel: false,
+    mouseWheel: false,
 
     // Transition style
     // transition: 'concave', // default/cube/page/concave/zoom/linear/fade/none
