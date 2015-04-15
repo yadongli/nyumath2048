@@ -1855,10 +1855,10 @@ a(x,t)\PDutt + 2b(x,t)\frac{\partial ^2u}{\partial t\partial x} + c(x,t)\PDuxx
 }
 $$</p>
 <ul>
-<li>Classified into three categories: <strong>Hyperbolic, Parabolic and Elliptic</strong></li>
+<li>It can be classified into three categories: <strong>Hyperbolic, Parabolic and Elliptic</strong></li>
 </ul>
 <ul>
-<li>In general, the different type of equations makes a big difference of how the solution behave and</li>
+<li>In general, the different types of equations make a big difference in how the solutions behave and</li>
 </ul>
 <ul>
 <li>on how we can solve them more effectively</li>
@@ -1950,7 +1950,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="initial-and-boundary-conditions">Initial and Boundary Conditions</h2>
 <ul>
-<li>Depending on the problem, <strong>initial conditions (IC)</strong></li>
+<li>Depending on the problem, we usually have <strong>initial conditions (IC)</strong></li>
 </ul>
 <p>$$
 \large{
@@ -1984,7 +1984,7 @@ $$</p>
 \PDut + \frac{1}{2}\sigma^2S^2\PDuSS + rS\PDuS - ru = 0
 $$</p>
 <ul>
-<li><p>It is of the parabolic type, can be converted into the standard Heat equation form by doing change-of-variables</p>
+<li><p>It belongs to the parabolic type, and can be converted into the standard Heat equation form by a change-of-variables</p>
 </li>
 <li><p>For <strong>European Call</strong> option, the &quot;initial&quot; (the payoff function) and boundary conditions are</p>
 </li>
@@ -2028,10 +2028,10 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="finite-difference-methods-for-solving-pdes">Finite Difference Methods for Solving PDEs</h1>
 <ul>
-<li>Very rare that the PDEs have closed form analytical solutions, in general PDEs need to be solved numerically.</li>
+<li>Very rare that the PDEs have closed form solutions, in general, can only be solved numerically.</li>
 </ul>
 <ul>
-<li>Will focus on the finite difference method (FDM): other methods exist and can be more appropriate---very much depends on the actual problems at hand.</li>
+<li>Will focus on the finite difference method (FDM): other numerical methods exist and can be more appropriate---very much depends on the actual problems at hand.</li>
 </ul>
 </div>
 </div>
@@ -2044,10 +2044,10 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="discretization">Discretization</h2>
 <ul>
-<li>First step in solving PDEs using FDM is to represent the solution $u(x,t)$ as a discrete collection of values at a well distributed points in space and time in the proper domain.</li>
+<li>First step in solving PDEs using FDM is to represent the solution $u(x,t)$ as a discrete collection of values at a well distributed grid points in space and time in the proper domain.</li>
 </ul>
 <ul>
-<li>For example, for the  rectangular domain in space and time with $t \in [0, T]$ and $x\in [x_{min}, x_{max}]$, we can represent the points simply as $t_0 = 0, t_1, t_2, \cdots, t_M = T$ in time and $x_0 = x_{min}, x_1, x_2, \cdots, x_N = x_{max}$ in space, where the grid is uniform, i.e. $t_{k+1} = t_k + \triangle t, \;\triangle t = \frac{T}{M}$ and $x_{i+1} = x_i + \triangle x, \;\triangle x = \frac{x_{max}-x_{min}}{N}$.</li>
+<li>For example, for the  rectangular domain in space and time with $t \in [0, T]$ and $x\in [x_{min}, x_{max}]$, we can represent the points simply as $t_0 = 0, t_1, t_2, \cdots, t_M = T$ in time and $x_0 = x_{min}, x_1, x_2, \cdots, x_N = x_{max}$ in space. The grid is uniform, i.e. $t_{k+1} = t_k + \triangle t, \;\triangle t = \frac{T}{M}$ and $x_{i+1} = x_i + \triangle x, \;\triangle x = \frac{x_{max}-x_{min}}{N}$.</li>
 </ul>
 <ul>
 <li>The discretized version of the solution will be represented by the values of </li>
@@ -2056,7 +2056,7 @@ $$</p>
 u_{i,k} = u(x_i, t_k), \;\mbox{for   }  i = 0,1,\cdots,N, \mbox{  and  } k = 0,1,\cdots,M
 $$</p>
 <ul>
-<li>The values of $u(x,t)$ at any other desired points can of course be approximated via interpolation.</li>
+<li>The values of $u(x,t)$ at any other desired points can be approximated via interpolation.</li>
 </ul>
 </div>
 </div>
@@ -2068,7 +2068,7 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>It is not necessary the most efficient to work with a uniform mesh, in fact, it rarely is.</li>
+<li>A uniform mesh may not necessary be the most efficient form to work with, in fact, it rarely is.</li>
 </ul>
 <ul>
 <li>A greatly simplified rule-of-thumb: the mesh needs to be refined around the region where the function varies a lot</li>
@@ -2077,7 +2077,7 @@ $$</p>
 <li>On the other hand, the mesh can be relatively coarse if the function is smooth and changing slowly</li>
 </ul>
 <ul>
-<li>In finance, the time grid is well advised to keep the <strong>important</strong> dates as grid points: such as cash flow dates, contractual term schedule dates, etc. The spacing of these dates is most likely not uniform.</li>
+<li>In finance, the time grid is well advised to keep the <strong>important</strong> dates as grid points: such as cash flow dates, contractual schedule dates, etc. The spacing of these dates is most likely not uniform.</li>
 </ul>
 </div>
 </div>
@@ -2090,11 +2090,11 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="finite-difference-methods-fdm-">Finite Difference Methods(FDM)</h2>
 <ul>
-<li>Toolkit table for finite difference approximation
+<li>Toolkit for finite difference approximation
 $
 \renewcommand{FDut}{\frac{u_{i,k+1}-u_{i,k}}{\triangle t}}
 \renewcommand{FDutb}{\frac{u_{i,k}-u_{i,k-1}}{\triangle t}}
-\renewcommand{FDutc}{\frac{u_{i,k_1}-u_{i,k-1}}{2\triangle t}}
+\renewcommand{FDutc}{\frac{u_{i,k+1}-u_{i,k-1}}{2\triangle t}}
 \renewcommand{FDutt}{\frac{u_{i,k+1}-2u_{i,k}+u_{i,k-1}}{\triangle t^2}}
 \renewcommand{FDux}{\frac{u_{i+1,k}-u_{i,k}}{\triangle x}}
 \renewcommand{FDuxb}{\frac{u_{i,k}-u_{i-1,k}}{\triangle x}}
@@ -2173,16 +2173,19 @@ $</li>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="the-explicit-method">The Explicit Method</h2>
 <ul>
-<li><p>For convenience, reverse the time for Black-Scholes notation: $t_0 = T, t_1, t_2, \cdots, t_M = 0$ and $t_{k+1} = t_k - \triangle t$</p>
-</li>
-<li><p>Approximate the Black-Scholes Eqn by</p>
-</li>
+<li>For convenience, reverse the time for Black-Scholes notation: $ t \leftarrow T - t$</li>
 </ul>
 <p>$$
-\FDut - \frac{1}{2} \sigma^2 x_i^2 \FDuxx - r x_i \FDuxc = - r u_{i,k}
+\PDut - \frac{1}{2}\sigma^2S^2\PDuSS - rS\PDuS + ru = 0
 $$</p>
 <ul>
-<li>To show it&#39;s explicit, rewrite it as</li>
+<li>Approximate the Black-Scholes Eqn by</li>
+</ul>
+<p>$$
+\FDut - \frac{1}{2} \sigma^2 x_i^2 \FDuxx - r x_i \FDuxc + r u_{i,k} = 0
+$$</p>
+<ul>
+<li>This can be rewritten simply as</li>
 </ul>
 <p>\begin{aligned}
 u_{i,k+1} &amp; = \left\{ \frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2} - r x_i \frac{\triangle t}{2\triangle x} \right\} u_{i-1,k}
@@ -2202,7 +2205,7 @@ u_{i,k+1} &amp; = \left\{ \frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="consistency-stability-and-convergence">Consistency, Stability and Convergence</h2>
 <ul>
-<li><p>For any FDM that are rmployed to solve practical problems, we should ask</p>
+<li><p>For any FDM that are used to solve practical problems, we should ask</p>
 <ul>
 <li><p>1) How acurate is the method?    </p>
 </li>
@@ -2230,7 +2233,7 @@ u_{i,k+1} &amp; = \left\{ \frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle
 T(x,t) = O(\triangle x^2 + \triangle t)
 $$</p>
 <ul>
-<li>Taylor series expansion can verify this or one can read this off from the Table.</li>
+<li>Taylor series expansion can verify this (or one can simply read this off of the Toolkit Table).</li>
 </ul>
 <ul>
 <li>So the explicit method above is consistent of order 1 in time and order 2 in spatial variable.</li>
@@ -2278,7 +2281,7 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Looking for $\epsilon_{j,k} $ in the Fourier expansion form,</li>
+<li>Looking for $\epsilon_{j,k} $ in the Fourier expansion representation,</li>
 </ul>
 <p>$$
 \epsilon(x,t) = \sum_{m= 1}^{M} e^{at}e^{il_mx}
@@ -2287,7 +2290,7 @@ $$</p>
 \mbox{  and  } 
 M = \frac{L}{\triangle x}$</p>
 <ul>
-<li>Due to linearity again, the error analysis can be performed without any loss of generality by looking at a single term of the expansion</li>
+<li>Due to linearity again, the error analysis can be performed (without any loss of generality) by looking at a single term of the expansion</li>
 </ul>
 <p>$$
 e^{at_k}e^{il_mx_j}
@@ -2302,13 +2305,13 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>In fact, we are really interested in the amplification of the error, which is</li>
+<li>In fact, we are really interested in the amplification of the error,</li>
 </ul>
 <p>$$
 \frac{\epsilon_{j,k+1}}{\epsilon_{j,k}} = e^{a\triangle t}
 $$</p>
 <ul>
-<li>The stability analysis in the Von Neumann method is to analyze the form of $e^{a\triangle t}$ so that </li>
+<li>The stability analysis in the Von Neumann method is simply to analyze the form of $e^{a\triangle t}$ so that </li>
 </ul>
 <p>$$
 ||e^{a\triangle t}|| &lt; 1
@@ -2420,7 +2423,7 @@ $$</p>
 <li>The <strong>Lax equivalence theorem</strong> holds for PDE as well.</li>
 </ul>
 <ul>
-<li>Takeaway: when implementing FDM for PDEs, study the <strong>CFL (Courant-Fletcher-Levy)</strong> stability condition for your scheme.</li>
+<li>Takeaway: when implementing FDM for PDEs, study the <strong>CFL (Courant–Friedrichs–Lewy)</strong> stability condition before building your discretization grid.</li>
 </ul>
 </div>
 </div>
@@ -2458,13 +2461,13 @@ u_{i,k-1} &amp; = \left\{ -\frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangl
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The local truncation error is </li>
+<li>The local truncation error</li>
 </ul>
 <p>$$
 T(x,t) = O(\triangle x^2 + \triangle t)
 $$</p>
 <ul>
-<li>The amplification factor for $r=0$ is</li>
+<li>And the amplification factor for $r=0$</li>
 </ul>
 <p>$$
 e^{a\triangle t}  = \frac{1}{1 + \sigma^2 x_j^2 \frac{\triangle t}{\triangle x^2} \cdot 2\sin^2(l_m\triangle x/2)}
@@ -2511,7 +2514,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="numerical-examples">Numerical Examples</h1>
 <ul>
-<li>Will go through the Black Scholes exmaple in next lecture.</li>
+<li>Will go through the Black Scholes example in next lecture.</li>
 </ul>
 </div>
 </div>
@@ -2541,7 +2544,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="homework">Homework</h1>
 <ul>
-<li>Derive the CFL condition for the Crank-Nicholson method assuming $r=0$.</li>
+<li>Derive the CFL condition for the Crank-Nicholson method for the Black-Scholes PDE, assuming $r=0$.</li>
 </ul>
 </div>
 </div>
