@@ -1820,18 +1820,14 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="linear-programming-theory">Linear Programming Theory</h1>
 <h2 id="formulation">Formulation</h2>
-<p>$$
+<p>\begin{aligned}
 \renewcommand{bx}{\boldsymbol x}
 \renewcommand{bs}{\boldsymbol}
-\begin{array}
+\min_{\bx \in \mathbb{R}^n } \;\; &amp;z = \bs{c}^T \bx
 \\
-\min_{\bx \in \mathbb{R}^n } &amp; &amp;  z = \bs{c}^T \bx
-\\
-s.t. &amp; &amp; \bs{A}\bx  \geq \bs{b}
-\\
-     &amp; &amp; x_j \geq 0 \;\; \forall j.
-\end{array}
-$$</p>
+s.t. \;\;\bs{A}\bx  &amp;\geq \bs{b};\;
+x_j \geq 0, \;\forall j
+\end{aligned}</p>
 <ul>
 <li><p>Simpler than any other optimization problem</p>
 </li>
@@ -1850,28 +1846,20 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="duality">Duality</h2>
-<p>Primal (P)
-$$
-\begin{array}
+<p>Primal (P)</p>
+<p>\begin{aligned}
+\min_{\bx \in \mathbb{R}^n } \;\; &amp;z = \bs{c}^T \bx
 \\
-\min_{\bx \in \mathbb{R}^n } &amp; &amp;  z = \bs{c}^T \bx
+s.t. \;\;\bs{A}\bx  \geq \bs{b};\;
+&amp; x_j \geq 0, \;\forall j = \overline{1, n}
+\end{aligned}</p>
+<p>Dual (D)</p>
+<p>\begin{aligned}
+\max_{\bs{y} \in \mathbb{R}^m } \;\; &amp; z = \bs{b}^T \bs{y}
 \\
-s.t. &amp; &amp; \bs{A}\bx  \geq \bs{b}
-\\
-     &amp; &amp; x_j \geq 0 \;\; \forall j = \overline{1, n}
-\end{array}
-$$</p>
-<p>Dual (D)
-$$
-\begin{array}
-\\
-\max_{\bs{y} \in \mathbb{R}^m } &amp; &amp;  z = \bs{b}^T \bs{y}
-\\
-s.t. &amp; &amp; \bs{A}^T\bs{y}  \leq \bs{c}
-\\
-     &amp; &amp; y_j \geq 0 \;\; \forall j = \overline{1, m}
-\end{array}
-$$</p>
+s.t. \;\;\bs{A}^T\bs{y}  \leq \bs{c}; \;\;
+&amp; y_k \geq 0, \;\; \forall k = \overline{1, m}
+\end{aligned}</p>
 </div>
 </div>
 </div></section><section>
@@ -1882,8 +1870,8 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="derivation">Derivation</h3>
-<p>Lagrangian:
-$$
+<p>Lagrangian:</p>
+<p>$$
 \renewcommand{ml}{\mathbb{\mathcal L}}
 \renewcommand{bA}{\boldsymbol A}
 \renewcommand{by}{\boldsymbol y}
@@ -1896,19 +1884,20 @@ $$
 \\
 &amp; = &amp; \by^T\bb + (\bc^T  - \by^T \bA - \bw^T)\bx
 \\
-&amp; &amp; with \;\; \by \geq \bf{0}, \;\;\; \bw \geq \bf{0}
+&amp; &amp; \mbox{with} \;\; \by \geq \bf{0}, \;\;\; \bw \geq \bf{0}
 \end{array}
 $$</p>
-<p>Lagrangian dual function
-$$
+<p>Lagrangian dual function</p>
+<p>$$
 \renewcommand{mD}{\mathbb{\mathcal D}}
 \renewcommand{df}{\hat{f}}
 \df(\by, \bw) = \inf_{\bx\in \mD}\; \ml(\bx, \by, \bw) =\by^T\bb + \inf_{\bx\in\mD}  (\bc^T  - \by^T \bA - \bw^T)\bx
 $$</p>
-<p>But the second term is linear, so the only case where the infimum can be reached is when the slop is zero:
-$$
-\bc  - \bA^T \by = \bw \geq 0
+<p>Obviously the last term is linear in $\bx$, so the only scenario where the infimum can be reached is when the slop is zero:</p>
+<p>$$
+\bc  - \bA^T \by - \bw = 0
 $$</p>
+<p>write-off the slack variable $\bw$ will generate the dual problem (D).</p>
 </div>
 </div>
 </div></section><section>
@@ -1920,11 +1909,11 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="duality-theorem-">Duality Theorem:</h3>
 <ul>
-<li>If $\bx$ is feasible for (P) and $\bs{y}$ is feasible for (D), then $\bs{c}^T \bx = \bs{b}^T \bs{y}$, 
-and at optimality $\bs{c}^T \bx^* \geq \bs{b}^T \bs{y}^*$ .</li>
+<li>If $\bx$ is feasible for (P) and $\bs{y}$ is feasible for (D), then $\bs{c}^T \bx \geq \bs{b}^T \bs{y}$, 
+and only at optimality the equality holds $\bs{c}^T \bx^* = \bs{b}^T \bs{y}^*$ .</li>
 </ul>
 <ul>
-<li>The quantity: $\bs{c}^T \bx - \bs{b}^T \bs{y}$  is called duality gap. This value is common stopping criteria for Interior LP method.</li>
+<li>The quantity: $\bs{c}^T \bx - \bs{b}^T \bs{y}$  is called <strong>duality gap</strong>. This value is used commonly as the stopping criteria for Interior LP method.</li>
 </ul>
 </div>
 </div>
@@ -1941,7 +1930,7 @@ and at optimality $\bs{c}^T \bx^* \geq \bs{b}^T \bs{y}^*$ .</li>
 </li>
 <li><p><strong>Ellipsoid</strong> (Kachian 1979, the first algorithm known to be in <strong>polynomial time</strong>)</p>
 </li>
-<li><p><strong>Interior Point</strong> (Karmakar 1984, first  <strong>practical</strong> polynomial time algorithm)</p>
+<li><p><strong>Interior Point</strong> (Karmakar 1984, the first  <strong>practical</strong> polynomial time algorithm)</p>
 <ul>
 <li>Projection method (Karmakar 1984)</li>
 <li>Affine Method (Dikin 1967)</li>
@@ -1989,18 +1978,16 @@ and at optimality $\bs{c}^T \bx^* \geq \bs{b}^T \bs{y}^*$ .</li>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="algorithm-simplex-method-">Algorithm (Simplex Method)</h3>
 <ul>
-<li><p>Input
-$$
-\begin{array}
+<li>Input
+\begin{aligned}
 \\
-\min_{\bx \in \mathbb{R}^n } &amp;   z = \bs{c}^T \bx
+\min_{\bx \in \mathbb{R}^n } \;\;   z &amp; = \bs{c}^T \bx
 \\
-s.t. &amp; \bx \in \mathcal{P} = \{\bx: \bs{A}\bx  \leq \bs{b}, \bx \geq 0 \}
-\end{array}
-$$</p>
-</li>
-<li><p>Look at the polytope $\mathcal{P}$ as a graph $\mathcal{G} = (V,E)$ with $V$ as vertices and $E$ as edges.</p>
-</li>
+s.t. \;\; \bx \in \mathcal{P} &amp; = \{\bx: \bs{A}\bx  \leq \bs{b}, \bx \geq 0 \}
+\end{aligned}</li>
+</ul>
+<ul>
+<li>Look at the polytope $\mathcal{P}$ as a graph $\mathcal{G} = (V,E)$ with $V$ as vertices and $E$ as edges.</li>
 </ul>
 <ul>
 <li><strong>Algorithm</strong><ol>
@@ -2023,24 +2010,18 @@ $$</p>
 <ul>
 <li>For convenience, reformulate the LP problme into an equivalent form</li>
 </ul>
-<p>Primal (P)
-$$
-\begin{array}
+<p>Primal (P)</p>
+<p>\begin{aligned}
+\min_{\bx \in \mathbb{R}^n } \;\; &amp;  \bs{c}^T \bx
 \\
-\min_{\bx \in \mathbb{R}^n } &amp; &amp;  \bs{c}^T \bx
-\\
-s.t. &amp; &amp; \bs{A}\bx  = \bs{b}, \;\; \bx \geq \bf{0}
-\end{array}
-$$</p>
+s.t. \;\;  \bs{A}\bx  &amp;= \bs{b}, \;\; \bx \geq \bf{0}
+\end{aligned}</p>
 <p>Dual (D)
-$$
-\begin{array}
+\begin{aligned}
+\max_{\bs{y} \in \mathbb{R}^m } \;\; &amp; \bs{b}^T \bs{y}
 \\
-\max_{\bs{y} \in \mathbb{R}^m } &amp; &amp; \bs{b}^T \bs{y}
-\\
-s.t. &amp; &amp; \bs{A}^T\bs{y}  + \bs{s} = \bs{c}, \;\; \bs{s} \geq \bf{0}
-\end{array}
-$$</p>
+s.t. \;\; \bs{A}^T\bs{y} + \bs{s} &amp; = \bs{c}, \;\; \bs{s} \geq \bf{0}
+\end{aligned}</p>
 </div>
 </div>
 </div></section><section>
@@ -2053,18 +2034,15 @@ $$</p>
 <ul>
 <li>And the optimality (KKT) conditions are</li>
 </ul>
-<p>$$
-\begin{array} 
+<p>\begin{aligned} 
+ \bs{A}^T\bs{y}  + \bs{s} &amp;= \bs{c}, 
 \\
-&amp; &amp; \bs{A}^T\bs{y}  + \bs{s} = \bs{c}, 
+ \bs{A}\bx  &amp;= \bs{b}, 
 \\
-&amp; &amp; \bs{A}\bx  = \bs{b}, 
+ \bx\circ \bs{s} &amp;= \bf{0}, 
 \\
-&amp; &amp; \bx\circ \bs{s} = \bf{0}, 
-\\
-&amp; &amp; \bx \geq \bf{0}, \;\; \bs{s} \geq \bf{0}
-\end{array}
-$$</p>
+\bx \geq \bf{0}, \;\; \bs{s} &amp;\geq \bf{0}
+\end{aligned}</p>
 <p>The third complementary slackness condition relates to the duality gap.</p>
 </div>
 </div>
@@ -2075,7 +2053,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Primal-dual interior-point methods find primal-dual solutions $(\bx^*; \by^*; \bs{s}^*)$ by applying variants of Newton&#39;s method to the first three KKT conditions above, and modifying search directions and step lengths, so that the last KKT condition is strictly satisfied at each iteration.</p>
+<p>Primal-dual interior-point methods find primal-dual solutions $(\bx^*, \by^*, \bs{s}^*)$ by applying variants of Newton&#39;s method to the first three KKT conditions above, and modifying search directions and step lengths, so that the last KKT condition is strictly satisfied at each iteration.</p>
 <p>Rewrite the KKT conditions as:
 $$
 \begin{matrix}
@@ -2098,8 +2076,8 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And the search direction is generated by solving,
-$$
+<p>And the search direction is generated by solving,</p>
+<p>$$
 \begin{matrix}
 \bs{F}'(\bx,\by,\bs{s})  \left[
 \begin{matrix}
@@ -2110,8 +2088,8 @@ $$
 \right] = \bs{F}(\bx,\by,\bs{s})
 \end{matrix}
 $$</p>
-<p>Looking for iterates that are strictly feasible, this becomes
-$$
+<p>Looking for iterates that are strictly feasible, this becomes</p>
+<p>$$
 \begin{matrix}
 \left[
 \begin{matrix}
@@ -2218,11 +2196,12 @@ choosing $\alpha^k$ so that $(\bx^{k+1}, \bs{s}^{k+1}) \geq 0 $</li>
 </ul>
 </div>
 </div>
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[3]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2272,7 +2251,9 @@ The Numpy version:
 </div>
 </div>
 
-</div></section><section>
+</div></section>
+    </section><section>
+    <section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2325,15 +2306,24 @@ The Numpy version:
 <ul>
 <li>$x_j, \;\; j = 1,\cdots, N $ are the amount to be invested in asset $j$</li>
 </ul>
-<p>The problem is to find the asset portfolio such that the total cost
-$$
-\Sigma_j x_j P_j 
-$$
-is minimized, while the projected liability cash flows are covered by the cash flows generated by the asset portfolio
-$$
-\Sigma_j x_j C_{j,k} \geq L_k \;\;  k = 1,\cdots,K
-$$
-and $x_j \geq 0$.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The problem is to find the asset portfolio such that the total cost</p>
+<p>$$
+\sum_j x_j P_j 
+$$</p>
+<p>is minimized, while the projected liability cash flows are covered by the cash flows generated by the asset portfolio</p>
+<p>$$
+\sum_j x_j C_{j,k} \geq L_k \;\;  k = 1,\cdots,K
+$$</p>
+<p>and $x_j \geq 0$.</p>
 </div>
 </div>
 </div></section><section>
@@ -2465,23 +2455,29 @@ and $x_j \geq 0$.</p>
 </ul>
 </li>
 </ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The LP problem can be formulated as:
-$$
-\begin{array}
+\begin{equation*}
+\min_{\bx} \left( \sum_i x_i P_i \right)
+\end{equation*}
+\begin{aligned}
+\mbox{such that} &amp; \sum_{i=1,10; M_i\geq k} \; C_i(t)x_i +100\sum_{i=1,10; M_i= k} \;x_i - s_k + s_{k-1}= L_k, \;\;  k = 1,2,\cdots, 8
 \\
-\min_{\bx} &amp; &amp;  \Sigma_i x_i P_i
-\\
-s.t. &amp; &amp; \Sigma_{i=1,10; M_i\geq k} x_i C_i(t) +100*\Sigma_{i=1,10; M_i= k} x_i - s_k + s_{k-1}= L_k \;\;  k = 1,2,\cdots, 8
-\\
-     &amp; &amp; x_i \geq 0 \;\; i = 1,2,\cdots, 10
-\\
-     &amp; &amp; s_k \geq 0 \;\;  k = 1,2,\cdots, 8
-\end{array}
-$$
+     &amp; x_i \geq 0 \;\; i = 1,2,\cdots, 10; \;\;\; s_k \geq 0 \;\;  k = 1,2,\cdots, 8
+\end{aligned}
 where we assume $s_0 = 0$.</p>
 </div>
 </div>
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
@@ -2545,14 +2541,25 @@ The solution from Scipy Simplex method:
 <ul>
 <li>$s_k, \;\; k = 1,\cdots, K $ are the amount of excess cash after paying the liability</li>
 </ul>
-<p>With that, the constraints are now
-$$
-\Sigma_j x_j C_{j,k} - s_k = L_k, \;\;  k = 1,\cdots,K
+<p>With that, the constraints are now</p>
+<p>$$
+\sum_j x_j C_{j,k} - s_k = L_k, \;\;  k = 1,\cdots,K
 $$
 and $x_j \geq 0, \;\; s_k \geq 0$.</p>
-<p>With these excess cash flows, it is natural and economical that they are re-invested, assuming the return is simply $r$, then the constraints becomes
-$$
-\Sigma_j x_j C_{j,k} - s_k + r * s_{k-1} = L_k, \;\;  k = 1,\cdots,K
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>With these excess cash flows, it is then natural to assume that they will be re-invested, and the return is simply $r$, therefore the constraints becomes</li>
+</ul>
+<p>$$
+\sum_j x_j C_{j,k} - s_k + r * s_{k-1} = L_k, \;\;  k = 1,\cdots,K
 $$
 where we set $s_0 = 0$.</p>
 </div>
@@ -2571,7 +2578,7 @@ where we set $s_0 = 0$.</p>
 </li>
 <li><p>Which introduces another dimension: the borrowing rate and lending (re-investment) rate are typically different in real life. </p>
 </li>
-<li><p>In practice, these assumtions (or approximations) can certainly make a big difference in terms of the complexity and realistism of your model (come to think of it, any mathematical model trying to describe a real life problem).</p>
+<li><p>In practice, these assumtions (or approximations) can certainly make a big difference in terms of the complexity and realistism of your model.</p>
 </li>
 </ul>
 </div>
@@ -2609,7 +2616,7 @@ where we set $s_0 = 0$.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="homework">Homework</h1>
-<p>Similar to our example in class, here is the table of future liabilities (in $millions ):</p>
+<p>Similar to our example in class, here is the table of future liabilities (in $millions):</p>
 <table>
 <thead>
 <tr>
