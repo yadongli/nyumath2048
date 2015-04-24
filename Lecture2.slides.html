@@ -5045,7 +5045,7 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <p>Given the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
 <ul>
 <li>minimize the variance (risk): $\bs w^TV\bs w$</li>
-<li>while preserving an unit dollar of excess return: $\bs w^T \bs f = 1$</li>
+<li>while preserving an unit dollar of excess P&amp;L: $\bs w^T \bs f = 1$</li>
 </ul>
 <p>which gives a portfolio with the largest Sharp ratio under the view $\bs f$.</p>
 <ul>
@@ -5097,7 +5097,7 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="important-characteristic-portfolios">Important characteristic portfolios</h2>
-<p>Note that $\bs f$ is only meaningful in a relative sense, the resulting portfolio remains unchanged if $\bs f$ is scaled.</p>
+<p>Note that $\bs f$ is only meaningful in a relative sense.</p>
 <p>Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$: </p>
 <ul>
 <li>A naive view that all assets have the same excess returns (zero information)</li>
@@ -5123,18 +5123,19 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <p>From any portfolio, we can backout its implied excess return forecast $\bs f$</p>
 <ul>
 <li>The implied forecast is nothing but the betas to the portfolio</li>
+<li>The implied forecast is also only meaningful in a relative sense</li>
 </ul>
 <p>Consider the market portfolio: the market collectively believe that $\bs f = \bs \beta_m$ </p>
 <ul>
-<li>Recall that the $\bs f$ is only meaningful in a relative sense, the implied excess return forecast of individual asset is therefore: </li>
+<li>The actual (as oppose to relative) implied excess return is therefore: </li>
 </ul>
 <p>$$ \bs f = \bs \beta_m \left(\mathbb{E}[\tilde r_m] - r_0\right)$$</p>
 <ul>
-<li>this is exactly the CAPM, where $\tilde r_m$ is the market portfolio&#39;s return.</li>
+<li>where $\tilde r_m$ is the market portfolio&#39;s return, this is exactly the CAPM.</li>
 </ul>
-<p>The implied view is a much better estimate of the return than from historical data.</p>
+<p>The implied view is a much better estimate of returns than using historical data.</p>
 <ul>
-<li>How many years of historical data do you need to reliably estimate expected returns?</li>
+<li>How many years of historical data do we need to reliably estimate expected returns?</li>
 </ul>
 </div>
 </div>
