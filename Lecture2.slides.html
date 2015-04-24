@@ -5071,7 +5071,7 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <p>which gives a portfolio with the largest Sharp ratio under the view $\bs f$.</p>
 <ul>
 <li>it can then be scaled to match the dollar amount to be invested</li>
-<li>the scaling of does not change the Sharp ratio and the optimality </li>
+<li>the scaling does not change the portfolio&#39;s Sharp ratio and optimality </li>
 </ul>
 </div>
 </div>
@@ -5105,7 +5105,7 @@ $$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <p>$\bs w$ is often called the characteristic portfolio for the return forecast $\bs f$.</p>
 <ul>
-<li>the portfolio composition is unchanged if $\bs f$ is scaled by a constant</li>
+<li>the resulting portfolio composition is unchanged if $\bs f$ is scaled by a constant</li>
 <li>$\bs f$ forecast is therefore only meaningful in a relative sense</li>
 </ul>
 </div>
@@ -5118,22 +5118,14 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="important-characteristic-portfolios">Important characteristic portfolios</h2>
-<p>Note that $\bs f$ is only meaningful in a reletive sense.</p>
-<h3 id="identical-returns-1-">Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$:</h3>
+<p>Note that $\bs f$ is only meaningful in a relative sense, the resulting portfolio remains unchanged if $\bs f$ is scaled.</p>
+<p>Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$: </p>
 <ul>
 <li>A naive view that all assets have the same excess returns (zero information)</li>
 <li>$\bs e^T\bs w = 1$ means it is a fully invested portfolio of \$1</li>
 <li>$\bs w_e = \frac{V^{-1}\bs e}{\bs e^TV^{-1}\bs e}$ has the minimum variance amongst all fully invested portfolio</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="beta-to-a-benchmark-portfolio-0-">Beta to a benchmark portfolio: $\bs{f = \beta_b} = \frac{V\bs w_b}{\sigma_b^2}$:</h3>
+<p>Beta to a benchmark portfolio: $\bs{f = \beta_b} = \frac{V\bs w_b}{\sigma_b^2}$:</p>
 <ul>
 <li>$\bs{\beta_b w} = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\bs w_b$</li>
 <li>$\bs w_{\beta} = \frac{V^{-1}\bs \beta_b}{\bs \beta_b^T V^{-1}\bs \beta_b} = \frac{\bs w_b}{\bs{\beta_b^T w_b}} = \bs w_b$, which is the benchmark portfolio itself</li>
