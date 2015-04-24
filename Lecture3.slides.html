@@ -2109,7 +2109,7 @@ In&nbsp;[30]:
 <ul>
 <li>where each column of $R$ is a eigenvector, and $\Lambda$ is a diagnoal matrix of eigenvalues</li>
 </ul>
-<p>$R$ is invertable because eigen vectors are all independent:</p>
+<p>$R$ is invertible because eigen vectors are all independent:</p>
 <p>$$\begin{array} \\
 R^{-1} A &amp;= \Lambda R^{-1} \\
  A^*(R^{-1})^* &amp;= (R^{-1})^* \Lambda^* \\
@@ -2123,7 +2123,6 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="eigenvalue-decomposition">Eigenvalue decomposition</h2>
 <p>If $A$ is real and symmetric: $A^* = A$:</p>
 <ul>
 <li>$\Lambda^* = \Lambda$: all eigenvalues are real</li>
@@ -2132,6 +2131,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <li>$A =  R\Lambda R^T$, this diagonalization is called the eigenvalue decomposition (EVD)</li>
 <li>all eigenvalues are positive if and only if $A$ is SPD</li>
 </ul>
+<p>The conclusion holds even if there are duplicated eigen values, with some care. </p>
 </div>
 </div>
 </div></section><section>
@@ -2159,6 +2159,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <ul>
 <li>$\bs v_2$ maximizes $\bs u^T A \bs u$ for all unit $\bs u$ that is orthogonal to $\bs v_1$, i.e, $\bs u^T \bs v_1 = 0$.</li>
 <li>$\bs v_i$ maximizes amongst those unit $\bs u$ that are orthogonal to $\bs v_1, ..., \bs v_{i-1}$</li>
+<li>In the case of duplicated eigen values, $\bs v_i$ is not unique, we can pick any $\bs v_i$ and continue.</li>
 </ul>
 </div>
 </div>
@@ -6322,7 +6323,7 @@ $$\small \bs u^T M \bs v = 2\lambda_1 = 2\lambda_2 \iff M \bs v = \sigma \bs u \
 <p>Therefore, among those unit $\bs u, \bs v$ that are orthogonal to $\bs{u_1, v_1}$ :</p>
 <ul>
 <li>$\bs {u_2, v_2}$ maximizes $\bs u^T M \bs v$  </li>
-<li>this process can repeat for all singular vectors</li>
+<li>this process can repeat for all singular vectors (assuming singular values are distinct)</li>
 </ul>
 </div>
 </div>

@@ -2473,7 +2473,7 @@ GkPq4dd+6QAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="sample-mean">Sample mean</h2>
 <p>$\hat{u}$ is the mean of the samples:</p>
-<p>$$\hat{\mu} = \frac{1}{n}\sum_i r_{i=1}^n = \frac{1}{n} \bs 1^T \bs r$$</p>
+<p>$$\hat{\mu} = \frac{1}{n}\sum_{i=1}^n r_i = \frac{1}{n} \bs 1^T \bs r$$</p>
 <p>$\hat u$ is an unbiased estimator of the population mean $\mu$: </p>
 <p>$$\mathbb{E}[\hat{\mu}] = \frac{1}{n} \bs 1^T \bs 1 \mu  = \mu $$</p>
 <p>the variance of sample mean:</p>
@@ -2503,7 +2503,7 @@ GkPq4dd+6QAAAABJRU5ErkJggg==
 $$</p>
 <p>$\hat{s}^2 = \frac{n}{n-1}\hat{\sigma}^2$ is therefore an unbiased estimator of $\sigma^2$.</p>
 <ul>
-<li>$\hat s^2$ is normally distributed (for large $n$), due to central limit theorem</li>
+<li>$\hat s^2$ is normally distributed for large $n$, due to central limit theorem</li>
 </ul>
 </div>
 </div>
@@ -17999,7 +17999,7 @@ In&nbsp;[126]:
 <p>at time $t_{m-1}$: $\hs(t_{m-1})$ and the corresponding c.v. $\bs v(t_m)e^{-r\delta}$ are known:</p>
 <ol>
 <li><p>construct a smooth function $u(s; t_{m-1})$ that minimizes </p>
-<p>$$\left\Vert \ind\left(\hs(t_{m-1}) &lt; k\right) \odot \left( u\left(\hs(t_{m-1}); t_{m-1}\right) - \bs c(t_m)e^{-r\delta} \right)\right\Vert_2 $$</p>
+<p>$$\left\Vert \ind\left(\hs(t_{m-1}) &lt; k\right) \odot \left( u\left(\hs(t_{m-1}); t_{m-1}\right) - \bs v(t_m)e^{-r\delta} \right)\right\Vert_2 $$</p>
 <ul>
 <li>$u(\cdot)$ is an estimate of the option&#39;s c.v., based on $\hs(t_{m-1})$</li>
 <li>$u(s; t_{m-1}) = c_0 + c_1 s + c_2 s^2$, coeficients are solved by least square</li>

@@ -1883,7 +1883,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="inner-product">Inner product</h2>
 <ul>
-<li>$\langle \bs u, a \bs v_1 + b \bs v_2 \rangle = a \langle \bs{u, v_1} \rangle + a \langle \bs{u, v_2} \rangle$ </li>
+<li>$\langle \bs u, a \bs v_1 + b \bs v_2 \rangle = a \langle \bs{u, v_1} \rangle + b \langle \bs{u, v_2} \rangle$ </li>
 <li>$\langle \bs{u, v} \rangle = \langle \bs{v, u} \rangle^c$ </li>
 <li>$\langle \bs{u, u} \rangle \ge 0$ </li>
 <li>$\langle \bs{u, u} \rangle = 0 \iff u = 0$ </li>
@@ -1996,7 +1996,7 @@ C = AB &amp;\iff c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 <li>Identity matrix $I$: $I A = A I = A$</li>
 <li>$A^T$ is the transpose of $A$: $a^T_{ij} = a_{ji}$</li>
 <li>Symmetric matrix: $A = A^T$</li>
-<li>$A^*$ is the adjuoint of $A$: $a^*_{ij} = a_{ji}^c$<ul>
+<li>$A^*$ is the adjoint of $A$: $a^*_{ij} = a_{ji}^c$<ul>
 <li>real matrix: $A^T = A^*$</li>
 <li>self-adjoint (Hermitian) matrix: $A = A^*$</li>
 </ul>
@@ -5017,7 +5017,7 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <p>Suppose there are $n$ risky assets on the market, with random return vector $\bs r$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\bs w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
-<li>$\bs w^T \bs r$ is the portfolio&#39;s return</li>
+<li>$\bs w^T \bs r$ is the portfolio&#39;s return in dollar amount</li>
 <li>$\sigma^2 = \bs w^TV\bs w$: the variance of its return</li>
 </ul>
 </li>
@@ -5063,12 +5063,16 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="optimal-portfolio-and-sharp-ratio">Optimal portfolio and Sharp Ratio</h2>
-<p>Gien the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
+<p>Given the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
 <ul>
 <li>minimize the variance (risk): $\bs w^TV\bs w$</li>
-<li>while preserving an unit excess return: $\bs w^T \bs f = 1$</li>
+<li>while preserving an unit dollar of excess return: $\bs w^T \bs f = 1$</li>
 </ul>
-<p>which gives the highest Sharp ratio under the view $\bs f$.</p>
+<p>which gives a portfolio with the largest Sharp ratio under the view $\bs f$.</p>
+<ul>
+<li>it can then be scaled to match the dollar amount to be invested</li>
+<li>the scaling of does not change the Sharp ratio and the optimality </li>
+</ul>
 </div>
 </div>
 </div><div class="fragment">
@@ -5100,6 +5104,10 @@ $$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 <p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
 $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <p>$\bs w$ is often called the characteristic portfolio for the return forecast $\bs f$.</p>
+<ul>
+<li>the portfolio composition is unchanged if $\bs f$ is scaled by a constant</li>
+<li>$\bs f$ forecast is therefore only meaningful in a relative sense</li>
+</ul>
 </div>
 </div>
 </div></section><section>
@@ -5110,7 +5118,8 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="important-characteristic-portfolios">Important characteristic portfolios</h2>
-<h3 id="identical-returns-0-">Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$:</h3>
+<p>Note that $\bs f$ is only meaningful in a reletive sense.</p>
+<h3 id="identical-returns-1-">Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$:</h3>
 <ul>
 <li>A naive view that all assets have the same excess returns (zero information)</li>
 <li>$\bs e^T\bs w = 1$ means it is a fully invested portfolio of \$1</li>
@@ -5118,8 +5127,7 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 </ul>
 </div>
 </div>
-</div><div class="fragment">
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -5133,8 +5141,7 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 </ul>
 </div>
 </div>
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
