@@ -1625,6 +1625,7 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .nv { color: #19177C } /* Name.Variable */
 .highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
@@ -2009,6 +2010,14 @@ $$</p>
 <li>For <strong>European Put</strong> option, the &quot;initial&quot; (the payoff function) and boundary conditions are</li>
 </ul>
 <p>\begin{aligned}
+\renewcommand{FDut}{\frac{u_{i,k+1}-u_{i,k}}{\triangle t}}
+\renewcommand{FDutb}{\frac{u_{i,k}-u_{i,k-1}}{\triangle t}}
+\renewcommand{FDutc}{\frac{u_{i,k+1}-u_{i,k-1}}{2\triangle t}}
+\renewcommand{FDutt}{\frac{u_{i,k+1}-2u_{i,k}+u_{i,k-1}}{\triangle t^2}}
+\renewcommand{FDux}{\frac{u_{i+1,k}-u_{i,k}}{\triangle x}}
+\renewcommand{FDuxb}{\frac{u_{i,k}-u_{i-1,k}}{\triangle x}}
+\renewcommand{FDuxc}{\frac{u_{i+1,k}-u_{i-1,k}}{2\triangle x}}
+\renewcommand{FDuxx}{\frac{u_{i+1,k}-2u_{i,k}+u_{i-1,k}}{\triangle x^2}}
 &amp;u(S,T) = \max(K-S, 0);
 \\
 &amp;u(0,t) = Ke^{-r(T-t)}; 
@@ -2090,17 +2099,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="finite-difference-methods-fdm-">Finite Difference Methods(FDM)</h2>
 <ul>
-<li>Toolkit for finite difference approximation
-$
-\renewcommand{FDut}{\frac{u_{i,k+1}-u_{i,k}}{\triangle t}}
-\renewcommand{FDutb}{\frac{u_{i,k}-u_{i,k-1}}{\triangle t}}
-\renewcommand{FDutc}{\frac{u_{i,k+1}-u_{i,k-1}}{2\triangle t}}
-\renewcommand{FDutt}{\frac{u_{i,k+1}-2u_{i,k}+u_{i,k-1}}{\triangle t^2}}
-\renewcommand{FDux}{\frac{u_{i+1,k}-u_{i,k}}{\triangle x}}
-\renewcommand{FDuxb}{\frac{u_{i,k}-u_{i-1,k}}{\triangle x}}
-\renewcommand{FDuxc}{\frac{u_{i+1,k}-u_{i-1,k}}{2\triangle x}}
-\renewcommand{FDuxx}{\frac{u_{i+1,k}-2u_{i,k}+u_{i-1,k}}{\triangle x^2}}
-$</li>
+<li>Toolkit for finite difference approximation</li>
 </ul>
 <table>
 <thead>
@@ -2442,15 +2441,15 @@ $$</p>
 \FDutb - \frac{1}{2} \sigma^2 x_i^2 \FDuxx - r x_i \FDuxc = - r u_{i,k}
 $$</p>
 <ul>
-<li>Which can be rewritten as
-\begin{aligned}
+<li>Which can be rewritten as</li>
+</ul>
+<p>\begin{aligned}
 u_{i,k-1} &amp; = \left\{ -\frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2} + r x_i \frac{\triangle t}{2\triangle x} \right\} u_{i-1,k}
 \\
 &amp; + \left\{ 1 + \sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2}  + r \triangle t \right\} u_{i,k}
 \\
 &amp; + \left\{ -\frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2} - r x_i \frac{\triangle t}{2\triangle x} \right\} u_{i+1,k}
-\end{aligned}</li>
-</ul>
+\end{aligned}</p>
 </div>
 </div>
 </div></section><section>
@@ -2529,7 +2528,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="higher-dimension-methods">Higher Dimension Methods</h1>
 <ul>
-<li>What to do when there are more than one spatial variables (Asian Option)? - ADI methods.</li>
+<li>What to do when there are more than one spatial variables (Heston Stochastic Vol Model)? - ADI methods.</li>
 </ul>
 </div>
 </div>
@@ -2578,7 +2577,7 @@ dependencies: [
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
