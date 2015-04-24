@@ -5141,10 +5141,17 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="implied-view-of-a-portfolio">Implied view of a portfolio</h2>
+<p>From any portfolio, we can backout its implied excess return forecast $\bs f$</p>
 <ul>
-<li>From any portfolio, we can backout its implied excess return forecast $\bs f$</li>
 <li>The implied forecast is nothing but the betas to the portfolio</li>
-<li>Consider the market portfolio: the market collectively believe that $\bs {f = \beta_m}$ (CAPM)</li>
+</ul>
+<p>Consider the market portfolio: the market collectively believe that $\bs f = \bs \beta_m$ </p>
+<ul>
+<li>Recall that the $\bs f$ is only meaningful in a relative sense, the implied excess return forecast of individual asset is therefore: </li>
+</ul>
+<p>$$ \bs f = \bs \beta_m \mathbb{E}[\tilde r_m] $$</p>
+<ul>
+<li>this is exactly the CAPM, where $\tilde r_m$ is the market portfolio&#39;s return.</li>
 </ul>
 <p>The implied view is a much better estimate of the return than from historical data.</p>
 <ul>
@@ -5494,6 +5501,18 @@ In&nbsp;[32]:
 </div>
 </div>
 
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>note that these forecast are only meaningful in a relative sense</li>
+</ul>
+</div>
+</div>
 </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
