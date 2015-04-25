@@ -5083,10 +5083,6 @@ $$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 <p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
 $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <p>$\bs w$ is often called the characteristic portfolio for the return forecast $\bs f$.</p>
-<ul>
-<li>the resulting portfolio composition is unchanged if $\bs f$ is scaled by a constant</li>
-<li>$\bs f$ forecast is therefore only meaningful in a relative sense</li>
-</ul>
 </div>
 </div>
 </div></section><section>
@@ -5096,19 +5092,19 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="relativity-in-return-forecast">Relativity in return forecast</h2>
-<p>Given the characteristics (optimal) portfolio $\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$ for the return forecast $\bs f$.</p>
+<h2 id="relativity-of-return-forecast">Relativity of return forecast</h2>
+<p>Given the optimal portfolio $\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$.</p>
 <p>The optimal portfolio is unchanged if $\bs f$ is scaled by a scalar $a$:</p>
 <ul>
-<li>$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$, scaling a portfolio by $a$ does not change its composition materially</li>
+<li>$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$, scaling a portfolio by $a$ does not change the optimal portfolio&#39;s composition</li>
 <li>the optimal portfolio has to be scaled to match the amount of funds to be invested, the final portfolios are identical from forecast $\bs f$ or $a \bs f$</li>
 </ul>
-<p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense</p>
+<p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense:</p>
 <ul>
-<li>it is only important to forecast the relative size of excess returns:</li>
+<li>it is only important to forecast the relative size of excess returns</li>
 <li>e.g. with two assets, the excess return forecast of [1%, 2%] and [10%, 20%] would result in identical optimal portfolio</li>
 </ul>
-<p>From now on, the return forecast $\bs f$ should only be interpreted in the relative sense, we use $\propto$ to make this explicit.</p>
+<p>The return forecast $\bs f$ should only be interpreted in a relative sense, we use $\propto$ to make this explicit.</p>
 </div>
 </div>
 </div></section><section>
@@ -5143,10 +5139,11 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <h2 id="implied-view-of-a-portfolio">Implied view of a portfolio</h2>
 <p>From any portfolio, we can backout its implied excess return forecast $\bs f$:</p>
 <ul>
-<li>The implied forecast is nothing but the betas to the portfolio</li>
-<li>The implied excess return is only meaningful in a relative sense</li>
+<li>It is nothing but the betas to the portfolio</li>
+<li>Only meaningful in a relative sense as well</li>
+<li>Has to be normalized to produce absolute excess return forecast</li>
 </ul>
-<p>Consider the market portfolio: the market collectively believe that $\bs f \propto \bs \beta_m$ </p>
+<p>Consider the market portfolio: the market collectively believe that $\bs f \propto \bs \beta_m$: </p>
 <ul>
 <li>the absolute implied excess return can be obtained by normalizing with market excess return:</li>
 </ul>
@@ -5154,7 +5151,7 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <ul>
 <li>where $\tilde r_m$ is the market portfolio&#39;s return, this is exactly the CAPM.</li>
 </ul>
-<p>The implied view is a much better estimate of returns than using historical data.</p>
+<p>The implied excess return is a much better return estimate than historical data.</p>
 <ul>
 <li>How many years of historical data do we need to reliably estimate expected returns?</li>
 </ul>
