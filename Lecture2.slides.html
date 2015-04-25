@@ -5082,7 +5082,7 @@ $$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 <p>plug it into $\bs f^T \bs w = 1$:</p>
 <p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
 $$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
-<p>$\bs w (\bs f)$ is often called the characteristic portfolio for the excess return forecast $\bs f$.</p>
+<p>$\bs w (\bs f)$ is often called the characteristic portfolio for the forecast $\bs f$.</p>
 </div>
 </div>
 </div></section><section>
@@ -5093,11 +5093,11 @@ $$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="relativity-of-return-forecast">Relativity of return forecast</h2>
-<p>The optimal portfolio composition remain unchanged if $\bs f$ is scaled by a scalar $a$</p>
+<p>The optimal portfolio is invariant if $\bs f$ is scaled by a scalar $a$:</p>
 <p>$$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$$ </p>
 <ul>
 <li>the portfolio $\bs w$ and $\frac{1}{a} \bs w$ has no material difference </li>
-<li>they are identical after the scaling to match the dollar amount to be invested</li>
+<li>no difference after the scaling to match the dollar amount to be invested</li>
 </ul>
 <p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense:</p>
 <ul>
@@ -5141,11 +5141,11 @@ $$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <ul>
 <li>It is nothing but the betas to the portfolio</li>
 <li>Only meaningful in a relative sense as well</li>
-<li>Has to be normalized to produce absolute excess return forecast</li>
+<li>Normalization required to produce absolute excess return forecast</li>
 </ul>
 <p>Consider the market portfolio: the market collectively believe that $\bs f \propto \bs \beta_m$: </p>
 <ul>
-<li>the absolute implied excess return can be obtained by normalizing with market excess return:</li>
+<li>the absolute implied excess return by normalizing to the market excess return:</li>
 </ul>
 <p>$$\mathbb{E}[\tilde{\bs r}] - r_0 = \bs \beta_m \left(\mathbb{E}[\tilde r_m] - r_0\right)$$</p>
 <ul>
