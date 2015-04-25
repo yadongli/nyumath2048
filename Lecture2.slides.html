@@ -5081,8 +5081,8 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 $$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 <p>plug it into $\bs f^T \bs w = 1$:</p>
 <p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
-$$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
-<p>$\bs w$ is often called the characteristic portfolio for the return forecast $\bs f$.</p>
+$$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
+<p>$\bs w (\bs f)$ is often called the characteristic portfolio for the excess return forecast $\bs f$.</p>
 </div>
 </div>
 </div></section><section>
@@ -5093,18 +5093,18 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="relativity-of-return-forecast">Relativity of return forecast</h2>
-<p>Given the optimal portfolio $\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$.</p>
-<p>The optimal portfolio is unchanged if $\bs f$ is scaled by a scalar $a$:</p>
+<p>The optimal portfolio composition remain unchanged if $\bs f$ is scaled by a scalar $a$</p>
+<p>$$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$$ </p>
 <ul>
-<li>$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$, scaling a portfolio by $a$ does not change the optimal portfolio&#39;s composition</li>
-<li>the optimal portfolio has to be scaled to match the amount of funds to be invested, the final portfolios are identical from forecast $\bs f$ or $a \bs f$</li>
+<li>the portfolio $\bs w$ and $\frac{1}{a} \bs w$ has no material difference </li>
+<li>they are identical after the scaling to match the dollar amount to be invested</li>
 </ul>
 <p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense:</p>
 <ul>
 <li>it is only important to forecast the relative size of excess returns</li>
-<li>e.g. with two assets, the excess return forecast of [1%, 2%] and [10%, 20%] would result in identical optimal portfolio</li>
+<li>e.g. excess return forecast of [1%, 2%] and [10%, 20%] of two assets would result in identical optimal portfolio</li>
 </ul>
-<p>The return forecast $\bs f$ should only be interpreted in a relative sense, we use $\propto$ to make this explicit.</p>
+<p>The return forecast $\bs f$ should only be interpreted in a relative sense, we use $\propto$ to make it explicit.</p>
 </div>
 </div>
 </div></section><section>
