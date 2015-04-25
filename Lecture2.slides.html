@@ -4993,10 +4993,10 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <ul>
 <li>Powerful mean/variance portfolio theory can be expressed succinctly using linear algebra and matrix calculus.</li>
 </ul>
-<p>Suppose there are $n$ risky assets on the market, with random return vector $\bs r$ whose covariance matrix is $V$,</p>
+<p>Suppose there are $n$ risky assets on the market, with random return vector $\tilde{\bs r}$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\bs w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
-<li>$\bs w^T \bs r$ is the portfolio&#39;s return in dollar amount</li>
+<li>$\bs w^T \tilde{\bs r}$ is the portfolio&#39;s return in dollar amount</li>
 <li>$\sigma^2 = \bs w^TV\bs w$: the variance of its return</li>
 </ul>
 </li>
@@ -5021,7 +5021,7 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="excess-return-forecast">Excess return forecast</h2>
 <ul>
-<li>$\bs f = \mathbb{E}[\bs r] - r_0$ is a vector of excess return forecast of all assets<ul>
+<li>$\bs f = \mathbb{E}[\tilde{\bs r}] - r_0$ is a vector of excess return forecast of all assets<ul>
 <li>$r_0$ is the risk free rate</li>
 </ul>
 </li>
@@ -5096,15 +5096,36 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="relativity-in-return-forecast">Relativity in return forecast</h2>
+<p>Given the characteristics (optimal) portfolio $\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$ for the return forecast $\bs f$.</p>
+<p>The optimal portfolio is unchanged if $\bs f$ is scaled by a scalar $a$:</p>
+<ul>
+<li>$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$, scaling a portfolio by $a$ does not change its composition materially</li>
+<li>the optimal portfolio has to be scaled to match the amount of funds to be invested, the final portfolios are identical from forecast $\bs f$ or $a \bs f$</li>
+</ul>
+<p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense</p>
+<ul>
+<li>it is only important to forecast the relative size of excess returns:</li>
+<li>e.g. with two assets, the excess return forecast of [1%, 2%] and [10%, 20%] would result in identical optimal portfolio</li>
+</ul>
+<p>From now on, the return forecast $\bs f$ should only be interpreted in the relative sense, we use $\propto$ to make this explicit.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="important-characteristic-portfolios">Important characteristic portfolios</h2>
-<p>Note that $\bs f$ is only meaningful in a relative sense.</p>
-<p>Identical returns: $\bs{f = e} = [1, 1, ...., 1]^T$: </p>
+<p>Identical returns: $\bs f \propto \bs e = [1, 1, ...., 1]^T$: </p>
 <ul>
 <li>A naive view that all assets have the same excess returns (zero information)</li>
 <li>$\bs e^T\bs w = 1$ means it is a fully invested portfolio of \$1</li>
 <li>$\bs w_e = \frac{V^{-1}\bs e}{\bs e^TV^{-1}\bs e}$ has the minimum variance amongst all fully invested portfolio</li>
 </ul>
-<p>Beta to a benchmark portfolio: $\bs{f = \beta_b} = \frac{V\bs w_b}{\sigma_b^2}$:</p>
+<p>Beta to a benchmark portfolio: $\bs f \propto \bs \beta_b = \frac{V\bs w_b}{\sigma_b^2}$:</p>
 <ul>
 <li>$\bs{\beta_b w} = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\bs w_b$</li>
 <li>$\bs w_{\beta} = \frac{V^{-1}\bs \beta_b}{\bs \beta_b^T V^{-1}\bs \beta_b} = \frac{\bs w_b}{\bs{\beta_b^T w_b}} = \bs w_b$, which is the benchmark portfolio itself</li>
@@ -5120,16 +5141,16 @@ $$\bs w = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="implied-view-of-a-portfolio">Implied view of a portfolio</h2>
-<p>From any portfolio, we can backout its implied excess return forecast $\bs f$</p>
+<p>From any portfolio, we can backout its implied excess return forecast $\bs f$:</p>
 <ul>
 <li>The implied forecast is nothing but the betas to the portfolio</li>
-<li>The implied forecast is also only meaningful in a relative sense</li>
+<li>The implied excess return is only meaningful in a relative sense</li>
 </ul>
-<p>Consider the market portfolio: the market collectively believe that $\bs f = \bs \beta_m$ </p>
+<p>Consider the market portfolio: the market collectively believe that $\bs f \propto \bs \beta_m$ </p>
 <ul>
-<li>The actual (as oppose to relative) implied excess return is therefore: </li>
+<li>the absolute implied excess return can be obtained by normalizing with market excess return:</li>
 </ul>
-<p>$$ \bs f = \bs \beta_m \left(\mathbb{E}[\tilde r_m] - r_0\right)$$</p>
+<p>$$\mathbb{E}[\tilde{\bs r}] - r_0 = \bs \beta_m \left(\mathbb{E}[\tilde r_m] - r_0\right)$$</p>
 <ul>
 <li>where $\tilde r_m$ is the market portfolio&#39;s return, this is exactly the CAPM.</li>
 </ul>
