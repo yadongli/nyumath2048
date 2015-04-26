@@ -7650,7 +7650,7 @@ $$
 <ul>
 <li>Without it, the allocation algorithm is vulnerable to manipulations via trade rebooking.</li>
 </ul>
-<p>The strategy of attack:</p>
+<p>The direction of attack:</p>
 <ul>
 <li>Tweak the Shapley allocation to make it associative</li>
 </ul>
@@ -7706,7 +7706,7 @@ $\bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq $,
 <p>The A-S allocation is additive by construction:</p>
 <p>$$\begin{array}
 \\ \sum_i \xi_i &amp;= \sum_i \bs u^T \bs w_i = \bs u^T \bs w \\
-&amp;= \int_0^1 \frac{\partial c(q\bs w)}{\partial q \bs w} \bs w \; dq = \int_0^1 \frac{\partial c(q\bs w)}{\partial q \bs w} \frac{\partial q \bs w}{\partial q} \; dq \\
+&amp;= \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} \bs w \; dq = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} \frac{\partial q \bs w}{\partial q} \; dq \\
 &amp;= \int_0^1 d c(q\bs w) = c(\bs w) - c(\bs 0)
 \end{array}$$</p>
 <ul>
@@ -7723,7 +7723,7 @@ $\bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq $,
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="euler-allocation">Euler allocation</h2>
 <p>If the cost function is homogeneous, ie, $c(q \bs w) = q c(\bs w)$, the A-S allocation reduces to the Euler allocation:</p>
-<p>$$ \bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial q \bs w} dq = \int_0^1 \frac{\partial c(\bs w)} { \partial \bs w} dq  = \frac{ \partial c(\bs w)} {\partial \bs w} $$</p>
+<p>$$ \bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq = \int_0^1 \frac{\partial c(\bs w)} { \partial \bs w} dq  = \frac{ \partial c(\bs w)} {\partial \bs w} $$</p>
 <ul>
 <li>In practice, most risk capital metrics are homogenous</li>
 <li>Euler allocation is by trades&#39; marginal contribution</li>
