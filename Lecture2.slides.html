@@ -4996,8 +4996,8 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <p>Suppose there are $n$ risky assets on the market, with random return vector $\tilde{\bs r}$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\bs w$: a portfolio, its elements are dollar amounts invested in each asset<ul>
-<li>$\bs w^T \tilde{\bs r}$ is the portfolio&#39;s return in dollar amount</li>
-<li>$\sigma^2 = \bs w^TV\bs w$: the variance of its return</li>
+<li>$\bs w^T \tilde{\bs r}$ is the portfolio&#39;s P&amp;L in dollar amount</li>
+<li>$\sigma^2 = \bs w^TV\bs w$: the variance of the portfolio P&amp;L</li>
 </ul>
 </li>
 <li>$\bs w_b$: a benchmark portfolio, e.g. a sector index<ul>
@@ -5044,12 +5044,12 @@ $$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsi
 <h2 id="optimal-portfolio-and-sharp-ratio">Optimal portfolio and Sharp Ratio</h2>
 <p>Given the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
 <ul>
-<li>minimize the variance (risk): $\bs w^TV\bs w$</li>
-<li>while preserving an unit dollar of excess P&amp;L: $\bs w^T \bs f = 1$</li>
+<li>minimize the variance of portfolio P&amp;L (risk): $\bs w^TV\bs w$</li>
+<li>while preserving a unit dollar of excess P&amp;L: $\bs w^T \bs f = 1$</li>
 </ul>
-<p>which gives a portfolio with the largest Sharp ratio under the view $\bs f$.</p>
+<p>which solves a portfolio with the largest Sharp ratio under the view $\bs f$.</p>
 <ul>
-<li>it can then be scaled to match the dollar amount to be invested</li>
+<li>the optimal portfolio can then be scaled to match the dollar amount to be invested</li>
 <li>the scaling does not change the portfolio&#39;s Sharp ratio and optimality </li>
 </ul>
 </div>
@@ -5082,7 +5082,7 @@ $$ V \bs w - \lambda \bs f = 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
 <p>plug it into $\bs f^T \bs w = 1$:</p>
 <p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
 $$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
-<p>$\bs w (\bs f)$ is often called the characteristic portfolio for the forecast $\bs f$.</p>
+<p>$\bs w (\bs f)$ is also known as the characteristic portfolio for the forecast $\bs f$.</p>
 </div>
 </div>
 </div></section><section>
@@ -5096,7 +5096,7 @@ $$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <p>The optimal portfolio is invariant if $\bs f$ is scaled by a scalar $a$:</p>
 <p>$$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$$ </p>
 <ul>
-<li>the portfolio $\bs w$ and $\frac{1}{a} \bs w$ has no material difference </li>
+<li>the portfolio $\bs w$ and $\frac{1}{a} \bs w$ have no material difference </li>
 <li>identical after the scaling to match the dollar amount to be invested</li>
 </ul>
 <p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense:</p>
@@ -5139,7 +5139,7 @@ $$\bs w(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f}$$</p>
 <h2 id="implied-view-of-a-portfolio">Implied view of a portfolio</h2>
 <p>From any portfolio, we can backout its implied excess return forecast $\bs f$:</p>
 <ul>
-<li>It is nothing but the betas to the portfolio</li>
+<li>It is nothing but the betas to the portfolio, following previous slides</li>
 <li>Only meaningful in a relative sense as well</li>
 <li>Normalization required to produce absolute excess return forecast</li>
 </ul>
