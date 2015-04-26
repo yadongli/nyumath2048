@@ -7605,6 +7605,64 @@ $$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="associativity">Associativity</h2>
+<p>Associativity means a top-down applicaiton of the allocation yields identical results as a bottom-up application:</p>
+<center>
+<img src="img/assoc.png" width=400 height=400>
+</center>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Neither standalone nor Shapley allocation is associative:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">allocation to [A]</th>
+<th style="text-align:center">allocation to [BC]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Top-down</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Standalone bottom-up</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">Shapley bottom-up</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>Associativity is critical in practice:</p>
+<ul>
+<li>Without it, the allocation algorithm is vulnerable to manipulations via trade rebooking.</li>
+</ul>
+<p>The strategy of attack:</p>
+<ul>
+<li>Tweak the Shapley allocation to make it associative</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="aumann-shapley-allocation">Aumann-Shapley allocation</h2>
 <p>A continuous limit of the Shapley allocation with allocation units being trades with infinitesimal notionals. </p>
 <p>$$\bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq 
@@ -7614,6 +7672,7 @@ $$</p>
 <li>$\bs u$ is the allocation per unit notional of trades</li>
 <li>the allocation to individual trades in the i-th unit are $\bs u \odot \bs w_i$, where $\odot$ is element-wise multiplication</li>
 <li>the allocation to a portfolio is therefore $\xi_i = \bs u^T \bs w_i$.</li>
+<li>Associative by construction</li>
 </ul>
 <p>A-S allocation is much more efficient to compute than Shapley allocation.</p>
 </div>
@@ -7626,12 +7685,13 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="the-big-blender">The big blender</h2>
-<p>Conceptually A-S allocation, 
+<p>Conceptually the A-S allocation, 
 $\bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq $, 
- is a Big Blender$^{\text{TM}}$:</p>
+ is a big blender:</p>
 <p><img src="img/bigblender.png" width=200 height=200></p>
 <ul>
 <li>all organizational information are lost</li>
+<li>the allocation is computed from a homogenous soup of trades</li>
 </ul>
 </div>
 </div>
@@ -7688,7 +7748,8 @@ $\bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq $,
 $$</p>
 <ul>
 <li>$\frac{d}{dx} \max(x, 0) = \ind(x &gt; 0)$, where $\ind(\cdot)$ is the indicator function</li>
-<li>the allocation is trade&#39;s MtM if the total PV is positive, otherwise 0.</li>
+<li>the allocation is trade&#39;s MtM if the total PV is positive, otherwise 0</li>
+<li>it is indeed associative, the sum of allocation to B and C is 0</li>
 </ul>
 <table>
 <thead>
@@ -7710,65 +7771,6 @@ $$</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="associativity">Associativity</h2>
-<p>Associativity means a top-down applicaiton of the allocation yields identical results as a bottom-up application:</p>
-<center>
-<img src="img/assoc.png" width=400 height=400>
-</center>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Only the A-S/Euler allocation is associative, as shown below:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">allocation to [A]</th>
-<th style="text-align:center">allocation to [BC]</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Top-down</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">Standalone bottom-up</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td style="text-align:center">Shapley bottom-up</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">A-S/Euler bottom-up</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<p>Associativity is critical in practice:</p>
-<ul>
-<li>Without it, the allocation algorithm is vulnerable to manipulations via trade rebooking.</li>
-</ul>
 </div>
 </div>
 </div></section><section>
