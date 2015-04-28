@@ -1896,12 +1896,12 @@ $$</p>
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[1]:
+In&nbsp;[27]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="o">.</span><span class="mo">01</span>
-<span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">])</span>
+<span class="k">print</span> <span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1915,15 +1915,11 @@ In&nbsp;[1]:
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_pyerr">
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-1-95585c21c25a&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> p <span class="ansiyellow">=</span> <span class="ansicyan">.01</span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span><span class="ansiyellow">-</span>p<span class="ansiyellow">*</span>math<span class="ansiyellow">.</span>log<span class="ansiyellow">(</span>p<span class="ansiyellow">,</span> <span class="ansicyan">2</span><span class="ansiyellow">)</span> <span class="ansiyellow">-</span> <span class="ansiyellow">(</span><span class="ansicyan">1</span><span class="ansiyellow">-</span>p<span class="ansiyellow">)</span><span class="ansiyellow">*</span>math<span class="ansiyellow">.</span>log<span class="ansiyellow">(</span><span class="ansicyan">1</span><span class="ansiyellow">-</span>p<span class="ansiyellow">,</span> <span class="ansicyan">2</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+[ 1.          0.81127812  0.08079314]
 
-<span class="ansired">NameError</span>: name &apos;math&apos; is not defined</pre>
+</pre>
 </div>
 </div>
 
@@ -2094,7 +2090,7 @@ p(x) &amp;= \exp((\lambda_1 -1) + \lambda_2 x)
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[2]:
+In&nbsp;[3]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2135,7 +2131,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[3]:
+In&nbsp;[4]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3179,7 +3175,7 @@ $$</p>
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[5]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3311,7 +3307,7 @@ In&nbsp;[4]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[5]:
+In&nbsp;[6]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3848,7 +3844,7 @@ wsm5mZmZmVlJODk3MzMzMysJJ+dmZmZmZiXh5NzMzMzMrCT+PxAS0+2jChtnAAAAAElFTkSuQmCC
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[7]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4623,7 +4619,7 @@ $$</p>
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4776,7 +4772,7 @@ In&nbsp;[7]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[8]:
+In&nbsp;[9]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4840,7 +4836,7 @@ In&nbsp;[8]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[10]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4941,7 +4937,7 @@ In&nbsp;[9]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[10]:
+In&nbsp;[11]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5378,7 +5374,7 @@ JEmSOvD/ixzHiBFWnqsAAAAASUVORK5CYII=
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[11]:
+In&nbsp;[12]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5501,7 +5497,7 @@ In&nbsp;[11]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[13]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -6268,7 +6264,7 @@ VGAAAAAASUVORK5CYII=
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[14]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -6425,7 +6421,7 @@ In&nbsp;[13]:
 <div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[15]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -7414,7 +7410,7 @@ bq5Lq0wAAAAASUVORK5CYII=
 <p>We use <strong>replacement cost</strong> as an example to illustrate allocation methods:</p>
 <p>$$ \rc(\bs w) = \max(\bs w^T \bs v, 0)$$</p>
 <ul>
-<li>$\bs v$ is the PV vector of all instruments (per unit notional)</li>
+<li>$\bs v$ is the PV vector of all tradable instruments (per unit notional)</li>
 <li>$\bs w^T \bs v$ is the portfolio&#39;s total PV</li>
 </ul>
 <p>Replacement cost is the aggregated PV of the portfolio against a particular counterparty, floored at 0 </p>
@@ -7669,7 +7665,7 @@ $$
 \iff u_k = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q w_k)} dq 
 $$</p>
 <ul>
-<li>$\bs u$ is the allocation per unit notional of trades</li>
+<li>$\bs u$ is the allocation per unit notional of instruments</li>
 <li>the allocation to individual trades in the i-th unit are $\bs u \odot \bs w_i$, where $\odot$ is element-wise multiplication</li>
 <li>the allocation to a portfolio is therefore $\xi_i = \bs u^T \bs w_i$.</li>
 <li>Associative by construction</li>
@@ -7706,7 +7702,7 @@ $\bs u^T = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} dq $,
 <p>The A-S allocation is additive by construction:</p>
 <p>$$\begin{array}
 \\ \sum_i \xi_i &amp;= \sum_i \bs u^T \bs w_i = \bs u^T \bs w \\
-&amp;= \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} \bs w \; dq = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} \frac{\partial q \bs w}{\partial q} \; dq \\
+&amp;= \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} \bs w \; dq = \int_0^1 \frac{\partial c(q\bs w)}{\partial (q \bs w)} \frac{\partial (q \bs w)}{\partial q} \; dq \\
 &amp;= \int_0^1 d c(q\bs w) = c(\bs w) - c(\bs 0)
 \end{array}$$</p>
 <ul>
@@ -7784,7 +7780,7 @@ $$</p>
 <ul>
 <li>A-S allocation could produce perverse incentives in practice</li>
 <li>A consequence of using infitesimal sized allocation unit</li>
-<li>It is important to capture the organizational structure</li>
+<li>Fairness depends on organization</li>
 </ul>
 <p>Consider replacement cost of a bank with two trading desks X and Y:</p>
 <table>
@@ -8000,7 +7996,7 @@ $$</p>
 <h2 id="c-shapley-features">C-Shapley features</h2>
 <p>Advantages of C-Shapley:</p>
 <ul>
-<li>additive and associative</li>
+<li>additive and associative by construction</li>
 <li>gives the right business incentive</li>
 </ul>
 <p>However, it is still computationally expensive:</p>
