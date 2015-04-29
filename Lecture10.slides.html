@@ -7395,7 +7395,10 @@ bq5Lq0wAAAAASUVORK5CYII=
 <ul>
 <li>allocated capital is actively managed by business heads</li>
 <li>allocation method directly affects trading desks&#39; behaviour</li>
-<li>allocation method should incentivize risk reduction</li>
+<li>allocation method should incentivize risk reduction<ul>
+<li>a business unit&#39;s action to reduce the firm&#39;s overall risk should also reduce its own allocaton</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -7499,7 +7502,7 @@ $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="a-model-for-fairness">A model for fairness</h2>
-<p>Fairness in allocation is defined axiomatically by:</p>
+<p>In cooperative game theory, Fairness is defined by the following axioms:</p>
 <ul>
 <li>efficiency: allocations sum up to total</li>
 <li>symmetry: if two units&#39; contribution are identical to any arbitrary subsets of units, their allocations are the same</li>
@@ -7668,7 +7671,7 @@ $$</p>
 <li>$\bs u$ is the allocation per unit notional of instruments</li>
 <li>the allocation to individual trades in the i-th unit are $\bs u \odot \bs w_i$, where $\odot$ is element-wise multiplication</li>
 <li>the allocation to a portfolio is therefore $\xi_i = \bs u^T \bs w_i$.</li>
-<li>Associative by construction</li>
+<li>Associative by construction: inherited from vector summation</li>
 </ul>
 <p>A-S allocation is much more efficient to compute than Shapley allocation.</p>
 </div>
@@ -8158,6 +8161,31 @@ $$</p>
 <li>applicable to the risk allocations of multiple trading strategies</li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="achieve-the-impossible">Achieve the impossible</h2>
+<p>Change allocation methodology is almost mission impossible:</p>
+<ul>
+<li>zero-sum: a desk&#39;s gain is another desk&#39;s loss</li>
+<li>it affects the interests and livelihood of every business unit</li>
+<li>diffcult to build consensus amongst business units with conflicting interests</li>
+</ul>
+<p>The only way to implement the change is to:</p>
+<ul>
+<li>establish a theoreticaly sound methodology that is impossible to argue against (C-Shapley/CAS)</li>
+<li>explain the methodology to every business unit, and ask business heads to document their objections<ul>
+<li>&quot;I don&#39;t like my allocation&quot; is not a good objection</li>
+</ul>
+</li>
+<li>the process takes time and effort</li>
 </ul>
 </div>
 </div>
