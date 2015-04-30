@@ -2942,7 +2942,7 @@ distribution $\bs p$ in relative to a prior distribution $\bs q$; </p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="properties-of-cross-entropy">Properties of cross entropy</h2>
-<p>Cross entropy $h(\bs p| \bs q) = \bs p^T(\log(\bs p) - \log(\bs q))$:</p>
+<p>Cross entropy $h(\bs p| \bs q) = - \bs p^T(\log(\bs p) - \log(\bs q))$:</p>
 <ul>
 <li>a measure of the lack of incremental information in $\bs p$ from $\bs q$:</li>
 <li>reduces to regular entropy when the prior $\bs q$ is uniform</li>
@@ -2951,7 +2951,7 @@ distribution $\bs p$ in relative to a prior distribution $\bs q$; </p>
 <li>Proof: apply the Lagrange multiplier</li>
 </ul>
 </li>
-<li>$h(\bs q| \bs p) = -\infty$ if $p_k &gt; 0$ for some $q_k = 0$<ul>
+<li>$h(\bs p| \bs q) = -\infty$ if $p_k &gt; 0$ for some $q_k = 0$<ul>
 <li>new discovery adds infinite amount of new information</li>
 </ul>
 </li>
