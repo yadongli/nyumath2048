@@ -3139,11 +3139,14 @@ v &amp;= \log \left(\bs q^T \exp(-A^T \bs u)\right) - 1 \\
 </ul>
 </li>
 <li>A solution is guaranteed to exist if $W$ is diagonal and positive</li>
-<li>Once we find the optimal $\bs u^*$ that minimizes the dual objective:</li>
 </ul>
+<p>Once we find the optimal $\bs u^*$ that minimizes the dual objective:</p>
 <p>$$
-\bs p^* = \frac{\bs q \cdot \exp(- A^T \bs u^*)}{\bs q^T \exp(- A^T \bs u^*)}
+\bs p^* = \frac{\bs q \odot \exp(- A^T \bs u^*)}{\bs q^T \exp(- A^T \bs u^*)}
 $$</p>
+<ul>
+<li>$\odot$ is element wise multiplication</li>
+</ul>
 </div>
 </div>
 </div></section>
