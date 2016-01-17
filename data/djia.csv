@@ -1,0 +1,31 @@
+Ticker,Name,Sector,Weights
+MMM,3M Co.,Diversified Industrials,0.0539
+AXP,American Express Co.,Consumer Finance,0.0324
+T,AT&T Inc.,Fixed Line Telecommunications,0.0134
+BA,Boeing Co.,Aerospace/Defense Products & Services,0.0483
+CAT,Caterpillar Inc.,Commercial Vehicles & Trucks,0.0373
+CVX,Chevron Corp.,Integrated Oil & Gas,0.0438
+CSCO,"Cisco Systems, Inc",Networking & Communication,0.0091
+KO,Coca-Cola Co.,Soft Drinks,0.0168
+DD,E.I. DuPont de Nemours & Co.,Commodity Chemicals,0.0263
+XOM,Exxon Mobil Corp.,Integrated Oil & Gas,0.0358
+GE,General Electric Co.,Diversified Industrials,0.0097
+GS,Goldman Sachs Group Inc ,Investment Brokerage - National,0.0694
+HD,Home Depot Inc.,Home Improvement Retailers,0.0354
+INTC,Intel Corp.,Semiconductors,0.0123
+IBM,International Business Machines Corp.,Computer Services,0.0714
+JNJ,Johnson & Johnson,Pharmaceuticals,0.0387
+JPM,JPMorgan Chase & Co.,Banks,0.022
+MCD,McDonald's Corp.,Restaurants & Bars,0.0357
+MRK,Merck & Co. Inc.,Pharmaceuticals,0.0212
+MSFT,Microsoft Corp.,Software,0.0171
+NKE,NIKE Inc,Textile - Apparel Footwear & Accessories,0.0342
+PFE,Pfizer Inc.,Pharmaceuticals,0.0109
+PG,Procter & Gamble Co.,Nondurable Household Products,0.0326
+TRV,"The Travelers Companies, Inc.",Property & Casualty Insurance,0.0366
+UTX,United Technologies Corp.,Aerospace,0.0398
+UNH,UnitedHealth Group,Healthcare,0.0346
+VZ,Verizon Communications Inc.,Fixed Line Telecommunications,0.0188
+V,Visa Inc,Credit Services,0.0808
+WMT,Wal-Mart Stores Inc.,Broadline Retailers,0.0291
+DIS,Walt Disney Co.,Broadcasting & Entertainment,0.0329
