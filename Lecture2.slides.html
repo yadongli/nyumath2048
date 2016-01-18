@@ -2243,7 +2243,7 @@ $$ \tiny \left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">s_A</span><span class="p">,</span> <span class="n">a11</span><span class="p">,</span> <span class="n">A12</span><span class="p">,</span> <span class="n">A21</span><span class="p">,</span> <span class="n">A22</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;A, a_{11} A_{21}^T A_{21} A_{22}&quot;</span><span class="p">)</span>
@@ -2253,7 +2253,8 @@ $$ \tiny \left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 
 <span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">l11</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">L12</span><span class="p">,</span> <span class="n">L22</span><span class="p">]])</span>
 <span class="n">LT</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">l11</span><span class="p">,</span> <span class="n">L12T</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">L22T</span><span class="p">]])</span>
 
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">s_A</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">s_L</span><span class="p">,</span> <span class="n">L</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">s_LT</span><span class="p">,</span> <span class="n">LT</span><span class="p">))</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">s_A</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">s_L</span><span class="p">,</span> <span class="n">L</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">s_LT</span><span class="p">,</span> <span class="n">LT</span><span class="p">)</span>
+               <span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">small&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2270,7 +2271,7 @@ $$ \tiny \left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 
 
 
 <div class="output_latex output_subarea ">
-$$ \small\;,\;\;\;A=\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{22}}\end{matrix}\right)\;,\;\;\;L=\left(\begin{matrix}l_{{11}} & 0\\L_{{21}} & L_{{22}}\end{matrix}\right)\;,\;\;\;L^{T}=\left(\begin{matrix}l_{{11}} & L^{T}_{{21}}\\0 & L^{T}_{{22}}\end{matrix}\right)$$
+$$\small A=\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{22}}\end{matrix}\right)\;,\;\;\;L=\left(\begin{matrix}l_{{11}} & 0\\L_{{21}} & L_{{22}}\end{matrix}\right)\;,\;\;\;L^{T}=\left(\begin{matrix}l_{{11}} & L^{T}_{{21}}\\0 & L^{T}_{{22}}\end{matrix}\right)$$
 </div>
 
 </div>
@@ -2292,10 +2293,10 @@ $$ \small\;,\;\;\;A=\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span>  <span class="n">L</span><span class="o">*</span><span class="n">LT</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span>  <span class="n">L</span><span class="o">*</span><span class="n">LT</span><span class="p">),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">small&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2312,7 +2313,7 @@ $$ \small\;,\;\;\;A=\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{
 
 
 <div class="output_latex output_subarea ">
-$$ \small\;,\;\;\;\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{22}}\end{matrix}\right)=\left(\begin{matrix}l_{{11}}^{2} & L^{T}_{{21}} l_{{11}}\\L_{{21}} l_{{11}} & L_{{21}} L^{T}_{{21}} + L_{{22}} L^{T}_{{22}}\end{matrix}\right)$$
+$$\small \left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{22}}\end{matrix}\right)=\left(\begin{matrix}l_{{11}}^{2} & L^{T}_{{21}} l_{{11}}\\L_{{21}} l_{{11}} & L_{{21}} L^{T}_{{21}} + L_{{22}} L^{T}_{{22}}\end{matrix}\right)$$
 </div>
 
 </div>
@@ -2334,11 +2335,11 @@ $$ \small\;,\;\;\;\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{22
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">small&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">l11</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a11</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">L12</span><span class="p">,</span>  <span class="n">A21</span><span class="o">/</span><span class="n">l11</span><span class="p">),</span> 
-                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A22</span> <span class="o">-</span> <span class="n">L12</span><span class="o">*</span><span class="n">L12T</span><span class="p">,</span> <span class="n">L22</span><span class="o">*</span><span class="n">L22T</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">l11</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a11</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">L12</span><span class="p">,</span>  <span class="n">A21</span><span class="o">/</span><span class="n">l11</span><span class="p">),</span> 
+                <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">A22</span> <span class="o">-</span> <span class="n">L12</span><span class="o">*</span><span class="n">L12T</span><span class="p">,</span> <span class="n">L22</span><span class="o">*</span><span class="n">L22T</span><span class="p">),</span> <span class="n">pre</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">small&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2355,7 +2356,7 @@ $$ \small\;,\;\;\;\left(\begin{matrix}a_{{11}} & A^{T}_{{21}}\\A_{{21}} & A_{{22
 
 
 <div class="output_latex output_subarea ">
-$$ \small\;,\;\;\;l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}}\;,\;\;\;A_{{22}} - L_{{21}} L^{T}_{{21}}=L_{{22}} L^{T}_{{22}}$$
+$$\small l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}}\;,\;\;\;A_{{22}} - L_{{21}} L^{T}_{{21}}=L_{{22}} L^{T}_{{22}}$$
 </div>
 
 </div>
