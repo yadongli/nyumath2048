@@ -2197,12 +2197,12 @@ cGSc1MdoAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">lcm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
 <span class="n">lcv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">cv</span><span class="p">)</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">scriptsize &quot;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> 
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">tiny &quot;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lcm</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> 
                 <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -2220,7 +2220,7 @@ cGSc1MdoAAAAAElFTkSuQmCC
 
 
 <div class="output_latex output_subarea ">
-$$ \scriptsize \left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 & 0.8611\end{matrix}\right)\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0 & 0.9995 & 0.2878\\0 & 0 & 0.8611\end{matrix}\right)=\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0.03215 & 1.0 & 0.3011\\0.4191 & 0.3011 & 1.0\end{matrix}\right)$$
+$$ \tiny \left(\begin{matrix}1.0 & 0 & 0\\0.03215 & 0.9995 & 0\\0.4191 & 0.2878 & 0.8611\end{matrix}\right)\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0 & 0.9995 & 0.2878\\0 & 0 & 0.8611\end{matrix}\right)=\left(\begin{matrix}1.0 & 0.03215 & 0.4191\\0.03215 & 1.0 & 0.3011\\0.4191 & 0.3011 & 1.0\end{matrix}\right)$$
 </div>
 
 </div>
