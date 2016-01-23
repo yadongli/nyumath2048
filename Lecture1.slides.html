@@ -2258,7 +2258,7 @@ div.output_prompt {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="expressivity">Expressivity</h2>
 <center>
-<img src="img/proglang.png" width=450 height=450>
+<img src="img/proglang.png" width=500 height=500>
 </center>
 
 <p>When you have the opportunity, choose the more expressive language for the job.</p>
@@ -2474,7 +2474,7 @@ div.output_prompt {
 <ul>
 <li>The vast majority of general purpose CPUs are IEEE 754 compliant</li>
 <li>the OS/software situation is more complicated  <ul>
-<li>Java floating point arithmetic was not compliant with the <code>strictfp</code> flag (don&#39;t use it!)</li>
+<li>Java <code>strictfp</code> flag is a poor choice, don&#39;t use it!</li>
 <li>Compiled language like C++ depends on the hardware&#39;s implementation.</li>
 </ul>
 </li>
@@ -4222,7 +4222,7 @@ $$</p>
 </ul>
 <p>The problem is ill-posed if its condition number is large.</p>
 <ul>
-<li>In practice, it is impossible to compute condition number analysis over complicated calculations:</li>
+<li>In practice, it is impossible to run condition number analysis over complicated calculations:</li>
 <li>We have to rely upon monitoring and testing</li>
 </ul>
 </div>
@@ -4245,13 +4245,12 @@ $$</p>
 </ul>
 <p>The numerical algorithm can be unstable even if the problem itself is well-posed.</p>
 <ul>
-<li><p>A better algorithm near $x=0$ is:</p>
-<p>$$f(x) = \frac{2\sin^2(\frac{x}{2})}{x^2}$$</p>
-</li>
+<li>A better algorithm near $x=0$ is $f(x) = \frac{2}{x^2}\sin^2(\frac{x}{2})$</li>
 </ul>
 <p>But an ill-posed problem is always numerically unstable by definition.</p>
 <ul>
-<li>Direct numerical calculation always unstable at around $x = 2\pi$</li>
+<li>Direct numerical calculation is always unstable at around $x = 2\pi$</li>
+<li>But we can use approximation near $2\pi$: $f(x) = \frac{1}{2x^2}(x-2\pi)^2$</li>
 </ul>
 </div>
 </div>
@@ -4259,7 +4258,7 @@ $$</p>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&#39;x, k&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
@@ -4277,13 +4276,20 @@ $$</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-1-e9a72a95e929&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>x<span class="ansiyellow">,</span> k <span class="ansiyellow">=</span> sp<span class="ansiyellow">.</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;x, k&apos;</span><span class="ansiyellow">,</span> real <span class="ansiyellow">=</span> True<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> f <span class="ansiyellow">=</span> <span class="ansiyellow">(</span><span class="ansicyan">1</span><span class="ansiyellow">-</span>sp<span class="ansiyellow">.</span>cos<span class="ansiyellow">(</span>x<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">/</span>x<span class="ansiyellow">**</span><span class="ansicyan">2</span><span class="ansiyellow"></span>
+<span class="ansigreen">      3</span> k <span class="ansiyellow">=</span> sp<span class="ansiyellow">.</span>simplify<span class="ansiyellow">(</span>f<span class="ansiyellow">.</span>diff<span class="ansiyellow">(</span>x<span class="ansiyellow">)</span><span class="ansiyellow">*</span>x<span class="ansiyellow">/</span>f<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      4</span> sp<span class="ansiyellow">.</span>limit<span class="ansiyellow">(</span>k<span class="ansiyellow">,</span> x<span class="ansiyellow">,</span> <span class="ansicyan">0</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      5</span> sp<span class="ansiyellow">.</span>simplify<span class="ansiyellow">(</span><span class="ansicyan">1</span><span class="ansiyellow">-</span>sp<span class="ansiyellow">.</span>cos<span class="ansiyellow">(</span><span class="ansicyan">2</span><span class="ansiyellow">*</span>x<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-
-<div class="output_latex output_subarea output_pyout">
-$$2 \sin^{2}{\left (x \right )}$$
+<span class="ansired">NameError</span>: name &apos;sp&apos; is not defined</pre>
 </div>
-
 </div>
 
 </div>
