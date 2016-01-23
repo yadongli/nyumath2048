@@ -34,6 +34,29 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 <script src="//cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
 <![endif]-->
 
+<!-- Loading the mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
+
 <!-- Get Font-awesome from cdn -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
@@ -145,11 +168,9 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-html {
-  overflow-y: auto;
-}
 .reveal {
   font-size: 160%;
+  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -202,6 +223,14 @@ div.output_prompt {
   /* 5px right shift to account for margin in parent container */
   margin: 5px 5px 0 0;
 }
+div.text_cell.rendered .rendered_html {
+  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
+  overflow-y: hidden;
+}
+a.anchor-link {
+  /* There is still an anchor, we are only hidding it */
+  display: none;
+}
 .rendered_html p {
   text-align: inherit;
 }
@@ -237,46 +266,7 @@ $(document).ready(function(){
 <body>
 <div class="reveal">
 <div class="slides">
-<div style=display:none>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="kn">as</span> <span class="nn">sp</span>
-
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Populating the interactive namespace from numpy and matplotlib
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+<section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -290,10 +280,7 @@ $(document).ready(function(){
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -308,7 +295,6 @@ $(document).ready(function(){
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -325,7 +311,6 @@ $(document).ready(function(){
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -682,7 +667,6 @@ zMxa8f9QEGVJyeVw5gAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1067,7 +1051,6 @@ LzYt2ynDkwGcAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1386,7 +1369,6 @@ xRxfyMAAqQAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1700,7 +1682,6 @@ SAm4iIiIiEgaKQEXEREREUkjJeAiIiIiImmkBFxEREREJI2UgIuIiIiIpJEScBERERGRNPp/Lc+f
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2051,7 +2032,6 @@ AABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2392,7 +2372,6 @@ gg==
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2695,7 +2674,6 @@ iIiISJaouBYRERERyRIV1yIiIiIiWaLiWkREREQkS1Rci4iIiIhkiYprEREREZEs+f+67if6QeB0
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3073,10 +3051,7 @@ IyIiIiJqlqY7IiIiIqJm/wXVLfcb+W/SlAAAAABJRU5ErkJggg==
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3087,7 +3062,6 @@ IyIiIiJqlqY7IiIiIqJm/wXVLfcb+W/SlAAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3109,7 +3083,6 @@ IyIiIiJqlqY7IiIiIqJm/wXVLfcb+W/SlAAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3332,7 +3305,6 @@ TiJmZlYyJxEzMyuZk4iZmZXMScTMzErmJGJmZiVzEjEzs5L9f+FbPyp78Rm5AAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3525,7 +3497,6 @@ YGaWcQ4CM7OMcxCYmWWcg8DMLOP+PxCdtaaO6p10AAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3539,8 +3510,7 @@ $$ p(x) = \sum_{i=0}^n(\prod_{1\le j \le n, j\ne i}\frac{x-x_j}{x_i-x_j})y_i $$<
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="27">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
@@ -3728,9 +3698,7 @@ TkSuQmCC
 </div>
 </div>
 
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3751,7 +3719,6 @@ TkSuQmCC
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3768,7 +3735,6 @@ q''_{i-1}(x_i) &=& q''_{i}(x_i)
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3789,7 +3755,6 @@ q''_{i-1}(x_i) &=& q''_{i}(x_i)
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4186,7 +4151,6 @@ kEQ6IiIiImIASaQjIiIiIgbwHzbYihM85evBAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4204,7 +4168,6 @@ $$<ul>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4221,7 +4184,6 @@ $$<ul>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4294,7 +4256,6 @@ $$ f{\left (t \right )}=\frac{a + b t + c t^{2} + d t^{3}}{\lambda t \left(- t +
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4388,7 +4349,6 @@ $$\small \left(\begin{matrix}f{\left (1 \right )}\\\dot{f}{\left (1 \right )}\\\
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4437,7 +4397,6 @@ $$\small \left(\begin{matrix}1 & 0 & 0 & 0\\1 & 1 & 1 & 1\\2 \lambda^{2} + 2 \la
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4494,7 +4453,6 @@ $$ \left(\begin{matrix}a\\b\\c\\d\end{matrix}\right)=\left(\begin{matrix}1 & 0 &
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4516,7 +4474,6 @@ $$<ul>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4594,7 +4551,6 @@ $$ \;\;\;\;\;\;\; =- \frac{f{\left (x_{i} \right )}}{x_{i} - x_{{i-1}}} + \frac{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4655,8 +4611,7 @@ $$\small \left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\0.03 & 0.2
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="54">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4666,9 +4621,7 @@ $$\small \left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\0.03 & 0.2
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -5205,7 +5158,6 @@ EZEaUCEtIiIiIlID/x/HUpa5Wc2/KgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -5950,7 +5902,6 @@ Lu7NzMzMzCrCxb2ZmZmZWUX8H/Ke+SznMnTKAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -5966,40 +5917,7 @@ Lu7NzMzMzCrCxb2ZmZmZWUX8H/Ke+SznMnTKAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div><div style=display:none>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># now we compute the integral of r</span>
-<span class="n">num</span><span class="p">,</span> <span class="n">den</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">fraction</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">den</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-<span class="n">sep</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="o">.</span><span class="n">One</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="o">.</span><span class="n">One</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span> 
-
-<span class="n">tt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&#39;tau&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">t1q</span><span class="p">,</span> <span class="n">t1r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">t</span><span class="p">),</span>  <span class="n">sp</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
-<span class="n">t2q</span><span class="p">,</span> <span class="n">t2r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">t</span><span class="p">),</span>  <span class="n">sp</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">t2</span><span class="p">))</span>
-<span class="n">r_t1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t1</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tt</span><span class="p">))</span><span class="o">*</span><span class="n">t1r</span>
-<span class="n">r_t2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tt</span><span class="p">))</span><span class="o">*</span><span class="n">t2r</span>
-<span class="n">q_t1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">t1q</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tt</span><span class="p">))</span>
-<span class="n">q_t2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">t2q</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tt</span><span class="p">))</span>
-<span class="n">sums</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">q_t1</span> <span class="o">-</span> <span class="n">q_t2</span> <span class="o">+</span> <span class="n">r_t1</span> <span class="o">-</span> <span class="n">r_t2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="n">l</span>
-
-<span class="n">iv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sums</span><span class="p">),</span> <span class="n">tt</span><span class="p">))</span>
-<span class="n">intg</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">iv</span><span class="p">)</span>
-</pre></div>
-
 </div>
-</div>
-</div>
-
-</div>
-
-</div>
-    </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
@@ -6075,10 +5993,7 @@ $$\small  c_{1}=\frac{c_{0} d}{\lambda} + c_{0} \left(b + c + d\right)\;,\;\;\;c
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6089,7 +6004,6 @@ $$\small  c_{1}=\frac{c_{0} d}{\lambda} + c_{0} \left(b + c + d\right)\;,\;\;\;c
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6104,7 +6018,6 @@ $$\small  c_{1}=\frac{c_{0} d}{\lambda} + c_{0} \left(b + c + d\right)\;,\;\;\;c
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6121,7 +6034,6 @@ $$\small  c_{1}=\frac{c_{0} d}{\lambda} + c_{0} \left(b + c + d\right)\;,\;\;\;c
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6142,7 +6054,6 @@ $$s(t) = \frac{1 - b(t)}{\int_0^t b(s) ds} \iff s(t) \int_0^t b(s) ds + b(t) = 1
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6556,7 +6467,6 @@ $$ s(t) = \frac{1 - b(t)}{\int_0^t b(s) ds} \approx \frac{1 - e^{-r(t)t}}{t} \ap
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6584,7 +6494,6 @@ $$ s(t) = \frac{1 - b(t)}{\int_0^t b(s) ds} \approx \frac{1 - e^{-r(t)t}}{t} \ap
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6606,7 +6515,6 @@ $$ s(t) = \frac{1 - b(t)}{\int_0^t b(s) ds} \approx \frac{1 - e^{-r(t)t}}{t} \ap
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6652,7 +6560,6 @@ $$ s(t) = \frac{1 - b(t)}{\int_0^t b(s) ds} \approx \frac{1 - e^{-r(t)t}}{t} \ap
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6791,7 +6698,6 @@ $$ s(t) = \frac{1 - b(t)}{\int_0^t b(s) ds} \approx \frac{1 - e^{-r(t)t}}{t} \ap
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6812,8 +6718,7 @@ $$p(t) = e^{-\int_0^t h(s) ds}$$</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="77">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6826,9 +6731,7 @@ $$p(t) = e^{-\int_0^t h(s) ds}$$</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6854,8 +6757,8 @@ $$g(t) = \int_0^t h(s) ds = -\log(p(t))$$<ul>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bootstrap">Bootstrap<a class="anchor-link" href="#Bootstrap">&#182;</a></h2><p>$\renewcommand{bs}{\boldsymbol}$</p>
-<p>The objective:</p>
+<h2 id="Bootstrap">Bootstrap<a class="anchor-link" href="#Bootstrap">&#182;</a></h2><p>$\renewcommand{bs}{\boldsymbol}$
+The objective:</p>
 <ul>
 <li>build a curve in hazard rate $\bs h(t)$ that exactly reprice all observed CDS prices quoted in $\bs q(t)$</li>
 <li>or equivalently, we could build the curve in cumulative hazard $\bs g(t)$.</li>
@@ -6925,7 +6828,6 @@ $$g(t) = \int_0^t h(s) ds = -\log(p(t))$$<ul>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -7348,7 +7250,6 @@ IrGmhFhEREREYk0JsYiIiIjEmhJiEREREYk1JcQiIiIiEmv/HxQR1LAR7VjgAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -7986,7 +7887,6 @@ QP4fX7AdOXiRBSUAAAAASUVORK5CYII=
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -8636,7 +8536,6 @@ GGM8LDk2xhhjjDHGw5JjY4wxxhhjPP4/BpQHlWHGxj8AAAAASUVORK5CYII=
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -9180,7 +9079,6 @@ ERGRiKaGWEREREQimhpiEREREYlo/w+bR7hW8lTciwAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -9803,7 +9701,6 @@ AnMwHu9uAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -10404,7 +10301,6 @@ RK5CYII=
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11064,7 +10960,6 @@ McYYD/t/TBGCAPDwz1MAAAAASUVORK5CYII=
 </div>
 
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11078,8 +10973,7 @@ McYYD/t/TBGCAPDwz1MAAAAASUVORK5CYII=
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="100">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11089,11 +10983,7 @@ McYYD/t/TBGCAPDwz1MAAAAASUVORK5CYII=
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11113,61 +11003,61 @@ McYYD/t/TBGCAPDwz1MAAAAASUVORK5CYII=
 
 </div>
 </div>
+</div></section></section>
 </div>
 </div>
-</div>
-
-<script src="//cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/head.min.js"></script>
-
-<script src="//cdn.jsdelivr.net/reveal.js/2.6.2/js/reveal.js"></script>
 
 <script>
 
-// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-controls: true,
-progress: true,
-history: true,
+require(
+    {
+      // it makes sense to wait a little bit when you are loading
+      // reveal from a cdn in a slow connection environment
+      waitSeconds: 15
+    },
+    [
+      "//cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/head.min.js",
+      "//cdn.jsdelivr.net/reveal.js/2.6.2/js/reveal.js"
+    ],
 
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+    function(head, Reveal){
 
-// Optional libraries used to extend on reveal.js
-dependencies: [
-{ src: "//cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/classList.js", condition: function() { return !document.body.classList; } },
-{ src: "//cdn.jsdelivr.net/reveal.js/2.6.2/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
-]
-});
-</script>
+        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
 
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
-<script>
-Reveal.addEventListener( 'slidechanged', function( event ) {
-  window.scrollTo(0,0);
-  MathJax.Hub.Rerender(event.currentSlide);
-});
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: "//cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/classList.js",
+                  condition: function() { return !document.body.classList; } },
+                { src: "//cdn.jsdelivr.net/reveal.js/2.6.2/plugin/notes/notes.js",
+                  async: true,
+                  condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+        var update = function(event){
+          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
+            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
+          }
+        };
+
+        Reveal.addEventListener('slidechanged', update);
+
+        var update_scroll = function(event){
+          $(".reveal").scrollTop(0);
+        };
+
+        Reveal.addEventListener('slidechanged', update_scroll);
+
+    }
+);
+
 </script>
 
 </body>
