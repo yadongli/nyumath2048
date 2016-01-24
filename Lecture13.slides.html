@@ -1379,7 +1379,7 @@ input.engine_num_input{width:60px}
 .ansiblack{color:#000}
 .ansired{color:#8b0000}
 .ansigreen{color:#006400}
-.ansiyellow{color:#a52a2a}
+.ansiyellow{color:#c4a000}
 .ansiblue{color:#00008b}
 .ansipurple{color:#9400d3}
 .ansicyan{color:#4682b4}
@@ -1745,9 +1745,7 @@ $(document).ready(function(){
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[4]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
@@ -2047,9 +2045,7 @@ $$</p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[242]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[242]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -2439,9 +2435,7 @@ EZEMUaIlIiIikiFKtEREREQyRImWiIiISIYo0RIRERHJkP8P0a5MPcnWqGgAAAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[243]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[243]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
@@ -2556,9 +2550,7 @@ mt_min ~=  4900
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[238]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[238]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="n">ns</span><span class="o">-</span><span class="mi">2</span>
@@ -3025,9 +3017,7 @@ JxtGSZIkSVInG0ZJkiRJUicbRkmSJElSp78BQ2tgt7oeg2MAAAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[258]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[258]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">Smax</span> <span class="o">=</span> <span class="mi">120</span>
@@ -3583,9 +3573,7 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[244]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[244]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
@@ -3674,9 +3662,7 @@ In&nbsp;[244]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[237]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[237]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">Smax</span> <span class="o">=</span> <span class="mi">200</span>
@@ -4115,9 +4101,7 @@ Ik6SJEmSaohFnCRJkiTVEIs4SZIkSaohFnGSJEmSVEP+P0bi/YYmph1JAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[246]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[246]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">Smax</span> <span class="o">=</span> <span class="mi">120</span>
@@ -4791,6 +4775,15 @@ Reveal.initialize({
      // height: 100%,
      // margin: 0,
      theme: 'white', // available themes are in /css/theme
+});
+
+// remap F5/ESC/b key
+Reveal.configure({
+  keyboard: {
+    66: 'right',
+    116: 'left',
+    27: 'left'
+  }
 });
 
 </script>

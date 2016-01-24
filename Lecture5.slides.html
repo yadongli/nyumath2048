@@ -1379,7 +1379,7 @@ input.engine_num_input{width:60px}
 .ansiblack{color:#000}
 .ansired{color:#8b0000}
 .ansigreen{color:#006400}
-.ansiyellow{color:#a52a2a}
+.ansiyellow{color:#c4a000}
 .ansiblue{color:#00008b}
 .ansipurple{color:#9400d3}
 .ansicyan{color:#4682b4}
@@ -1764,9 +1764,7 @@ $(document).ready(function(){
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
@@ -1969,9 +1967,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[2]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">ir_rate</span> <span class="o">=</span> <span class="mf">0.02</span>
@@ -2240,9 +2236,7 @@ $$</p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[3]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre> <span class="k">def</span> <span class="nf">calcDelta</span><span class="p">(</span><span class="n">bmks</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">lbd</span><span class="p">,</span> <span class="n">trades</span><span class="p">,</span> <span class="n">pert</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">fpert</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">pert_bmk</span><span class="p">)</span> <span class="p">:</span> 
@@ -2338,9 +2332,7 @@ In&nbsp;[3]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[4]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">hedge_items</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PV01 $= </span><span class="se">\\</span><span class="s">frac{\partial b}{\partial q}$&#39;</span><span class="p">,</span> 
@@ -2455,9 +2447,7 @@ In&nbsp;[4]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[5]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">hedgeRatio</span><span class="p">(</span><span class="n">lbdm</span><span class="p">)</span> <span class="p">:</span>
@@ -2715,9 +2705,7 @@ In&nbsp;[5]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[6]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">pars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">par</span><span class="p">(</span><span class="n">disc</span><span class="p">,</span> <span class="n">inst</span><span class="o">.</span><span class="n">zero2disc</span><span class="p">(</span><span class="n">cds</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">insts</span><span class="p">])</span>
@@ -2839,9 +2827,7 @@ In&nbsp;[6]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[7]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">deltas_p</span><span class="p">,</span> <span class="n">pert_names</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">calcDelta</span><span class="p">(</span><span class="n">bmk_par</span><span class="p">,</span> <span class="n">disc</span><span class="p">,</span> <span class="n">lbdm</span><span class="p">,</span> <span class="n">bmks</span> <span class="o">+</span> <span class="p">[</span><span class="n">bespoke</span><span class="p">])</span>
@@ -2949,9 +2935,7 @@ In&nbsp;[7]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[8]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">ih</span> <span class="o">=</span> <span class="o">-</span><span class="n">db_p</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">pv01m_p</span><span class="p">))</span><span class="o">*</span><span class="n">notional</span>
@@ -3051,9 +3035,7 @@ In&nbsp;[8]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[9]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pv01m_p</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">hi_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">pert_names</span><span class="p">),</span> <span class="s">&quot;4f&quot;</span><span class="p">)</span>
@@ -3219,9 +3201,7 @@ In&nbsp;[9]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[10]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pv01m</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">hi_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">pert_names</span><span class="p">),</span> <span class="s">&#39;4f&#39;</span><span class="p">)</span>
@@ -3398,9 +3378,7 @@ In&nbsp;[10]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[11]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">hns</span><span class="o">*</span><span class="mf">1e-6</span><span class="p">,</span> <span class="s">&quot;4f&quot;</span><span class="p">)</span>
@@ -3556,9 +3534,7 @@ In&nbsp;[11]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[12]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">calcCurveDelta</span><span class="p">(</span><span class="n">ir</span><span class="p">,</span> <span class="n">cds</span><span class="p">,</span> <span class="n">lbd</span><span class="p">,</span> <span class="n">trades</span><span class="p">,</span> <span class="n">pert</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span> <span class="p">:</span>
@@ -3821,9 +3797,7 @@ JVJ^T \bs h = J V \bs d \\
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[13]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">hi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
@@ -3910,9 +3884,7 @@ In&nbsp;[13]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[14]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hi_names</span><span class="p">)</span>
@@ -4104,9 +4076,7 @@ In&nbsp;[14]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[15]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">opt_l2</span> <span class="o">=</span> <span class="n">lsqm</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">db_p</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
@@ -4188,9 +4158,7 @@ In&nbsp;[15]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[16]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_opt</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">notional</span><span class="p">,</span> <span class="s">&quot;5g&quot;</span><span class="p">)</span>
@@ -4321,9 +4289,7 @@ In&nbsp;[16]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[17]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">nt</span> <span class="o">=</span> <span class="mf">100.</span>
@@ -5287,9 +5253,7 @@ gLGPAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[18]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">lin</span>
@@ -6042,6 +6006,15 @@ Reveal.initialize({
      // height: 100%,
      // margin: 0,
      theme: 'white', // available themes are in /css/theme
+});
+
+// remap F5/ESC/b key
+Reveal.configure({
+  keyboard: {
+    66: 'right',
+    116: 'left',
+    27: 'left'
+  }
 });
 
 </script>

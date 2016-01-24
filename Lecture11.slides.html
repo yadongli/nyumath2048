@@ -1379,7 +1379,7 @@ input.engine_num_input{width:60px}
 .ansiblack{color:#000}
 .ansired{color:#8b0000}
 .ansigreen{color:#006400}
-.ansiyellow{color:#a52a2a}
+.ansiyellow{color:#c4a000}
 .ansiblue{color:#00008b}
 .ansipurple{color:#9400d3}
 .ansicyan{color:#4682b4}
@@ -1745,9 +1745,7 @@ $(document).ready(function(){
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[3]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
@@ -2428,9 +2426,7 @@ $$</p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[4]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -2741,9 +2737,7 @@ MzMzM7MKnCibmZmZmVXgRNnMzMzMrAInymZmZmZmFThRNjMzMzOrwImymZmZmVkF/x+Xk6p3AiCA
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[144]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">ode</span>
@@ -4418,6 +4412,15 @@ Reveal.initialize({
      // height: 100%,
      // margin: 0,
      theme: 'white', // available themes are in /css/theme
+});
+
+// remap F5/ESC/b key
+Reveal.configure({
+  keyboard: {
+    66: 'right',
+    116: 'left',
+    27: 'left'
+  }
 });
 
 </script>
