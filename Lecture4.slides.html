@@ -5700,7 +5700,7 @@ kEQ6IiIiImIASaQjIiIiIgbwHzbYihM85evBAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="convexity">Convexity</h2>
-<p>Option like instruments&#39; prices are convex functions:</p>
+<p>Option-like instruments&#39; prices are convex functions:</p>
 <p>$$ v(s, k) = \mathbb{E}[\max(s - k, 0)] $$</p>
 <p>No arbitrage requires $\frac{\partial^2 v}{\partial s^2} &gt; 0$ and $\frac{\partial^2 v}{\partial k^2} &gt; 0 $, because:</p>
 <p>$$\frac{\partial^2}{\partial x^2}\mathbb{E}[\max(x, 0)] = \mathbb{E}[\frac{\partial^2}{\partial x^2} \max(x, 0)] = \mathbb{E}[\delta(x)] = p(x)
@@ -8342,28 +8342,6 @@ $$p(t) = e^{-\int_0^t h(s) ds}$$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="cumulative-hazard">Cumulative hazard</h2>
-<p>The cumulative hazard $g(t)$ is a suitable variable for the tension spline interpolation:</p>
-<p>$$g(t) = \int_0^t h(s) ds = -\log(p(t))$$</p>
-<ul>
-<li>$g(t)$ is continuous and monotonic</li>
-<li>$g(0) = 0$, the boundary condition is well defined</li>
-<li>$h(t) = g'(t)$ can be discountinous when $\lambda \rightarrow \infty$, this reverts to the standard method of piecewise flat hazard rate</li>
-<li>with finite $\lambda$, hazard rate is smooth and continuous</li>
-</ul>
-<p>This argument carries over to the interest rate curve building:</p>
-<ul>
-<li>the cumulative yield, $y(t) = -\log(b(t))$, is a suitable variable to interpolate</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="bootstrap">Bootstrap</h2>
 <p>$\renewcommand{bs}{\boldsymbol}$
 The objective:</p>
@@ -8392,16 +8370,16 @@ The objective:</p>
 <thead>
 <tr>
 <th style="text-align:center"></th>
-<th style="text-align:center">$\;h(3m)\;$</th>
-<th style="text-align:center">$\;h(6m)\;$</th>
-<th style="text-align:center">$\;h(1Y)\;$</th>
-<th style="text-align:center">$\;h(2Y)\;$</th>
-<th style="text-align:center">$\;h(5Y)\;$</th>
+<th style="text-align:center">$h(3m)$</th>
+<th style="text-align:center">$h(6m)$</th>
+<th style="text-align:center">$h(1Y)$</th>
+<th style="text-align:center">$h(2Y)$</th>
+<th style="text-align:center">$h(5Y)$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$\;q(3m)\;\;$</td>
+<td style="text-align:center">$q(3m)$</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
@@ -8409,7 +8387,7 @@ The objective:</p>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">$\;q(6m)\;$</td>
+<td style="text-align:center">$q(6m)$</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center"></td>
@@ -8417,7 +8395,7 @@ The objective:</p>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">$\;q(1Y)\;$</td>
+<td style="text-align:center">$q(1Y)$</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
@@ -8425,7 +8403,7 @@ The objective:</p>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">$\;q(2Y)\;$</td>
+<td style="text-align:center">$q(2Y)$</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
@@ -8433,7 +8411,7 @@ The objective:</p>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">$\;q(5Y)\;$</td>
+<td style="text-align:center">$q(5Y)$</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
@@ -8451,10 +8429,11 @@ The objective:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="piecewise-linear-bootstrap">Piecewise linear bootstrap</h2>
+<h2 id="piecewise-flat-bootstrap">Piecewise flat bootstrap</h2>
 <ul>
-<li>The piecewise linear interpolation works well with bootstrapping, result in exact fit to the benchmark prices</li>
 <li>This is the standard approach to build CDS curves in the industry</li>
+<li>$g(t)$ is the cumulative hazard: $g(t) = \int_0^t h(s) ds = -\log(p(t))$</li>
+<li>Piecewise flat in hazard rate $h(t)$ is equivalent to piecewise linear in $g(t)$</li>
 </ul>
 </div>
 </div>
@@ -8761,6 +8740,20 @@ IrGmhFhEREREYk0JsYiIiIjEmhJiEREREYk1JcQiIiIiEmv/HxQR1LAR7VjgAAAAAElFTkSuQmCC
 </div>
 </div>
 
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pros and cons of piecewise flat bootstrap</p>
+<ul>
+<li>All benchmark prices are exactly matched, after bootstrap with piecewise flat hazard rate.</li>
+<li>Discontinuity in hazard rate causes hedging problems, risk profiles jump over the roll dates.</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
@@ -8867,6 +8860,42 @@ IrGmhFhEREREYk0JsYiIiIjEmhJiEREREYk1JcQiIiIiEmv/HxQR1LAR7VjgAAAAAElFTkSuQmCC
 </div>
 </div>
 
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How to remove the discontinuity in hazard rate?</p>
+<ul>
+<li>apply cubic spline to hazard rate seems to be a natural idea, but does it work?</li>
+</ul>
+</div>
+</div>
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="cumulative-hazard">Cumulative hazard</h2>
+<p>The cumulative hazard $g(t)$ is a suitable variable for the tension spline interpolation:</p>
+<p>$$g(t) = \int_0^t h(s) ds = -\log(p(t))$$</p>
+<ul>
+<li>$g(t)$ is continuous and monotonic</li>
+<li>$g(0) = 0$, the boundary condition is well defined</li>
+<li>$h(t) = g'(t)$ can be discountinous when $\lambda \rightarrow \infty$, this reverts to the standard method of piecewise flat hazard rate</li>
+<li>with finite $\lambda$, hazard rate is smooth and continuous</li>
+</ul>
+<p>This argument carries over to the interest rate curve building:</p>
+<ul>
+<li>the cumulative yield, $y(t) = -\log(b(t))$, is a suitable variable to apply tension spline</li>
+</ul>
+</div>
+</div>
 </div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
