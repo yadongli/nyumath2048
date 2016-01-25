@@ -2423,7 +2423,7 @@ div.output_prompt {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="rounding-under-ieee754">Rounding under IEEE754</h2>
-<p>Default rule: round to nearest to the true value, ties to even digit</p>
+<p>Default rule: round to the nearest, ties to even digit</p>
 <ul>
 <li>Example, rround to 4 significant digit: <ul>
 <li>$3.1245 \rightarrow 3.124$</li>
@@ -3424,13 +3424,27 @@ b =  [ 0.          0.33333333  0.66666667]
 </div>
 </div>
 
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It should become your instinct to always use error bound when comparing floating numbers, or use integer comparison as the condition for ending loops.</p>
+<h2 id="avoid-equality-test">Avoid equality test</h2>
+<p>Equality test in floating point number is <strong>always</strong> a bad idea:</p>
+<ul>
+<li>Mathematical equality often fails floating point equality test because of rounding errors </li>
+<li>Often produce off-by-one number of loops when used to test end loop conditions</li>
+</ul>
+<p>It should become your instinct to:</p>
+<ul>
+<li>always use error bound when comparing floating numbers, such as <code>numpy.allclose()</code> </li>
+<li>try to use integer comparison as the end condition for loops<ul>
+<li>integer representation and arithmetic in IEEE 754 is exact</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div><div class="fragment">
@@ -4245,7 +4259,7 @@ $$</p>
 </ul>
 <p>The numerical algorithm can be unstable even if the problem itself is well-posed.</p>
 <ul>
-<li>A better algorithm near $x=0$ is $f(x) = \frac{2}{x^2}\sin^2(\frac{x}{2})$</li>
+<li>A better algorithm near $x=0$ is $f(x) = \frac{2}{x^2}\sin^2(\frac{x}{2})$ </li>
 </ul>
 <p>But an ill-posed problem is always numerically unstable by definition.</p>
 <ul>
