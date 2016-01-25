@@ -1,8 +1,3 @@
-All python codes embedded in the class IPython notebook can be used free of charge by anyone. They are released 
-under the open source MIT license, any derived work from the said Python codes shall reference to this github page.
+All python codes embedded in the class IPython notebook can be used free of charge by anyone. They are released under the open source MIT license, any derived work from the said Python codes shall reference to this github page.  
 
-The rest of the class materials, including but not limited to its contents, organization, lecture slides, derivations, 
-examples, illustrations and homework problems etc, are copyrighted by the instructors. Permissions are granted for
-any educational institutions to use these class materials for educational purposes, conditioned on that this github 
-page is referenced and attributed to. Any other unauthorized use, copy and redistribution of these class materials 
-are prohibited.
+The rest of the class materials, including but not limited to its contents, organization, lecture slides, derivations, examples, illustrations and homework problems etc, are copyrighted by the instructors. Permissions are granted for any educational institutions to use these class materials for educational purposes, conditioned on that this github page is referenced and attributed to. All other rights reserved.
