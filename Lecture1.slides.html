@@ -4198,18 +4198,18 @@ $$1$$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="condition-number">Condition number</h2>
 <p>Consider the relative error of a function with multiple arguments: $f = f(x_1, ..., x_n)$:</p>
-<p>\begin{eqnarray} 
+<p>$$
 \small
-df &amp;=&amp; \sum_i \frac{\partial f}{\partial x_i} dx_i \\
-\frac{df}{f} &amp;=&amp; \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \frac{dx_i}{x_i}
-\end{eqnarray}</p>
+df = \sum_i \frac{\partial f}{\partial x_i} dx_i \iff
+\frac{df}{f} = \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \frac{dx_i}{x_i}
+$$</p>
 <p>Assuming input argument&#39;s relative errors are $\epsilon_i$ (could be negative):</p>
 <p>$$
 \small
 \left| \frac{\Delta f}{f} \right| = \left| \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \epsilon_i \right|
-\le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \left|\epsilon_i\right| \le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \epsilon \equiv k(f) \epsilon
+\le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \left|\epsilon_i\right| \le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \epsilon_m \equiv k(f) \epsilon_m
 $$</p>
-<p>where $\epsilon$ is the maximum relative error of all inputs. </p>
+<p>where $\epsilon_m$ is the maximum relative error of all inputs. </p>
 <ul>
 <li>$k(f) = \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right|$ is defined as the condition number of a function, </li>
 <li>it is the maximum growth factor of the relative error.</li>

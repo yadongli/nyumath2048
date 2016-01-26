@@ -6480,6 +6480,29 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="rank-deficiency-and-reduction">Rank deficiency and reduction</h2>
+<p>Singular matrix are those that are not fully ranked</p>
+<ul>
+<li>Square matrix: non-invertible, its determinant is 0</li>
+<li>In practice, matrices are rarely exactly singular due to numerical errors</li>
+</ul>
+<p>SVD can detect near singular matrices</p>
+<ul>
+<li>near singular matrix has very small singular values</li>
+</ul>
+<p>SVD can find low rank approximations to a full rank matrix</p>
+<ul>
+<li>by zeroing out small singular values</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="condition-number-for-evd">Condition number for EVD</h2>
 <p>What is the change in $\lambda_i$ if we perturb the symmetric matrix $A$? </p>
 <p>$$ A \bs v_i = \lambda_i \bs v_i$$</p>
