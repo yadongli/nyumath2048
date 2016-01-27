@@ -2041,7 +2041,7 @@ Which can be easily solved using Matrix calculus:</p>
 </ul>
 </li>
 <li>eigenvalues are named in descending order: $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_n $, their corresponding eigen vectors are $\bs {v_1, v_2, ..., v_n}$ <ul>
-<li>can eigenvalues be negative?</li>
+<li>can eigenvalues be negative? Yes, otherwise the matrix is positive definite.</li>
 </ul>
 </li>
 </ul>
@@ -2151,6 +2151,15 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <li>the solution must be an eigenvector </li>
 <li>since $\bs v_i^T A \bs v_i = \lambda_i$, $\bs v_1$ is the solution because $\lambda_1$ is the largest</li>
 </ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This process can be repeated to find all eigenvalues and vectors:</p>
 <ul>
 <li>$\bs v_2$ maximizes $\bs u^T A \bs u$ for all unit $\bs u$ that is orthogonal to $\bs v_1$, i.e, $\bs u^T \bs v_1 = 0$.</li>
