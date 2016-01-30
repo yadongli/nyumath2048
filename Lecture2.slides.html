@@ -1995,7 +1995,7 @@ C = AB &amp;\iff c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 </li>
 <li>But <strong>not</strong> commutative: $AB \ne BA$</li>
 </ul>
-<p>$\renewcommand{id}{\bs{I}}$</p>
+<p>$\renewcommand{id}{I}$</p>
 </div>
 </div>
 </div></section><section>
@@ -3929,7 +3929,7 @@ $$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 </ul>
 <p>$\delta \bs w$ have the desired correlation:
 $$\mathbb{E}[\delta \bs w \delta \bs w^T] = \mathbb{E}[L \bs z \bs z^T L^T] \delta t = L \mathbb{E}[\bs z \bs z^T] L^T \delta t = LL^T \delta t = C \delta t$$</p>
-<p>It is equivalent to use Cholesky decomposition on the covariance matrix:
+<p>Equivalently, Cholesky decomposition on the covariance matrix (note $\Sigma$ is diagonal):
 $$ C = LL^T \iff V = \Sigma C \Sigma = L\Sigma (L\Sigma)^T $$</p>
 </div>
 </div>
@@ -4768,6 +4768,7 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 <ul>
 <li>$A, a, b, \bs c$ are constants (ie, not functions of $\bs x$)</li>
 <li>$\bs {u=u(x), v=v(x)}, y=y(\bs x)$ are functions of $\bs x$</li>
+<li>$O$ is the zero matrix</li>
 </ul>
 <p>$\renewcommand{p}{\partial}$</p>
 <table>
@@ -4782,7 +4783,7 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 <tr>
 <td style="text-align:center">$\frac{\p(a \bs u + b \bs v)}{\p \bs x}$</td>
 <td style="text-align:center">$a \frac{\p{\bs u}}{\p \bs x} + b\frac{\p{\bs v}}{\p \bs x}$</td>
-<td style="text-align:center">$\frac{\p{\bs c}}{\p \bs x} = \bs{0}, \frac{\p{\bs x}}{\p \bs x} = \id$</td>
+<td style="text-align:center">$\frac{\p{\bs c}}{\p \bs x} = O, \frac{\p{\bs x}}{\p \bs x} = \id$</td>
 </tr>
 <tr>
 <td style="text-align:center">$\frac{\p{A \bs u}}{\p \bs x}$</td>
@@ -4807,7 +4808,7 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 </tbody>
 </table>
 <ul>
-<li>Very similar expressions to  univariate calculus.</li>
+<li>Similar to  univariate calculus, but very succinct</li>
 <li>Replace $A^T$ by $A^*$ for complex matrix</li>
 </ul>
 </div>
@@ -4968,7 +4969,7 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 </ul>
 <p>Beta to a benchmark portfolio: $\bs f \propto \bs \beta_b = \frac{V\bs w_b}{\sigma_b^2}$:</p>
 <ul>
-<li>$\bs{\beta_b w} = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\bs w_b$</li>
+<li>$\bs \beta_b^T \bs w_b = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\bs w_b$</li>
 <li>$\bs w_{\beta} = \frac{V^{-1}\bs \beta_b}{\bs \beta_b^T V^{-1}\bs \beta_b} = \frac{\bs w_b}{\bs{\beta_b^T w_b}} = \bs w_b$, which is the benchmark portfolio itself</li>
 <li>the benchmark portfolio itself is the optimal portfolio amongst those with unit beta.</li>
 </ul>
@@ -4982,7 +4983,7 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="portfolio-optimization-example">Portfolio optimization example</h2>
-<p>Given the following covariance matrix estimates and excess return forcasts:</p>
+<p>Given the following covariance matrix estimates and excess return forecasts:</p>
 </div>
 </div>
 </div>
@@ -5152,7 +5153,7 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="efficient-frontier">Efficient Frontier</h2>
-<p>The simulated sharp ratios of all $1 portfolios:</p>
+<p>The simulated sharp ratios of all $1 portfolios fully invested in risky assets:</p>
 <ul>
 <li>the optimal portfolio O has the optimal Sharp Ratio</li>
 <li>the min Variance portfolio C has the smallest variance</li>
