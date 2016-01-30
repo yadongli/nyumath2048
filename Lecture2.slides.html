@@ -2515,7 +2515,10 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2577,6 +2580,7 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 </ul>
 <p>Both covariance and correlation matrices are symmetric positive semi-definate (SPD):</p>
 <ul>
+<li>$\bs x^T V \bs x = \text{cov}[\bs x^T \bs {\tilde r},\bs x^T \bs {\tilde r}] = \text{var}[\bs x^T \bs {\tilde r}] \ge 0$</li>
 <li>$\bs x^T C \bs x = \text{cov}[\bs x^T \bs {\tilde s},\bs x^T \bs {\tilde s}] = \text{var}[\bs x^T \bs {\tilde s}] \ge 0$</li>
 </ul>
 </div>
@@ -3884,7 +3888,8 @@ $$\small l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}}\;,\
 <p>Note that $L_{22}$ is the Cholesky decomposition of the smaller matrix of $A_{22} - \frac{1}{a_{11}}A_{21}A_{21}^T$.</p>
 </div>
 </div>
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3916,11 +3921,14 @@ $$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <h2 id="draw-correlated-brownian">Draw correlated Brownian</h2>
 <p>Draw discretized version of $\delta \bs w \approx L \bs z \sqrt{\delta t}$</p>
 <ul>
-<li>where $\bs z$ is a vector of independent standard normal random variables: $\mathbb{E}[\bs z \bs z^T] = I$</li>
+<li>where $\bs z$ is a vector of independent standard normal random variables<ul>
+<li>$\mathbb{E}[\bs z] = \bs 1$, $\mathbb{E}[\bs z \bs z^T] = I$ </li>
+</ul>
+</li>
 <li>$L$ is the Cholesky decomposition of the correlaiton matrix $C = LL^T$</li>
 </ul>
-<p>$\delta d \bs w$ have the desired correlation:
-$$\mathbb{E}[\delta \bs w \delta \bs w^T] = \mathbb{E}[L \bs z \bs z^T L^T] \delta t = C \delta t$$</p>
+<p>$\delta \bs w$ have the desired correlation:
+$$\mathbb{E}[\delta \bs w \delta \bs w^T] = \mathbb{E}[L \bs z \bs z^T L^T] \delta t = L \mathbb{E}[\bs z \bs z^T] L^T \delta t = LL^T \delta t = C \delta t$$</p>
 </div>
 </div>
 </div></section><section>
