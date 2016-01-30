@@ -1826,6 +1826,7 @@ $$</p>
 <li>row vector: $\bs u^T, \bs v^T, \bs x^T, \bs \beta^T$</li>
 <li>scalar: $a, b, \alpha, \beta$ </li>
 <li>matrix: $A, B, P$</li>
+<li>random variables: $\tilde a, \tilde{\bs u}, \tilde{\bs v}^T$</li>
 </ul>
 </div>
 </div>
@@ -2349,7 +2350,7 @@ $$\scriptsize  U^{{-1}}=\left(\begin{matrix}\frac{1}{2} & - \frac{1}{2} & -1\\0 
 </div>
 </div>
 </div>
-    </div><div class="fragment">
+    </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input_hidden">
@@ -2385,8 +2386,6 @@ $$\scriptsize  L=\left(\begin{matrix}1 & 0 & 0\\-3 & 1 & 0\\-1 & 2 & 1\end{matri
 </div>
 
 </div>
-    </div><div class="fragment">
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2394,11 +2393,14 @@ $$\scriptsize  L=\left(\begin{matrix}1 & 0 & 0\\-3 & 1 & 0\\-1 & 2 & 1\end{matri
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>The LU factorization is the matrix representation of Gaussian elimination</li>
+<li>LU factorization can be used to compute matrix inversion<ul>
+<li>trianglular matrix is easy to invert (simply substitute known variables)</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2507,38 +2509,20 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 <li>binary search $O(\log(n))$</li>
 <li>best sorting algorithm: $O(n \log(n))$</li>
 </ul>
-<p>Most numerical linear algebra algorithm is of complexity of $O(n^3)$</p>
+<p>Most common numerical linear algebra algorithm is of complexity of $O(n^3)$</p>
 <ul>
-<li>e.g.: the LU decomposition (why?)</li>
+<li>the LU decomposition, iterate through the $n$ diagonal elements, to zero-out each column using a diagonal element cost $O(n^2)$</li>
 </ul>
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cholesky-Decomposition">Cholesky Decomposition<a class="anchor-link" href="#Cholesky-Decomposition">&#182;</a></h1>
-</div>
-</div>
-</div>
-</section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="symmetric-positive-definite-matrix">Symmetric positive definite Matrix</h2>
-<ul>
-<li>$V$ is positive definite if $\bs x^T V \bs x &gt; 0$ for $\forall \bs{x \ne 0}$</li>
-<li>$V$ is semi positive definite if $\bs x^T V \bs {x \ge 0}$ for $\forall \bs{x \ne 0}$</li>
-<li>Semi-positive definite does not mean every element in the matrix is positive</li>
-</ul>
+<h2 id="cholesky-decomposition">Cholesky Decomposition</h2>
+<p>aka Cholesky Factorization</p>
 </div>
 </div>
 </div></section><section>
@@ -2575,6 +2559,21 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 <li>$C = (\rho_{ij})$ is the co-variance matrix of the normalized factors $\bs {\tilde s} = [\frac{r_1}{\sigma_1}, ..., \frac{r_n}{\sigma_n}]^T$</li>
 <li>$V = \Sigma C \Sigma $, where $\Sigma$ is a diagonal matrix of $\sigma_i$</li>
 <li>all elements in a correlation matrix are within [-1, 1]</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="symmetric-positive-definite-matrix">Symmetric positive definite Matrix</h2>
+<ul>
+<li>$A$ is positive definite if $\bs x^T A \bs x &gt; 0$ for $\forall \bs{x \ne 0}$</li>
+<li>$A$ is semi positive definite if $\bs x^T A \bs {x \ge 0}$ for $\forall \bs{x \ne 0}$</li>
+<li>Semi-positive definite does not mean every element in the matrix is positive</li>
 </ul>
 <p>Both covariance and correlation matrices are symmetric positive semi-definate (SPD):</p>
 <ul>
@@ -3885,8 +3884,7 @@ $$\small l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}}\;,\
 <p>Note that $L_{22}$ is the Cholesky decomposition of the smaller matrix of $A_{22} - \frac{1}{a_{11}}A_{21}A_{21}^T$.</p>
 </div>
 </div>
-</div></section><section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3898,16 +3896,31 @@ $$\small l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}}\;,\
 <li>The common underlying process for asset prices and other risk factors</li>
 <li>The vast matjority of quant finance models are based on Brownian motions.</li>
 </ul>
-<p>Example: drawing correlated n-dimensional Geometric Brownian motion paths:</p>
+<p>Example: drawing correlated n-dimensional Geometric Brownian motion:</p>
 <p>$$
 \frac{dx^k_t}{x^k_t} = u^k dt + \sigma^k dw^k_t, 
 \;\;\;\;dw_t^j\cdot dw_t^k = \rho_{jk} dt
 $$</p>
-<ol>
-<li>compute the Cholesky decomposition of the correlation matrix: $C = LL^T$</li>
-<li>draw a n independent normal random number vector $\bs \epsilon = (\epsilon_1, \epsilon_2, ..., \epsilon_n)^T$, these are the normalized risk factors</li>
-<li>$L\bs \epsilon$ is the correlated normal random vector, and the correlated Brownian increments is therefore $dw_t = L\bs \epsilon\sqrt{dt}$</li>
-</ol>
+<p>In vector form:
+$$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
+<p>where $X$ is a diagonal matrix of $x_i$, and $\Sigma$ is a diagonal matrix of $\sigma_i$ and $C$ is the correlation matrix of $\rho_{ij}$</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="draw-correlated-brownian">Draw correlated Brownian</h2>
+<p>Draw discretized version of $\delta \bs w \approx L \bs z \sqrt{\delta t}$</p>
+<ul>
+<li>where $\bs z$ is a vector of independent standard normal random variables: $\mathbb{E}[\bs z \bs z^T] = I$</li>
+<li>$L$ is the Cholesky decomposition of the correlaiton matrix $C = LL^T$</li>
+</ul>
+<p>$\delta d \bs w$ have the desired correlation:
+$$\mathbb{E}[\delta \bs w \delta \bs w^T] = \mathbb{E}[L \bs z \bs z^T L^T] \delta t = C \delta t$$</p>
 </div>
 </div>
 </div></section><section>
@@ -4660,16 +4673,6 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The resulting covariance (correlation) is: 
-$$\mathbb{E}[L\bs \epsilon  (L\bs \epsilon)^T] = \mathbb{E}[L\bs{\epsilon  \epsilon}^T L^T] = LL^T = C$$</p>
-</div>
-</div>
 </div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
