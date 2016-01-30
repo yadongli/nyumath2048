@@ -3929,6 +3929,8 @@ $$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 </ul>
 <p>$\delta \bs w$ have the desired correlation:
 $$\mathbb{E}[\delta \bs w \delta \bs w^T] = \mathbb{E}[L \bs z \bs z^T L^T] \delta t = L \mathbb{E}[\bs z \bs z^T] L^T \delta t = LL^T \delta t = C \delta t$$</p>
+<p>It is equivalent to use Cholesky decomposition on the covariance matrix:
+$$ C = LL^T \iff V = \Sigma C \Sigma = L\Sigma (L\Sigma)^T $$</p>
 </div>
 </div>
 </div></section><section>
