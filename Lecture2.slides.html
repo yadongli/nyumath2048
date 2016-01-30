@@ -4694,19 +4694,17 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="big-correlation-covariance-matrices">Big correlation/covariance matrices</h2>
-<p>The covariance/correlation matrix are extremely useful, but they are difficult to deal with when their size grows large:</p>
+<p>In practice, we work with thousands of risk factors</p>
 <ul>
-<li>In practice, we often deal with thousands or tens of thousands risk factors</li>
-<li>Correlation matrix is often easier to work with than the covariance matrix, because it is &quot;normalized&quot;</li>
-<li>It is very difficult to keep a large correlation matrix semi positive definite (SPD)<ul>
-<li>Correlation matrix size of a few thousands is the practical limit</li>
-<li>Small changes in isolated values can invalidate the whole correlation matrix</li>
-<li>Adding new entries to a large correlation matrix can be extremely hard</li>
+<li>Correlation matrix is easier to maintain than the covariance matrix, because it is &quot;normalized&quot;</li>
 </ul>
-</li>
-<li>Cholesky decomposition often fails for large matrices due to non-SPD or numerical noise.</li>
+<p>Very difficult to keep large correlation matrices semi positive definite (SPD)</p>
+<ul>
+<li>Size of a few thousands is the practical limit</li>
+<li>Small changes in few values can invalidate the whole matrix</li>
+<li>Adding new entries can be extremely difficult</li>
 </ul>
-<p>Dimensionality reduction is often required when dealing with large number of factors.</p>
+<p>Dimensionality reduction is required when dealing with very large number of factors.</p>
 </div>
 </div>
 </div></section>
@@ -4733,7 +4731,7 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 <p>$$f(\bs x) = f(x_1, ..., x_n)$$</p>
 <ul>
 <li>Derivative to vector (Gradient): $\frac{\partial f}{\partial \bs x} = \nabla f = [\frac{\partial f}{\partial x_1}, ..., \frac{\partial f}{\partial x_n}]$</li>
-<li>Note that $\frac{\partial f}{\partial \bs x}$ is a <strong>row vector</strong>, whenever the vector or matrix appears in the denominator of differentiation, the result is transposed.</li>
+<li>Note that $\frac{\partial f}{\partial \bs x}$ is <strong>always a row vector</strong>, whenever the vector or matrix appears in the denominator of differentiation, the result is transposed.</li>
 <li>Some time we use the notation: $\frac{\partial f}{\partial \bs x^T} = \left(\frac{\partial f}{\partial \bs x}\right)^T $ to denote a column vector.</li>
 </ul>
 </div>
@@ -4750,7 +4748,8 @@ DAaDwZAB/w+yWhwx608rGgAAAABJRU5ErkJggg==
 <ul>
 <li>Deriative to vector (Jacobian matrix): $\frac{\partial \bs y}{\partial \bs x} = \left[\frac{\partial{y_1}}{\partial \bs x}, \frac{\partial{y_2}}{\partial \bs x}, \cdots, \frac{\partial{y_n}}{\partial \bs x} \right]^T$<ul>
 <li>$\frac{\partial \bs y}{\partial \bs x}$ is a matrix of $\bs y$ rows and $\bs x$ columns</li>
-<li>$\frac{\partial \bs y}{\partial \bs x}\frac{\partial \bs x}{\partial \bs y} = \id$, even when $\bs x$ and $\bs y$ are of different dimension. </li>
+<li>$\frac{\partial \bs y}{\partial \bs x}\frac{\partial \bs x}{\partial \bs y} = \id$, even when $\bs x$ and $\bs y$ are of different dimension.</li>
+<li>sometime we use the following notation:  $\frac{\partial \bs y}{\partial \bs x^T} =  \left(\frac{\partial \bs y}{\partial \bs x}\right)^T$</li>
 </ul>
 </li>
 <li>Derivative to scalar: $\frac{\partial \bs y}{\partial z} = [\frac{\partial y_1}{\partial z}, \cdots, \frac{\partial y_n}{\partial z}]^T$<ul>
