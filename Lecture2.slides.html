@@ -2561,7 +2561,7 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 <p>$\renewcommand{Sigma}{\mathcal{S}}$</p>
 <ul>
 <li>$C = (\rho_{ij})$ is the co-variance matrix of the normalized factors $\bs {\tilde s} = [\frac{r_1}{\sigma_1}, ..., \frac{r_n}{\sigma_n}]^T$</li>
-<li>$V = \Sigma C \cs $, where $\cs$ is a diagonal matrix of $\sigma_i$</li>
+<li>$V = \Sigma C \Sigma $, where $\Sigma$ is a diagonal matrix of $\sigma_i$</li>
 <li>all elements in a correlation matrix are within [-1, 1]</li>
 </ul>
 </div>
@@ -4945,23 +4945,12 @@ Z2duvGjOtj9eXjdnU3ITgiAIgiAIgnCAx5ObEARBEARBEEROh4RmgiAIgiAIgnAACc0EQRAEQRAE
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="portfolio-optimization">Portfolio optimization</h2>
-<ul>
-<li>Powerful mean/variance portfolio theory can be expressed succinctly using linear algebra and matrix calculus.</li>
-</ul>
+<p>Powerful mean/variance portfolio theory can be expressed succinctly using linear algebra and matrix calculus.</p>
 <p>Suppose there are $n$ <strong>risky</strong> assets on the market, with random return vector $\tilde{\bs r}$ whose covariance matrix is $V$,</p>
 <ul>
 <li>$\bs w$: a portfolio, its elements are values (dollar) invested in each asset<ul>
 <li>$\bs w^T \tilde{\bs r}$ is the portfolio&#39;s P&amp;L</li>
 <li>$\sigma^2 = \bs w^TV\bs w$: the variance of the portfolio P&amp;L</li>
-</ul>
-</li>
-<li>$\bs w_b$: a benchmark portfolio, e.g. a sector index<ul>
-<li>$\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $: the beta vector of individual assets to the benchmark portfolio</li>
-<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {\bs 1}$, the benchmark portfolio itself has a beta of $\bs 1$</li>
-</ul>
-</li>
-<li>$\bs w_m$: the market portfolio, as defined in CAPM<ul>
-<li>$\bs \beta_m = \frac{V\bs w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\bs w_m$</li>
 </ul>
 </li>
 </ul>
@@ -5002,7 +4991,30 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w^T}}$$</p>
 <p>Sharp ratio is invariant under:</p>
 <ul>
 <li>portfoio scaling: $s(a \bs w) = s(\bs w)$</li>
-<li>mix (leverage or de-leverage) with the risk free assets, the risk free asset has 0 contribution to portfolio excess return and vol.</li>
+<li>leverage or deleverage: borrowing or lending money using the risk free asset </li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="benchmark-portfolio-and-0-">Benchmark portfolio and $\bs \beta$</h2>
+<p>Benchmark portfolio is usually an index portfolio to measure the performane of active portfolio management. </p>
+<ul>
+<li>$\bs w_b$: a benchmark portfolio<ul>
+<li>$\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $: the beta vector of individual assets to the benchmark portfolio</li>
+<li>The beta of a portfolio $\bs w$ is $\bs w^T \bs \beta_b$</li>
+<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {1}$, the benchmark portfolio itself has a beta of $1$</li>
+</ul>
+</li>
+<li>$\bs w_m$: the market portfolio, as defined in CAPM<ul>
+<li>$\bs \beta_m = \frac{V\bs w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\bs w_m$</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
