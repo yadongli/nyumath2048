@@ -2558,9 +2558,10 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="correlation-matrix">Correlation matrix</h2>
+<p>$\renewcommand{Sigma}{\mathcal{S}}$</p>
 <ul>
 <li>$C = (\rho_{ij})$ is the co-variance matrix of the normalized factors $\bs {\tilde s} = [\frac{r_1}{\sigma_1}, ..., \frac{r_n}{\sigma_n}]^T$</li>
-<li>$V = \Sigma C \Sigma $, where $\Sigma$ is a diagonal matrix of $\sigma_i$</li>
+<li>$V = \Sigma C \cs $, where $\cs$ is a diagonal matrix of $\sigma_i$</li>
 <li>all elements in a correlation matrix are within [-1, 1]</li>
 </ul>
 </div>
@@ -3964,7 +3965,7 @@ $$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="draw-correlated-brownians">Draw correlated Brownians</h2>
-<p>Draw discretized version of $\delta \bs w \approx L \bs z \sqrt{\delta t}$</p>
+<p>Draw discretized version of $\delta \bs w = L \bs z \sqrt{\delta t}$</p>
 <ul>
 <li>where $\bs z$ is a vector of independent standard normal random variables<ul>
 <li>$\mathbb{E}[\bs z] = \bs 1$, $\mathbb{E}[\bs z \bs z^T] = I$ </li>
