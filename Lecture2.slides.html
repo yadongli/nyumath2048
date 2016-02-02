@@ -2394,7 +2394,7 @@ $$\scriptsize  L=\left(\begin{matrix}1 & 0 & 0\\-3 & 1 & 0\\-1 & 2 & 1\end{matri
 <ul>
 <li>The LU factorization is the matrix representation of Gaussian elimination</li>
 <li>LU factorization can be used to compute matrix inversion<ul>
-<li>trianglular matrix is easy to invert (simply substitute known variables)</li>
+<li>trianglular matrix can be inverted by simple substitution</li>
 </ul>
 </li>
 </ul>
@@ -2511,7 +2511,8 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 </ul>
 <p>Most common numerical linear algebra algorithm is of complexity of $O(n^3)$</p>
 <ul>
-<li>the LU decomposition, iterate through the $n$ diagonal elements, to zero-out each column using a diagonal element cost $O(n^2)$</li>
+<li>matrix multiplication: $n^2$ elements in output, each element takes $O(n)$</li>
+<li>LU decomposition: $n$ diagonal elements, to zero-out each column costs $O(n^2)$</li>
 </ul>
 </div>
 </div>
@@ -2536,14 +2537,16 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="covariance-matrix">Covariance matrix</h2>
-<p>The most important and ubiquitous matrices in quant Finance, </p>
+<p>The most important and ubiquitous matrix in quant Finance, </p>
 <ul>
-<li>capturing the linear dependencies of random factors $\bs{\tilde r} = [r_1, ..., r_n]^T$ </li>
-<li>we use $\bar{\bs r} = \mathbb{E}[\bs {\tilde r}]$ to denote their expectations</li>
+<li>given random factors $\bs{\tilde r} = [r_1, ..., r_n]^T$ and their expectation: $\bar{\bs r} = \mathbb{E}[\bs {\tilde r}]$</li>
 </ul>
-<p>$$\begin{array}{l}V &amp;= \mathbb{E}[(\bs {\tilde r} - \bar{\bs r})(\bs {\tilde r} - \bar{\bs r})^T] = \mathbb{E}[\bs{\tilde r} \bs{\tilde r}^T] - \bar{\bs r}\bar{\bs r}^T \\
-&amp;= (\text{cov}(r_i, r_j)) = (\rho_{ij} \sigma_i \sigma_j)\end{array}$$</p>
-<p>Covariance of linear combinations: </p>
+<p>The covariance matrix is:</p>
+<p>$$V = \mathbb{E}[(\bs {\tilde r} - \bar{\bs r})(\bs {\tilde r} - \bar{\bs r})^T] = \mathbb{E}[\bs{\tilde r} \bs{\tilde r}^T] - \bar{\bs r}\bar{\bs r}^T $$</p>
+<ul>
+<li>The element $(i, j)$ in $V$ is: $\text{cov}(r_i, r_j) = \rho_{ij} \sigma_i \sigma_j$.</li>
+</ul>
+<p>Covariance of linear combinations of factors: </p>
 <p>$$\begin{array}{l}
 \text{cov}(\bs x^T \bs r, \bs y^T \bs r) &amp;= \mathbb{E}[(\bs x^T \bs r)(\bs r^T \bs y)] - \mathbb{E}[\bs x^T \bs r]\mathbb{E}[\bs r^T \bs y]\\
 &amp;= \bs x^T \mathbb{E}[\bs r \bs r^T] \bs y - \bs x^T \bar{\bs r}\bar{\bs r}^T \bs y = \bs x^T V \bs y
@@ -2573,13 +2576,13 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="symmetric-positive-definite-matrix">Symmetric positive definite Matrix</h2>
+<h2 id="symmetric-positive-definite-spd-">Symmetric positive definite (SPD)</h2>
 <ul>
-<li>$A$ is positive definite if $\bs x^T A \bs x &gt; 0$ for $\forall \bs{x \ne 0}$</li>
-<li>$A$ is semi positive definite if $\bs x^T A \bs {x \ge 0}$ for $\forall \bs{x \ne 0}$</li>
-<li>Semi-positive definite does not mean every element in the matrix is positive</li>
+<li>Matrix $A$ is positive definite if $\bs x^T A \bs x &gt; 0$ for $\forall \bs{x \ne 0}$</li>
+<li>Matrix $A$ is semi positive definite (SPD) if $\bs x^T A \bs {x \ge 0}$ for $\forall \bs{x \ne 0}$</li>
+<li>SPD does not imply every element in the matrix is positive</li>
 </ul>
-<p>Both covariance and correlation matrices are symmetric positive semi-definate (SPD):</p>
+<p>Both covariance and correlation matrices are symmetric SPD:</p>
 <ul>
 <li>$\bs x^T V \bs x = \text{cov}[\bs x^T \bs {\tilde r},\bs x^T \bs {\tilde r}] = \text{var}[\bs x^T \bs {\tilde r}] \ge 0$</li>
 <li>$\bs x^T C \bs x = \text{cov}[\bs x^T \bs {\tilde s},\bs x^T \bs {\tilde s}] = \text{var}[\bs x^T \bs {\tilde s}] \ge 0$</li>
@@ -3942,12 +3945,12 @@ $$\scriptsize l_{{11}}=\sqrt{a_{{11}}}\;,\;\;\;L_{{21}}=\frac{A_{{21}}}{l_{{11}}
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="correlated-brownian-motion">Correlated Brownian motion</h2>
-<p>Ubiquitous in quant Finance</p>
+<p>Ubiquitous in quantitative Finance</p>
 <ul>
-<li>The common underlying process for asset prices and other risk factors</li>
-<li>The vast matjority of quant finance models are based on Brownian motions.</li>
+<li>The most common processes for asset prices and risk factors</li>
+<li>The vast matjority of quantitative finance models are based on Brownian motions.</li>
 </ul>
-<p>Example: drawing correlated n-dimensional Geometric Brownian motion:</p>
+<p>Example: correlated n-dimensional Geometric Brownian motion:</p>
 <p>$$
 \frac{dx^k_t}{x^k_t} = u^k dt + \sigma^k dw^k_t, 
 \;\;\;\;dw_t^j\cdot dw_t^k = \rho_{jk} dt
@@ -4892,7 +4895,7 @@ Z2duvGjOtj9eXjdnU3ITgiAIgiAIgnCAx5ObEARBEARBEEROh4RmgiAIgiAIgnAACc0EQRAEQRAE
 <ul>
 <li>$A, a, b, \bs c$ are constants (ie, not functions of $\bs x$)</li>
 <li>$\bs {u=u(x), v=v(x)}, y=y(\bs x)$ are functions of $\bs x$</li>
-<li>$O$ is the zero matrix</li>
+<li>$O$ is the zero matrix, $I$ is the identity matrix</li>
 </ul>
 <p>$\renewcommand{p}{\partial}$</p>
 <table>
@@ -4932,7 +4935,7 @@ Z2duvGjOtj9eXjdnU3ITgiAIgiAIgnCAx5ObEARBEARBEEROh4RmgiAIgiAIgnAACc0EQRAEQRAE
 </tbody>
 </table>
 <ul>
-<li>Similar to  univariate calculus, but very succinct</li>
+<li>Similar to  univariate calculus, a compact notation for mutlivariate calculus</li>
 <li>Replace $A^T$ by $A^*$ for complex matrix</li>
 </ul>
 </div>
@@ -5006,8 +5009,8 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w^T}}$$</p>
 <p>Benchmark portfolio is usually an index portfolio to measure the performane of active portfolio management. </p>
 <ul>
 <li>$\bs w_b$: a benchmark portfolio<ul>
-<li>$\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $: the beta vector of individual assets to the benchmark portfolio</li>
-<li>The beta of a portfolio $\bs w$ is $\bs w^T \bs \beta_b$</li>
+<li>The beta of a portfolio $\bs w$ to the benchmark is $\frac{\text{cov}(\bs w^T \tilde{\bs r}, \bs w_b^T \tilde{\bs r})}{\sigma_b^2} = \frac{\bs w^T V \bs w_b^T}{\sigma_b^2} = \bs w^T \bs \beta_b$</li>
+<li>Define $\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $, the vector of individual assets&#39; beta to the benchmark</li>
 <li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {1}$, the benchmark portfolio itself has a beta of $1$</li>
 </ul>
 </li>
@@ -5029,11 +5032,12 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w^T}}$$</p>
 <p>Given the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
 <ul>
 <li>minimize the variance of portfolio P&amp;L (risk): $\bs w^TV\bs w$</li>
-<li>while preserving a unit value of excess P&amp;L: $\bs w^T \bs f = 1$</li>
+<li>while preserving a unit dollar of excess P&amp;L: $\bs w^T \bs f = 1$</li>
 </ul>
-<p>which solves the portfolio $\bs w^*$ with the maximum Sharp ratio, under the view $\bs f$:</p>
+<p>which solves the portfolio $\bs w^*$ with the maximum Sharp ratio under the view $\bs f$:</p>
 <ul>
-<li>$\bs w^*$ and its mix with risk free asset are the optimal porfolios</li>
+<li>$\bs w^*$ has a unique solution</li>
+<li>all portfolios with optimal Sharp ratio have the same risky asset mix</li>
 </ul>
 </div>
 </div>
@@ -5081,12 +5085,10 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <ul>
 <li>$\bs w$ and $\frac{1}{a} \bs w$ defines the same risky asset mix, with identical Sharp ratio</li>
 </ul>
-<p>Therefore, the return forecast $\bs f$ is only meaningful in a relative sense:</p>
+<p>Therefore, only the relative sizes of excess returns are important</p>
 <ul>
-<li>Only the relative sizes of excess returns are important</li>
 <li>e.g. excess return forecast of [1%, 2%] and [10%, 20%] of two assets would result in identical optimal (characteristic) portfolio</li>
 </ul>
-<p>The return forecast $\bs f$ should only be interpreted in a relative sense, we use $\propto$ to make it explicit.</p>
 </div>
 </div>
 </div></section><section>
@@ -5100,14 +5102,14 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <p>Identical returns: $\bs f \propto \bs e = [1, 1, ...., 1]^T$: </p>
 <ul>
 <li>A naive view that all assets have the same excess returns (zero information)</li>
-<li>$\bs e^T\bs w = 1$ means it is a fully invested portfolio of \$1</li>
-<li>$\bs w_e = \frac{V^{-1}\bs e}{\bs e^TV^{-1}\bs e}$ has the minimum variance amongst all fully invested portfolio</li>
+<li>$\bs e^T\bs w = 1$ means it is a portfolio of \$1 fully invested in risky assets</li>
+<li>$\bs w_e = \frac{V^{-1}\bs e}{\bs e^TV^{-1}\bs e}$ has the minimum variance of those fully-invested</li>
 </ul>
 <p>Beta to a benchmark portfolio: $\bs f \propto \bs \beta_b = \frac{V\bs w_b}{\sigma_b^2}$:</p>
 <ul>
 <li>$\bs \beta_b^T \bs w_b = 1$ means the portfolio has a beta of 1 to the benchmark portfolio $\bs w_b$</li>
-<li>$\bs w_{\beta} = \frac{V^{-1}\bs \beta_b}{\bs \beta_b^T V^{-1}\bs \beta_b} = \frac{\bs w_b}{\bs{\beta_b^T w_b}} = \bs w_b$, which is the benchmark portfolio itself</li>
-<li>the benchmark portfolio itself is the optimal portfolio amongst those with unit beta.</li>
+<li>$\bs w_{\beta} = \frac{V^{-1}\bs \beta_b}{\bs \beta_b^T V^{-1}\bs \beta_b} = \frac{\bs w_b}{\bs{\beta_b^T w_b}} = \bs w_b$, i.e., the benchmark portfolio itself</li>
+<li>the benchmark portfolio itself is optimal amongst those with unit beta.</li>
 </ul>
 </div>
 </div>
