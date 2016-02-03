@@ -3968,10 +3968,10 @@ $$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 </ul>
 <p>$\delta \bs w$ have the desired correlation:
 $$\mathbb{E}[\delta \bs w \delta \bs w^T] = \mathbb{E}[L \bs z \bs z^T L^T] \delta t = L \mathbb{E}[\bs z \bs z^T] L^T \delta t = LL^T \delta t = C \delta t$$</p>
-<p>Equivalently, we can draw $\Sigma \delta \bs w \approx (\Sigma L) \bs z\sqrt{\delta t}$, where</p>
+<p>Equivalently, we can draw $\Sigma \delta \bs w = (\Sigma L) \bs z\sqrt{\delta t}$, where</p>
 <ul>
 <li>$\Sigma L$ is the Cholesky decomposition of the covariance matrix
-$$ C = LL^T \iff V = \Sigma C \Sigma = L\Sigma (L\Sigma)^T $$</li>
+$$ C = LL^T \iff V = \Sigma C \Sigma = \Sigma L (\Sigma L)^T $$</li>
 </ul>
 </div>
 </div>
@@ -4963,7 +4963,7 @@ atznjtUXAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="vector-function">Vector function</h2>
-<p>$$\bs{ y(x) } = [y_1(\bs x), ..., y_n(\bs x)]^T$$</p>
+<p>$$\renewcommand{p}{\partial}\bs y(\bs x)  = [y_1(\bs x), ..., y_n(\bs x)]^T$$</p>
 <ul>
 <li>Deriative to vector (Jacobian matrix): $\frac{\partial \bs y}{\partial \bs x} = \left[\frac{\partial{y_1}}{\partial \bs x}, \frac{\partial{y_2}}{\partial \bs x}, \cdots, \frac{\partial{y_n}}{\partial \bs x} \right]^T$<ul>
 <li>$\frac{\partial \bs y}{\partial \bs x}$ is a matrix of $\bs y$ rows and $\bs x$ columns</li>
@@ -4986,7 +4986,6 @@ atznjtUXAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="vector-differentiation-cheatsheet">Vector differentiation cheatsheet</h2>
-<p>$\renewcommand{p}{\partial}$</p>
 <ul>
 <li>$A, a, b, \bs c$ are constants (ie, not functions of $\bs x$)</li>
 <li>$\bs {u=u(x), v=v(x)}, y=y(\bs x)$ are functions of $\bs x$</li>
@@ -5151,10 +5150,10 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="relativity-of-return-forecast">Relativity of return forecast</h2>
-<p>The optimal portfolio is invariant if $\bs f$ is scaled by a scalar $a$:</p>
-<p>$$\bs w(a\bs f) = \frac{1}{a} \bs w(\bs f)$$ </p>
+<p>The optimal portfolio unchanged if $\bs f$ is scaled by a scalar $a$:</p>
+<p>$$\bs w^*(a\bs f) = \frac{1}{a} \bs w^*(\bs f)$$ </p>
 <ul>
-<li>$\bs w$ and $\frac{1}{a} \bs w$ defines the same risky asset mix, with identical Sharp ratio</li>
+<li>$\bs w^*$ and $\frac{1}{a} \bs w^*$ defines the same risky asset mix, with identical Sharp ratio</li>
 </ul>
 <p>Therefore, only the relative sizes of excess returns are important</p>
 <ul>
@@ -5170,18 +5169,16 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="benchmark-portfolio-and-0-">Benchmark portfolio and $\bs \beta$</h2>
-<p>Benchmark portfolio is usually an index portfolio to measure the performane of active portfolio management. </p>
+<p>Benchmark portfolio $\bs w_b$ is usually an index portfolio to measure the performane of active portfolio management. </p>
 <ul>
-<li>$\bs w_b$: a benchmark portfolio<ul>
-<li>The beta of a portfolio $\bs w$ to the benchmark is $\frac{\text{cov}(\bs w^T \tilde{\bs r}, \bs w_b^T \tilde{\bs r})}{\sigma_b^2} = \frac{\bs w^T V \bs w_b^T}{\sigma_b^2} = \bs w^T \bs \beta_b$</li>
-<li>Define $\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $, the vector of individual assets&#39; beta to the benchmark</li>
-<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {1}$, the benchmark portfolio itself has a beta of $1$</li>
+<li>The beta of a portfolio $\bs w$ to the benchmark is 
+$$\frac{\text{cov}(\bs w^T \tilde{\bs r}, \bs w_b^T \tilde{\bs r})}{\sigma_b^2} = \frac{\bs w^T V \bs w_b}{\sigma_b^2} = \bs w^T \bs \beta_b$$</li>
+<li>Define $\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $, the vector of individual assets&#39; betas</li>
+<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {1}$, the benchmark portfolio itself has a unit beta</li>
 </ul>
-</li>
-<li>$\bs w_m$: the market portfolio, as defined in CAPM<ul>
+<p>$\bs w_m$ is the market portfolio, as defined in CAPM</p>
+<ul>
 <li>$\bs \beta_m = \frac{V\bs w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\bs w_m$</li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -6776,9 +6773,7 @@ SUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>A few days later, there is a tiny change in covariance matrix, but ...</li>
-</ul>
+<p>A few days later, there is a tiny change in covariance matrix, but</p>
 </div>
 </div>
 </div>
@@ -6868,6 +6863,15 @@ SUVORK5CYII=
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the optimal portfolio is totally different, how is it posible?</p>
+</div>
+</div>
 </div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
