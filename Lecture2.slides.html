@@ -2506,26 +2506,6 @@ $$\scriptsize  P^{{-1}} A = \left(\begin{matrix}9.0 & 2.0 & 5.0 & 0\\0 & 3.0 & 1
 </div>
 </div>
 
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="complexity-of-numerical-algorithm">Complexity of numerical algorithm</h2>
-<p>Complexity of a numerical algorithm is stated in the order of magnitude, often in the big-O notation:</p>
-<ul>
-<li>binary search $O(\log(n))$</li>
-<li>best sorting algorithm: $O(n \log(n))$</li>
-</ul>
-<p>Most common numerical linear algebra algorithm is of complexity of $O(n^3)$</p>
-<ul>
-<li>matrix multiplication: $n^2$ elements in output, each element takes $O(n)$</li>
-<li>LU decomposition: $n$ diagonal elements, to zero-out each column costs $O(n^2)$</li>
-</ul>
-</div>
-</div>
 </div></section>
     </section><section>
     <section>
@@ -4925,6 +4905,27 @@ atznjtUXAAAAAElFTkSuQmCC
 <p>Dimensionality reduction is required when dealing with very large number of factors.</p>
 </div>
 </div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="complexity">Complexity</h2>
+<p>Complexity of a numerical algorithm is stated in the order of magnitude, often in the big-O notation:</p>
+<ul>
+<li>binary search $O(\log(n))$</li>
+<li>best sorting algorithm: $O(n \log(n))$</li>
+</ul>
+<p>Most common numerical linear algebra algorithms are of complexity of $O(n^3)$</p>
+<ul>
+<li>matrix multiplication: $n^2$ elements in output, each element takes $O(n)$</li>
+<li>LU decomposition: $n$ diagonal elements, to zero-out each column costs $O(n^2)$</li>
+<li>Cholesky decomposition: $n$ recursive steps, each takes $O(n^2)$</li>
+</ul>
+</div>
+</div>
 </div></section>
     </section><section>
     <section>
@@ -5098,29 +5099,6 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w^T}}$$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="benchmark-portfolio-and-0-">Benchmark portfolio and $\bs \beta$</h2>
-<p>Benchmark portfolio is usually an index portfolio to measure the performane of active portfolio management. </p>
-<ul>
-<li>$\bs w_b$: a benchmark portfolio<ul>
-<li>The beta of a portfolio $\bs w$ to the benchmark is $\frac{\text{cov}(\bs w^T \tilde{\bs r}, \bs w_b^T \tilde{\bs r})}{\sigma_b^2} = \frac{\bs w^T V \bs w_b^T}{\sigma_b^2} = \bs w^T \bs \beta_b$</li>
-<li>Define $\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $, the vector of individual assets&#39; beta to the benchmark</li>
-<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {1}$, the benchmark portfolio itself has a beta of $1$</li>
-</ul>
-</li>
-<li>$\bs w_m$: the market portfolio, as defined in CAPM<ul>
-<li>$\bs \beta_m = \frac{V\bs w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\bs w_m$</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="portfolio-optimization">Portfolio optimization</h2>
 <p>Given the view $\bs f$, the optimal portfolio $\bs w$ to express the view is:</p>
 <ul>
@@ -5181,6 +5159,29 @@ $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$
 <p>Therefore, only the relative sizes of excess returns are important</p>
 <ul>
 <li>e.g. excess return forecast of [1%, 2%] and [10%, 20%] of two assets would result in identical optimal (characteristic) portfolio</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="benchmark-portfolio-and-0-">Benchmark portfolio and $\bs \beta$</h2>
+<p>Benchmark portfolio is usually an index portfolio to measure the performane of active portfolio management. </p>
+<ul>
+<li>$\bs w_b$: a benchmark portfolio<ul>
+<li>The beta of a portfolio $\bs w$ to the benchmark is $\frac{\text{cov}(\bs w^T \tilde{\bs r}, \bs w_b^T \tilde{\bs r})}{\sigma_b^2} = \frac{\bs w^T V \bs w_b^T}{\sigma_b^2} = \bs w^T \bs \beta_b$</li>
+<li>Define $\bs \beta_b = \frac{V\bs w_b}{\sigma^2_b} $, the vector of individual assets&#39; beta to the benchmark</li>
+<li>$\bs w_b^T \bs \beta_b = \frac{\bs w_b^T V\bs w_b}{\sigma^2_b} = {1}$, the benchmark portfolio itself has a beta of $1$</li>
+</ul>
+</li>
+<li>$\bs w_m$: the market portfolio, as defined in CAPM<ul>
+<li>$\bs \beta_m = \frac{V\bs w_m}{\sigma^2_m}$: the betas vector to the market portfolio $\bs w_m$</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
