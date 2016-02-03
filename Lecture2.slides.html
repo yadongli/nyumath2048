@@ -5019,7 +5019,7 @@ atznjtUXAAAAAElFTkSuQmCC
 <tr>
 <td style="text-align:center">$\frac{\p \bs{u}^T A \bs v}{\p \bs x} $</td>
 <td style="text-align:center">$\bs u^T A \frac{\p{\bs v}}{\p \bs x}  +  \bs v^T A^T \frac{\p{\bs u}}{\p \bs x} $</td>
-<td style="text-align:center">$\frac{\p \bs{x}^T A \bs x}{\p \bs x} = (A + A^T) \bs x$, $\frac{\p \bs{u^Tv}}{\p \bs x} =\bs{u}^T\frac{\p \bs{v}}{\p \bs x} + \bs{v}^T\frac{\p \bs{u}}{\p \bs x}$</td>
+<td style="text-align:center">$\frac{\p \bs{x}^T A \bs x}{\p \bs x} = \bs x^T (A + A^T) $, $\frac{\p \bs{u^Tv}}{\p \bs x} =\bs{u}^T\frac{\p \bs{v}}{\p \bs x} + \bs{v}^T\frac{\p \bs{u}}{\p \bs x}$</td>
 </tr>
 <tr>
 <td style="text-align:center">$\frac{\p{\bs g(\bs u})}{\p \bs x}$</td>
@@ -5132,11 +5132,11 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w^T}}$$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="characteristic-portfolio">Characteristic portfolio</h2>
 <p>The optimal portfolio can be solved analytically using Lagrange multiplier and matrix calculus:</p>
-<p>$$\begin{array}
-\\  &amp; l &amp;= \bs w^TV \bs w - 2 \lambda (\bs f^T \bs w - 1) \\
-&amp; \frac{\partial l}{\partial \bs w} &amp;= 2  \bs w^T V - 2 \lambda \bs f^T = \bs 0^T \\
-\end{array}$$
-$$ V \bs w - \lambda \bs f = \bs 0 \iff \bs w = \lambda V^{-1} \bs f $$</p>
+<p>$$\begin{eqnarray}
+l &amp;=&amp; \bs w^TV \bs w - 2 \lambda (\bs f^T \bs w - 1) \\
+\frac{\partial l}{\partial \bs w^T} &amp;=&amp; 2 V \bs w  - 2 \lambda \bs f = \bs 0 \\
+\bs w &amp;=&amp; \lambda V^{-1} \bs f
+\end{eqnarray}$$</p>
 <p>plug it into $\bs f^T \bs w = 1$:</p>
 <p>$$ \bs f^T(\lambda V^{-1} \bs f) = 1 \iff \lambda = \frac{1}{\bs f^T V^{-1} \bs f}$$
 $$\bs w^*(\bs f) = \frac{V^{-1}\bs f}{\bs f^T V^{-1} \bs f} \propto V^{-1}\bs f$$</p>
