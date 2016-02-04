@@ -3961,7 +3961,7 @@ $$ d \bs x = X \bs u dt + X \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <p>Draw discretized version of $\delta \bs w = L \bs z \sqrt{\delta t}$</p>
 <ul>
 <li>where $\bs z$ is a vector of independent standard normal random variables<ul>
-<li>$\mathbb{E}[\bs z] = \bs 1$, $\mathbb{E}[\bs z \bs z^T] = I$ </li>
+<li>$\mathbb{E}[\bs z] = \bs 0$, $\mathbb{E}[\bs z \bs z^T] = I$ </li>
 </ul>
 </li>
 <li>$L$ is the Cholesky decomposition of the correlaiton matrix $C = LL^T$</li>
@@ -5023,7 +5023,7 @@ atznjtUXAAAAAElFTkSuQmCC
 <tr>
 <td style="text-align:center">$\frac{\p{\bs g(\bs u})}{\p \bs x}$</td>
 <td style="text-align:center">$\frac{\p{\bs g}}{\p \bs u} \frac{\p{\bs u}}{\p \bs x} $</td>
-<td style="text-align:center">$\frac{\p \bs y}{\p \bs x}\frac{\p \bs x}{\p \bs y} = \id$ , $\frac{\p \bs z}{\p \bs y}\frac{\p \bs y}{\p \bs x}  \frac{\p \bs x} {\p \bs z}= \id$, etc.</td>
+<td style="text-align:center">$\frac{\p \bs y}{\p \bs x}\frac{\p \bs x}{\p \bs y} = \id$ , $\frac{\p \bs z}{\p \bs y}\frac{\p \bs y}{\p \bs x}  \frac{\p \bs x} {\p \bs z}= \id$, multi-step chain rules.</td>
 </tr>
 </tbody>
 </table>
