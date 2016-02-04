@@ -1831,7 +1831,7 @@ Populating the interactive namespace from numpy and matplotlib
 <ul>
 <li>We write the observed inputs as a matrix $X = [\bs{x_1, x_2, ..., x_m}]^T$, and the observed outputs as an vector of $\bs y = [y_1, ..., y_m]^T$</li>
 <li>$X \bs \beta = \bs y$ is over-determined, no vector $\bs \beta$ solves the linear system exactly</li>
-<li>Instead, we find $\bs \beta $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
+<li>Instead, we find the $\bs \beta $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
 </ul>
 </div>
 </div>
@@ -1848,8 +1848,7 @@ Which can be easily solved using Matrix calculus:</p>
 <p>$$\begin{array}{l}
 \Vert X \bs{\beta - y} \Vert_2^2 &amp;= (X \bs{\beta - y})^T (X \bs{\beta - y}) \\
 &amp;= \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T\bs y\\
-\frac{\partial}{\partial \bs \beta} \Vert X \bs{\beta - y} \Vert_2^2 &amp;= 2 \bs \beta^T X^TX - 2\bs y^T X = \bs 0^T \\
- X^TX \bs \beta &amp;=  X^T \bs y \\
+\frac{\partial}{\partial \bs \beta^T} \Vert X \bs{\beta - y} \Vert_2^2 &amp;= 2 X^TX \bs \beta  - 2X^T \bs y  = \bs 0 \\
 \bs \beta &amp;= (X^TX)^{-1}X^T\bs y
 \end{array}$$</p>
 <ul>
@@ -1889,11 +1888,11 @@ Which can be easily solved using Matrix calculus:</p>
 </ul>
 <p>Ridge regression adds a magnitude penalty to the objective function of least square: </p>
 <p>$$\begin{array}{l}  l(\bs \beta) &amp;= \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_2^2 \\ &amp;=  \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T \bs y + \lambda \bs \beta^T W^TW \bs \beta \\
-\frac{\partial l}{\partial \bs \beta} &amp;= 2\bs \beta^T X^TX  - 2\bs y^T X + 2 \lambda \bs \beta^T W^T W = \bs 0^T \\
+\frac{\partial l}{\partial \bs \beta^T} &amp;= 2X^TX \bs \beta   - 2X^T \bs y + 2 \lambda W^T W \bs \beta = \bs 0 \\
 \bs \beta &amp;= (X^TX + \lambda W^TW)^{-1}X^T\bs y
 \end{array}$$</p>
 <ul>
-<li>$W$ is a diagonal weighting for the elements in $\bs \beta$, e.g. $W = I$ is often a good start</li>
+<li>$W$ is a diagonal weighting matrix for the elements in $\bs \beta$, e.g. $W = I$ is often a good start</li>
 <li>$\lambda$ is a scaler penalty rate</li>
 </ul>
 </div>
@@ -2001,7 +2000,7 @@ Which can be easily solved using Matrix calculus:</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>ridge regression is more robust, it works even if $X$ is not fully ranked (colinearity)</li>
-<li>useful for constructing hedging portfolios</li>
+<li>often used for constructing hedging portfolios</li>
 </ul>
 </div>
 </div>
@@ -2037,11 +2036,11 @@ Which can be easily solved using Matrix calculus:</p>
 <p>Eigen vector/value naming conventions:</p>
 <ul>
 <li>eigenvectors are usually specified as unit L2 vectors of $\Vert \bs v \Vert_2^2 = \bs v^T \bs v = 1$. <ul>
-<li>there are still ambuiguity between  $\bs v$ and $- \bs v$ </li>
+<li>$\bs v$ and $- \bs v$ are equivalent unit eigenvectors</li>
 </ul>
 </li>
 <li>eigenvalues are named in descending order: $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_n $, their corresponding eigen vectors are $\bs {v_1, v_2, ..., v_n}$ <ul>
-<li>can eigenvalues be negative? Yes, otherwise the matrix is positive definite.</li>
+<li>can eigenvalues be negative?</li>
 </ul>
 </li>
 </ul>
@@ -2059,9 +2058,10 @@ Which can be easily solved using Matrix calculus:</p>
 <p>$$ (A - \lambda I) \bs {v = 0}$$</p>
 <p>It has non-zero solution if and only if:</p>
 <p>$$ \det(A - \lambda I) = 0$$ </p>
-<p>characteristic equation is a polynomial of degree $n$:</p>
+<p>a polynomial equation of degree $n$:</p>
 <ul>
 <li>there can be $n$ distinct eigenvalues at most</li>
+<li>eigenvalues can be negative or complex</li>
 <li>$\prod_{i}\lambda_i = \det( A )$</li>
 <li>$\sum_i\lambda_i = \text{tr}(A)$</li>
 </ul>
@@ -2223,7 +2223,41 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <ul>
 <li>making EVD analysis of large matrices a routine practice</li>
 </ul>
-<p>What if $A$ is not fully ranked?</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\underbrace{\pmatrix{
+* &amp; * &amp; * \\  
+* &amp; * &amp; * \\  
+* &amp; * &amp; * \\  
+* &amp; * &amp; * \\  
+* &amp; * &amp; * \\  
+* &amp; * &amp; *  
+}}_A = 
+\underbrace{\pmatrix{
+* &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * \\
+* &amp; * &amp; * &amp; * &amp; * 
+}}_Q 
+\;\;
+\underbrace{\pmatrix{
+* &amp; * &amp; * \\ 
+0 &amp; * &amp; * \\ 
+0 &amp; 0 &amp; * \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 
+}}_R$$</p>
+<p>If $A$ is not fully ranked:</p>
 <ul>
 <li>$Q$ remains full rank (as all orthogonal matrices)</li>
 <li>$R$ have more 0 rows </li>
@@ -2404,16 +2438,17 @@ $$\scriptsize A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 &
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="householder-transformation">Householder transformation</h2>
 <ul>
-<li>an orthogonal transformation representing reflection over a hyper plane, with a normal vector $\bs u$:</li>
+<li>an orthogonal transformation representing reflection over a hyper plane, with a normal vector $\hat {\bs u}$ with unit L-2 norm: $\Vert \hat{\bs u} \Vert_2 = \sqrt{\hat {\bs u}^T \hat {\bs u}} = 1$:</li>
 </ul>
-<p>$$ H = I - \frac{2\bs{uu}^T}{\bs {(u^T u)^2}}$$</p>
+<p>$$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 (\hat{\bs u}^T \bs x) \bs{\hat u} $$</p>
 <ul>
 <li>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \hat{\bs e}_1$, where $\hat{\bs e}_1$ can be any unit vector. </li>
 </ul>
+<p>$$ $$</p>
 <center><img src = "img/householder.png" height=300 width=300></center>
 
 <ul>
-<li>It is obvious from the figure that: $\bs u = \frac{1}{2}\left(\bs x - \Vert \bs x \Vert_2 \hat{\bs e}_1\right)$.</li>
+<li>It is obvious from the figure that: $\bs{\hat u}$ must be in the direction of $\bs u = \frac{1}{2}\left(\bs x - \Vert \bs x \Vert_2 \hat{\bs e}_1\right)$.</li>
 </ul>
 </div>
 </div>
@@ -2715,6 +2750,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="principal-component-analysis">Principal Component Analysis</h1>
 <p>Mahatma Gandhi: action expresses priorities. </p>
+<p>$\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
 </div>
 </div>
 </div></section><section>
@@ -2727,14 +2763,14 @@ $$</p>
 <h2 id="principal-component">Principal component</h2>
 <p>The principal component (PC):</p>
 <ul>
-<li><p>Suppose $\bs r$ is a random vector, with expectation $\bar{\bs r} = \mathbb{E}[\bs r]$ and covariance matrix $ V = \mathbb{E}[(\bs r - \bar{\bs r})(\bs r - \bar{\bs r})^T] $</p>
+<li><p>Suppose $\tilde {\bs r}$ is a random vector, with expectation $\bar{\bs r} = \mathbb{E}[\tilde{\bs r}]$ and covariance matrix $ V = \mathbb{E}[(\bt r - \bar{\bs r})(\bt r - \bar{\bs r})^T] $</p>
 <ul>
 <li>daily returns of a set of equities is an example of random vectors</li>
 </ul>
 </li>
 <li><p>PC is defined to be the direction $\hat{\bs u}$ onto which the projection $\bs r^T \hat{\bs u}$ has the maximimum variance, </p>
 <ul>
-<li>$\hat{\bs u}$ is a unit vector, i.e., $\Vert \hat{\bs u} \Vert_2 = \hat{\bs u}^T\hat{\bs u} = 1$</li>
+<li>$\hat{\bs u}$ is a unit vector, i.e., $\Vert \hat{\bs u} \Vert_2 = \sqrt{\hat{\bs u}^T\hat{\bs u}} = 1$</li>
 </ul>
 </li>
 </ul>
@@ -3026,7 +3062,7 @@ k2QF/ZAAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="link-to-eigenvectors">Link to eigenvectors</h2>
-<p>The projection of the random vector in the direction of $\hat{\bs u}$ is a random scalar $\hat{\bs u}^T \bs r$</p>
+<p>The projection of the random vector in the direction of $\hat{\bs u}$ is a random scalar $\hat{\bs u}^T \bt r$</p>
 <ul>
 <li>the variance of the projection is $\text{var}[\hat{\bs u}^T \bs r] = \hat{\bs u}^T V \hat{\bs u}$.</li>
 <li>the first eigen vector $\bs v_1$ of $V$ is therefore the principal component</li>
@@ -6258,7 +6294,7 @@ QmCC
 <p>By convention, </p>
 <ul>
 <li>we represent singular vectors as unit L-2 vectors, i.e., $\bs u^T\bs u = \bs v^T \bs v = 1$,</li>
-<li>we name the singular values in descending order as $\sigma_1, \sigma_2, ..., \sigma_n$, and refer corresponding singular vector pairs as $\bs{ (u_1, v_1), (u_2, v_2), ..., (u_n, v_n) }$.</li>
+<li>we name the singular values in descending order as $\sigma_1, \sigma_2, ..., \sigma_n$, and refer corresponding singular vector pairs as $ (\bs u_1, \bs v_1), (\bs u_2, \bs v_2), ..., (\bs u_n, \bs v_n) $.</li>
 </ul>
 </div>
 </div>
@@ -6277,11 +6313,12 @@ QmCC
 <p>Apply the Lagrange multiplier, with constraints $\bs u^T  \bs u = \bs v^T  \bs v = 1$:</p>
 <p>$$\small \begin{array} 
 \\l &amp;= \bs u^T M \bs v - \lambda_1 (\bs u^T  \bs u - 1) - \lambda_2 (\bs v^T  \bs v - 1) \\
-\frac{\partial l}{\partial{\bs u}} &amp;= \bs v^T M^T - 2 \lambda_1 \bs u^T = \bs 0^T \iff \bs u^T M \bs v - 2 \lambda_1 = 0\\
-\frac{\partial l}{\partial{\bs v}} &amp;= \bs u^T M - 2\lambda_2 \bs v^T = \bs 0^T \iff \bs u^T M \bs v- 2\lambda_2 = 0
+\frac{\partial l}{\partial{\bs u^T}} &amp;= M \bs v - 2 \lambda_1 \bs u = \bs 0 \iff \bs u^T M \bs v - 2 \lambda_1 = \bs 0\\
+\frac{\partial l}{\partial{\bs v}} &amp;= \bs u^T M  - 2\lambda_2 \bs v^T = \bs 0^T \iff \bs u^T M \bs v- 2\lambda_2 = \bs 0
 \end{array}$$</p>
 <p>Therefore,
-$$\small \bs u^T M \bs v = 2\lambda_1 = 2\lambda_2 \iff M \bs v = \sigma \bs u \;,\; M^T\bs u = \sigma \bs v $$</p>
+$$ 2\lambda_1 = \small \bs u^T M \bs v  = 2\lambda_2 $$
+$$M \bs v = \sigma \bs u \;,\; M^T\bs u = \sigma \bs v $$</p>
 </div>
 </div>
 </div></section><section>
