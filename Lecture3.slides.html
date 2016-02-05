@@ -1824,14 +1824,11 @@ Populating the interactive namespace from numpy and matplotlib
 <h2 id="least-square-problem">Least square problem</h2>
 <p>Given an unknown scalar function $\renewcommand{bs}{\boldsymbol} y = y(\boldsymbol x)$, where the argument $\bs x$ is a $n$ dimensional vector.</p>
 <ul>
-<li>We have $m &gt; n$ observations of the inputs and matching outputs:  $\bs {x_1, x_2, ..., x_m}$ and $[y_1, ..., y_m]$. </li>
+<li>We have $m &gt; n$ observations: $X$ represents inputs and $\bs y$ represents outputs:
+$$X = \pmatrix{\bs x_1 \\ \bs x_2 \\ \vdots \\ \bs x_m}, \;\; \bs y = \pmatrix{y_1 \\ y_2 \\ \vdots \\ y_m}$$</li>
 <li>We want to find a factor loading vector $\bs \beta$ so that the linear function $\hat y = \bs x^T \bs \beta$ is the best aproximation to the observed inputs/outputs.</li>
-</ul>
-<p>We can express this problem as a least square minimization:</p>
-<ul>
-<li>We write the observed inputs as a matrix $X = [\bs{x_1, x_2, ..., x_m}]^T$, and the observed outputs as an vector of $\bs y = [y_1, ..., y_m]^T$</li>
 <li>$X \bs \beta = \bs y$ is over-determined, no vector $\bs \beta$ solves the linear system exactly</li>
-<li>Instead, we find the $\bs \beta $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
+<li>Instead, we find the $\bs \beta^* $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
 </ul>
 </div>
 </div>
@@ -1843,16 +1840,16 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="pseudo-inverse-">Pseudo inverse:</h2>
-<p>$$ \min_{\bs {\beta}} \Vert X \bs{\beta - y} \Vert_2$$
+<p>$$ \bs \beta^* = \text{argmin}_{\bs {\beta}} \Vert X \bs{\beta - y} \Vert_2$$
 Which can be easily solved using Matrix calculus:</p>
-<p>$$\begin{array}{l}
-\Vert X \bs{\beta - y} \Vert_2^2 &amp;= (X \bs{\beta - y})^T (X \bs{\beta - y}) \\
-&amp;= \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T\bs y\\
-\frac{\partial}{\partial \bs \beta^T} \Vert X \bs{\beta - y} \Vert_2^2 &amp;= 2 X^TX \bs \beta  - 2X^T \bs y  = \bs 0 \\
-\bs \beta &amp;= (X^TX)^{-1}X^T\bs y
-\end{array}$$</p>
+<p>$$\begin{eqnarray}
+\Vert X \bs{\beta - y} \Vert_2^2 &amp;=&amp; (X \bs{\beta - y})^T (X \bs{\beta - y}) \\
+&amp;=&amp; \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T\bs y\\
+\frac{\partial}{\partial \bs \beta^T} \Vert X \bs{\beta - y} \Vert_2^2 &amp;=&amp; 2 X^TX \bs \beta  - 2X^T \bs y  = \bs 0 \\
+\bs \beta^* &amp;=&amp; (X^TX)^{-1}X^T\bs y
+\end{eqnarray}$$</p>
 <ul>
-<li>The solution is equivalent to linear regression.</li>
+<li>The solution is equivalent to linear regression, but beware the difference</li>
 <li>$X^+ = (X^TX)^{-1}X^T$ is also known as the psuedo inverse of $X$ because $X^+X = I$<ul>
 <li>note $XX^+$ is not even a valid matrix multiplication. </li>
 </ul>
@@ -1887,10 +1884,10 @@ Which can be easily solved using Matrix calculus:</p>
 <li>often cause problems in practice</li>
 </ul>
 <p>Ridge regression adds a magnitude penalty to the objective function of least square: </p>
-<p>$$\begin{array}{l}  l(\bs \beta) &amp;= \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_2^2 \\ &amp;=  \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T \bs y + \lambda \bs \beta^T W^TW \bs \beta \\
-\frac{\partial l}{\partial \bs \beta^T} &amp;= 2X^TX \bs \beta   - 2X^T \bs y + 2 \lambda W^T W \bs \beta = \bs 0 \\
-\bs \beta &amp;= (X^TX + \lambda W^TW)^{-1}X^T\bs y
-\end{array}$$</p>
+<p>$$\begin{eqnarray} l(\bs \beta) &amp;=&amp; \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_2^2 \\ &amp;=&amp;  \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T \bs y + \lambda \bs \beta^T W^TW \bs \beta \\
+\frac{\partial l}{\partial \bs \beta^T} &amp;=&amp; 2X^TX \bs \beta   - 2X^T \bs y + 2 \lambda W^T W \bs \beta = \bs 0 \\
+\bs \beta &amp;=&amp; (X^TX + \lambda W^TW)^{-1}X^T\bs y
+\end{eqnarray}$$</p>
 <ul>
 <li>$W$ is a diagonal weighting matrix for the elements in $\bs \beta$, e.g. $W = I$ is often a good start</li>
 <li>$\lambda$ is a scaler penalty rate</li>
@@ -2058,7 +2055,18 @@ Which can be easily solved using Matrix calculus:</p>
 <p>$$ (A - \lambda I) \bs {v = 0}$$</p>
 <p>It has non-zero solution if and only if:</p>
 <p>$$ \det(A - \lambda I) = 0$$ </p>
-<p>a polynomial equation of degree $n$:</p>
+<p>a polynomial equation of degree $n$.</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="properties-of-eigenvalues">Properties of eigenvalues</h2>
+<p>For matrix $A$ of size $n \times n$:</p>
 <ul>
 <li>there can be $n$ distinct eigenvalues at most</li>
 <li>eigenvalues can be negative or complex</li>
@@ -2145,7 +2153,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <p>Apply Lagrange multiplier:</p>
 <p>$$\begin{array}
 \\ l &amp;= \bs u^T A \bs u - \gamma (\bs u^T \bs u - 1) \\
-\frac{\partial l}{\partial \bs u} &amp;= 2 \bs u^T A^T - 2\gamma \bs u^T = \bs 0^T \iff A \bs u = \gamma \bs u
+\frac{\partial l}{\partial \bs u^T} &amp;= 2 A \bs u - 2\gamma \bs u = \bs 0 \iff A \bs u = \gamma \bs u
 \end{array}$$</p>
 <ul>
 <li>the solution must be an eigenvector </li>
@@ -2232,31 +2240,31 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$$\underbrace{\pmatrix{
+<p>$$\overbrace{\pmatrix{
 * &amp; * &amp; * \\  
 * &amp; * &amp; * \\  
 * &amp; * &amp; * \\  
 * &amp; * &amp; * \\  
 * &amp; * &amp; * \\  
 * &amp; * &amp; *  
-}}_A = 
-\underbrace{\pmatrix{
+}}^A = 
+\overbrace{\pmatrix{
 * &amp; * &amp; * &amp; * &amp; * \\  
 * &amp; * &amp; * &amp; * &amp; * \\  
 * &amp; * &amp; * &amp; * &amp; * \\  
 * &amp; * &amp; * &amp; * &amp; * \\  
 * &amp; * &amp; * &amp; * &amp; * \\
 * &amp; * &amp; * &amp; * &amp; * 
-}}_Q 
+}}^Q 
 \;\;
-\underbrace{\pmatrix{
+\overbrace{\pmatrix{
 * &amp; * &amp; * \\ 
 0 &amp; * &amp; * \\ 
 0 &amp; 0 &amp; * \\
 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 
-}}_R$$</p>
+}}^R$$</p>
 <p>If $A$ is not fully ranked:</p>
 <ul>
 <li>$Q$ remains full rank (as all orthogonal matrices)</li>
@@ -2437,18 +2445,13 @@ $$\scriptsize A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 &
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="householder-transformation">Householder transformation</h2>
-<ul>
-<li>an orthogonal transformation representing reflection over a hyper plane, with a normal vector $\hat {\bs u}$ with unit L-2 norm: $\Vert \hat{\bs u} \Vert_2 = \sqrt{\hat {\bs u}^T \hat {\bs u}} = 1$:</li>
-</ul>
+<p>An orthogonal transformation representing reflection over a hyper plane, with a normal vector $\hat {\bs u}$ with unit L-2 norm:</p>
 <p>$$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 (\hat{\bs u}^T \bs x) \bs{\hat u} $$</p>
-<ul>
-<li>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \hat{\bs e}_1$, where $\hat{\bs e}_1$ can be any unit vector. </li>
-</ul>
-<p>$$ $$</p>
+<p>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \hat{\bs e}_1$, where $\hat{\bs e}_1$ can be any unit vector. </p>
 <center><img src = "img/householder.png" height=300 width=300></center>
 
 <ul>
-<li>It is obvious from the figure that: $\bs{\hat u}$ must be in the direction of $\bs u = \frac{1}{2}\left(\bs x - \Vert \bs x \Vert_2 \hat{\bs e}_1\right)$.</li>
+<li>It is obvious that: $\bs{\hat u}$ must be in the direction of $\bs u = \frac{1}{2}\left(\bs x - \Vert \bs x \Vert_2 \hat{\bs e}_1\right)$.</li>
 </ul>
 </div>
 </div>
