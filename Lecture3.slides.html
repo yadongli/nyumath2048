@@ -6255,12 +6255,33 @@ QmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$$\exp(-9 r_9)\exp(-(10-9) f_9^{10} ) = \exp(-10 r_{10}) \iff r_{10} = 0.9r_9 + 0.1f_9^{10} $$</p>
+<p>$$\begin{eqnarray}
+\exp(-10 r_{10}) &amp;=&amp; \exp(-9 r_9)\exp(-(10-9) f(9, 10) )  \\
+r_{10} &amp;=&amp; 0.9r_9 + 0.1f(9, 10) 
+\end{eqnarray}$$</p>
 <ul>
-<li>the $f_9^{10}$ is the 9Y to 10Y forward rate as observed at $t=0$.</li>
-<li>The correlation between spot rates are spurious because 10Y spot rate is largely determined by the 9Y spot rates.</li>
-<li>it makes no difference if we have unlimited precision, but we usually only keep few eigen vectors in PCA</li>
-<li>it&#39;s better to model the correlation/covariance matrix of forward rates</li>
+<li>the $f(9, 10)$ is the 9Y to 10Y forward rate.</li>
+<li>of course $r_{10} = f(0, 10)$</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="correlated-by-construction">Correlated by construction</h2>
+<p>$$ r_{10} = 0.9r_9 + 0.1f(9, 10) $$</p>
+<ul>
+<li>The high correlation between spot rates to similar tenors are by construction</li>
+<li>PCA analysis can be misleading in percentage of variance explained<ul>
+<li>the variance of sot rates of short tenors are counted multiple times</li>
+</ul>
+</li>
+<li>May not be a problem if we have unlimited precision, but we usually only keep the first few eigen vectors in PCA</li>
+<li>it&#39;s usually better to model the correlation/covariance matrix of forward rates</li>
 </ul>
 </div>
 </div>
