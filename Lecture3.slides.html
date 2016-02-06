@@ -5615,13 +5615,13 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="pca-depends-on-scale">PCA depends on scale</h2>
+<h2 id="pca-is-scale-variant">PCA is scale variant</h2>
 <p>Given the following two EVD on covariance and correlation matrix:</p>
 <p>$$R \Lambda R^T = V = \Sigma C \Sigma = \Sigma U \Gamma U^T \Sigma$$</p>
-<p>It is tempting to think they are equivalent as:
-$$ \Sigma U \Gamma U^T \Sigma = U (\Sigma \Gamma \Sigma) U^T $$</p>
+<p>It is tempting to think they are equivalent:</p>
 <ul>
-<li>if so, $ \Lambda = \Sigma \Gamma \Sigma $, and $R = U$, then we are happy</li>
+<li>$\Sigma U \Gamma U^T \Sigma = (\Sigma U) \Gamma (\Sigma U)^T \rightarrow \Lambda = \Gamma$ and $R = \Sigma U$</li>
+<li>$\Sigma U \Gamma U^T \Sigma = U (\Sigma \Gamma \Sigma) U^T \rightarrow \Lambda = \Sigma \Gamma \Sigma $, and $R = U$</li>
 </ul>
 </div>
 </div>
@@ -5632,9 +5632,10 @@ $$ \Sigma U \Gamma U^T \Sigma = U (\Sigma \Gamma \Sigma) U^T $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, it is not true because: $\Sigma U \ne U \Sigma$, even when $\Sigma$ is diagonal.</p>
+<p>However, they are not true because: </p>
 <ul>
-<li>one scale by row, another scale by column</li>
+<li>$\Sigma U$ is not diagonal: $(\Sigma U)(\Sigma U)^T = \Sigma U U^T \Sigma = \Sigma\Sigma \ne I$</li>
+<li>$\Sigma U \ne U \Sigma$, even when $\Sigma$ is diagonal.</li>
 </ul>
 <p>It is more consistent to apply PCA to the covariance matrix.</p>
 </div>
