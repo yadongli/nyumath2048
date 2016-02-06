@@ -4979,74 +4979,57 @@ vucdYzMzMzMzvGNsZmZmZgY4MTYzMzMzA5wYm5mZmZkBTozNzMzMzAAnxmZmZmZmgBNjMzMzMzMA
 </div>
 </div>
 
-</div></section><section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="dimension-reduction-using-pca">Dimension reduction using PCA</h2>
+<h2 id="dimension-reduction-in-mc">Dimension reduction in MC</h2>
 <p>Given a generic $n$-dimensional SDE in vector form:</p>
-<p>$$\renewcommand{Sigma}{\mathcal{S}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
+<p>$$\renewcommand{Sigma}{\mathcal{S}} \renewcommand{bt}[1]{\bs{\tilde #1}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <ul>
 <li>$\Sigma$ is a diagonal matrix of $\sigma_i$ </li>
 <li>$C$ is the correlation matrix of $d \bs w$, its covariance matrix $V = \Sigma C \Sigma$.</li>
 </ul>
-<p>Using the EVD to approximate the correlaiton or covariance matrix: </p>
-<p>$$ \begin{eqnarray} 
-V &amp;=&amp; R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T \\
-C &amp;=&amp; U\Gamma U^T \approx \dot U \dot \Gamma \dot U^T
-\end{eqnarray}
+<p>Recall the Cholesky decomposition, $V = LL^T$, then we draw $S \delta \bs w = L \bt z \sqrt{dt}$: </p>
+<p>$$
+\mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] = \mathbb E[(L \bt z \sqrt{dt}) (L \bt z \sqrt{dt})^T ] 
+= L \mathbb E[\bt z\bt z^T] L^T dt = V dt
 $$</p>
 <ul>
+<li>$\bt z$ is independent standard normal random vector.</li>
+<li>note the above holds even if $L$ is neither square nor triangular, as long as $V = LL^T$</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="dimension-reduction-with-pca">Dimension reduction with PCA</h2>
+<p>Use the PCA of the covariance matrix: 
+$$
+\small
+V = R_V \Lambda_V R_V^T \approx \dot R_V \dot \Lambda_V \dot R_V^T = \dot R_V \dot H_V \dot H_V^T  \dot R_V^T = (\overbrace{\dot R_V \dot H_V}^{L_V})(\dot R_V\dot H_V )^T \\$$
+PCA on the correlation matrix:
+$$
+\small
+V = \Sigma C \Sigma = \Sigma (R_C \Lambda_C R_C^T) \Sigma \approx \Sigma \dot R_C \dot \Lambda_C \dot R_C^T \Sigma = \Sigma \dot R_C \dot H_C \dot H_C^T  \dot R_C^T \Sigma^T = (\underbrace{\Sigma \dot R_C \dot H_C}_{L_C})(\Sigma \dot R_C\dot H_C )^T 
+$$</p>
+<ul>
+<li>$\Lambda = H H^T$, both $\Lambda$ and $H$ are diagonal matrix with positive elements</li>
 <li>The dotted version only retains the first $k$ eigen values</li>
-<li>$\dot R, \dot U$ are $n \times k$ matrices; $\dot \Lambda, \dot \Gamma$ are $k \times k$ matrices.</li>
+<li>$\dot R$ and $L_V, L_C$ are $n \times k$ matrices; $\dot \Lambda$ are $k \times k$ matrices.</li>
 </ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="dimension-reduction-covariance-matrix">Dimension reduction - covariance matrix</h2>
-<p>$$ V = R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T $$</p>
-<p>We draw $\Sigma \delta \bs w \approx \dot R \dot L \bs z \sqrt{dt}$, </p>
+<p>Simulation can be driven by $\Sigma \delta \bs w = L \bt z \sqrt{dt}$:</p>
 <ul>
-<li>where $\dot \Lambda = \dot L \dot L$, $\bs z$ is standard normal vector of length $k$.</li>
+<li>Either $L_V = \dot R_V \dot H_V$ or $L_C = \Sigma \dot R_C \dot H_C$ works</li>
+<li>$\bt z$ is of length $k$</li>
 </ul>
-<p>The resulting Brownian motion has the right covariance:
-$$\begin{eqnarray}
-\mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] &amp;=&amp; \mathbb E[(\dot R \dot L \bs z \sqrt{dt}) (\dot R \dot L \bs z \sqrt{dt})^T ]
-= \dot R \dot L \mathbb E[\bs z\bs z^T] \dot L \dot R^T  dt \\
-&amp;=&amp; \dot R \dot \Lambda \dot R^T dt = V dt
-\end{eqnarray}
-$$</p>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="dimension-reduction-correlation-matrix">Dimension reduction - correlation matrix</h2>
-<p>$$ C = U\Gamma U^T \approx \dot U \dot \Gamma \dot U^T $$</p>
-<p>We draw $\delta \bs w = \dot U \dot H \bs z \sqrt {dt}$, where $\dot \Gamma = \dot H \dot H$, we get the correct covariance:</p>
-<p>$$\begin{eqnarray}
-\mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] &amp;=&amp; S\mathbb E[(\dot U \dot H \bs z \sqrt{dt}) (\dot U \dot H \bs z \sqrt{dt})^T ]S^T
-= S \dot U \dot H \mathbb E[\bs z\bs z^T] \dot H \dot U^TS  dt \\
-&amp;=&amp; S\dot U \dot \Gamma \dot U^TS dt \approx S C S dt  = V dt
-\end{eqnarray}
-$$</p>
-<ul>
-<li>Note $\Sigma$ is diagonal, thus $\Sigma^T = \Sigma$</li>
-</ul>
-<p>PCA on covariance and correlation matrix, are they equivalent?</p>
 </div>
 </div>
 </div></section><section>
@@ -5057,12 +5040,12 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="pca-is-scale-variant">PCA is scale variant</h2>
-<p>Given the following two EVD on covariance and correlation matrix:</p>
-<p>$$R \Lambda R^T = V = \Sigma C \Sigma = \Sigma U \Gamma U^T \Sigma$$</p>
-<p>It is tempting to think they are equivalent:</p>
+<p>Given the EVDs on covariance and correlation matrix:</p>
+<p>$$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$$</p>
+<p>Are they equivalent? </p>
 <ul>
-<li>$\Sigma U \Gamma U^T \Sigma = (\Sigma U) \Gamma (\Sigma U)^T \rightarrow \Lambda = \Gamma$ and $R = \Sigma U$</li>
-<li>$\Sigma U \Gamma U^T \Sigma = U (\Sigma \Gamma \Sigma) U^T \rightarrow \Lambda = \Sigma \Gamma \Sigma $ and $R = U$</li>
+<li>$\Sigma R_C \Lambda_C R_C^T \Sigma = (\Sigma R_C) \Lambda_C (\Sigma R_C)^T \rightarrow \Lambda_C = \Lambda_V$ and $R_V = \Sigma R_C$</li>
+<li>$\Sigma R_C \Lambda_C R_C^T \Sigma = R_C (\Sigma \Lambda_C \Sigma) R_C^T \rightarrow \Lambda_V = \Sigma \Lambda_C \Sigma $ and $R_C = R_V$</li>
 </ul>
 </div>
 </div>
@@ -5073,12 +5056,12 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, they are not true because: </p>
+<p>However, neiher is true because: </p>
 <ul>
-<li>$\Sigma U$ is not diagonal: $(\Sigma U)(\Sigma U)^T = \Sigma U U^T \Sigma = \Sigma\Sigma \ne I$</li>
-<li>$\Sigma U \ne U \Sigma$, even when $\Sigma$ is diagonal.</li>
+<li>$\Sigma R_C$ is not diagonal: $(\Sigma R_C)(\Sigma R_C)^T = \Sigma R_C R_C^T \Sigma = \Sigma\Sigma \ne I$</li>
+<li>$\Sigma R_C \ne R_C \Sigma$, even when $\Sigma$ is diagonal.</li>
 </ul>
-<p>It is more consistent to apply PCA to the covariance matrix.</p>
+<p>There is no simple relationship btw these two EVDs.</p>
 </div>
 </div>
 </div>
