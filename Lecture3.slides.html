@@ -5016,10 +5016,10 @@ $$</p>
 $$
 \small
 V = R_V \Lambda_V R_V^T \approx \dot R_V \dot \Lambda_V \dot R_V^T = \dot R_V \dot H_V \dot H_V^T  \dot R_V^T = (\overbrace{\dot R_V \dot H_V}^{L_V})(\dot R_V\dot H_V )^T \\$$
-PCA on the correlation matrix:
+Or PCA on the correlation matrix:
 $$
 \small
-V = \Sigma C \Sigma = \Sigma (R_C \Lambda_C R_C^T) \Sigma \approx \Sigma \dot R_C \dot \Lambda_C \dot R_C^T \Sigma = \Sigma \dot R_C \dot H_C \dot H_C^T  \dot R_C^T \Sigma^T = (\underbrace{\Sigma \dot R_C \dot H_C}_{L_C})(\Sigma \dot R_C\dot H_C )^T 
+V = \Sigma C \Sigma = \Sigma (R_C \Lambda_C R_C^T) \Sigma \approx \Sigma \dot R_C \dot \Lambda_C \dot R_C^T \Sigma = \Sigma \dot R_C \dot H_C \dot H_C^T  \dot R_C^T \Sigma^T = (\overbrace{\Sigma \dot R_C \dot H_C}^{L_C})(\Sigma \dot R_C\dot H_C )^T 
 $$</p>
 <ul>
 <li>$\Lambda = H H^T$, both $\Lambda$ and $H$ are diagonal matrix with positive elements</li>
@@ -5029,7 +5029,7 @@ $$</p>
 <p>Simulation can be driven by $\Sigma \delta \bs w = L \bt z \sqrt{dt}$:</p>
 <ul>
 <li>Either $L_V = \dot R_V \dot H_V$ or $L_C = \Sigma \dot R_C \dot H_C$ works</li>
-<li>$\bt z$ is of length $k$</li>
+<li>$\bt z$ is of length $k$ only</li>
 </ul>
 </div>
 </div>
