@@ -4710,7 +4710,7 @@ xprH0QAAAABJRU5ErkJggg==
 <h2 id="ir-pca-components">IR PCA components</h2>
 <p>The eigenvectors and percentage explained, </p>
 <ul>
-<li>the 1st principal component (PC) explains more than 95% of the variance</li>
+<li>the 1st principal component (PC) explains &gt;95% of the variance</li>
 <li>the first 3 PCs can be interpreted as level, slope and curvature</li>
 <li>note that the sign of the PC is insignificant</li>
 </ul>
@@ -5545,21 +5545,22 @@ MzMzMzMA/g97zpRqhEbv4QAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="use-pca-to-drive-simulation">Use PCA to drive simulation</h2>
+<h2 id="dimension-reduction-using-pca">Dimension reduction using PCA</h2>
 <p>Given a generic $n$-dimensional SDE in vector form:</p>
 <p>$$\renewcommand{Sigma}{\mathcal{S}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <ul>
-<li>where $\Sigma$ is a diagonal matrix of $\sigma_i$ and $C$ is the correlation matrix of $\rho_{ij}$.</li>
+<li>$\Sigma$ is a diagonal matrix of $\sigma_i$ </li>
+<li>$C$ is the correlation matrix of $d \bs w$, its covariance matrix $V = \Sigma C \Sigma$.</li>
 </ul>
 <p>Using the EVD to approximate the correlaiton or covariance matrix: </p>
 <p>$$ \begin{eqnarray} 
-V = \Sigma C \Sigma &amp;=&amp; R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T \\
+V &amp;=&amp; R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T \\
 C &amp;=&amp; U\Gamma U^T \approx \dot U \dot \Gamma \dot U^T
 \end{eqnarray}
 $$</p>
 <ul>
 <li>The dotted version only retains the first $k$ eigen values</li>
-<li>$\dot R$ is $n \times k$ matrix, $\dot \Lambda$ is $k \times k$ matrix.</li>
+<li>$\dot R, \dot U$ are $n \times k$, $\dot \Lambda, \dot \Gamma$ are $k \times k$.</li>
 </ul>
 </div>
 </div>
@@ -5571,6 +5572,7 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="dimension-reduction-covariance-matrix">Dimension reduction - covariance matrix</h2>
+<p>$$ V = R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T $$</p>
 <p>We draw $\Sigma \delta \bs w \approx \dot R \dot L \bs z \sqrt{dt}$, </p>
 <ul>
 <li>where $\dot \Lambda = \dot L \dot L$, $\bs z$ is standard normal vector of length $k$.</li>
@@ -5579,7 +5581,7 @@ $$</p>
 $$\begin{eqnarray}
 \mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] &amp;=&amp; \mathbb E[(\dot R \dot L \bs z \sqrt{dt}) (\dot R \dot L \bs z \sqrt{dt})^T ]
 = \dot R \dot L \mathbb E[\bs z\bs z^T] \dot L \dot R^T  dt \\
-&amp;=&amp; \dot R \dot \Lambda \dot R^T dt \approx S C S dt  = V dt
+&amp;=&amp; \dot R \dot \Lambda \dot R^T dt = V dt
 \end{eqnarray}
 $$</p>
 </div>
@@ -5592,9 +5594,8 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="dimension-reduction-correlation-matrix">Dimension reduction - correlation matrix</h2>
-<p>Alternatively, we could use the EVD of correlation matrix for dimension reduction:</p>
 <p>$$ C = U\Gamma U^T \approx \dot U \dot \Gamma \dot U^T $$</p>
-<p>Then draw $\delta \bs w = \dot U \dot H \bs z \sqrt {dt}$, where $\dot \Gamma = \dot H \dot H$, we get the correct covariance:</p>
+<p>We draw $\delta \bs w = \dot U \dot H \bs z \sqrt {dt}$, where $\dot \Gamma = \dot H \dot H$, we get the correct covariance:</p>
 <p>$$\begin{eqnarray}
 \mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] &amp;=&amp; S\mathbb E[(\dot U \dot H \bs z \sqrt{dt}) (\dot U \dot H \bs z \sqrt{dt})^T ]S^T
 = S \dot U \dot H \mathbb E[\bs z\bs z^T] \dot H \dot U^TS  dt \\
@@ -5631,11 +5632,11 @@ $$ \Sigma U \Gamma U^T \Sigma = U (\Sigma \Gamma \Sigma) U^T $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, this is not true because: $\Sigma U \ne U \Sigma$, even when $\Sigma$ is diagonal.</p>
+<p>However, it is not true because: $\Sigma U \ne U \Sigma$, even when $\Sigma$ is diagonal.</p>
 <ul>
 <li>one scale by row, another scale by column</li>
 </ul>
-<p>It is more consistent to apply PCA on the covariance matrix.</p>
+<p>It is more consistent to apply PCA to the covariance matrix.</p>
 </div>
 </div>
 </div>
