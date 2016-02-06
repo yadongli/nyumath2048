@@ -5545,17 +5545,32 @@ MzMzMzMA/g97zpRqhEbv4QAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="dimension-reduction-covariance-matrix">Dimension reduction - covariance matrix</h2>
+<h2 id="use-pca-to-drive-simulation">Use PCA to drive simulation</h2>
 <p>Given a generic $n$-dimensional SDE in vector form:</p>
 <p>$$\renewcommand{Sigma}{\mathcal{S}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <ul>
 <li>where $\Sigma$ is a diagonal matrix of $\sigma_i$ and $C$ is the correlation matrix of $\rho_{ij}$.</li>
 </ul>
-<p>Using the EVD of covariance matrix: $V = \Sigma C \Sigma = R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T$</p>
+<p>Using the EVD to approximate the correlaiton or covariance matrix: </p>
+<p>$$ \begin{eqnarray} 
+V = \Sigma C \Sigma &amp;=&amp; R \Lambda R^T \approx \dot R \dot \Lambda \dot R^T \\
+C &amp;=&amp; U\Gamma U^T \approx \dot U \dot \Gamma \dot U^T
+\end{eqnarray}
+$$</p>
 <ul>
 <li>The dotted version only retains the first $k$ eigen values</li>
 <li>$\dot R$ is $n \times k$ matrix, $\dot \Lambda$ is $k \times k$ matrix.</li>
 </ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="dimension-reduction-covariance-matrix">Dimension reduction - covariance matrix</h2>
 <p>We draw $\Sigma \delta \bs w \approx \dot R \dot L \bs z \sqrt{dt}$, </p>
 <ul>
 <li>where $\dot \Lambda = \dot L \dot L$, $\bs z$ is standard normal vector of length $k$.</li>
@@ -5599,7 +5614,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="pca-is-not-scaling-invariant">PCA is not scaling invariant</h2>
+<h2 id="pca-depends-on-scale">PCA depends on scale</h2>
 <p>Given the following two EVD on covariance and correlation matrix:</p>
 <p>$$R \Lambda R^T = V = \Sigma C \Sigma = \Sigma U \Gamma U^T \Sigma$$</p>
 <p>It is tempting to think they are equivalent as:
