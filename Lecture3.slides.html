@@ -1835,7 +1835,7 @@ WARNING: pylab import has clobbered these variables: [&apos;rc&apos;, &apos;beta
 <p>Given an unknown scalar function $\renewcommand{bs}{\boldsymbol} y = y(\boldsymbol x)$, where the argument $\bs x$ is a $n$ dimensional vector.</p>
 <ul>
 <li>We have $m &gt; n$ observations: $X$ represents inputs and $\bs y$ represents outputs:
-$$X = \pmatrix{\bs x_1 \\ \bs x_2 \\ \vdots \\ \bs x_m}, \;\; \bs y = \pmatrix{y_1 \\ y_2 \\ \vdots \\ y_m}$$</li>
+$$X = \pmatrix{\bs x_1^T \\ \bs x_2^T \\ \vdots \\ \bs x_m^T}, \;\; \bs y = \pmatrix{y_1 \\ y_2 \\ \vdots \\ y_m}$$</li>
 <li>We want to find a factor loading vector $\bs \beta$ so that the linear function $\hat y = \bs x^T \bs \beta$ is the best aproximation to the observed inputs/outputs.</li>
 <li>$X \bs \beta = \bs y$ is over-determined, no vector $\bs \beta$ solves the linear system exactly</li>
 <li>Instead, we find the $\bs \beta^* $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
@@ -4710,8 +4710,8 @@ xprH0QAAAABJRU5ErkJggg==
 <h2 id="ir-pca-components">IR PCA components</h2>
 <p>The eigenvectors and percentage explained, </p>
 <ul>
-<li>the first principal component explains more than 95% of the variance</li>
-<li>the first 3 principal components can be interpreted as level, slope and curvature of the curve</li>
+<li>the 1st principal component (PC) explains more than 95% of the variance</li>
+<li>the first 3 PCs can be interpreted as level, slope and curvature</li>
 <li>note that the sign of the PC is insignificant</li>
 </ul>
 </div>
@@ -5569,7 +5569,8 @@ $$\begin{eqnarray}
 $$</p>
 </div>
 </div>
-</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
