@@ -1757,6 +1757,7 @@ $(document).ready(function(){
 <li>Principal Component Analysis</li>
 <li>Singular Value Decomposition</li>
 </ul>
+<p>$\renewcommand{bt}[1]{\bs{\tilde #1}} $</p>
 </div>
 </div>
 </div><div style=display:none>
@@ -1865,7 +1866,7 @@ Which can be easily solved using Matrix calculus:</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="condition-number-of-non-square-matrix">Condition number of non-square matrix</h2>
-<p>We already learned that an invertable matrix $A$&#39;s condition number is </p>
+<p>We already proved that an invertable matrix $A$&#39;s condition number is </p>
 <p>$$k(A) = \Vert A \Vert \Vert A^{-1} \Vert$$</p>
 <p>We can extend this to non-square matrix using pseudo-inverse, following the same proof.</p>
 <p>$$k(A) = \Vert A \Vert \Vert A^{+} \Vert$$</p>
@@ -1908,7 +1909,7 @@ Which can be easily solved using Matrix calculus:</p>
 <li>$x, z$ are standard normal, $z$ represent an insignificant feature (or accidental correlation)</li>
 <li>$\epsilon$ is a standard normal noise</li>
 </ul>
-<p>We regress the vector $\bs y$ against $X = [\bs x, \bs x + .0001 \bs z, \bs 1]$:</p>
+<p>We regress the vector $\bs y$ against $X = [\bs x, \bs x + .0001 \bs z, \bs 1]^T$:</p>
 </div>
 </div>
 </div>
@@ -2030,17 +2031,26 @@ Which can be easily solved using Matrix calculus:</p>
 <li>$A$ only changes $\bs v$&#39;s magnitude, but not direction</li>
 <li>$\lambda$ can be complex even for real $A$</li>
 </ul>
-<p>Eigen vector/value naming conventions:</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="eigen-vector-value-conventions">Eigen vector/value conventions</h2>
+<p>$$ A \bs v = \lambda \bs v $$</p>
+<p>Eigenvectors are usually specified as unit L2 vectors of $\Vert \bs v \Vert_2^2 = \bs v^T \bs v = 1$. </p>
 <ul>
-<li>eigenvectors are usually specified as unit L2 vectors of $\Vert \bs v \Vert_2^2 = \bs v^T \bs v = 1$. <ul>
 <li>$\bs v$ and $- \bs v$ are equivalent unit eigenvectors</li>
 </ul>
-</li>
-<li>eigenvalues are named in descending order: $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_n $, their corresponding eigen vectors are $\bs {v_1, v_2, ..., v_n}$ <ul>
-<li>can eigenvalues be negative?</li>
+<p>Eigenvalues are named in descending order: $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_n $ </p>
+<ul>
+<li>their corresponding eigen vectors are $\bs {v_1, v_2, ..., v_n}$ </li>
 </ul>
-</li>
-</ul>
+<p>Can eigenvalues be negative?</p>
 </div>
 </div>
 </div></section><section>
@@ -2127,12 +2137,16 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="eigenvalue-decomposition">Eigenvalue decomposition</h2>
+<p>$$ A^*(R^{-1})^* = (R^{-1})^* \Lambda^* $$</p>
 <p>If $A$ is real and symmetric: $A^* = A$:</p>
 <ul>
 <li>$\Lambda^* = \Lambda$: all eigenvalues are real</li>
-<li>we can consider real eigen vectors only without losing generaliy</li>
+<li>we can consider real eigen vectors only without losing generality</li>
 <li>$R$ is orthogonal: $(R^{-1})^* = (R^{-1})^T = R \iff RR^T = I$</li>
-<li>$A =  R\Lambda R^T$, this diagonalization is called the eigenvalue decomposition (EVD)</li>
+</ul>
+<p>$A =  R\Lambda R^T$, this diagonalization is called the eigenvalue decomposition (EVD)</p>
+<ul>
 <li>all eigenvalues are positive if and only if $A$ is SPD</li>
 </ul>
 <p>The conclusion holds even when there are duplicated eigen values, with some care. </p>
@@ -2768,10 +2782,10 @@ $$</p>
 <ul>
 <li><p>Suppose $\tilde {\bs r}$ is a random vector, with expectation $\bar{\bs r} = \mathbb{E}[\tilde{\bs r}]$ and covariance matrix $ V = \mathbb{E}[(\bt r - \bar{\bs r})(\bt r - \bar{\bs r})^T] $</p>
 <ul>
-<li>daily returns of a set of equities is an example of random vectors</li>
+<li>e.g.: returns of a set of equity names</li>
 </ul>
 </li>
-<li><p>PC is defined to be the direction $\hat{\bs u}$ onto which the projection $\bs r^T \hat{\bs u}$ has the maximimum variance, </p>
+<li><p>PC is defined to be the direction $\hat{\bs u}$ onto which the projection $\tilde {\bs r}^T \hat{\bs u}$ has the maximimum variance, </p>
 <ul>
 <li>$\hat{\bs u}$ is a unit vector, i.e., $\Vert \hat{\bs u} \Vert_2 = \sqrt{\hat{\bs u}^T\hat{\bs u}} = 1$</li>
 </ul>
@@ -3059,9 +3073,9 @@ zmbSt6glISIiRSknISIiRSlIiIhIUQoSIiJSlIKEiIgUpSAhIiJFKUiIiEhRChIiIlKUgoSIiBT1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="link-to-eigenvectors">Link to eigenvectors</h2>
-<p>The projection of the random vector in the direction of $\hat{\bs u}$ is a random scalar $\hat{\bs u}^T \bt r$</p>
+<p>The projection $\hat{\bs u}^T \bt r$ is a random scaler:</p>
 <ul>
-<li>the variance of the projection is $\text{var}[\hat{\bs u}^T \bs r] = \hat{\bs u}^T V \hat{\bs u}$.</li>
+<li>the variance of the projection is $\text{var}[\hat{\bs u}^T \bt r] = \hat{\bs u}^T V \hat{\bs u}$.</li>
 <li>the first eigen vector $\bs v_1$ of $V$ is therefore the principal component</li>
 </ul>
 <p>If we limit ourselves to all $\bs u$ that is perpendicular to $\bs v_1$, then: </p>
@@ -3078,13 +3092,13 @@ zmbSt6glISIiRSknISIiRSlIiIhIUQoSIiJSlIKEiIgUpSAhIiJFKUiIiEhRChIiIlKUgoSIiBT1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="percentage-of-variance-explained">Percentage of variance explained</h2>
+<h2 id="variance-explained">Variance explained</h2>
 <p>The total variance of is sum of variance of in all $n$ elements of the random vector, which equals:</p>
 <ol>
 <li>trace of $V$</li>
 <li>sum of all eigen values of $V$</li>
 </ol>
-<p>Therefore, the percentage of variance explained by the first $k$ eigenvectors is $\frac{\sum_i^k \lambda_i}{\sum_i^n \lambda_i}$. </p>
+<p>The portion of variance explained by the first $k$ eigenvectors is $\frac{\sum_i^k \lambda_i}{\sum_i^n \lambda_i}$. </p>
 </div>
 </div>
 </div></section><section>
@@ -4988,12 +5002,12 @@ vucdYzMzMzMzvGNsZmZmZgY4MTYzMzMzA5wYm5mZmZkBTozNzMzMzAAnxmZmZmZmgBNjMzMzMzMA
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="dimension-reduction-in-mc">Dimension reduction in MC</h2>
 <p>Given a generic $n$-dimensional SDE in vector form:</p>
-<p>$$\renewcommand{Sigma}{\mathcal{S}} \renewcommand{bt}[1]{\bs{\tilde #1}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
+<p>$$\renewcommand{Sigma}{\mathcal{S}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$</p>
 <ul>
 <li>$\Sigma$ is a diagonal matrix of $\sigma_i$ </li>
 <li>$C$ is the correlation matrix of $d \bs w$, its covariance matrix $V = \Sigma C \Sigma$.</li>
 </ul>
-<p>Recall the Cholesky decomposition, $V = LL^T$, then we draw $S \delta \bs w = L \bt z \sqrt{dt}$: </p>
+<p>With Cholesky decomposition $V = LL^T$, we draw $S \delta \bs w = L \bt z \sqrt{dt}$: </p>
 <p>$$
 \mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] = \mathbb E[(L \bt z \sqrt{dt}) (L \bt z \sqrt{dt})^T ] 
 = L \mathbb E[\bt z\bt z^T] L^T dt = V dt
@@ -5050,7 +5064,7 @@ $$</p>
 </ul>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -5059,14 +5073,19 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>However, neiher is true because: </p>
 <ul>
-<li>$\Sigma R_C$ is not diagonal: $(\Sigma R_C)(\Sigma R_C)^T = \Sigma R_C R_C^T \Sigma = \Sigma\Sigma \ne I$</li>
+<li>$\Sigma R_C$ is not diagonal: $(\Sigma R_C)(\Sigma R_C)^T = \Sigma R_C R_C^T \Sigma = \Sigma\Sigma \ne I$<ul>
+<li>$V = \Sigma C \Sigma$, $V$ and $C$ are not similar</li>
+</ul>
+</li>
 <li>$\Sigma R_C \ne R_C \Sigma$, even when $\Sigma$ is diagonal.</li>
 </ul>
 <p>There is no simple relationship btw these two EVDs.</p>
+<ul>
+<li>despite $C$ and $V$ are covariance matrix of $\bt r$ and $\Sigma^{-1} \bt r$ respectively</li>
+</ul>
 </div>
 </div>
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
