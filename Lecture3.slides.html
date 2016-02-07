@@ -2138,7 +2138,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="eigenvalue-decomposition">Eigenvalue decomposition</h2>
-<p>$$ A^*(R^{-1})^* = (R^{-1})^* \Lambda^* $$</p>
+<p>$$A R = R\Lambda \iff A^*(R^{-1})^* = (R^{-1})^* \Lambda^* $$</p>
 <p>If $A$ is real and symmetric: $A^* = A$:</p>
 <ul>
 <li>$\Lambda^* = \Lambda$: all eigenvalues are real</li>
@@ -2148,8 +2148,8 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <p>$A =  R\Lambda R^T$, this diagonalization is called the eigenvalue decomposition (EVD)</p>
 <ul>
 <li>all eigenvalues are positive if and only if $A$ is SPD</li>
+<li>applies even when there are duplicated eigen values. </li>
 </ul>
-<p>The conclusion holds even when there are duplicated eigen values, with some care. </p>
 </div>
 </div>
 </div></section><section>
@@ -3073,7 +3073,7 @@ zmbSt6glISIiRSknISIiRSlIiIhIUQoSIiJSlIKEiIgUpSAhIiJFKUiIiEhRChIiIlKUgoSIiBT1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="link-to-eigenvectors">Link to eigenvectors</h2>
-<p>The projection $\hat{\bs u}^T \bt r$ is a random scaler:</p>
+<p>The projection $\hat{\bs u}^T \bt r$ is a random scalar:</p>
 <ul>
 <li>the variance of the projection is $\text{var}[\hat{\bs u}^T \bt r] = \hat{\bs u}^T V \hat{\bs u}$.</li>
 <li>the first eigen vector $\bs v_1$ of $V$ is therefore the principal component</li>
@@ -5059,8 +5059,14 @@ $$</p>
 <p>$$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$$</p>
 <p>Are they equivalent? </p>
 <ul>
-<li>$\Sigma R_C \Lambda_C R_C^T \Sigma = (\Sigma R_C) \Lambda_C (\Sigma R_C)^T \rightarrow \Lambda_C = \Lambda_V$ and $R_V = \Sigma R_C$</li>
-<li>$\Sigma R_C \Lambda_C R_C^T \Sigma = R_C (\Sigma \Lambda_C \Sigma) R_C^T \rightarrow \Lambda_V = \Sigma \Lambda_C \Sigma $ and $R_C = R_V$</li>
+<li>$\Sigma R_C \Lambda_C R_C^T \Sigma = (\Sigma R_C) \Lambda_C (\Sigma R_C)^T$<ul>
+<li>implies $\Lambda_C = \Lambda_V$ and $R_V = \Sigma R_C$</li>
+</ul>
+</li>
+<li>$\Sigma R_C \Lambda_C R_C^T \Sigma = R_C (\Sigma \Lambda_C \Sigma) R_C^T$<ul>
+<li>implies $ \Lambda_V = \Sigma \Lambda_C \Sigma $ and $R_C = R_V$</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
