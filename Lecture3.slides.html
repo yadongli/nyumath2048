@@ -2085,7 +2085,10 @@ Which can be easily solved using Matrix calculus:</p>
 <li>$\prod_{i}\lambda_i = \det( A )$</li>
 <li>$\sum_i\lambda_i = \text{tr}(A)$</li>
 </ul>
-<p>It is difficult to directly solve the characteristic function for $\lambda_i$, especially for large $n$.</p>
+<p>It is difficult to solve the characteristic function for $\lambda_i$, especially for large $n$.</p>
+<ul>
+<li>But once we have eigenvalues, it is easy to find corresponding eigenvectors.</li>
+</ul>
 </div>
 </div>
 </div></section><section>
@@ -2200,18 +2203,17 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="matrix-similarity">Matrix similarity</h2>
-<p>Square matrix $B$ and $A$ are similar if $B = P^{-1}AP$: </p>
+<p>Square matrix $B$ and $A$ are similar if $B = PAP^{-1}$: </p>
 <ul>
 <li>similar matrix have identical eigenvalues:</li>
 </ul>
-<p>$$ AR = PBP^{-1} R = R \Lambda \iff B (P^{-1}R) = (P^{-1} R) \Lambda $$ </p>
+<p>$$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$ </p>
 <ul>
-<li>they represents the same linear function in different basis</li>
-<li>$B$ is also called a similarity transformation of $A$</li>
+<li>$B$ is also called a similarity transformation of $A$, representing the same operation in different basis</li>
 </ul>
 <p>The basic idea of computing eigen values for $A$:</p>
 <ul>
-<li>Find a similarity transformation $B = P^{-1}AP$ so that $B$ is a triangular matrix</li>
+<li>Find a similarity transformation $B = PAP^{-1}$ so that $B$ is a triangular matrix</li>
 <li>$A$ and $B$ has identical eigenvalues</li>
 <li>Eigen values of a triangular matrix $B$ is just its diagonal elements.</li>
 </ul>
@@ -2304,6 +2306,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <li>set $A_{k+1} = R_kQ_k = Q_k^{-1}A_kQ_k$, $A_{k+1}$ therefore has the same eigen values as $A_k$</li>
 <li>stop if $A_k$ is adequately upper triangular</li>
 <li>the eigven values are the diagonal elements of $A_k$</li>
+<li>guaranteed to converge if A is real and symmetric</li>
 </ul>
 <p>This algorithm is unconditionally stable because only orthogonal transformtions are used.</p>
 <ul>

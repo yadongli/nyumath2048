@@ -1796,6 +1796,7 @@ Populating the interactive namespace from numpy and matplotlib
 <li>Discretize stochastic processes</li>
 <li>Least square MC</li>
 </ul>
+<p>$\renewcommand{bt}[1]{\tilde{\boldsymbol #1}}$</p>
 </div>
 </div>
 </div></section>
@@ -4182,6 +4183,59 @@ $$\small x(t) = x(t_0)e^{-\kappa (t-t_0)} + \bar x (1 - e^{-\kappa (t-t_0)}) + \
 <ul>
 <li>Euler scheme can then be applied to sample $y(t)$, without added bias</li>
 <li>it can be easiliy extended to sample any bounded processes</li>
+<li>But in practice, we still need a reflective bound for $y(t)$ otherwise it goes to $-\infty$ quickly.</li>
+</ul>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="milstein-sampling">Milstein sampling</h2>
+<p>For a diffusion SDE of the form:</p>
+<p>$$ dx_t = u(x_t)dt + \sigma(x_t) dw_t $$</p>
+<p>Observe that both $u(x_t)$ and $\sigma(x_t)$ are stochastic through $x_t$:</p>
+<p>$$ d u_s = (\cdot) ds + \dot u_s \sigma_s dw_s,  \;\; d\sigma_s = (\cdot) ds + \dot \sigma_s \sigma_s dw_s $$</p>
+<p>where $\dot u_s = \frac{du(x_s)}{dx_s}, \dot \sigma_s = \frac{du(\sigma_s)}{dx_s}$.</p>
+<p>All corrections are higher order than $\delta t$ except the $dw_s dw_t$ term (note $t &lt; u &lt; s &lt; t+\delta t$):</p>
+<p>$$ \delta x_t = u_t \delta t + \sigma_t \delta w_t + \int_t^{t+\delta t}\int_t^{s}\dot\sigma_u \sigma_s dw_u dw_s $$</p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p> The last correction term can be approximated as:
+$$ \small \begin{eqnarray}
+\sigma_t\int_t^{t+\delta t}\int_t^{s}\dot\sigma_u dw_u dw_s &amp;\approx&amp; \sigma_t\dot\sigma_u \int_t^{t+\delta t}\int_t^{s} dw_u dw_s
+= \sigma_t\dot\sigma_t \int_t^{t+\delta t} (w_{s}-w_t)dw_s \\
+&amp;=&amp; \sigma_t\dot\sigma_t \left(\int_t^{t+\delta t} w_{s}dw_s - \int_t^{t+dt}w_t dw_s\right) \\
+&amp;=&amp; \sigma_t\dot\sigma_t \left(\int_t^{t+\delta t} w_{s}dw_s - w_t(w_{t+\delta t} - w_t)\right)
+\end{eqnarray}$$</p>
+<p>Note that $\int w_t dw_t = \frac{1}{2}(w_t^2 - t)$, the term in the bracket becomes:
+$$ \small \frac{1}{2} (w_{t+\delta t}^2 - w_t^2) - \frac{1}{2}\delta t - w_t(w_{t+\delta t} - w_t) - dt = \frac{1}{2}(w_{t+\delta t} - w_t)^2 - \frac{\delta t}{2} \approx \frac{1}{2}(\delta^2w - \delta t) $$</p>
+<p>This term vanishes for infinitesimal $dt$ but not for finited sample size $\delta t$. </p>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="properties-of-milstein">Properties of Milstein</h2>
+<p>Therefore, if we sample $\delta w_t = \tilde z \sqrt{\delta t}$, we add the following correction term:</p>
+<p>$$\delta x = u(t) \delta t + \sigma(t) \sqrt{\delta t} \tilde z + \sigma \dot \sigma (\tilde z^2 - 1) \delta t $$</p>
+<ul>
+<li>Milstein sampling is 1st order in strong convergence and weak convergence</li>
+<li>But it is non-trivial to extend Milstein to multi-dimensional </li>
 </ul>
 </div>
 </div>
