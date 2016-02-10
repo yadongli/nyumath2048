@@ -1830,7 +1830,7 @@ Populating the interactive namespace from numpy and matplotlib
 </li>
 <li><p>We want to find a factor loading vector $\bs \beta$ so that the linear function $\hat y = \bs x^T \bs \beta$ is the best aproximation to the observed inputs/outputs.</p>
 </li>
-<li>$X \bs \beta = \bs y$ is over-determined, no vector $\bs \beta$ solves the linear system exactly</li>
+<li>$X \bs \beta = \bs y$ is over-determined, no vector $\bs \beta$ solves it exactly</li>
 <li>Instead, we find the $\bs \beta^* $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
 </ul>
 </div>
@@ -2210,6 +2210,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <p>$$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$ </p>
 <ul>
 <li>$B$ is also called a similarity transformation of $A$, representing the same operation in different basis</li>
+<li>$P$ is orthogonal if $A$ is real and symmetric</li>
 </ul>
 <p>The basic idea of computing eigen values for $A$:</p>
 <ul>
@@ -2306,7 +2307,7 @@ R^{-1} A &amp;= \Lambda R^{-1} \\
 <li>set $A_{k+1} = R_kQ_k = Q_k^{-1}A_kQ_k$, $A_{k+1}$ therefore has the same eigen values as $A_k$</li>
 <li>stop if $A_k$ is adequately upper triangular</li>
 <li>the eigven values are the diagonal elements of $A_k$</li>
-<li>guaranteed to converge if A is real and symmetric</li>
+<li>guaranteed to converge if $A$ is real and symmetric</li>
 </ul>
 <p>This algorithm is unconditionally stable because only orthogonal transformtions are used.</p>
 <ul>
@@ -5018,10 +5019,10 @@ vucdYzMzMzMzvGNsZmZmZgY4MTYzMzMzA5wYm5mZmZkBTozNzMzMzAAnxmZmZmZmgBNjMzMzMzMA
 <li>$\Sigma$ is a diagonal matrix of $\sigma_i$ </li>
 <li>$C$ is the correlation matrix of $d \bs w$, its covariance matrix $V = \Sigma C \Sigma$.</li>
 </ul>
-<p>Recall Cholesky decomposition $V = LL^T$: $S \delta \bs w = L \bt z \sqrt{dt}$: </p>
+<p>Recall Cholesky decomposition $V = LL^T$: $\Sigma \delta \bs w = L \bt z \sqrt{\delta t}$: </p>
 <p>$$
-\mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] = \mathbb E[(L \bt z \sqrt{dt}) (L \bt z \sqrt{dt})^T ] 
-= L \mathbb E[\bt z\bt z^T] L^T dt = V dt
+\mathbb E [\Sigma\delta \bs w (\Sigma\delta \bs w)^T] = \mathbb E[(L \delta t z \sqrt{\delta t}) (L \delta t z \sqrt{\delta t})^T ] 
+= L \mathbb E[\delta t z\delta t z^T] L^T \delta t = V \delta t
 $$</p>
 <ul>
 <li>$\bt z$ is independent standard normal random vector.</li>
@@ -5051,10 +5052,10 @@ $$</p>
 <li>The dotted version only retains the first $k$ eigen values</li>
 <li>$\dot R$ and $L_V, L_C$ are $n \times k$ matrices; $\dot \Lambda$ are $k \times k$ matrices.</li>
 </ul>
-<p>Simulation can then be driven by $\Sigma \delta \bs w = L \bt z \sqrt{dt}$:</p>
+<p>Simulation can then be driven by $\Sigma \delta \bs w = L \dot{\bt z} \sqrt{\delta t}$:</p>
 <ul>
 <li>Either $L_V = \dot R_V \dot H_V$ or $L_C = \Sigma \dot R_C \dot H_C$ works</li>
-<li>$\bt z$ is of length $k$ only</li>
+<li>$\dot{\bt z}$ is of length $k$ only</li>
 </ul>
 </div>
 </div>
