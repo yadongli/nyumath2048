@@ -1794,6 +1794,7 @@ Populating the interactive namespace from numpy and matplotlib
 <li>Interpolation</li>
 <li>Curve building</li>
 </ul>
+<p>$\renewcommand{bs}{\boldsymbol}$</p>
 </div>
 </div>
 </div></section>
@@ -8399,29 +8400,10 @@ $$p(t) = e^{-\int_0^t h(s) ds}$$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="bootstrap">Bootstrap</h2>
-<p>$\renewcommand{bs}{\boldsymbol}$
-The objective:</p>
+<h2 id="triangular-dependency">Triangular dependency</h2>
+<p>The objective:</p>
 <ul>
-<li>build a curve in hazard rate $\bs h(t)$ that exactly reprice all observed CDS prices quoted in $\bs q(t)$</li>
-<li>or equivalently, we could build the curve in cumulative hazard $\bs g(t)$.</li>
-</ul>
-<p>Bootstrap is the standard method to build curves in quatitative finance</p>
-<ul>
-<li>Solve the knot values one by one, using benchmark instruments in the increasing order of their maturities</li>
-</ul>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="why-bootstrap-">Why bootstrap?</h2>
-<ul>
-<li>the dependency is triangular, because of non-zero coupons:</li>
+<li>build a curve in hazard rate $\bs h(t)$ that exactly reproduce all observed CDS prices quoted in $\bs q(t)$</li>
 </ul>
 <table>
 <thead>
@@ -8477,6 +8459,10 @@ The objective:</p>
 </tr>
 </tbody>
 </table>
+<p>Bootstrap is the standard method to build curves with triangular dependency:</p>
+<ul>
+<li>Solve the knot values one by one, using benchmark instruments with increasing maturities</li>
+</ul>
 </div>
 </div>
 </div></section><section>
