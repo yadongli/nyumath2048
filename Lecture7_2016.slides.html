@@ -1379,7 +1379,7 @@ input.engine_num_input{width:60px}
 .ansiblack{color:#000}
 .ansired{color:#8b0000}
 .ansigreen{color:#006400}
-.ansiyellow{color:#a52a2a}
+.ansiyellow{color:#c4a000}
 .ansiblue{color:#00008b}
 .ansipurple{color:#9400d3}
 .ansicyan{color:#4682b4}
@@ -1625,6 +1625,7 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .nv { color: #19177C } /* Name.Variable */
 .highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
@@ -1715,6 +1716,26 @@ div.output_prompt {
 </head>
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style type="text/css">
+//div.output_wrapper {
+//  margin-top: 0px;
+//}
+.input_hidden {
+  display: none;
+//  margin-top: 5px;
+}
+</style>
+
+<!-- script>
+$(document).ready(function(){
+  $(".output_wrapper").click(function(){
+      $(this).prev('.input_hidden').slideToggle();
+  });
+})
+</script -->
+
 
 <body>
 <div class="reveal">
@@ -1722,10 +1743,9 @@ div.output_prompt {
 <div style=display:none>
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
@@ -1743,6 +1763,8 @@ In&nbsp;[1]:
 
 </div>
 </div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2190,10 +2212,9 @@ choosing $\alpha^k$ so that $(\bx^{k+1}, \bs{s}^{k+1}) \geq 0 $</li>
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[3]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -2216,6 +2237,8 @@ In&nbsp;[3]:
 
 </div>
 </div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2470,10 +2493,9 @@ where we assume $s_0 = 0$.</p>
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[25]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">102</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -2496,6 +2518,8 @@ In&nbsp;[25]:
 
 </div>
 </div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2627,7 +2651,7 @@ dependencies: [
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -2658,6 +2682,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 </body>
 
 
+
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
@@ -2686,7 +2711,7 @@ Reveal.initialize({
     controls: true,
 
     // Display a presentation progress bar
-    //progress: true,
+    progress: true,
 
     // Push each slide change to the browser history
     history: false,
@@ -2696,7 +2721,7 @@ Reveal.initialize({
     slideNumber: true,
 
     // Enable touch events for navigation
-    //touch: true,
+    touch: true,
 
     // Enable the slide overview mode
     //overview: true,
@@ -2716,7 +2741,7 @@ Reveal.initialize({
     //autoSlide: 0,
 
     // Enable slide navigation via mouse wheel
-    //mouseWheel: false,
+    mouseWheel: false,
 
     // Transition style
     // transition: 'concave', // default/cube/page/concave/zoom/linear/fade/none
@@ -2733,7 +2758,6 @@ Reveal.initialize({
      // margin: 0,
      theme: 'white', // available themes are in /css/theme
 });
-
 
 // remap F5/ESC/b key
 Reveal.configure({
