@@ -1716,26 +1716,6 @@ div.output_prompt {
 </head>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<style type="text/css">
-//div.output_wrapper {
-//  margin-top: 0px;
-//}
-.input_hidden {
-  display: none;
-//  margin-top: 5px;
-}
-</style>
-
-<!-- script>
-$(document).ready(function(){
-  $(".output_wrapper").click(function(){
-      $(this).prev('.input_hidden').slideToggle();
-  });
-})
-</script -->
-
 
 <body>
 <div class="reveal">
@@ -1743,7 +1723,6 @@ $(document).ready(function(){
 <div style=display:none>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
@@ -1758,8 +1737,6 @@ $(document).ready(function(){
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -1865,7 +1842,6 @@ Monte carlo simulation: </p>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
@@ -1885,10 +1861,7 @@ Monte carlo simulation: </p>
 </div>
 
 </div>
-
-</div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
@@ -1916,8 +1889,6 @@ Monte carlo simulation: </p>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -2676,7 +2647,6 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
@@ -2707,8 +2677,6 @@ $$</p>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -3253,7 +3221,6 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 </div><div style=display:none>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
@@ -3264,8 +3231,6 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -3417,7 +3382,6 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
@@ -3443,8 +3407,6 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -4158,7 +4120,7 @@ $$\small x(t) = x(t_0)e^{-\kappa (t-t_0)} + \bar x (1 - e^{-\kappa (t-t_0)}) + \
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="cir-process">CIR process</h2>
 <p>Cox-Ingersoll-Ross (CIR) process:</p>
-<p>$$dx(t) = \kappa(\bar x - x(t)) dt + \sigma \sqrt{x(t)} dw(t)$$</p>
+<p>$$dx(t) = \kappa(x(t) - \bar x) dt + \sigma \sqrt{x(t)} dw(t)$$</p>
 <ul>
 <li>$x(t) \ge 0$, zero is attainable if $\sigma^2 &gt; 2\kappa\bar x$ </li>
 <li>no known analytical solution for $x(t)$</li>
@@ -4179,7 +4141,7 @@ $$\small x(t) = x(t_0)e^{-\kappa (t-t_0)} + \bar x (1 - e^{-\kappa (t-t_0)}) + \
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="log-euler-scheme">Log-Euler scheme</h2>
 <p>A better solution to prevent CIR process from becoming negative is to apply the transformation $y(t) = \log(x(t))$:</p>
-<p>$$\small dy(t) = \frac{1}{x(t)}\left(\kappa(\bar x - x(t)) - \frac{\sigma^2}{2} \right) dt + \frac{\sigma}{\sqrt{x(t)}}dw(t) $$</p>
+<p>$$\small dy(t) = \frac{1}{x(t)}\left(\kappa(x(t) - \bar x) - \frac{\sigma^2}{2} \right) dt + \frac{\sigma}{\sqrt{x(t)}}dw(t) $$</p>
 <ul>
 <li>Euler scheme can then be applied to sample $y(t)$, without added bias</li>
 <li>it can be easiliy extended to sample any bounded processes</li>
@@ -4200,7 +4162,7 @@ $$\small x(t) = x(t_0)e^{-\kappa (t-t_0)} + \bar x (1 - e^{-\kappa (t-t_0)}) + \
 <p>Observe that both $u(x_t)$ and $\sigma(x_t)$ are stochastic through $x_t$:</p>
 <p>$$ d u_s = (\cdot) ds + \dot u_s \sigma_s dw_s,  \;\; d\sigma_s = (\cdot) ds + \dot \sigma_s \sigma_s dw_s $$</p>
 <p>where $\dot u_s = \frac{du(x_s)}{dx_s}, \dot \sigma_s = \frac{du(\sigma_s)}{dx_s}$.</p>
-<p>All corrections are higher order than $\delta t$ except the $dw_s dw_t$ term (note $t &lt; u &lt; s &lt; t+\delta t$):</p>
+<p>All corrections are higher order than $d t$ except the $dw_s dw_t$ term (note $t &lt; u &lt; s &lt; t+\delta t$):</p>
 <p>$$ \delta x_t = u_t \delta t + \sigma_t \delta w_t + \int_t^{t+\delta t}\int_t^{s}\dot\sigma_u \sigma_s dw_u dw_s $$</p>
 </div>
 </div>
@@ -4259,7 +4221,6 @@ x(t_{i+1}) &amp;= x(t_i) + \kappa(\bar x - x(t_i)) \delta + \sqrt{\delta} \sigma
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
@@ -4280,12 +4241,9 @@ x(t_{i+1}) &amp;= x(t_i) + \kappa(\bar x - x(t_i)) \delta + \sqrt{\delta} \sigma
 </div>
 </div>
 
-</div>
-
 </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
@@ -4309,8 +4267,6 @@ x(t_{i+1}) &amp;= x(t_i) + \kappa(\bar x - x(t_i)) \delta + \sqrt{\delta} \sigma
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -5059,7 +5015,6 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 </div><div style=display:none>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
@@ -5069,8 +5024,6 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -5092,7 +5045,6 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 </div>
     </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
@@ -5126,8 +5078,6 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -7138,7 +7088,6 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
@@ -7159,8 +7108,6 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -7206,7 +7153,6 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
@@ -7228,8 +7174,6 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -8151,7 +8095,6 @@ yCIiIiIirShAFhERERFpRQGyiIiIiEgrCpBFRERERFr5/5RQARUPo1bOAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
@@ -8165,8 +8108,6 @@ yCIiIiIirShAFhERERFpRQGyiIiIiEgrCpBFRERERFr5/5RQARUPo1bOAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 </div></section><section>
@@ -8188,7 +8129,6 @@ yCIiIiIirShAFhERERFpRQGyiIiIiEgrCpBFRERERFr5/5RQARUPo1bOAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
@@ -8216,8 +8156,6 @@ yCIiIiIirShAFhERERFpRQGyiIiIiEgrCpBFRERERFr5/5RQARUPo1bOAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -9592,7 +9530,6 @@ SJz/A8hKXzKS9WisAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[134]:</div>
 <div class="inner_cell">
@@ -9636,8 +9573,6 @@ SJz/A8hKXzKS9WisAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -11287,7 +11222,6 @@ qXAAAAAASUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
@@ -11297,8 +11231,6 @@ qXAAAAAASUVORK5CYII=
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -12935,7 +12867,6 @@ D0gflbku4++93iOpHb42oOgLla2KULqDIAiCIAiCoIkJ95IgCIIgCIIgaGJC6Q6CIAiCIAiCJiaU
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
@@ -12945,8 +12876,6 @@ D0gflbku4++93iOpHb42oOgLla2KULqDIAiCIAiCoIkJ95IgCIIgCIIgaGJC6Q6CIAiCIAiCJiaU
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -14599,7 +14528,6 @@ AElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
@@ -14609,8 +14537,6 @@ AElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -16274,7 +16200,6 @@ B4flfLiF/HQcAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[138]:</div>
 <div class="inner_cell">
@@ -16284,8 +16209,6 @@ B4flfLiF/HQcAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -17943,7 +17866,6 @@ OI7jOI7jOHXGjW7HcRzHcRzHqTP/D2uFKDRVGEqsAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
@@ -17956,8 +17878,6 @@ OI7jOI7jOHXGjW7HcRzHcRzHqTP/D2uFKDRVGEqsAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -18040,7 +17960,6 @@ OI7jOI7jOHXGjW7HcRzHcRzHqTP/D2uFKDRVGEqsAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
@@ -18052,8 +17971,6 @@ OI7jOI7jOHXGjW7HcRzHcRzHqTP/D2uFKDRVGEqsAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -18330,7 +18247,6 @@ VsPchdLMrIY5yJuZ1TAHeTOzGuYgb2ZWwxzkzcxqmIO8mVkNc5A3M6thDvJmZjXMQd7MrIb9f8MS
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
@@ -18347,8 +18263,6 @@ VsPchdLMrIY5yJuZ1TAHeTOzGuYgb2ZWwxzkzcxqmIO8mVkNc5A3M6thDvJmZjXMQd7MrIb9f8MS
 
 </div>
 </div>
-</div>
-
 </div>
 
 </div></section><section>
@@ -18407,7 +18321,6 @@ VsPchdLMrIY5yJuZ1TAHeTOzGuYgb2ZWwxzkzcxqmIO8mVkNc5A3M6thDvJmZjXMQd7MrIb9f8MS
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
@@ -18430,8 +18343,6 @@ VsPchdLMrIY5yJuZ1TAHeTOzGuYgb2ZWwxzkzcxqmIO8mVkNc5A3M6thDvJmZjXMQd7MrIb9f8MS
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -18952,7 +18863,6 @@ BNXWAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[130]:</div>
 <div class="inner_cell">
@@ -18989,10 +18899,7 @@ BNXWAAAAAElFTkSuQmCC
 </div>
 
 </div>
-
-</div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
@@ -19015,8 +18922,6 @@ BNXWAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -19145,10 +19050,6 @@ BNXWAAAAAElFTkSuQmCC
 </ul>
 <p>Homework:</p>
 <ul>
-<li>Work on our project<ul>
-<li>you now have the knowledge to complete 75% of the modelling work in your project</li>
-</ul>
-</li>
 <li>Complete <a href="http://yadongli.github.io/nyumath2048">homework set 6</a></li>
 </ul>
 </div>
@@ -19214,7 +19115,6 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 </body>
 
 
-
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
@@ -19243,7 +19143,7 @@ Reveal.initialize({
     controls: true,
 
     // Display a presentation progress bar
-    progress: true,
+    //progress: true,
 
     // Push each slide change to the browser history
     history: false,
@@ -19253,7 +19153,7 @@ Reveal.initialize({
     slideNumber: true,
 
     // Enable touch events for navigation
-    touch: true,
+    //touch: true,
 
     // Enable the slide overview mode
     //overview: true,
@@ -19273,7 +19173,7 @@ Reveal.initialize({
     //autoSlide: 0,
 
     // Enable slide navigation via mouse wheel
-    mouseWheel: false,
+    //mouseWheel: false,
 
     // Transition style
     // transition: 'concave', // default/cube/page/concave/zoom/linear/fade/none
@@ -19288,8 +19188,9 @@ Reveal.initialize({
      // width: 100%,
      // height: 100%,
      // margin: 0,
-     theme: 'white', // available themes are in /css/theme
+     theme: 'default-dark', // available themes are in /css/theme
 });
+
 
 // remap F5/ESC/b key
 Reveal.configure({
