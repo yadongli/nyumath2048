@@ -4232,7 +4232,7 @@ $$ \small \frac{1}{2} (w_{t+\delta t}^2 - w_t^2) - \frac{1}{2}\delta t - w_t(w_{
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="properties-of-milstein">Properties of Milstein</h2>
 <p>Therefore, if we sample $\delta w_t = \tilde z \sqrt{\delta t}$, we add the following correction term:</p>
-<p>$$\delta x = u(t) \delta t + \sigma(t) \sqrt{\delta t} \tilde z + \sigma \dot \sigma (\tilde z^2 - 1) \delta t $$</p>
+<p>$$\delta x = u(t) \delta t + \sigma(t) \sqrt{\delta t} \tilde z + \frac{1}{2}\sigma \dot \sigma (\tilde z^2 - 1) \delta t $$</p>
 <ul>
 <li>Milstein sampling is 1st order in strong convergence and weak convergence</li>
 <li>But it is non-trivial to extend Milstein to multi-dimensional </li>
