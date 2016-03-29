@@ -4215,11 +4215,11 @@ $$\small x(t) = x(t_0)e^{-\kappa (t-t_0)} + \bar x (1 - e^{-\kappa (t-t_0)}) + \
 $$ \small \begin{eqnarray}
 \sigma_t\int_t^{t+\delta t}\int_t^{s}\dot\sigma_u dw_u dw_s &amp;\approx&amp; \sigma_t\dot\sigma_u \int_t^{t+\delta t}\int_t^{s} dw_u dw_s
 = \sigma_t\dot\sigma_t \int_t^{t+\delta t} (w_{s}-w_t)dw_s \\
-&amp;=&amp; \sigma_t\dot\sigma_t \left(\int_t^{t+\delta t} w_{s}dw_s - \int_t^{t+dt}w_t dw_s\right) \\
+&amp;=&amp; \sigma_t\dot\sigma_t \left(\int_t^{t+\delta t} w_{s}dw_s - \int_t^{t+\delta t}w_t dw_s\right) \\
 &amp;=&amp; \sigma_t\dot\sigma_t \left(\int_t^{t+\delta t} w_{s}dw_s - w_t(w_{t+\delta t} - w_t)\right)
 \end{eqnarray}$$</p>
 <p>Note that $\int w_t dw_t = \frac{1}{2}(w_t^2 - t)$, the term in the bracket becomes:
-$$ \small \frac{1}{2} (w_{t+\delta t}^2 - w_t^2) - \frac{1}{2}\delta t - w_t(w_{t+\delta t} - w_t) - dt = \frac{1}{2}(w_{t+\delta t} - w_t)^2 - \frac{\delta t}{2} \approx \frac{1}{2}(\delta^2w - \delta t) $$</p>
+$$ \small \frac{1}{2} (w_{t+\delta t}^2 - w_t^2) - \frac{1}{2}\delta t - w_t(w_{t+\delta t} - w_t) - \del= \frac{1}{2}(w_{t+\delta t} - w_t)^2 - \frac{\delta t}{2} \approx \frac{1}{2}(\delta^2w - \delta t) $$</p>
 <p>This term vanishes for infinitesimal $dt$ but not for finited sample size $\delta t$. </p>
 </div>
 </div>
