@@ -9,7 +9,7 @@ http://github.com/yadongli/nyumath2048
 
 Lecture slides and homework will be published weekly before the Wednesday lecture. 
 
-Old lecture slides from Spring 2015 semester are available [here](http://yadongli.github.io/nyumath2048/2015Spring/)
+Old lecture slides from past years: [Spring2016](http://yadongli.github.io/nyumath2048/2016Spring/), [Spring2015](http://yadongli.github.io/nyumath2048/2015Spring/), 
 
 Lecture slides are in HTML format, which requires javascript enabled browser to render properly. 
 
