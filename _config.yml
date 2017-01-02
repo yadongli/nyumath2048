@@ -1,0 +1,8 @@
+title: Scientific Computing in Finance
+description: Math-GA 2048, New York University, Spring 2016
+google_analytics: UA-56992512-1
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
