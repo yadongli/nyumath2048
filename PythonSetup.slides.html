@@ -1589,8 +1589,10 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -1769,8 +1771,7 @@ $(document).ready(function(){
 </ul>
 <p>The lecture slides are all generated from the IPython notebooks sources. You can get a copy of the source by:</p>
 <ul>
-<li>download the zip package from the source url above, or</li>
-<li>(recommended): using the git command line tool: <ul>
+<li>using the git command line tool: <ul>
 <li>install git command line tool from <a href="http://git-scm.com/book/en/v2/Getting-Started-Installing-Git">http://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></li>
 <li>clone the source code to your local folder by issue the following command, which creates a new folder of nyumath2048, and downloads all the source files from github:</li>
 </ul>
@@ -1797,22 +1798,21 @@ $(document).ready(function(){
 <p><strong>Python version 2.7.x</strong></p>
 <ul>
 <li>Python 3.x is not backward compatible</li>
-<li>either 32bit or 64bit version works </li>
+<li>either 32bit or 64bit version works, 64bit is recommended </li>
 </ul>
 <p>Recommend using a Python distribution:</p>
 <ul>
+<li><a href=http://continuum.io/downloads>Anaconda</a>: a popular free Python distribution</li>
 <li><a href=https://www.enthought.com/products/canopy/>Enthought Canopy</a>: free for students</li>
-<li><a href=http://continuum.io/downloads>Anaconda</a>: another popular free Python distribution</li>
 </ul>
 <p>Both distributions come with necessary packages like IPython/numpy/pandas etc. </p>
 <ul>
-<li>Enthought canopy comes with a graphical package manager</li>
 <li>Anaconda comes with command line package manager <code>conda</code></li>
+<li>Enthought canopy comes with a graphical package manager</li>
 <li><a href=https://pypi.python.org/pypi/pip>pip</a> can be used to install Python packages that are not part of Enthought Anaconda distribution (rarely needed)</li>
 <li>both distributions support major OSes</li>
 </ul>
 <p>Difficulties of installing Enthought Canopy has been reported on MacOS, Anaconda is recommended for MacOS.</p>
-<p>(Please inform us if you have succeeded with using Enthought on MacOS).</p>
 </div>
 </div>
 </div></section><section>
@@ -1850,7 +1850,7 @@ $(document).ready(function(){
 <ul>
 <li>this step allows python interpretor to find the python modules for the class</li>
 <li>you won&#39;t be able to run the class IPython notebook without performing this step</li>
-<li>many students have run into problems because they ignored this step last year</li>
+<li>many past students have run into problems because they ignored this step</li>
 </ul>
 <p>If you don&#39;t know what environment variable is or how to create it in your OS, google it</p>
 </div>
@@ -2035,6 +2035,15 @@ Reveal.initialize({
      // height: 100%,
      // margin: 0,
      theme: 'white', // available themes are in /css/theme
+});
+
+// remap F5/ESC/b key
+Reveal.configure({
+  keyboard: {
+    66: 'right',
+    116: 'left',
+    27: 'left'
+  }
 });
 
 </script>
