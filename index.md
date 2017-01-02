@@ -69,4 +69,4 @@ The instructors want to thank our current and past students for pointing out man
 ## Authors
 @yadongli @hcheng66
 
-&copy; 2014-2016
+&copy; 2014-2017
