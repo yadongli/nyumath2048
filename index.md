@@ -16,7 +16,7 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 
 | Lecture | Materials |
 | :---: | :---: |
-| 1. Introduction | [Lecture Slides](Lecture1.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb) |
+| 1. Introduction | [Lecture Slides](Lecture1.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb) |
 
 <!---
 | 1. Introduction | <a href="Lecture1.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb>homework</a> | @yadongli |
