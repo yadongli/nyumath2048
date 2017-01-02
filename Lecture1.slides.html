@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Lecture1 slides</title>
+<title>lecture1 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -1589,8 +1589,10 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -1730,7 +1732,7 @@ div.output_prompt {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="scientific-computing-in-finance">Scientific Computing in Finance</h1>
 <ul>
-<li>MATH-GA 2048, Spring 2016</li>
+<li>MATH-GA 2048, Spring 2017</li>
 <li>Courant Institute of Mathematical Sciences</li>
 <li>New York University</li>
 </ul>
@@ -1744,21 +1746,16 @@ div.output_prompt {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="instructors">Instructors</h2>
-<h4 id="hongwei-cheng">Hongwei Cheng</h4>
-<ul>
-<li>Head of Research and CRO, Mill Hill Capital</li>
-<li>Ph.D. Mathematics, New York University</li>
-</ul>
 <h4 id="yadong-li">Yadong Li</h4>
 <ul>
-<li>Head of Trading Book Risk Modelling, Quantitative Analytics, Barclays</li>
+<li>Head of Trading Book Risk and XVA Modelling, Quantitative Analytics, Barclays</li>
 <li>Ph.D. in Physics, M.S. in Computer Sciences, University of Wisconsin-Madison</li>
 <li>Master of Financial Engineering, University of California, Berkeley </li>
 </ul>
-<h2 id="teaching-assitant">Teaching Assitant</h2>
-<h4 id="maulik-desai">Maulik Desai</h4>
+<h4 id="wujiang-lou">Wujiang Lou</h4>
 <ul>
-<li>Ph.D. EECS, Columbia University</li>
+<li>Senior trader, Global Fixed Income, HSBC</li>
+<li>Ph.D. in Aeronautics and Astronautics, Nanjing University</li>
 </ul>
 </div>
 </div>
@@ -2551,7 +2548,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
 
 <span class="kn">import</span> <span class="nn">bitstring</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -2559,7 +2556,7 @@ $$</p>
 <span class="kn">import</span> <span class="nn">fmt</span>
 <span class="kn">import</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">sys</span>
 
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">parts2f</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span> <span class="p">:</span>
     <span class="k">return</span> <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">sign</span><span class="o">*</span><span class="n">sig</span><span class="o">*</span><span class="mf">2.</span><span class="o">**</span><span class="n">e</span><span class="p">)</span>
@@ -2579,8 +2576,8 @@ $$</p>
     <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">signb</span><span class="o">.</span><span class="n">bin</span><span class="p">,</span> <span class="n">eb</span><span class="o">.</span><span class="n">bin</span><span class="p">,</span> <span class="n">sigb</span><span class="o">.</span><span class="n">bin</span><span class="p">])</span>
     <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="o">-</span><span class="n">signb</span><span class="o">.</span><span class="n">uint</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">sig</span><span class="p">])</span>
     
-    <span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">bins</span><span class="p">,</span> <span class="n">vals</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Bits&#39;</span><span class="p">,</span> <span class="s">&#39;Decimal&#39;</span><span class="p">],</span> 
-                               <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Sign&quot;</span><span class="p">,</span> <span class="s">&quot;Exp&quot;</span><span class="p">,</span> <span class="s">&quot;Fraction&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">bins</span><span class="p">,</span> <span class="n">vals</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Bits&#39;</span><span class="p">,</span> <span class="s1">&#39;Decimal&#39;</span><span class="p">],</span> 
+                               <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Sign&quot;</span><span class="p">,</span> <span class="s2">&quot;Exp&quot;</span><span class="p">,</span> <span class="s2">&quot;Fraction&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2619,7 +2616,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="mf">10.7</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="mf">10.7</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -2670,7 +2667,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">23445.25</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">23445.25</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2742,14 +2739,14 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">prec32</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">24</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">prec32</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">24</span><span class="p">)</span>
 <span class="n">prec64</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">53</span><span class="p">)</span>
 
 <span class="n">f32</span> <span class="o">=</span> <span class="p">[</span><span class="n">parts2f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">126</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">parts2f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">254</span><span class="o">-</span><span class="mi">127</span><span class="p">,</span> <span class="p">(</span><span class="mf">2.</span><span class="o">-</span><span class="n">prec32</span><span class="o">*</span><span class="mi">2</span><span class="p">)),</span> <span class="n">prec32</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">prec32</span><span class="p">)]</span>
 <span class="n">f64</span> <span class="o">=</span> <span class="p">[</span><span class="n">parts2f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1022</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">parts2f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2046</span><span class="o">-</span><span class="mi">1023</span><span class="p">,</span> <span class="p">(</span><span class="mf">2.</span><span class="o">-</span><span class="n">prec64</span><span class="o">*</span><span class="mi">2</span><span class="p">)),</span> <span class="n">prec64</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">prec64</span><span class="p">)]</span>
 
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f32</span><span class="p">,</span> <span class="n">f64</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;32 bit&#39;</span><span class="p">,</span> <span class="s">&#39;64 bit&#39;</span><span class="p">],</span> 
-                           <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Min&quot;</span><span class="p">,</span> <span class="s">&quot;Max&quot;</span><span class="p">,</span> <span class="s">&quot;Machine Precision&quot;</span><span class="p">,</span> <span class="s">&quot;# of Significant Digits&quot;</span><span class="p">]),</span> <span class="s">&quot;5g&quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f32</span><span class="p">,</span> <span class="n">f64</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;32 bit&#39;</span><span class="p">,</span> <span class="s1">&#39;64 bit&#39;</span><span class="p">],</span> 
+                           <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Min&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Machine Precision&quot;</span><span class="p">,</span> <span class="s2">&quot;# of Significant Digits&quot;</span><span class="p">]),</span> <span class="s2">&quot;5g&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2815,7 +2812,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -2866,7 +2863,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -2918,7 +2915,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">Inf</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">Inf</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -2969,7 +2966,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-43</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-43</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -3031,11 +3028,11 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">3</span>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">1.</span> <span class="o">-</span> <span class="mf">1.</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span>
-<span class="k">print</span> <span class="s">&quot;b == c? </span><span class="si">%s</span><span class="s"> !&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;b - c = </span><span class="si">%e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;b == c? </span><span class="si">%s</span><span class="s2"> !&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;b - c = </span><span class="si">%e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3066,7 +3063,7 @@ b - c = -1.110223e-16
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -3119,7 +3116,7 @@ b - c = -1.110223e-16
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">f2parts</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -3182,8 +3179,8 @@ b - c = -1.110223e-16
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">1e-308</span>
-<span class="k">print</span> <span class="s">&quot;inverse of </span><span class="si">%e</span><span class="s"> is </span><span class="si">%e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e-308</span>
+<span class="k">print</span> <span class="s2">&quot;inverse of </span><span class="si">%e</span><span class="s2"> is </span><span class="si">%e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3212,8 +3209,8 @@ inverse of 1.000000e-308 is 1.000000e+308
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">1e-309</span>
-<span class="k">print</span> <span class="s">&quot;inverse of </span><span class="si">%e</span><span class="s"> is </span><span class="si">%e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e-309</span>
+<span class="k">print</span> <span class="s2">&quot;inverse of </span><span class="si">%e</span><span class="s2"> is </span><span class="si">%e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3255,7 +3252,7 @@ inverse of 1.000000e-309 is inf
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span> <span class="mf">1.</span> <span class="o">-</span> <span class="mf">1e-16</span> <span class="o">==</span> <span class="mf">1.</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="mf">1.</span> <span class="o">-</span> <span class="mf">1e-16</span> <span class="o">==</span> <span class="mf">1.</span>
 </pre></div>
 
 </div>
@@ -3284,7 +3281,7 @@ False
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">1e-16</span> <span class="o">==</span> <span class="mf">1.</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">1e-16</span> <span class="o">==</span> <span class="mf">1.</span>
 </pre></div>
 
 </div>
@@ -3314,17 +3311,17 @@ True
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">largeint</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><span class="n">largeint</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span>
 
-<span class="k">print</span> <span class="s">&quot;Integer arithmetic:&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c"># in Python&#39;s bignum</span>
-<span class="k">print</span> <span class="s">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span>
-<span class="k">print</span> <span class="s">&quot;a - </span><span class="si">%d</span><span class="s"> == a ?&quot;</span> <span class="o">%</span> <span class="n">largeint</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">largeint</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span>
+<span class="k">print</span> <span class="s2">&quot;Integer arithmetic:&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># in Python&#39;s bignum</span>
+<span class="k">print</span> <span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span>
+<span class="k">print</span> <span class="s2">&quot;a - </span><span class="si">%d</span><span class="s2"> == a ?&quot;</span> <span class="o">%</span> <span class="n">largeint</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">largeint</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span>
 
-<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Floating point arithmetic:&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Floating point arithmetic:&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
-<span class="k">print</span> <span class="s">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span>
-<span class="k">print</span> <span class="s">&quot;b - </span><span class="si">%d</span><span class="s"> == b ?&quot;</span> <span class="o">%</span> <span class="n">largeint</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">largeint</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span>
+<span class="k">print</span> <span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span>
+<span class="k">print</span> <span class="s2">&quot;b - </span><span class="si">%d</span><span class="s2"> == b ?&quot;</span> <span class="o">%</span> <span class="n">largeint</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">largeint</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
 
 </div>
@@ -3370,9 +3367,9 @@ b - 4294967295 == b ? True
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span>
-<span class="k">print</span> <span class="s">&quot;a/3 = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="mf">3.</span>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span>
+<span class="k">print</span> <span class="s2">&quot;a/3 = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="mf">3.</span>
 </pre></div>
 
 </div>
@@ -3402,8 +3399,8 @@ a/3 =  [ 0.          0.33333333]
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span>
+<div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span>
 </pre></div>
 
 </div>
@@ -3456,8 +3453,8 @@ b =  [ 0.          0.33333333  0.66666667]
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">b</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span> <span class="o">-</span> <span class="mf">1e-10</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span>
+<div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span> <span class="o">-</span> <span class="mf">1e-10</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span>
 </pre></div>
 
 </div>
@@ -3501,18 +3498,18 @@ $$e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!} = 1 + x + \frac{1}{2}x^2 + ...$$</p>
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">:</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)])</span> <span class="o">+</span> <span class="mf">1.</span>
 
 <span class="n">terms</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="k">print</span> <span class="s">&quot;rel err for exp(%.f) is </span><span class="si">%.2f%%</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">terms</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;rel err for exp(%.f) is </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">terms</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
-<span class="k">print</span> <span class="s">&quot;rel err for exp(%.f) is </span><span class="si">%.2f%%</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">terms</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;rel err for exp(%.f) is </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">terms</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s">&quot;exp_taylor(%.f) = </span><span class="si">%f</span><span class="s">, exp(%.f) = </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">exp_taylor</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">terms</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span> <span class="s2">&quot;exp_taylor(%.f) = </span><span class="si">%f</span><span class="s2">, exp(%.f) = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">exp_taylor</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">terms</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -3571,14 +3568,14 @@ exp_taylor(-5) = -0.025249, exp(-5) = 0.006738
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
     <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">4e-8</span><span class="p">,</span> <span class="mf">4e-8</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Numerical f(x)&#39;</span><span class="p">,</span> <span class="s">&#39;True Value&#39;</span><span class="p">]);</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Numerical f(x)&#39;</span><span class="p">,</span> <span class="s1">&#39;True Value&#39;</span><span class="p">]);</span>
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 
@@ -3859,10 +3856,10 @@ QmCC
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">1.1e-8</span>
-<span class="k">print</span> <span class="s">&quot;cos(</span><span class="si">%.16e</span><span class="s">) = </span><span class="si">%.16f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="k">print</span> <span class="s">&quot;1-cos(%.e) = </span><span class="si">%.16e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">1.</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="k">print</span> <span class="s">&quot;true value of 1-cos(%.e) = </span><span class="si">%.16e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.1e-8</span>
+<span class="k">print</span> <span class="s2">&quot;cos(</span><span class="si">%.16e</span><span class="s2">) = </span><span class="si">%.16f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">print</span> <span class="s2">&quot;1-cos(%.e) = </span><span class="si">%.16e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">1.</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">print</span> <span class="s2">&quot;true value of 1-cos(%.e) = </span><span class="si">%.16e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3930,12 +3927,12 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">3e-8</span><span class="p">,</span> <span class="mf">3e-8</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-7</span>
+<div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">3e-8</span><span class="p">,</span> <span class="mf">3e-8</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-7</span>
 <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">/</span><span class="n">k</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">r&#39;$\frac{1}{\kappa}(1-\exp(-\kappa))$&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">r&#39;$\kappa$&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">r&#39;$\frac{1}{\kappa}(1-\exp(-\kappa))$&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">r&#39;$\kappa$&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -4162,10 +4159,10 @@ AccgJyIKOAY5EVHAMciJiAKOQU5EFHAMciKigGOQExEF3P8HRJM6LZ9ahdQAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">sympy</span> <span class="kn">as</span> <span class="nn">sp</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="kn">as</span> <span class="nn">sp</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 
-<span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;k&quot;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">))</span><span class="o">/</span><span class="n">k</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -4277,7 +4274,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&#39;x, k&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, k&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">k</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">f</span><span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>

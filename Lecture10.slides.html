@@ -1589,8 +1589,10 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -1898,7 +1900,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">])</span>
 <span class="k">print</span> <span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 
@@ -2090,13 +2092,13 @@ p(x) &amp;= \exp((\lambda_1 -1) + \lambda_2 x)
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">me</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="n">lecture</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
 </pre></div>
 
 </div>
@@ -2129,20 +2131,20 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">.</span><span class="mo">05</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">.</span><span class="mo">05</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">])</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">));</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;$x&gt;0, \mathbb{E}[x]=1$&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;$x&gt;0, \mathbb{E}[x]=1$&#39;</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">15.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">)</span>
@@ -2152,11 +2154,11 @@ Populating the interactive namespace from numpy and matplotlib
 <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 <span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 <span class="n">semilogy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mf">1e-28</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;$\mathbb{E}[x] = 0, \mathbb{E}[x^2] = 1$&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;$\mathbb{E}[x] = 0, \mathbb{E}[x^2] = 1$&#39;</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">])</span>
@@ -2164,10 +2166,10 @@ Populating the interactive namespace from numpy and matplotlib
 <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 <span class="n">semilogy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;$\mathbb{E}[x] = 0, \mathbb{E}[x^2] = 1, \mathbb{E}[x^4] = 20$&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;$\mathbb{E}[x] = 0, \mathbb{E}[x^2] = 1, \mathbb{E}[x^4] = 20$&#39;</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">])</span>
@@ -2175,10 +2177,10 @@ Populating the interactive namespace from numpy and matplotlib
 <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;$\mathbb{E}[x] = 0, \mathbb{E}[x^2] = 1, \mathbb{E}[x^3] = -4, \mathbb{E}[x^4] = 20$&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;$\mathbb{E}[x] = 0, \mathbb{E}[x^2] = 1, \mathbb{E}[x^3] = -4, \mathbb{E}[x^4] = 20$&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -2972,7 +2974,7 @@ distribution $\bs p$ in relative to a prior distribution $\bs q$; </p>
 <ul>
 <li>e.g., stock returns are normally distributed</li>
 </ul>
-<p>Minimizing cross entropy is an ideal objective function to capture prior beliefs</p>
+<p>Maximizing cross entropy is an ideal objective function to capture prior beliefs</p>
 <ul>
 <li>Only introduce minimal perturbation to the prior beliefs $\bs q$</li>
 <li>While incorporating additional constraints to the distribution $\bs p$</li>
@@ -3174,7 +3176,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">inst</span> <span class="kn">import</span> <span class="n">BlackScholes</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">inst</span> <span class="kn">import</span> <span class="n">BlackScholes</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">import</span> <span class="nn">fmt</span>
 
@@ -3194,8 +3196,8 @@ $$</p>
 <span class="n">cs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">BlackScholes</span><span class="o">.</span><span class="n">callPrice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">iv</span><span class="p">)])</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">BlackScholes</span><span class="o">.</span><span class="n">callDelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">iv</span><span class="p">)])</span>
 
-<span class="n">df_opt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cs</span><span class="p">,</span> <span class="n">iv</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">d</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Call Price&quot;</span><span class="p">,</span> <span class="s">&quot;Implied Vol(%)&quot;</span><span class="p">,</span> <span class="s">&quot;Delta&quot;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">ks</span><span class="p">)</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_opt</span><span class="p">,</span> <span class="s">&quot;4g&quot;</span><span class="p">)</span>
+<span class="n">df_opt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cs</span><span class="p">,</span> <span class="n">iv</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">d</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Call Price&quot;</span><span class="p">,</span> <span class="s2">&quot;Implied Vol(%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Delta&quot;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">ks</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_opt</span><span class="p">,</span> <span class="s2">&quot;4g&quot;</span><span class="p">)</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mo">001</span><span class="p">))</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -3304,30 +3306,30 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 <span class="n">po</span> <span class="o">=</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">kd</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">80.</span><span class="p">,</span> <span class="mf">130.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="o">*</span><span class="n">s</span>
 <span class="n">cd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">po</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kd</span><span class="p">])</span>
 <span class="n">vd</span> <span class="o">=</span> <span class="p">[</span><span class="n">BlackScholes</span><span class="o">.</span><span class="n">compImpliedVolFromCall</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kd</span><span class="p">,</span> <span class="n">cd</span><span class="p">)]</span>
-<span class="c">#dd = [BlackScholes.callDelta(0, s, k, 1, v) for k, v in zip(kd, vd)]</span>
+<span class="c1">#dd = [BlackScholes.callDelta(0, s, k, 1, v) for k, v in zip(kd, vd)]</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Strike&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;ME Distribution of Prices&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Strike&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;ME Distribution of Prices&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span><span class="mi">2400</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">kd</span><span class="p">,</span> <span class="n">vd</span><span class="p">,</span> <span class="s">&#39;g-&#39;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">mks</span><span class="p">,</span> <span class="n">mvs</span><span class="p">,</span> <span class="s">&#39;k&gt;&#39;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">kd</span><span class="p">,</span> <span class="n">vd</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mks</span><span class="p">,</span> <span class="n">mvs</span><span class="p">,</span> <span class="s1">&#39;k&gt;&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">2200</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Strike&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Implied Vol&#39;</span><span class="p">);</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;Max Entropy&#39;</span><span class="p">,</span> <span class="s">&#39;Market&#39;</span><span class="p">]);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Strike&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Implied Vol&#39;</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Max Entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;Market&#39;</span><span class="p">]);</span>
 </pre></div>
 
 </div>
@@ -3839,32 +3841,32 @@ wsm5mZmZmVlJODk3MzMzMysJJ+dmZmZmZiXh5NzMzMzMrCT+PxAS0+2jChtnAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">qn</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">qn</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 <span class="n">po</span> <span class="o">=</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">cd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">po</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kd</span><span class="p">])</span>
 <span class="n">vd</span> <span class="o">=</span> <span class="p">[</span><span class="n">BlackScholes</span><span class="o">.</span><span class="n">compImpliedVolFromCall</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kd</span><span class="p">,</span> <span class="n">cd</span><span class="p">)]</span>
-<span class="c">#dd = [BlackScholes.callDelta(0, s, k, 1, v) for k, v in zip(kd, vd)]</span>
+<span class="c1">#dd = [BlackScholes.callDelta(0, s, k, 1, v) for k, v in zip(kd, vd)]</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">qn</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Strike&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Max Entropy Distribution&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;Prior&#39;</span><span class="p">,</span> <span class="s">&#39;Max Entropy&#39;</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Strike&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Max Entropy Distribution&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Prior&#39;</span><span class="p">,</span> <span class="s1">&#39;Max Entropy&#39;</span><span class="p">])</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span><span class="mi">2600</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">axhline</span><span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">kd</span><span class="p">,</span> <span class="n">vd</span><span class="p">,</span> <span class="s">&#39;g-&#39;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">mks</span><span class="p">,</span> <span class="n">mvs</span><span class="p">,</span> <span class="s">&#39;k&gt;&#39;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">kd</span><span class="p">,</span> <span class="n">vd</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mks</span><span class="p">,</span> <span class="n">mvs</span><span class="p">,</span> <span class="s1">&#39;k&gt;&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">2200</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Strike&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;Prior&#39;</span><span class="p">,</span> <span class="s">&#39;Max Entropy&#39;</span><span class="p">,</span> <span class="s">&#39;Market Quotes&#39;</span><span class="p">])</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Implied Vol&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Strike&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Prior&#39;</span><span class="p">,</span> <span class="s1">&#39;Max Entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;Market Quotes&#39;</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Implied Vol&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -4612,15 +4614,15 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">fmt</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmt</span>
 
 <span class="n">mats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
 <span class="n">par</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">.</span><span class="mo">042</span><span class="p">,</span> <span class="o">.</span><span class="mo">043</span><span class="p">,</span> <span class="o">.</span><span class="mo">047</span><span class="p">,</span> <span class="o">.</span><span class="mo">054</span><span class="p">,</span> <span class="o">.</span><span class="mo">057</span><span class="p">,</span> <span class="o">.</span><span class="mo">06</span><span class="p">,</span> <span class="o">.</span><span class="mo">061</span><span class="p">,</span> <span class="o">.</span><span class="mo">05</span><span class="mi">9</span><span class="p">,</span> <span class="o">.</span><span class="mo">056</span><span class="p">,</span> <span class="o">.</span><span class="mo">0555</span><span class="p">,</span> <span class="o">.</span><span class="mo">0555</span><span class="p">])</span>
 <span class="n">ba</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">.</span><span class="mo">0002</span><span class="p">,</span> <span class="o">.</span><span class="mo">0002</span><span class="p">,</span> <span class="o">.</span><span class="mo">0003</span><span class="p">,</span> <span class="o">.</span><span class="mo">0004</span><span class="p">,</span> <span class="o">.</span><span class="mo">0005</span><span class="p">,</span> <span class="o">.</span><span class="mo">0006</span><span class="p">,</span> <span class="o">.</span><span class="mo">0007</span><span class="p">,</span> <span class="o">.</span><span class="mo">001</span><span class="p">,</span> <span class="o">.</span><span class="mo">0015</span><span class="p">,</span> <span class="o">.</span><span class="mo">002</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">])</span>
 
-<span class="n">df_swap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">par</span><span class="p">,</span> <span class="n">ba</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Par Spread (%)&quot;</span><span class="p">,</span> <span class="s">&quot;Bid/Ask Spread (%)&quot;</span><span class="p">],</span> 
+<span class="n">df_swap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">par</span><span class="p">,</span> <span class="n">ba</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Par Spread (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Bid/Ask Spread (%)&quot;</span><span class="p">],</span> 
                        <span class="n">index</span><span class="o">=</span><span class="n">mats</span><span class="p">)</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&quot;2f&quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;2f&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -4763,7 +4765,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">swapCons</span><span class="p">(</span><span class="n">coupons</span><span class="p">,</span> <span class="n">mats</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swapCons</span><span class="p">(</span><span class="n">coupons</span><span class="p">,</span> <span class="n">mats</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">am</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">nt</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)(</span><span class="n">mats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">freq</span> <span class="o">+</span> <span class="n">freq</span> <span class="o">+</span> <span class="o">.</span><span class="mo">01</span><span class="p">)</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">coupons</span><span class="o">*</span><span class="n">mats</span>
@@ -4796,7 +4798,7 @@ $$</p>
             <span class="n">e</span> <span class="o">=</span> <span class="n">ba</span><span class="o">*</span><span class="n">pv01</span><span class="o">*</span><span class="n">ef</span>
     
             <span class="n">dual</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">MaxEntDual</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-            <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;BFGS&quot;</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">dual</span><span class="o">.</span><span class="n">dual</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)),</span> <span class="n">jac</span><span class="o">=</span><span class="n">dual</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
 
             <span class="n">op</span> <span class="o">=</span> <span class="n">dual</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
             <span class="n">d</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
@@ -4825,13 +4827,13 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">ef</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="n">ef</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
 <span class="n">op</span><span class="p">,</span> <span class="n">fit</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fwd</span> <span class="o">=</span> <span class="n">fitSwap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">ba</span><span class="p">,</span> <span class="n">ef</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ef</span><span class="p">,</span> <span class="n">fit</span><span class="p">)</span> <span class="p">:</span> 
-    <span class="n">df_swap</span><span class="p">[</span><span class="s">&quot;Fit Error </span><span class="si">%%</span><span class="s"> ($W^{-1} = </span><span class="si">%.1f</span><span class="s">E$)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">*</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">-</span><span class="n">par</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">df_swap</span><span class="p">[</span><span class="s2">&quot;Fit Error </span><span class="si">%%</span><span class="s2"> ($W^{-1} = </span><span class="si">%.1f</span><span class="s2">E$)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">*</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">-</span><span class="n">par</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
     
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap</span><span class="o">.</span><span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="s">&quot;2f&quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap</span><span class="o">.</span><span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;2f&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -4924,18 +4926,18 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;.-&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time (Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Loss Time Distribution&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Loss Time Distribution&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]))),</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Forward Rate&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time (Y)&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]))),</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forward Rate&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (Y)&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mo">05</span><span class="p">);</span>
 </pre></div>
@@ -5359,7 +5361,7 @@ JEmSOvD/ixzHiBFWnqsAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&quot;2f&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;2f&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -5480,21 +5482,21 @@ JEmSOvD/ixzHiBFWnqsAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">tags</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span> <span class="p">:</span> <span class="s">&#39;$W^{-1}=</span><span class="si">%d</span><span class="s"> E$&#39;</span> <span class="o">%</span> <span class="n">d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ef</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tags</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span> <span class="p">:</span> <span class="s1">&#39;$W^{-1}=</span><span class="si">%d</span><span class="s1"> E$&#39;</span> <span class="o">%</span> <span class="n">d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ef</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time(Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Loss Time Distribution&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Loss Time Distribution&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
 <span class="n">legend</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fwd</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time(Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Forward Rate&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fwd</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forward Rate&#39;</span><span class="p">);</span>
 <span class="n">legend</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mo">05</span><span class="p">);</span>
@@ -6245,20 +6247,20 @@ VGAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">par</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span>
+<div class="highlight"><pre><span></span><span class="n">par</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span>
 <span class="n">ba</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="o">.</span><span class="mo">001</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">swapCons</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">mats</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span>
 <span class="n">ef</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">]</span>
 
-<span class="n">df_swap_arb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">par</span><span class="p">,</span> <span class="n">ba</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Par Spread (%)&quot;</span><span class="p">,</span> <span class="s">&quot;Bid/Ask Spread (%)&quot;</span><span class="p">],</span> 
+<span class="n">df_swap_arb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">par</span><span class="p">,</span> <span class="n">ba</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Par Spread (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Bid/Ask Spread (%)&quot;</span><span class="p">],</span> 
                        <span class="n">index</span><span class="o">=</span><span class="n">mats</span><span class="p">)</span>
 
 <span class="n">op</span><span class="p">,</span> <span class="n">fit</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fwd</span> <span class="o">=</span> <span class="n">fitSwap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">ba</span><span class="p">,</span> <span class="n">ef</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ef</span><span class="p">,</span> <span class="n">fit</span><span class="p">)</span> <span class="p">:</span> 
-    <span class="n">df_swap_arb</span><span class="p">[</span><span class="s">&quot;Fit Error </span><span class="si">%%</span><span class="s"> ($W^{-1} = </span><span class="si">%.1f</span><span class="s">E$)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">*</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">-</span><span class="n">par</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">df_swap_arb</span><span class="p">[</span><span class="s2">&quot;Fit Error </span><span class="si">%%</span><span class="s2"> ($W^{-1} = </span><span class="si">%.1f</span><span class="s2">E$)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">*</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">-</span><span class="n">par</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
 
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap_arb</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&quot;3g&quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df_swap_arb</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;3g&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -6400,21 +6402,21 @@ VGAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">tags</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span> <span class="p">:</span> <span class="s">&#39;$W^{-1}=</span><span class="si">%.1f</span><span class="s">E$&#39;</span> <span class="o">%</span> <span class="n">d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ef</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tags</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span> <span class="p">:</span> <span class="s1">&#39;$W^{-1}=</span><span class="si">%.1f</span><span class="s1">E$&#39;</span> <span class="o">%</span> <span class="n">d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ef</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time(Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Loss Time Distribution&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Loss Time Distribution&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">legend</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fwd</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time(Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Forward Rate&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fwd</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forward Rate&#39;</span><span class="p">);</span>
 <span class="n">legend</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">08</span><span class="p">);</span>
