@@ -16,7 +16,7 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 
 | Lecture | Materials |
 | :---: | :---: |
-| 1. Introduction | [lecture slides](Lecture1.slides.html),  [ipynb](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb), [homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb>homework) |
+| 1. Introduction | [Lecture Slides](Lecture1.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb) |
 
 <!---
 | 1. Introduction | <a href="Lecture1.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb>homework</a> | @yadongli |
@@ -39,7 +39,7 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 
 Python is the primary programming tool for this class. The following is a step by step instruction on how to set up the right Python environment for the class.
 
-<a href="http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/PythonSetup.ipynb">Python setup instructions </a>
+[Python setup instructions](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/PythonSetup.ipynb)
 
 ## How to save/print slides as PDF
 
