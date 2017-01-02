@@ -13,11 +13,12 @@ Old lecture slides from past years: [Spring2016](http://yadongli.github.io/nyuma
 
 Lecture slides are in HTML format, which requires javascript enabled browser to render properly. 
 
-<center>
 
+| Lecture | Materials |
+| :---: | :---: |
+| 1. Introduction | [lecture slides](Lecture1.slides.html),  [ipynb](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb), [homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb>homework) |
 
-| Lecture | Materials | Instructor |
-| :---: | :---: | :---: |
+<!---
 | 1. Introduction | <a href="Lecture1.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb>homework</a> | @yadongli |
 | 2. Linear Algebra I | <a href="Lecture2.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture2.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework2.ipynb>homework</a> | @yadongli |
 | 3. Linear Algebra II | <a href="Lecture3.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture3.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework3.ipynb>homework</a> | @yadongli |
@@ -30,7 +31,6 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | 10. Entropy & Allocation | <a href="Lecture10.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture10.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework10.ipynb>homework</a> | @yadongli |
 | 11. ODE | <a href="Lecture11.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture11.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework11.ipynb>homework</a> | @hcheng66 |
 | 12. PDE | <a href="Lecture12.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture12.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework12.ipynb>homework</a> | @hcheng66 |
-<!---
 | 13. PDE II | <a href="Lecture13.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture13.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework8.ipynb>homework</a> |
 </center>
 --->
