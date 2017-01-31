@@ -17,9 +17,9 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | Lecture | Materials |
 | :---: | :---: |
 | 1. Introduction | [Lecture Slides](Lecture1.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb) |
+| 2. Linear Algebra | [Lecture Slides](Lecture2.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture2.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework2.ipynb) |
 
 <!---
-| 1. Introduction | <a href="Lecture1.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb>homework</a> | @yadongli |
 | 2. Linear Algebra I | <a href="Lecture2.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture2.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework2.ipynb>homework</a> | @yadongli |
 | 3. Linear Algebra II | <a href="Lecture3.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture3.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework3.ipynb>homework</a> | @yadongli |
 | 4. Rootfinding & Interpolation | <a href="Lecture4.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture4.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework4.ipynb>homework</a> | @yadongli |
