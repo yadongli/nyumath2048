@@ -18,9 +18,9 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | :---: | :---: |
 | 1. Introduction | [Lecture Slides](Lecture1.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture1.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework1.ipynb) |
 | 2. Linear Algebra | [Lecture Slides](Lecture2.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture2.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework2.ipynb) |
+| 3. Linear Algebra II | [Lecture Slides](Lecture3.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture3.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework3.ipynb) |
 
 <!---
-| 2. Linear Algebra I | <a href="Lecture2.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture2.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework2.ipynb>homework</a> | @yadongli |
 | 3. Linear Algebra II | <a href="Lecture3.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture3.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework3.ipynb>homework</a> | @yadongli |
 | 4. Rootfinding & Interpolation | <a href="Lecture4.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture4.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework4.ipynb>homework</a> | @yadongli |
 | 5. Deltas and Hedging | <a href="Lecture5.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture5.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework5.ipynb>homework</a> | Ariye Shater, @yadongli |
