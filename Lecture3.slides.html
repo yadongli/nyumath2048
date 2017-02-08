@@ -2469,7 +2469,7 @@ $$\scriptsize  A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="householder-transformation">Householder transformation</h2>
 <p>An orthogonal transformation representing reflection over a hyper plane, with a normal vector $\hat {\bs u}$ with unit L-2 norm:</p>
-<p>$$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 (\hat{\bs u}^T \bs x) \bs{\hat u} $$</p>
+<p>$$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 \bs{\hat u} (\hat{\bs u}^T \bs x)  $$</p>
 <p>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \hat{\bs e}_1$, where $\hat{\bs e}_1$ can be any unit vector. </p>
 <center><img src = "img/householder.png" height=300 width=300></center>
 
@@ -6811,14 +6811,12 @@ $$M \bs v = \sigma \bs u \;,\; M^T\bs u = \sigma \bs v $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="orthogonality-of-singular-vectors">Orthogonality of Singular Vectors</h2>
 <p>Given $\bs{u_1, v_1}$ are the first singular vectors of $M$:</p>
-<ul>
-<li>$\bs x^T \bs v_1 = 0  \iff (M \bs x)^T \bs u_1 = 0$ </li>
-</ul>
+<p>$$\bs x^T \bs v_1 = 0  \iff (M \bs x)^T \bs u_1 = 0 \iff \bs u_1^T M \bs x  = 0 $$</p>
 <p>because:</p>
 <p>$$ (M \bs x)^T \bs u_1 = \bs x^T M^T \bs u_1 = \bs x^T \sigma_1 \bs v_1  = 0 $$</p>
-<p>Therefore, among those unit $\bs u, \bs v$ that are orthogonal to $\bs{u_1, v_1}$ :</p>
+<p>Therefore, if we only consider those $\bs u^T \bs u_1^ = 0$, the corresponding $\bs v$ must be orthogonal to $\bs v_1$ :</p>
 <ul>
-<li>$\bs {u_2, v_2}$ maximizes $\bs u^T M \bs v$  </li>
+<li>$\bs {u_2, v_2}$ maximizes $\bs u^T M \bs v$  among those $(\bs u, \bs v)$ orthogonal to $\bs u_1, \bs v_1$</li>
 <li>this process can repeat for all singular vectors (assuming singular values are distinct)</li>
 </ul>
 </div>
