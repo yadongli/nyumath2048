@@ -20,6 +20,7 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | 2. Linear Algebra | [Lecture Slides](Lecture2.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture2.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework2.ipynb) |
 | 3. Linear Algebra II | [Lecture Slides](Lecture3.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture3.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework3.ipynb) |
 | 4. Rootfinding & Interpolation | [Lecture Slides](Lecture4.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture4.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework4.ipynb) |
+| 5. Delas and Hedging  | [Lecture Slides](Lecture5.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture5.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework5.ipynb) |
 
 <!---
 | 4. Rootfinding & Interpolation | <a href="Lecture4.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture4.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework4.ipynb>homework</a> | @yadongli |
