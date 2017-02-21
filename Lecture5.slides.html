@@ -2441,8 +2441,8 @@ $$</p>
 <p>Steps to compute $\frac{\partial v}{\partial \bs q}$ numerically:</p>
 <ul>
 <li>bump one tenor point $q_i$, re-bootstrap the whole CDS curve<ul>
-<li>for each tenor point <code>j=1:maturity</code><ul>
-<li>root search the knot of hazard rate $h_j$, for each trial value of $h_j$<ul>
+<li>for each tenor point <code>j=1:maturity</code>, root search the knot value of hazard rate $h_j$<ul>
+<li>for each trial value of $h_j$<ul>
 <li>build tension spline interpolation on the whole hazard rate term structure $\bs h$</li>
 <li>price the benchmark CDS instrument $b_j$, </li>
 <li>continue root search until $b_j$ matches the market price to a high precision</li>
