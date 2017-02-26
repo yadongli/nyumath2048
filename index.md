@@ -22,7 +22,7 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | 4. Rootfinding & Interpolation | [Lecture Slides](Lecture4.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture4.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework4.ipynb) |
 | 5. Delas and Hedging  | [Lecture Slides](Lecture5.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture5.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework5.ipynb) |
 | 8. Optimization  | [Lecture Slides](Lecture8.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture8.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework8.ipynb) |
-| 9. Linear Programming  | [Lecture Slides](Lecture9.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture9.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework9.ipynb) |
+| 9. Linear Programming  | [Lecture Slides](Lecture9.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture9.ipynb), no homework |
 
 <!---
 | 5. Deltas and Hedging | <a href="Lecture5.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture5.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework5.ipynb>homework</a> | Ariye Shater, @yadongli |
