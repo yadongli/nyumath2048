@@ -1589,8 +1589,10 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -1748,7 +1750,7 @@ $(document).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
@@ -1870,7 +1872,7 @@ Monte carlo simulation: </p>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">sim_pi</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sim_pi</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">es</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="n">ns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">])</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">1.</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">es</span><span class="p">])</span>
     
@@ -1893,25 +1895,25 @@ Monte carlo simulation: </p>
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">es</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">1.</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">es</span><span class="p">])</span>
 <span class="n">dn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">es</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">es</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;r.&#39;</span><span class="p">);</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">es</span><span class="p">[</span><span class="n">dn</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">es</span><span class="p">[</span><span class="n">dn</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;b.&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">es</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">es</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r.&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">es</span><span class="p">[</span><span class="n">dn</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">es</span><span class="p">[</span><span class="n">dn</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">);</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="s">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="n">semilogx</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">);</span>
-<span class="n">axhline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;Simulated&#39;</span><span class="p">,</span> <span class="s">&#39;True Value&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">semilogx</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Simulated&#39;</span><span class="p">,</span> <span class="s1">&#39;True Value&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Number of dots&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Simulation of $\pi$&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of dots&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simulation of $\pi$&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -2681,7 +2683,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">u</span><span class="p">)</span>
 <span class="n">u4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span>
 
@@ -2693,16 +2695,16 @@ $$</p>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">loglog</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">var_u</span><span class="p">,</span> <span class="n">var_var</span><span class="p">]),</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;var of $\hat \mu$&#39;</span><span class="p">,</span> <span class="s">&#39;var of $\hat s^2$&#39;</span><span class="p">]);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Number of random samples&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Sample Variance&#39;</span><span class="p">);</span>
+<span class="n">loglog</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">var_u</span><span class="p">,</span> <span class="n">var_var</span><span class="p">]),</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;var of $\hat \mu$&#39;</span><span class="p">,</span> <span class="s1">&#39;var of $\hat s^2$&#39;</span><span class="p">]);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of random samples&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample Variance&#39;</span><span class="p">);</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">loglog</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">beta</span><span class="o">-</span><span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="mf">4.</span><span class="o">/</span><span class="n">ns</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)]),</span> <span class="s">&#39;.-&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Error Estimate&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;std of mean&#39;</span><span class="p">,</span> <span class="s">&#39;std of $\hat s$&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Number of random samples&#39;</span><span class="p">);</span>
+<span class="n">loglog</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">beta</span><span class="o">-</span><span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="mf">4.</span><span class="o">/</span><span class="n">ns</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)]),</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error Estimate&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;std of mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std of $\hat s$&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of random samples&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -3242,6 +3244,7 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 <p>The historical mean estimator $\hat u = \frac{1}{n}\sum_i r_i $ has an error of:</p>
 <ul>
 <li>$\std(\hat \mu) = \frac{\sigma}{\sqrt{10}} = 0.079$, the error is large because we only have 10 independent sample</li>
+<li>using daily return does not help either: $\std(\hat \mu) = 250 \frac{\sigma/\sqrt{250}}{\sqrt{10 \times 250}} = 0.079$</li>
 </ul>
 <p>The vol is estimated as the standard deviation $\hat s$ of the daily return $r_i$:</p>
 <ul>
@@ -3258,7 +3261,7 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span> <span class="o">.</span><span class="mi">25</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2500</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="o">.</span><span class="mi">25</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2500</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">print</span> <span class="o">.</span><span class="mi">25</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
@@ -3422,23 +3425,23 @@ RERERCQMKpxFRERERMLw/wFT7/wnk9eUrQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">*.</span><span class="mi">1</span>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">*.</span><span class="mi">1</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">*.</span><span class="mi">1</span>
 <span class="n">xm</span><span class="p">,</span> <span class="n">ym</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xm</span><span class="p">,</span> <span class="n">ym</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;100 Grid Samples&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xm</span><span class="p">,</span> <span class="n">ym</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;100 Grid Samples&#39;</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="s">&#39;.&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;100 Random Samples&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="s1">&#39;.&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;100 Random Samples&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -4264,7 +4267,7 @@ x(t_{i+1}) &amp;= x(t_i) + \kappa(\bar x - x(t_i)) \delta + \sqrt{\delta} \sigma
 <div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">proc</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">proc</span>
 
 <span class="n">u</span> <span class="o">=</span> <span class="o">.</span><span class="mo">05</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mf">10.</span>
@@ -4290,21 +4293,21 @@ x(t_{i+1}) &amp;= x(t_i) + \kappa(\bar x - x(t_i)) \delta + \sqrt{\delta} \sigma
 <div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">et</span> <span class="o">=</span> <span class="o">.</span><span class="mo">01</span>
+<div class="highlight"><pre><span></span><span class="n">et</span> <span class="o">=</span> <span class="o">.</span><span class="mo">01</span>
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">k</span> <span class="o">-</span> <span class="n">et</span>
 <span class="n">paths</span> <span class="o">=</span> <span class="n">ou</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">es</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span> <span class="n">paths</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time(Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Euler sample path with $\delta = </span><span class="si">%g</span><span class="s">, \kappa=</span><span class="si">%g</span><span class="s">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time(Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Euler sample path with $\delta = </span><span class="si">%g</span><span class="s1">, \kappa=</span><span class="si">%g</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">k</span> <span class="o">+</span> <span class="n">et</span>
 <span class="n">paths</span> <span class="o">=</span> <span class="n">ou</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">es</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span> <span class="n">paths</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time(Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Euler sample path with $\delta = </span><span class="si">%g</span><span class="s">, \kappa=</span><span class="si">%g</span><span class="s">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time(Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Euler sample path with $\delta = </span><span class="si">%g</span><span class="s1">, \kappa=</span><span class="si">%g</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -4884,7 +4887,7 @@ ZmZmZpbj/wH0HJFszyRWUwAAAABJRU5ErkJggg==
 <p>apply the Lagrange multiplier:</p>
 <p>$$\small \begin{array}{l} 
 l &amp;= \left(\frac{c_1}{m^{2\gamma}} + \frac{c_2}{n}\right) + \lambda(mn - c) \\
-\frac{\partial l}{\partial m} &amp;= -c_1\frac{2\gamma}{m^{2\gamma-1}} + \lambda n = 0 \\
+\frac{\partial l}{\partial m} &amp;= -c_1\frac{2\gamma}{m^{2\gamma+1}} + \lambda n = 0 \\
 \frac{\partial l}{\partial n} &amp;= -c_2\frac{1}{n^2} + \lambda m = 0 \\
 \lambda mn &amp;= \frac{2c_1\gamma}{m^{2\gamma}} = \frac{c_2}{n}
 \end{array}$$</p>
@@ -5064,7 +5067,7 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 <div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span> <span class="mf">1e5</span><span class="o">*</span><span class="mi">100</span><span class="o">*</span><span class="mi">8</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="mf">1e5</span><span class="o">*</span><span class="mi">100</span><span class="o">*</span><span class="mi">8</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span>
 </pre></div>
 
 </div>
@@ -5097,7 +5100,7 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 <div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">vol</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span>
+<div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">vol</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="o">/</span><span class="n">m</span> 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">400000</span>
@@ -5115,13 +5118,13 @@ $$ v(t_i) = \max\left(\left(s(t_i)-k\right)^+, \mathbb{E}\left[v(t_{i+1})e^{-r\d
 <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">spath</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time(Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;First 100 simulated stock path&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time(Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;First 100 simulated stock path&#39;</span><span class="p">);</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot;Europan put price is </span><span class="si">%.2f</span><span class="s">, MC err </span><span class="si">%.2g</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;True value is </span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mf">5.46</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Europan put price is </span><span class="si">%.2f</span><span class="s2">, MC err </span><span class="si">%.2g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;True value is </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mf">5.46</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -7143,7 +7146,7 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">fmt</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmt</span>
 
 <span class="n">disc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">ts</span><span class="p">)</span>
 <span class="n">to</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="n">disc</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">spath</span><span class="p">]</span>
@@ -7153,8 +7156,8 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 <span class="n">te</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span>  <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[((</span><span class="n">o</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span> <span class="n">spath</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">o</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">to</span><span class="p">[:</span><span class="n">ne</span><span class="p">])]))</span>
 <span class="n">me</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="p">,</span> <span class="n">truv</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Pathwise Optimal&#39;</span><span class="p">,</span> <span class="s">&#39;True Value&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;American Put&#39;</span><span class="p">])</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&quot;3f&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="p">,</span> <span class="n">truv</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pathwise Optimal&#39;</span><span class="p">,</span> <span class="s1">&#39;True Value&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;American Put&#39;</span><span class="p">])</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;3f&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7211,19 +7214,19 @@ IYQQQoSYhHIhhBBCCCFCTEK5EEIIIYQQISahXAghhBBCiBD7f+2idG6vQzwOAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">nidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">me</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">spath</span><span class="p">[</span><span class="n">nidx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">[</span><span class="n">nidx</span><span class="p">],</span> <span class="n">se</span><span class="p">[</span><span class="n">nidx</span><span class="p">],</span> <span class="s">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">[</span><span class="n">nidx</span><span class="p">],</span> <span class="n">se</span><span class="p">[</span><span class="n">nidx</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time (Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Pathwise optimal exercise&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pathwise optimal exercise&#39;</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="s">&quot;o&quot;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time (Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Exercise points&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exercise points&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -8156,7 +8159,7 @@ yCIiIiIirShAFhERERFpRQGyiIiIiEgrCpBFRERERFr5/5RQARUPo1bOAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">mc</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mc</span>
 
 <span class="n">put_ev</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">v_b</span><span class="p">,</span> <span class="n">e_b</span><span class="p">,</span> <span class="n">b_b</span><span class="p">,</span> <span class="n">cvs</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">amer_opt</span><span class="p">(</span><span class="n">spath</span><span class="p">,</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">dt</span><span class="p">),</span> <span class="n">put_ev</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">fit_ex</span><span class="p">)</span>
@@ -8193,23 +8196,23 @@ yCIiIiIirShAFhERERFpRQGyiIiIiEgrCpBFRERERFr5/5RQARUPo1bOAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">spath</span><span class="p">[:</span><span class="mi">20</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 <span class="n">axvline</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">k</span> <span class="o">-</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Stock Paths&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">k</span> <span class="o">-</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s1">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stock Paths&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">spath</span><span class="p">[:</span><span class="mi">500</span><span class="p">,</span><span class="n">idx</span><span class="p">],</span> <span class="n">cvs</span><span class="p">[:</span><span class="mi">500</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="s">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">spath</span><span class="p">[:</span><span class="mi">500</span><span class="p">,</span><span class="n">idx</span><span class="p">],</span> <span class="n">cvs</span><span class="p">[:</span><span class="mi">500</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock price $s(t = </span><span class="si">%g</span><span class="s">)$&#39;</span> <span class="o">%</span> <span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Payoff $v(t = </span><span class="si">%g</span><span class="s">)$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock price $s(t = </span><span class="si">%g</span><span class="s1">)$&#39;</span> <span class="o">%</span> <span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Payoff $v(t = </span><span class="si">%g</span><span class="s1">)$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
 
 <span class="n">truv</span> <span class="o">=</span> <span class="mf">6.523</span>
 </pre></div>
@@ -9597,16 +9600,16 @@ SJz/A8hKXzKS9WisAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[134]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">show_lsmc_step</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_lsmc_step</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
     <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
     <span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">spath</span><span class="p">[:</span><span class="mi">20</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-    <span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">k</span> <span class="o">-</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">k</span> <span class="o">-</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s1">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
     <span class="n">axvline</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Price&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">title</span><span class="p">(</span><span class="s">&#39;Stock Paths&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-    <span class="n">legend</span><span class="p">([</span><span class="s">&#39;LSMC fit time&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stock Paths&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">legend</span><span class="p">([</span><span class="s1">&#39;LSMC fit time&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 
     <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -9618,18 +9621,18 @@ SJz/A8hKXzKS9WisAAAAAElFTkSuQmCC
     <span class="n">itm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="n">ne</span><span class="p">])</span>
     <span class="n">otm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">ne</span><span class="p">],</span> <span class="n">k</span><span class="p">)</span>
 
-    <span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">itm</span><span class="p">],</span> <span class="n">cv</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">itm</span><span class="p">],</span> <span class="s">&#39;b.&#39;</span><span class="p">);</span>
-    <span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">otm</span><span class="p">],</span> <span class="n">cv</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">otm</span><span class="p">],</span> <span class="s">&#39;g.&#39;</span><span class="p">);</span>
-    <span class="n">plot</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="n">u</span><span class="p">(</span><span class="n">sd</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
-    <span class="n">plot</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">sd</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s">&#39;k&#39;</span><span class="p">)</span>
-    <span class="n">plot</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">itm</span><span class="p">],</span> <span class="n">cv</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">itm</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">);</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">otm</span><span class="p">],</span> <span class="n">cv</span><span class="p">[:</span><span class="n">ne</span><span class="p">][</span><span class="n">otm</span><span class="p">],</span> <span class="s1">&#39;g.&#39;</span><span class="p">);</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="n">u</span><span class="p">(</span><span class="n">sd</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">sd</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">b_b</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s1">&#39;r&gt;&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
-    <span class="n">legend</span><span class="p">([</span><span class="s">&#39;in the money&#39;</span><span class="p">,</span> <span class="s">&#39;out of the money&#39;</span><span class="p">,</span> <span class="s">&#39;LS fit&#39;</span><span class="p">,</span> <span class="s">&#39;exer value&#39;</span><span class="p">]);</span>
+    <span class="n">legend</span><span class="p">([</span><span class="s1">&#39;in the money&#39;</span><span class="p">,</span> <span class="s1">&#39;out of the money&#39;</span><span class="p">,</span> <span class="s1">&#39;LS fit&#39;</span><span class="p">,</span> <span class="s1">&#39;exer value&#39;</span><span class="p">]);</span>
     <span class="n">xlim</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
     <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Current stock price $s(t=</span><span class="si">%.2f</span><span class="s">)$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
-    <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Continuation value&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">title</span><span class="p">(</span><span class="s">&#39;Least Square Fit @ t=</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
+    <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Current stock price $s(t=</span><span class="si">%.2f</span><span class="s1">)$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+    <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Continuation value&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Least Square Fit @ t=</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
     
 <span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -11292,7 +11295,7 @@ qXAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12940,7 +12943,7 @@ D0gflbku4++93iOpHb42oOgLla2KULqDIAiCIAiCoIkJ95IgCIIgCIIgaGJC6Q6CIAiCIAiCJiaU
 <div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14604,7 +14607,7 @@ AElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">show_lsmc_step</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -16279,7 +16282,7 @@ B4flfLiF/HQcAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[138]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">show_lsmc_step</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">show_lsmc_step</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17948,10 +17951,10 @@ OI7jOI7jOHXGjW7HcRzHcRzHqTP/D2uFKDRVGEqsAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">fmt</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmt</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v_b</span><span class="p">,</span> <span class="n">truv</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;LSMC MC&#39;</span><span class="p">,</span> <span class="s">&#39;True Value&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;American Put&#39;</span><span class="p">])</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s">&quot;3f&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v_b</span><span class="p">,</span> <span class="n">truv</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LSMC MC&#39;</span><span class="p">,</span> <span class="s1">&#39;True Value&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;American Put&#39;</span><span class="p">])</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;3f&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -18045,9 +18048,9 @@ OI7jOI7jOHXGjW7HcRzHcRzHqTP/D2uFKDRVGEqsAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">b_b</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Exercise boundary&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">b_b</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exercise boundary&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -18335,7 +18338,7 @@ VsPchdLMrIY5yJuZ1TAHeTOzGuYgb2ZWwxzkzcxqmIO8mVkNc5A3M6thDvJmZjXMQd7MrIb9f8MS
 <div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">fixed_b</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">ev</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fixed_b</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">ev</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">fixed_b</span><span class="o">.</span><span class="n">idx</span> <span class="o">-=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">fixed_b</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">fixed_b</span><span class="o">.</span><span class="n">idx</span><span class="p">])</span>
 
@@ -18412,20 +18415,20 @@ VsPchdLMrIY5yJuZ1TAHeTOzGuYgb2ZWwxzkzcxqmIO8mVkNc5A3M6thDvJmZjXMQd7MrIb9f8MS
 <div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">b_a</span><span class="p">,</span> <span class="n">b_u</span><span class="p">]),</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time(Y)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Exercise Boundary&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">([</span><span class="s">&#39;LSMC&#39;</span><span class="p">,</span> <span class="s">&#39;Optimize $b^*$&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">b_a</span><span class="p">,</span> <span class="n">b_u</span><span class="p">]),</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time(Y)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exercise Boundary&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;LSMC&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimize $b^*$&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;Option value is bounded by [</span><span class="si">%.3f</span><span class="s">, </span><span class="si">%.3f</span><span class="s">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">v_a</span><span class="p">,</span> <span class="n">v_u</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot;LSMC (1B) value is </span><span class="si">%.3f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">v_b</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="s">&quot;True value is </span><span class="si">%.3f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">truv</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;Option value is bounded by [</span><span class="si">%.3f</span><span class="s2">, </span><span class="si">%.3f</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">v_a</span><span class="p">,</span> <span class="n">v_u</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;LSMC (1B) value is </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">v_b</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;True value is </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">truv</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -18957,7 +18960,7 @@ BNXWAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[130]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">lsmc_batch</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lsmc_batch</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">bvs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">errs</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -18997,20 +19000,20 @@ BNXWAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">fmt</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">bvs</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">errs</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span> 
-                  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Batch </span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;LSMC - LB&#39;</span><span class="p">,</span> <span class="s">&#39;LSMC&#39;</span><span class="p">,</span> <span class="s">&#39;LSMC - UB&#39;</span><span class="p">,</span> 
-                         <span class="s">&#39;err - LB&#39;</span><span class="p">,</span> <span class="s">&#39;LSMC err &#39;</span><span class="p">,</span> <span class="s">&#39;err - UB&#39;</span><span class="p">])</span>
+                  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Batch </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)],</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LSMC - LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LSMC&#39;</span><span class="p">,</span> <span class="s1">&#39;LSMC - UB&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;err - LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LSMC err &#39;</span><span class="p">,</span> <span class="s1">&#39;err - UB&#39;</span><span class="p">])</span>
 <span class="n">sd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s">&#39;Batch Mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
-<span class="n">df</span><span class="p">[</span><span class="s">&#39;Batch Std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sd</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Batch Mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Batch Std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sd</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="s">&quot;3f&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="s2">&quot;3f&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
