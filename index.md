@@ -25,6 +25,7 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | 9. Linear Programming  | [Lecture Slides](Lecture9.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture9.ipynb), no homework |
 | 6. Monte Carlo  | [Lecture Slides](Lecture6.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture6.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework6.ipynb) |
 | 7. Variance Reduction  | [Lecture Slides](Lecture7.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture7.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework7.ipynb) |
+| 10. Entropy & Allocation  | [Lecture Slides](Lecture10.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture10.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework10.ipynb) |
 
 <!---
 | 9. Variance Reduction | <a href="Lecture7.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture7.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework7.ipynb>homework</a> | @yadongli |
