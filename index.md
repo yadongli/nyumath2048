@@ -26,6 +26,9 @@ Lecture slides are in HTML format, which requires javascript enabled browser to 
 | 6. Monte Carlo  | [Lecture Slides](Lecture6.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture6.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework6.ipynb) |
 | 7. Variance Reduction  | [Lecture Slides](Lecture7.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture7.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework7.ipynb) |
 | 10. Entropy & Allocation  | [Lecture Slides](Lecture10.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture10.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework10.ipynb) |
+| 11. ODE  | [Lecture Slides](Lecture11.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture11.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework11.ipynb) |
+| 11. PDE I  | [Lecture Slides](Lecture12.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture12.ipynb), [Homework](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework12.ipynb) |
+| 11. PDE II  | [Lecture Slides](Lecture13.slides.html),  [Lecture Notebook](http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture13.ipynb) |
 
 <!---
 | 9. Variance Reduction | <a href="Lecture7.slides.html">lecture slides</a> (<a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Lecture7.ipynb>ipynb</a>), <a href=http://nbviewer.ipython.org/github/yadongli/nyumath2048/blob/master/Homework7.ipynb>homework</a> | @yadongli |
