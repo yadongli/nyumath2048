@@ -1589,8 +1589,10 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -1748,17 +1750,17 @@ $(document).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
 <span class="n">lecture</span> <span class="o">=</span> <span class="mi">11</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;lib&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;lib&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">fmt</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="kn">as</span> <span class="nn">sp</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 
-<span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s">&quot;0.7.5&quot;</span><span class="p">,</span> <span class="s">&quot;Need sympy version 0.7.5 to render properly&quot;</span>
+<span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s2">&quot;0.7.5&quot;</span><span class="p">,</span> <span class="s2">&quot;Need sympy version 0.7.5 to render properly&quot;</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
@@ -2429,7 +2431,7 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
 
@@ -2437,27 +2439,27 @@ $$</p>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
 
-<span class="c"># initial value</span>
+<span class="c1"># initial value</span>
 <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mf">3.0</span><span class="o">*</span><span class="n">r</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="n">n</span>
-<span class="c"># print h</span>
+<span class="c1"># print h</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
 <span class="n">ys</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
    
 <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">ys</span><span class="p">[:,</span> <span class="p">:],</span> <span class="s">&#39;.-&#39;</span><span class="p">)</span>  
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;odeint&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">ys</span><span class="p">[:,</span> <span class="p">:],</span> <span class="s1">&#39;.-&#39;</span><span class="p">)</span>  
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;odeint&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot;$\;\; y&#39; = \mu (1-x^2)y - x$ &quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;$\;\; x&#39; = y$&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">75</span><span class="p">,</span> <span class="s">&quot;Integrating Van der Pol system&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;x-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;$\;\; y&#39; = \mu (1-x^2)y - x$ &quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;$\;\; x&#39; = y$&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">75</span><span class="p">,</span> <span class="s2">&quot;Integrating Van der Pol system&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">);</span>
 
 <span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -2740,21 +2742,21 @@ MzMzM7MKnCibmZmZmVXgRNnMzMzMrAInymZmZmZmFThRNjMzMzOrwImymZmZmVkF/x+Xk6p3AiCA
 <div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">ode</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">ode</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 
 <span class="k">def</span> <span class="nf">lorenz_sys</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="c"># sigma, rho and beta are global.</span>
+    <span class="c1"># sigma, rho and beta are global.</span>
     <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span>
          <span class="n">rho</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">,</span>
          <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">beta</span><span class="o">*</span><span class="n">z</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">f</span>
 
 
-<span class="c">#ic = [1.0, 2.0, 1.0]</span>
+<span class="c1">#ic = [1.0, 2.0, 1.0]</span>
 <span class="n">ic</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">t1</span> <span class="o">=</span> <span class="mf">70.0</span>
@@ -2764,17 +2766,17 @@ MzMzM7MKnCibmZmZmVXgRNnMzMzMrAInymZmZmZmFThRNjMzMzOrwImymZmZmVkF/x+Xk6p3AiCA
 <span class="n">rho</span> <span class="o">=</span> <span class="mf">28.0</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="mf">8.0</span><span class="o">/</span><span class="mf">3.0</span>
 
-<span class="c">#sigma = 28.0</span>
-<span class="c">#rho = 46.92</span>
-<span class="c">#beta = 4.0</span>
+<span class="c1">#sigma = 28.0</span>
+<span class="c1">#rho = 46.92</span>
+<span class="c1">#beta = 4.0</span>
 
 <span class="n">solver</span> <span class="o">=</span> <span class="n">ode</span><span class="p">(</span><span class="n">lorenz_sys</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">sol</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_value</span><span class="p">(</span><span class="n">ic</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
-<span class="c">#solver.set_integrator(&#39;dop853&#39;)</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">set_integrator</span><span class="p">(</span><span class="s">&#39;dopri5&#39;</span><span class="p">)</span>
+<span class="c1">#solver.set_integrator(&#39;dop853&#39;)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">set_integrator</span><span class="p">(</span><span class="s1">&#39;dopri5&#39;</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="n">solver</span><span class="o">.</span><span class="n">successful</span><span class="p">()</span> <span class="ow">and</span> <span class="n">solver</span><span class="o">.</span><span class="n">t</span> <span class="o">&lt;</span> <span class="n">t1</span><span class="p">:</span>
     <span class="n">solver</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span>
@@ -2787,15 +2789,15 @@ MzMzM7MKnCibmZmZmVXgRNnMzMzMrAInymZmZmZmFThRNjMzMzOrwImymZmZmVkF/x+Xk6p3AiCA
 <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">Axes3D</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">sol</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="s">&quot;$\;\; z&#39; = x y -\kappa z$&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="s">&quot;$\;\; y&#39; = x ( \gamma - z ) - y $&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot;$\;\; x&#39; = \sigma (y - x) $&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;xx-large&quot;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">65</span><span class="p">,</span> <span class="s">&quot;Integrating Lorenz system&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&quot;x-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;$\;\; z&#39; = x y -\kappa z$&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;$\;\; y&#39; = x ( \gamma - z ) - y $&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;$\;\; x&#39; = \sigma (y - x) $&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">65</span><span class="p">,</span> <span class="s2">&quot;Integrating Lorenz system&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">);</span>
 
 <span class="n">show</span><span class="p">()</span>
 </pre></div>

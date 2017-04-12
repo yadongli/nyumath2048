@@ -1589,8 +1589,10 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -1716,26 +1718,6 @@ div.output_prompt {
 </head>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<style type="text/css">
-//div.output_wrapper {
-//  margin-top: 0px;
-//}
-.input_hidden {
-  display: none;
-//  margin-top: 5px;
-}
-</style>
-
-<!-- script>
-$(document).ready(function(){
-  $(".output_wrapper").click(function(){
-      $(this).prev('.input_hidden').slideToggle();
-  });
-})
-</script -->
-
 
 <body>
 <div class="reveal">
@@ -1743,29 +1725,26 @@ $(document).ready(function(){
 <div style=display:none>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
 <span class="n">lecture</span> <span class="o">=</span> <span class="mi">13</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;lib&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;lib&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">fmt</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="kn">as</span> <span class="nn">sp</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 
-<span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s">&quot;0.7.5&quot;</span><span class="p">,</span> <span class="s">&quot;Need sympy version 0.7.5 to render properly&quot;</span>
+<span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s2">&quot;0.7.5&quot;</span><span class="p">,</span> <span class="s2">&quot;Need sympy version 0.7.5 to render properly&quot;</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -2043,23 +2022,22 @@ $$</p>
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[242]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">import</span> <span class="nn">time</span> 
 
-<span class="c">#Black and Scholes</span>
+<span class="c1">#Black and Scholes</span>
 <span class="k">def</span> <span class="nf">BlackScholesFormula</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">S0</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
     <span class="n">dtmp1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">S0</span> <span class="o">/</span> <span class="n">K</span><span class="p">)</span>
     <span class="n">dtmp2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
     <span class="n">sigsq</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">sigma</span>
     <span class="n">d1</span> <span class="o">=</span>  <span class="n">dtmp2</span> <span class="o">*</span> <span class="p">(</span><span class="n">dtmp1</span> <span class="o">+</span> <span class="n">T</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">sigsq</span><span class="p">))</span>
     <span class="n">d2</span> <span class="o">=</span>  <span class="n">dtmp2</span> <span class="o">*</span> <span class="p">(</span><span class="n">dtmp1</span> <span class="o">+</span> <span class="n">T</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">sigsq</span><span class="p">))</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="o">==</span><span class="s">&quot;C&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="o">==</span><span class="s2">&quot;C&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">S0</span> <span class="o">*</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span> <span class="o">-</span> <span class="n">K</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">K</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="n">d2</span><span class="p">)</span> <span class="o">-</span> <span class="n">S0</span> <span class="o">*</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="n">d1</span><span class="p">)</span>
@@ -2068,43 +2046,41 @@ $$</p>
 <span class="n">r</span> <span class="o">=</span> <span class="mf">0.05</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.35</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">putCall</span> <span class="o">=</span><span class="s">&#39;C&#39;</span>
+<span class="n">putCall</span> <span class="o">=</span><span class="s1">&#39;C&#39;</span>
 
 <span class="n">Smin</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">Smax</span> <span class="o">=</span> <span class="mf">200.0</span>
 <span class="n">ns</span> <span class="o">=</span> <span class="mi">201</span>
 <span class="n">Ss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">Ss</span> <span class="o">=</span> <span class="n">Ss</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="c">#print Ss</span>
+<span class="c1">#print Ss</span>
 
 <span class="n">t</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">px</span> <span class="o">=</span> <span class="n">BlackScholesFormula</span><span class="p">(</span><span class="n">putCall</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
 <span class="k">print</span> <span class="n">px</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
-<span class="c">#idx = 200-1</span>
-<span class="c">#print Ss[idx]</span>
-<span class="c">#print px[idx]</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="c1">#idx = 200-1</span>
+<span class="c1">#print Ss[idx]</span>
+<span class="c1">#print px[idx]</span>
 
 <span class="n">payoff</span> <span class="o">=</span> <span class="n">clip</span><span class="p">(</span><span class="n">Ss</span><span class="o">-</span><span class="n">K</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1e600</span><span class="p">)</span>
-<span class="c">#print &quot;payoff = &quot;, payoff</span>
+<span class="c1">#print &quot;payoff = &quot;, payoff</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">Ss</span><span class="p">,</span> <span class="n">payoff</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Payoff&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Payoff&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">Ss</span><span class="p">,</span> <span class="n">px</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Analytical Solution&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Analytical Solution&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -2433,12 +2409,11 @@ EZEMUaIlIiIikiFKtEREREQyRImWiIiISIYo0RIRERHJkP8P0a5MPcnWqGgAAAAASUVORK5CYII=
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[243]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
 <span class="kn">import</span> <span class="nn">scipy.sparse.linalg.dsolve</span> <span class="kn">as</span> <span class="nn">linsolve</span>
 
 <span class="k">class</span> <span class="nc">BS_FDM_explicit</span><span class="p">:</span>
@@ -2472,7 +2447,7 @@ EZEMUaIlIiIikiFKtEREREQyRImWiIiISIYo0RIRERHJkP8P0a5MPcnWqGgAAAAASUVORK5CYII=
     <span class="bp">self</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="n">empty</span><span class="p">((</span><span class="n">nt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ns</span><span class="p">))</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">payoff</span>
 
-    <span class="c">## Building Coefficient matrix:        </span>
+    <span class="c1">## Building Coefficient matrix:        </span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">lil_matrix</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">))</span>
 
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">):</span>
@@ -2492,7 +2467,7 @@ EZEMUaIlIiIikiFKtEREREQyRImWiIiISIYo0RIRERHJkP8P0a5MPcnWqGgAAAAASUVORK5CYII=
 
     <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">tocsr</span><span class="p">()</span>
 
-    <span class="c">### Building bc_coef:</span>
+    <span class="c1">### Building bc_coef:</span>
     <span class="n">nxl</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">xs</span>
     <span class="n">sxl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">nxl</span>
     <span class="n">nxu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ns</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">xs</span>
@@ -2510,19 +2485,17 @@ EZEMUaIlIiIikiFKtEREREQyRImWiIiISIYo0RIRERHJkP8P0a5MPcnWqGgAAAAASUVORK5CYII=
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">u</span>
 
 <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">Smax</span> <span class="o">-</span> <span class="n">Smin</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ns</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;ns =&quot;</span><span class="p">,</span> <span class="n">ns</span>
-<span class="k">print</span> <span class="s">&quot;dx =&quot;</span><span class="p">,</span> <span class="n">dx</span>
-<span class="k">print</span> <span class="s">&quot;sigma =&quot;</span><span class="p">,</span> <span class="n">sigma</span>
+<span class="k">print</span> <span class="s2">&quot;ns =&quot;</span><span class="p">,</span> <span class="n">ns</span>
+<span class="k">print</span> <span class="s2">&quot;dx =&quot;</span><span class="p">,</span> <span class="n">dx</span>
+<span class="k">print</span> <span class="s2">&quot;sigma =&quot;</span><span class="p">,</span> <span class="n">sigma</span>
 <span class="n">dt_max</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">Smax</span><span class="o">*</span><span class="n">Smax</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;by CFL, dt &lt;&quot;</span><span class="p">,</span> <span class="n">dt_max</span>
+<span class="k">print</span> <span class="s2">&quot;by CFL, dt &lt;&quot;</span><span class="p">,</span> <span class="n">dt_max</span>
 <span class="n">mt_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt_max</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
-<span class="k">print</span> <span class="s">&quot;mt_min ~= &quot;</span><span class="p">,</span> <span class="n">mt_min</span>
+<span class="k">print</span> <span class="s2">&quot;mt_min ~= &quot;</span><span class="p">,</span> <span class="n">mt_min</span>
 </pre></div>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -2548,17 +2521,16 @@ mt_min ~=  4900
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[238]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="n">ns</span><span class="o">-</span><span class="mi">2</span>
+<div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">ns</span><span class="o">-</span><span class="mi">2</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">payoff</span> <span class="o">=</span> <span class="n">clip</span><span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">K</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1e600</span><span class="p">)</span>
-<span class="c">#print &quot;payoff = &quot;, payoff</span>
+<span class="c1">#print &quot;payoff = &quot;, payoff</span>
   
 <span class="n">m</span> <span class="o">=</span> <span class="mi">4555</span> 
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -2568,17 +2540,17 @@ mt_min ~=  4900
 <span class="n">bs1</span> <span class="o">=</span> <span class="n">BS_FDM_explicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs1</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
-<span class="c">##print  px_fd_mat.shape</span>
+<span class="c1">##print  px_fd_mat.shape</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="k">print</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">4560</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -2588,13 +2560,13 @@ mt_min ~=  4900
 <span class="n">bs2</span> <span class="o">=</span> <span class="n">BS_FDM_explicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs2</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">4565</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -2604,19 +2576,17 @@ mt_min ~=  4900
 <span class="n">bs3</span> <span class="o">=</span> <span class="n">BS_FDM_explicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs3</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -3015,18 +2985,17 @@ JxtGSZIkSVInG0ZJkiRJUicbRkmSJElSp78BQ2tgt7oeg2MAAAAASUVORK5CYII=
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[258]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">Smax</span> <span class="o">=</span> <span class="mi">120</span>
+<div class="highlight"><pre><span></span><span class="n">Smax</span> <span class="o">=</span> <span class="mi">120</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">ns</span><span class="o">-</span><span class="mi">2</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">payoff</span> <span class="o">=</span> <span class="n">clip</span><span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">K</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1e600</span><span class="p">)</span>
-<span class="c">#print &quot;payoff = &quot;, payoff</span>
+<span class="c1">#print &quot;payoff = &quot;, payoff</span>
   
 <span class="n">m</span> <span class="o">=</span> <span class="mi">4570</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -3036,17 +3005,17 @@ JxtGSZIkSVInG0ZJkiRJUicbRkmSJElSp78BQ2tgt7oeg2MAAAAASUVORK5CYII=
 <span class="n">bs1</span> <span class="o">=</span> <span class="n">BS_FDM_explicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs1</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
-<span class="c">##print  px_fd_mat.shape</span>
+<span class="c1">##print  px_fd_mat.shape</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="k">print</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">4573</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -3056,13 +3025,13 @@ JxtGSZIkSVInG0ZJkiRJUicbRkmSJElSp78BQ2tgt7oeg2MAAAAASUVORK5CYII=
 <span class="n">bs2</span> <span class="o">=</span> <span class="n">BS_FDM_explicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs2</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">4580</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -3072,19 +3041,17 @@ JxtGSZIkSVInG0ZJkiRJUicbRkmSJElSp78BQ2tgt7oeg2MAAAAASUVORK5CYII=
 <span class="n">bs3</span> <span class="o">=</span> <span class="n">BS_FDM_explicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs3</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -3571,12 +3538,11 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[244]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
 <span class="kn">import</span> <span class="nn">scipy.sparse.linalg.dsolve</span> <span class="kn">as</span> <span class="nn">linsolve</span>
 
 <span class="k">class</span> <span class="nc">BS_FDM_implicit</span><span class="p">:</span>
@@ -3610,7 +3576,7 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
     <span class="bp">self</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="n">empty</span><span class="p">((</span><span class="n">nt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ns</span><span class="p">))</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">payoff</span>
 
-    <span class="c">## Building Coefficient matrix:        </span>
+    <span class="c1">## Building Coefficient matrix:        </span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">lil_matrix</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">))</span>
 
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">):</span>
@@ -3632,7 +3598,7 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
     <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">linsolve</span><span class="o">.</span><span class="n">splu</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span> <span class="o">=</span> <span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">ns</span><span class="p">,</span> <span class="p">))</span>
     
-    <span class="c">### Building bc_coef:</span>
+    <span class="c1">### Building bc_coef:</span>
     <span class="n">nxl</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">xs</span>
     <span class="n">sxl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">nxl</span>
     <span class="n">nxu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ns</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">xs</span>
@@ -3655,17 +3621,14 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 </div>
 </div>
 
-</div>
-
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[237]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">Smax</span> <span class="o">=</span> <span class="mi">200</span>
+<div class="highlight"><pre><span></span><span class="n">Smax</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">ns</span><span class="o">-</span><span class="mi">2</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -3680,16 +3643,16 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 <span class="n">bs1</span> <span class="o">=</span> <span class="n">BS_FDM_implicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs1</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
-<span class="c">#print  px_fd_mat.shape</span>
+<span class="c1">#print  px_fd_mat.shape</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span>  <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span>  <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -3699,13 +3662,13 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 <span class="n">bs2</span> <span class="o">=</span> <span class="n">BS_FDM_implicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs2</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -3715,13 +3678,13 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 <span class="n">bs3</span> <span class="o">=</span> <span class="n">BS_FDM_implicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs3</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 
 <span class="k">print</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
@@ -3729,8 +3692,6 @@ cSPPzMzMzMyshbiRZ2ZmZmZm1kLcyDMzMzMzM2sh/w8Aj/7l8hacqwAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -4099,12 +4060,11 @@ Ik6SJEmSaohFnCRJkiTVEIs4SZIkSaohFnGSJEmSVEP+P0bi/YYmph1JAAAAAElFTkSuQmCC
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[246]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">Smax</span> <span class="o">=</span> <span class="mi">120</span>
+<div class="highlight"><pre><span></span><span class="n">Smax</span> <span class="o">=</span> <span class="mi">120</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="n">ns</span><span class="o">-</span><span class="mi">2</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
@@ -4120,16 +4080,16 @@ Ik6SJEmSaohFnCRJkiTVEIs4SZIkSaohFnGSJEmSVEP+P0bi/YYmph1JAAAAAElFTkSuQmCC
 <span class="n">bs1</span> <span class="o">=</span> <span class="n">BS_FDM_implicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs1</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time1:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
-<span class="c">#print  px_fd_mat.shape</span>
+<span class="c1">#print  px_fd_mat.shape</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span>  <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span>  <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -4139,13 +4099,13 @@ Ik6SJEmSaohFnCRJkiTVEIs4SZIkSaohFnGSJEmSVEP+P0bi/YYmph1JAAAAAElFTkSuQmCC
 <span class="n">bs2</span> <span class="o">=</span> <span class="n">BS_FDM_implicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs2</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time2:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">Fl</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,))</span>
@@ -4155,13 +4115,13 @@ Ik6SJEmSaohFnCRJkiTVEIs4SZIkSaohFnGSJEmSVEP+P0bi/YYmph1JAAAAAElFTkSuQmCC
 <span class="n">bs3</span> <span class="o">=</span> <span class="n">BS_FDM_implicit</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Smin</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">Fl</span><span class="p">,</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">px_fd_mat</span> <span class="o">=</span> <span class="n">bs3</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 <span class="n">elapsed</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span>
-<span class="k">print</span> <span class="s">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
+<span class="k">print</span> <span class="s2">&quot;Elapsed Time3:&quot;</span><span class="p">,</span> <span class="n">elapsed</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">px_fd_mat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;nx = %.f&#39;</span><span class="o">%</span><span class="k">m</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 
 
 <span class="k">print</span> <span class="n">px_fd_mat</span><span class="p">[</span><span class="n">nrow</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
@@ -4169,8 +4129,6 @@ Ik6SJEmSaohFnCRJkiTVEIs4SZIkSaohFnGSJEmSVEP+P0bi/YYmph1JAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -4700,7 +4658,6 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 </body>
 
 
-
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
@@ -4729,7 +4686,7 @@ Reveal.initialize({
     controls: true,
 
     // Display a presentation progress bar
-    progress: true,
+    //progress: true,
 
     // Push each slide change to the browser history
     history: false,
@@ -4739,7 +4696,7 @@ Reveal.initialize({
     slideNumber: true,
 
     // Enable touch events for navigation
-    touch: true,
+    //touch: true,
 
     // Enable the slide overview mode
     //overview: true,
@@ -4759,7 +4716,7 @@ Reveal.initialize({
     //autoSlide: 0,
 
     // Enable slide navigation via mouse wheel
-    mouseWheel: false,
+    //mouseWheel: false,
 
     // Transition style
     // transition: 'concave', // default/cube/page/concave/zoom/linear/fade/none
@@ -4776,6 +4733,7 @@ Reveal.initialize({
      // margin: 0,
      theme: 'white', // available themes are in /css/theme
 });
+
 
 // remap F5/ESC/b key
 Reveal.configure({
