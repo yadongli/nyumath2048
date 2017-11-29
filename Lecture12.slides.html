@@ -11929,10 +11929,8 @@ $$
 \renewcommand{PDux}{\frac{\partial u}{\partial x}}
 \renewcommand{PDutt}{\frac{\partial ^2u}{\partial t^2}}
 \renewcommand{PDuxx}{\frac{\partial ^2u}{\partial x^2}}
-\large{
 a(x,t)\PDutt + 2b(x,t)\frac{\partial ^2u}{\partial t\partial x} + c(x,t)\PDuxx 
 +  d(x,t)\PDut + e(x,t)\PDux = f(t,x,u)
-}
 $$<ul>
 <li>It can be classified into three categories: <strong>Hyperbolic, Parabolic and Elliptic</strong></li>
 </ul>
@@ -12231,16 +12229,19 @@ $$<ul>
 <li>For convenience, reverse the time for Black-Scholes notation: $ t \leftarrow T - t$</li>
 </ul>
 $$
+\small
 \PDut - \frac{1}{2}\sigma^2S^2\PDuSS - rS\PDuS + ru = 0
 $$<ul>
 <li>Approximate the Black-Scholes Eqn by</li>
 </ul>
 $$
+\small
 \FDut - \frac{1}{2} \sigma^2 x_i^2 \FDuxx - r x_i \FDuxc + r u_{i,k} = 0
 $$<ul>
 <li>This can be rewritten simply as</li>
 </ul>
 \begin{aligned}
+\small
 u_{i,k+1} & = \left\{ \frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2} - r x_i \frac{\triangle t}{2\triangle x} \right\} u_{i-1,k}
 \\
 & + \left\{ 1 - \sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2}  -r \triangle t \right\} u_{i,k}
@@ -12472,11 +12473,13 @@ $$<ul>
 <li>Approximate the Black-Scholes Eqn by</li>
 </ul>
 $$
+\small
 \FDutb - \frac{1}{2} \sigma^2 x_i^2 \FDuxx - r x_i \FDuxc = - r u_{i,k}
 $$<ul>
 <li>Which can be rewritten as</li>
 </ul>
 \begin{aligned}
+\small
 u_{i,k-1} & = \left\{ -\frac{1}{2}\sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2} + r x_i \frac{\triangle t}{2\triangle x} \right\} u_{i-1,k}
 \\
 & + \left\{ 1 + \sigma^2 x_i^2 \frac{\triangle t}{\triangle x^2}  + r \triangle t \right\} u_{i,k}
@@ -12517,6 +12520,7 @@ $$<ul>
 <li>Crank-Nicholson is an average of the explicit and implicit scheme:</li>
 </ul>
 \begin{aligned}
+\small
 \FDut & = \frac{1}{4}  \sigma^2 x_i^2 \left\{ \FDuxx + \frac{u_{i+1,k+1}-2u_{i,k+1}+u_{i-1,k+1}}{\triangle x^2} \right\}
 \\ 
     & + \frac{1}{2} r x_i \left\{ \FDuxc + \frac{u_{i+1,k+1}-u_{i-1,k+1}}{2\triangle x} \right\} 
