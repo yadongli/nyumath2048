@@ -1,14 +1,14 @@
 .reveal {
 font-size:180%;
-overflow-x:visible;
-overflow-y:visible;
+overflow-x:hidden;
+overflow-y:hidden;
 }
 .output_latex {
-overflow-x:visible;
-overflow-y:visible;
+overflow-x:hidden;
+overflow-y:hidden;
 }
 .output_wrapper {
 font-size:150%;
-overflow-x:visible;
-overflow-y:visible;
+overflow-x:hidden;
+overflow-y:hidden;
 }
