@@ -17,6 +17,7 @@ $RECYCLE.BIN/
 *~
 *_checkpoints
 *_files
+*.swp
 
 reveal.js
 
@@ -47,3 +48,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# class specific ignore
+*-solution.*
+Final*.*
