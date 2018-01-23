@@ -12250,7 +12250,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These are good advice, but quite superficial.</p>
 <ul>
-<li>all of them have been ignored, even in extremely successful projects</li>
+<li>all of them have been compromised, even in very successful projects</li>
 <li>they are usually not the critical differentiator between successes and failures</li>
 </ul>
 
@@ -12262,7 +12262,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Best-advice-for-the-real-world:">Best advice for the real world:<a class="anchor-link" href="#Best-advice-for-the-real-world:">&#182;</a></h2><p>by Paul Phillips (quoting George Orwell's 1984) "We're doing it all wrong":</p>
+<h2 id="Best-advice-for-the-real-world:">Best advice for the real world:<a class="anchor-link" href="#Best-advice-for-the-real-world:">&#182;</a></h2><p>by Paul Phillips "We're doing it all wrong":</p>
+<p>(quoting George Orwell's 1984)</p>
 
 </div>
 </div>
@@ -12277,29 +12278,11 @@ a.anchor-link {
 <li>Challenge your clients to reduce the scope of your deliverable</li>
 <li>Define a minimal set of interactions to the outside world</li>
 </ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Ignorance-is-strength">Ignorance is strength<a class="anchor-link" href="#Ignorance-is-strength">&#182;</a></h4><ul>
 <li>Design dumb modules that only do one thing</li>
 <li>Keep it simple and stupid</li>
 <li>Separation of concerns, modular</li>
 </ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Freedom-is-slavery">Freedom is slavery<a class="anchor-link" href="#Freedom-is-slavery">&#182;</a></h4><ul>
 <li>Must be disciplined in testing, code review, releases etc. </li>
 <li>Limit the interface of your module (or external commitments)</li>
@@ -12309,6 +12292,16 @@ a.anchor-link {
 </div>
 </div>
 </div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sun Tzu (孙子): "the supreme art of quant modelling is to solve problems without coding"</p>
+
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12347,6 +12340,12 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Eric Raymond, "How to Become a Hacker":</p>
 <p>"Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot."</p>
+<p>Greenspun's tenth rule of programming:</p>
+<p>"Any sufficiently complicated C or Fortran program contains an ad-hoc, informally-specified, bug-ridden, slow implementation of half of Common Lisp."</p>
+<ul>
+<li>Clojure is a modern implementation of Lisp</li>
+<li>Julia borrowed heavily from Lisp, very promising</li>
+</ul>
 
 </div>
 </div>
@@ -12491,9 +12490,9 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rounding-under-IEEE754">Rounding under IEEE754<a class="anchor-link" href="#Rounding-under-IEEE754">&#182;</a></h2><p>Default rule: round to the nearest, ties to even digit</p>
 <ul>
-<li>Example, round to 4 significant digit: <ul>
-<li>$3.1245 \rightarrow 3.124$</li>
-<li>$43515 \rightarrow 43520$ </li>
+<li>Example, round to 4 significant digit(bit): <ul>
+<li>decimal: $3.1245 \rightarrow 3.124$, $43515 \rightarrow 43520$ </li>
+<li>binary: $10.11100 \rightarrow 11.00$, $1100100 \rightarrow 1100000 $</li>
 </ul>
 </li>
 <li>Addition and multiplication are commutative with rounding, but not associative</li>
