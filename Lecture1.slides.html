@@ -12169,51 +12169,30 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Before-optimizing-for-speed">Before optimizing for speed<a class="anchor-link" href="#Before-optimizing-for-speed">&#182;</a></h2><h4 id="Correctness">Correctness<a class="anchor-link" href="#Correctness">&#182;</a></h4><ul>
+<h2 id="Before-optimizing-for-speed">Before optimizing for speed<a class="anchor-link" href="#Before-optimizing-for-speed">&#182;</a></h2><ul>
+<li>Correctness<ul>
 <li>"those who would give up correctness for a little temporary performance deserve neither correctness nor performance"</li>
 <li>"the greatest performance improvement of all is when system goes from not-working to working"</li>
 </ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Modifiability">Modifiability<a class="anchor-link" href="#Modifiability">&#182;</a></h4><ul>
+</li>
+<li>Modifiability<ul>
 <li>"modification is undesirable but modifiability is paramount"</li>
 <li>modular design, learn from hardware designers</li>
 </ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Simplicity">Simplicity<a class="anchor-link" href="#Simplicity">&#182;</a></h4><ul>
+</li>
+<li>Simplicity<ul>
 <li>no obvious defects is not the same as obviously no defects</li>
 </ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Other-desirable-features:">Other desirable features:<a class="anchor-link" href="#Other-desirable-features:">&#182;</a></h4><ul>
+</li>
+<li>Other desirable features:<ul>
 <li>Scalability, robustness, Easy support and maintenanc etc.</li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12256,7 +12235,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12264,29 +12243,25 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Best-advice-for-the-real-world:">Best advice for the real world:<a class="anchor-link" href="#Best-advice-for-the-real-world:">&#182;</a></h2><p>by Paul Phillips "We're doing it all wrong":</p>
 <p>(quoting George Orwell's 1984)</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="War-is-peace">War is peace<a class="anchor-link" href="#War-is-peace">&#182;</a></h4><ul>
+<ul>
+<li>War is peace<ul>
 <li>Fight your war at the boundary so that you can have peace within</li>
 <li>Challenge your clients to reduce the scope of your deliverable</li>
 <li>Define a minimal set of interactions to the outside world</li>
 </ul>
-<h4 id="Ignorance-is-strength">Ignorance is strength<a class="anchor-link" href="#Ignorance-is-strength">&#182;</a></h4><ul>
+</li>
+<li>Ignorance is strength<ul>
 <li>Design dumb modules that only do one thing</li>
 <li>Keep it simple and stupid</li>
 <li>Separation of concerns, modular</li>
 </ul>
-<h4 id="Freedom-is-slavery">Freedom is slavery<a class="anchor-link" href="#Freedom-is-slavery">&#182;</a></h4><ul>
+</li>
+<li>Freedom is slavery<ul>
 <li>Must be disciplined in testing, code review, releases etc. </li>
 <li>Limit the interface of your module (or external commitments)</li>
 <li>Freedom $\rightarrow$ possibilities $\rightarrow$ complexity $\rightarrow$ unmodifiable code $\rightarrow$ slavery</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -12297,7 +12272,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sun Tzu (孙子): "the supreme art of quant modelling is to solve problems without coding"</p>
+<h2 id="The-art-of-modeling">The art of modeling<a class="anchor-link" href="#The-art-of-modeling">&#182;</a></h2><p>Sun Tzu (孙子): "the supreme art of quant modeling is to solve problems without coding"</p>
 
 </div>
 </div>
@@ -12491,7 +12466,7 @@ a.anchor-link {
 <h2 id="Rounding-under-IEEE754">Rounding under IEEE754<a class="anchor-link" href="#Rounding-under-IEEE754">&#182;</a></h2><p>Default rule: round to the nearest, ties to even digit</p>
 <ul>
 <li>Example, round to 4 significant digit(bit): <ul>
-<li>decimal: $3.1245 \rightarrow 3.124$, $43515 \rightarrow 43520$ </li>
+<li>decimal: $3.12450 \rightarrow 3.1240$, $435150 \rightarrow 435200$ </li>
 <li>binary: $10.11100 \rightarrow 11.00$, $1100100 \rightarrow 1100000 $</li>
 </ul>
 </li>
