@@ -12476,7 +12476,7 @@ a.anchor-link {
 </li>
 <li>Addition and multiplication are commutative with rounding, but not associative</li>
 <li>Intermediate calculations could be done at higher precision to minimize numerical error, if supported by the hardware<ul>
-<li>Intel CPU's FPU uses 80bit representation for all intermediate calculation, even if input/outputs are in 32 bit floats</li>
+<li>Intel CPU's FPU can use 80bit representation for intermediate calculations, even if input/outputs are in 64/32 bit floats</li>
 <li>Early version of Java (before v1.2) enforces intermediate calculation to be in 32/64bits for float/double for binary compatibility - a poor choice</li>
 </ul>
 </li>
