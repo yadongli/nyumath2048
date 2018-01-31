@@ -12134,7 +12134,8 @@ C = AB &\iff c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} = a_i \cdot b_j
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="LU-Factorization">LU Factorization<a class="anchor-link" href="#LU-Factorization">&#182;</a></h1>
+<h1 id="LU-Factorization">LU Factorization<a class="anchor-link" href="#LU-Factorization">&#182;</a></h1><p>Factorization: to resolve into factors.</p>
+
 </div>
 </div>
 </div></section><section>
@@ -13750,7 +13751,7 @@ IAiCIAiCIFRBTLIgCIIgCIIgVOH/AQQs+fSL7urIAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Why don't we compute the correlation and covariance of the price levels?</li>
+<li>Does it make sense to compute the covariance and correlation matrix of the price levels?</li>
 </ul>
 
 </div>
@@ -14029,7 +14030,6 @@ $$\scriptsize l_{11}=\sqrt{a_{11}}\;,\;\;\;L_{21}=\frac{A_{21}}{l_{11}}\;,\;\;\;
 <h2 id="Correlated-Brownian-motion">Correlated Brownian motion<a class="anchor-link" href="#Correlated-Brownian-motion">&#182;</a></h2><p>Ubiquitous in quantitative Finance</p>
 <ul>
 <li>The most common processes for asset prices and risk factors</li>
-<li>The vast matjority of quantitative finance models are based on Brownian motions.</li>
 </ul>
 <p>Example: correlated n-dimensional Geometric Brownian motion:</p>
 $$
@@ -15406,11 +15406,12 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w}}$$</p>
 <ul>
 <li>$\bs w^*$ is a unique solution</li>
 <li>all portfolios with optimal Sharpe ratio have the same risky asset mix</li>
+<li>No need to constrain the total value because Sharp ratio is invariant by scaling the portfolio.</li>
 </ul>
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -15420,7 +15421,7 @@ $$s(\bs w) = \frac{\bs w^T \bs f}{\sqrt{\bs w^T V \bs w}}$$</p>
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -17326,7 +17327,7 @@ $$ \left(\begin{matrix}1.0 & 2.0\\2.0 & 4.002\end{matrix}\right) x=\left(\begin{
 <li>L1: $\Vert \bs u\Vert _1 = \sum_i | u_i |$</li>
 <li>L2 (Euclidean): $\Vert \bs u\Vert _2 = (\sum u_i^2)^{\frac{1}{2}} = (\bs u^T \bs u)^\frac{1}{2}$</li>
 <li>Lp: $\Vert \bs u\Vert _p = (\sum u_i^p)^{\frac{1}{p}}$</li>
-<li>L${\infty}$: $\Vert \bs u\Vert _\infty = \max(u_1, u_2, ..., u_n)$</li>
+<li>L${\infty}$: $\Vert \bs u\Vert _\infty = \max(|u_1|, |u_2|, ..., |u_n|)$</li>
 </ul>
 
 </div>
