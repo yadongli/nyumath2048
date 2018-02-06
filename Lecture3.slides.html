@@ -12290,7 +12290,21 @@ $$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$<p></p>
 <li>$B$ is also called a similarity transformation of $A$, representing the same operation in different basis</li>
 <li>$P$ is orthogonal if $A$ is real and symmetric</li>
 </ul>
-<p>The basic idea of computing eigen values for $A$:</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solving-eigenvalues">Solving eigenvalues<a class="anchor-link" href="#Solving-eigenvalues">&#182;</a></h2><p>It is very challenging to solve eigen values for large matrices.</p>
+<ul>
+<li>Solving characteristic equation is not numerically feasible.</li>
+<li>QR algorithm is an important breakthrough in numerical analysis.</li>
+</ul>
+<p>The basic idea of solving eigen values of matrix $A$:</p>
 <ul>
 <li>Find a similarity transformation $B = PAP^{-1}$ so that $B$ is a triangular matrix</li>
 <li>$A$ and $B$ has identical eigenvalues</li>
@@ -15217,7 +15231,7 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>However, neiher is true because:</p>
 <ul>
-<li>$\Sigma R_C$ is not diagonal: $(\Sigma R_C)(\Sigma R_C)^T = \Sigma R_C R_C^T \Sigma = \Sigma\Sigma \ne I$<ul>
+<li>$\Sigma R_C$ is not orthogonal: $(\Sigma R_C)(\Sigma R_C)^T = \Sigma R_C R_C^T \Sigma = \Sigma\Sigma \ne I$<ul>
 <li>$V = \Sigma C \Sigma$, $V$ and $C$ are not similar</li>
 </ul>
 </li>
