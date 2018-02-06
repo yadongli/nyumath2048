@@ -12083,7 +12083,28 @@ $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Regularization">Regularization<a class="anchor-link" href="#Regularization">&#182;</a></h2><p>Ridge regression is an example of regularization. Two other popular regularizations are:</p>
+<ul>
+<li>LASSO regression: resulting sparse $\bs \beta$</li>
+</ul>
+$$
+l(\bs \beta) = \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_1
+$$<ul>
+<li>Elasticnet: in between LASSO and Ridge</li>
+</ul>
+$$
+l(\bs \beta) = \Vert X \bs{\beta - y} \Vert_2^2 + \lambda_1 \Vert W \bs \beta \Vert_1 + \lambda_2 \Vert W \bs \beta \Vert_2^2
+$$<p>Both LASSO and elasticnet reduces to support vector machine (SVM).</p>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12832,8 +12853,8 @@ $$<p>therefore, the solution is the $\bs \beta$ that zero out the first $n$ elem
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Principal-Component-Analysis">Principal Component Analysis<a class="anchor-link" href="#Principal-Component-Analysis">&#182;</a></h1><p>Mahatma Gandhi: action expresses priorities.</p>
-<p>$\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
+<h1 id="Principal-Component-Analysis">Principal Component Analysis<a class="anchor-link" href="#Principal-Component-Analysis">&#182;</a></h1><p>Mahatma Gandhi: action expresses priorities.
+$\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
 
 </div>
 </div>
