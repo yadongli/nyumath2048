@@ -11899,7 +11899,7 @@ $(document).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Least-Square">Least Square<a class="anchor-link" href="#Least-Square">&#182;</a></h1><p>Robert Wilson: Consciousness itself is an infinite regress. This explains coincidences.</p>
+<h1 id="Least-Square">Least Square<a class="anchor-link" href="#Least-Square">&#182;</a></h1><p>Robert Wilson: Consciousness itself is an infinite regress.</p>
 
 </div>
 </div>
@@ -11914,7 +11914,7 @@ $(document).ready(function(){
 <li><p>We have $m > n$ observations: $X$ represents inputs and $\bs y$ represents outputs:</p>
 <p>$$\small X = \pmatrix{\bs x_1^T \\ \bs x_2^T \\ \vdots \\ \bs x_m^T}, \;\; \bs y = \pmatrix{y_1 \\ y_2 \\ \vdots \\ y_m}$$</p>
 </li>
-<li><p>We want to find a factor loading vector $\bs \beta$ so that the linear function $\hat y = \bs x^T \bs \beta$ is the best aproximation to the observed inputs/outputs.</p>
+<li><p>We want to find a factor loading vector $\bs \beta$ so that the linear function $\hat y = \bs x^T \bs \beta$ best approximate the observed inputs/outputs.</p>
 </li>
 <li>$X \bs \beta = \bs y$ is over-determined, no vector $\bs \beta$ solves it exactly</li>
 <li>Instead, we find the $\bs \beta^* $ that minimizes $\Vert X \bs{\beta - y}\Vert_2$.</li>
@@ -11935,7 +11935,7 @@ $$\begin{eqnarray}
 \frac{\partial}{\partial \bs \beta^T} \Vert X \bs{\beta - y} \Vert_2^2 &=& 2 X^TX \bs \beta  - 2X^T \bs y  = \bs 0 \\
 \bs \beta^* &=& (X^TX)^{-1}X^T\bs y
 \end{eqnarray}$$<ul>
-<li>The solution is equivalent to linear regression, but beware the difference</li>
+<li>The solution is equivalent to linear regression, but the later requires stronger assumptions for forecasting.</li>
 <li>$X^+ = (X^TX)^{-1}X^T$ is also known as the psuedo inverse of $X$ because $X^+X = I$<ul>
 <li>note $XX^+$ is not even a valid matrix multiplication. </li>
 </ul>
@@ -12100,7 +12100,7 @@ $$<ul>
 </ul>
 $$
 l(\bs \beta) = \Vert X \bs{\beta - y} \Vert_2^2 + \lambda_1 \Vert W \bs \beta \Vert_1 + \lambda_2 \Vert W \bs \beta \Vert_2^2
-$$<p>Both LASSO and elasticnet reduce to support vector machine (SVM).</p>
+$$<p>Both LASSO and Elasticnet are equivalent to support vector machine (SVM).</p>
 
 </div>
 </div>
