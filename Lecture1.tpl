@@ -30,7 +30,7 @@
 Reveal.initialize({
 
     // Display controls in the bottom right corner
-    controls: true,
+    controls: false,
 
     // Display a presentation progress bar
     //progress: true,
