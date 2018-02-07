@@ -12091,7 +12091,7 @@ $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Regularization">Regularization<a class="anchor-link" href="#Regularization">&#182;</a></h2><p>Ridge regression is an example of regularization. Two other popular regularizations are:</p>
 <ul>
-<li>LASSO regression: resulting sparse $\bs \beta$</li>
+<li>LASSO regression: resulting in sparse $\bs \beta$</li>
 </ul>
 $$
 l(\bs \beta) = \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_1
@@ -12100,7 +12100,7 @@ $$<ul>
 </ul>
 $$
 l(\bs \beta) = \Vert X \bs{\beta - y} \Vert_2^2 + \lambda_1 \Vert W \bs \beta \Vert_1 + \lambda_2 \Vert W \bs \beta \Vert_2^2
-$$<p>Both LASSO and elasticnet reduces to support vector machine (SVM).</p>
+$$<p>Both LASSO and elasticnet reduce to support vector machine (SVM).</p>
 
 </div>
 </div>
@@ -12308,7 +12308,7 @@ $$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$<p></p>
 <ul>
 <li>Find a similarity transformation $B = PAP^{-1}$ so that $B$ is a triangular matrix</li>
 <li>$A$ and $B$ has identical eigenvalues</li>
-<li>Eigen values of a triangular matrix $B$ is just its diagonal elements.</li>
+<li>Eigen values of the triangular matrix $B$ are simply its diagonal elements.</li>
 </ul>
 
 </div>
@@ -15150,6 +15150,7 @@ $$
 $$<ul>
 <li>$\bt z$ is independent standard normal random vector.</li>
 <li>observe that the $L$ doesn't have to be square or triangular, as long as $V = LL^T$</li>
+<li>we can reduce $\bt z$ dimension by finding a rectanglar $\dot L$ so that $V \approx \dot L {\dot L}^T$</li>
 </ul>
 
 </div>
@@ -16273,7 +16274,7 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 </li>
 <li><p>Spot or forward</p>
 <ul>
-<li>Forward is usually a better choice than spot because of spurious correlaitons</li>
+<li>Forward is usually a better choice than spot</li>
 </ul>
 </li>
 </ul>
@@ -16960,7 +16961,7 @@ r_{10} &=& 0.9r_9 + 0.1f(9, 10)
 <h2 id="Correlated-by-construction">Correlated by construction<a class="anchor-link" href="#Correlated-by-construction">&#182;</a></h2>$$ r_{10} = 0.9r_9 + 0.1f(9, 10) $$<ul>
 <li>The high correlation between spot rates to similar tenors are by construction</li>
 <li>PCA analysis can be misleading in percentage of variance explained<ul>
-<li>the variance of sot rates of short tenors are counted multiple times</li>
+<li>the variance of spot rates of short tenors are counted multiple times</li>
 </ul>
 </li>
 <li>May not be a problem if we have unlimited precision, but we usually only keep the first few eigen vectors in PCA</li>
