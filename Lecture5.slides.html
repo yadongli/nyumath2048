@@ -12516,22 +12516,20 @@ $$<ul>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Compute-deltas-numerically">Compute deltas numerically<a class="anchor-link" href="#Compute-deltas-numerically">&#182;</a></h2><p>Steps to compute $\frac{\partial v}{\partial \bs q}$ numerically:</p>
-<ul>
-<li>bump one tenor point $q_i$, re-bootstrap the whole CDS curve<ul>
+<ol>
+<li>bump one tenor point $q_i$, re-bootstrap the whole CDS curve<ol>
 <li>for each tenor point <code>j=1:maturity</code>, root search the knot value of hazard rate $h_j$<ul>
-<li>for each trial value of $h_j$<ul>
+<li>for each trial value of $h_j$</li>
 <li>build tension spline interpolation on the whole hazard rate term structure $\bs h$</li>
 <li>price the benchmark CDS instrument $b_j$, </li>
 <li>continue root search until $b_j$ matches the market price to a high precision</li>
 </ul>
 </li>
-</ul>
+<li>price the besoke instrument $v$ using the bumped curve, and iterate if pricing error is large</li>
+</ol>
 </li>
-</ul>
-</li>
-<li>price the besoke instrument $v$ using the bumped curve</li>
 <li>compute the delta using finite difference</li>
-</ul>
+</ol>
 
 </div>
 </div>
@@ -16334,10 +16332,10 @@ require(
 Reveal.initialize({
 
     // Display controls in the bottom right corner
-    controls: true,
+    controls: false,
 
     // Display a presentation progress bar
-    progress: true,
+    progress: false,
 
     // Push each slide change to the browser history
     history: false,
