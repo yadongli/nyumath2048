@@ -13966,10 +13966,10 @@ $$ g \sqrt{\frac{p-p^2}{n}} < .01 g\cdot p \iff n > 10^4\frac{1-p}{p}$$<p>The re
 <h1 id="Pitfalls-with-sampling-extrememe-events">Pitfalls with sampling extrememe events<a class="anchor-link" href="#Pitfalls-with-sampling-extrememe-events">&#182;</a></h1><p>Consider the following scenario of winning odds $p=10^{-8}$:</p>
 <ul>
 <li>We draw 10,000 MC sample path and none of them hit the positive payoff</li>
-<li>Our MC error estimation gives incorrect value of 0 </li>
-<li>but MC simulation error $\frac{\hat s}{\sqrt{n}}$ estimated from the samples is 0.</li>
+<li>The average of the 10,000 paths gives incorrect value of 0. </li>
+<li>but MC error  estimated from the samples is $\frac{\hat s}{\sqrt{n}} = 0$.</li>
 </ul>
-<p>Why the MC error estimation failed us?</p>
+<p>Why and how the MC error estimation failed us?</p>
 
 </div>
 </div>
