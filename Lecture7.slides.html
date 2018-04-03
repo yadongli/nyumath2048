@@ -13963,6 +13963,32 @@ $$ g \sqrt{\frac{p-p^2}{n}} < .01 g\cdot p \iff n > 10^4\frac{1-p}{p}$$<p>The re
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pitfalls-with-sampling-extrememe-events">Pitfalls with sampling extrememe events<a class="anchor-link" href="#Pitfalls-with-sampling-extrememe-events">&#182;</a></h1><p>Consider the following scenario of winning odds $p=10^{-8}$:</p>
+<ul>
+<li>We draw 10,000 MC sample path and none of them hit the positive payoff</li>
+<li>Our MC error estimation gives incorrect value of 0 </li>
+<li>but MC simulation error $\frac{\hat s}{\sqrt{n}}$ estimated from the samples is 0.</li>
+</ul>
+<p>Why the MC error estimation failed us?</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because of the large error of MC error $\sqrt{\frac{\beta-1}{4n}}\frac{\sigma}{\sqrt{n}}$, in this case the kurtosis $\beta$ is very large, $\beta >> n = 10,000$.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Intuitions-of-importance-sampling">Intuitions of importance sampling<a class="anchor-link" href="#Intuitions-of-importance-sampling">&#182;</a></h2><p>The expected payoff is the same between the two lotteries:</p>
 <ol>
 <li>$p=10^{-8}$ chance of winning \$1 billion </li>
@@ -23944,10 +23970,10 @@ require(
 Reveal.initialize({
 
     // Display controls in the bottom right corner
-    controls: true,
+    controls: false,
 
     // Display a presentation progress bar
-    progress: true,
+    progress: false,
 
     // Push each slide change to the browser history
     history: false,
