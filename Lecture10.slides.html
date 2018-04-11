@@ -13075,7 +13075,7 @@ $$ h\left(p(x) | q(x)\right) = - \intr p(x) \log \left(\frac{p(x)}{q(x)}\right) 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Cross-entropy-optimization-with-bid/ask">Cross entropy optimization with bid/ask<a class="anchor-link" href="#Cross-entropy-optimization-with-bid/ask">&#182;</a></h2><p>Take the discrete form of cross entropy:</p>
-$$ \max  - \frac{1}{2} \bs e^T W \bs e $$<p>subj. to : 
+$$ \text{argmax}_{\bs p}  \left(- \bs p^T \left(\log(\bs p) - \log(\bs q)\right) - \frac{1}{2} \bs e^T W \bs e \right) $$<p>subj. to : 
  $$\begin{array}\\
  \bs 1^T \bs p & = 1 \\
  A \bs p &= \bs b + \bs e 
@@ -18433,10 +18433,10 @@ require(
 Reveal.initialize({
 
     // Display controls in the bottom right corner
-    controls: true,
+    controls: false,
 
     // Display a presentation progress bar
-    progress: true,
+    progress: false,
 
     // Push each slide change to the browser history
     history: false,
