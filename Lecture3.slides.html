@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+
 <title>Lecture3 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -36,7 +37,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +59,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -255,7 +256,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6800,15 +6800,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6865,6 +6865,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6880,6 +6893,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6902,31 +6919,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7411,6 +7428,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7423,6 +7441,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8060,7 +8079,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8164,7 +8184,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8290,6 +8310,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8303,6 +8324,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8470,6 +8493,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8750,6 +9424,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8775,6 +9453,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8806,13 +9488,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8847,8 +9532,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8964,6 +9655,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8984,6 +9678,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -9000,34 +9707,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9047,15 +9762,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9111,7 +9824,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9121,6 +9834,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9136,6 +9852,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9164,6 +9888,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9189,18 +9921,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9218,6 +9964,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9234,6 +9986,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9253,6 +10011,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9270,6 +10034,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9284,8 +10054,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9332,9 +10105,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9342,6 +10112,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9384,6 +10160,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9398,6 +10180,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9414,6 +10202,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9428,6 +10222,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9473,14 +10273,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9559,12 +10477,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9577,27 +10503,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9793,7 +10731,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9803,11 +10743,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10061,6 +11014,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10099,7 +11055,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10259,39 +11215,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10305,14 +11257,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10320,24 +11281,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10364,6 +11337,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10418,8 +11400,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10556,6 +11547,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10688,6 +11701,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10713,16 +11872,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10744,11 +11915,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10756,6 +11957,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10765,6 +11977,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10783,11 +11999,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10804,6 +12032,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10814,6 +12046,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10831,6 +12067,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10841,6 +12083,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10871,6 +12117,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10885,6 +12137,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10901,6 +12159,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10915,6 +12179,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10931,6 +12201,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10945,6 +12221,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11335,27 +12617,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11399,6 +12700,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11418,6 +12722,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11568,6 +12876,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11576,6 +12888,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11587,10 +12906,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11599,6 +12927,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11606,6 +12938,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11776,7 +13114,6 @@ ul.typeahead-list > li > a {
 /* Overrides of notebook CSS for static HTML export */
 .reveal {
   font-size: 160%;
-  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -11806,6 +13143,41 @@ ul.typeahead-list > li > a {
 }
 .reveal .progress {
   position: static;
+}
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #727272;
+}
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-left.enabled.enabled:hover {
+  border-right-color: #dfdfdf;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #727272;
+}
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-right.enabled.enabled:hover {
+  border-left-color: #dfdfdf;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #727272;
+}
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-up.enabled.enabled:hover {
+  border-bottom-color: #dfdfdf;
+}
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #727272;
+}
+.reveal .controls .navigate-down.enabled:hover,
+.reveal .controls .navigate-down.enabled.enabled:hover {
+  border-top-color: #dfdfdf;
+}
+.reveal .progress span {
+  background: #727272;
 }
 div.input_area {
   padding: 0.06em;
@@ -11839,6 +13211,19 @@ a.anchor-link {
 }
 .rendered_html p {
   text-align: inherit;
+}
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar *
+{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #727272 !important;
 }
 </style>
 
@@ -11876,10 +13261,8 @@ $(document).ready(function(){
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lecture-3:-Linear-Algebra-II">Lecture 3: Linear Algebra II<a class="anchor-link" href="#Lecture-3:-Linear-Algebra-II">&#182;</a></h1><p>Topics:</p>
 <ul>
@@ -11894,24 +13277,20 @@ $(document).ready(function(){
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Least-Square">Least Square<a class="anchor-link" href="#Least-Square">&#182;</a></h1><p>Robert Wilson: Consciousness itself is an infinite regress.</p>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Least-square-problem">Least square problem<a class="anchor-link" href="#Least-square-problem">&#182;</a></h2><p>Given an unknown scalar function $\renewcommand{bs}{\boldsymbol} y = y(\boldsymbol x)$, where the argument $\bs x$ is a $n$ dimensional vector.</p>
 <ul>
-<li><p>We have $m > n$ observations: $X$ represents inputs and $\bs y$ represents outputs:</p>
+<li><p>We have $m &gt; n$ observations: $X$ represents inputs and $\bs y$ represents outputs:</p>
 <p>$$\small X = \pmatrix{\bs x_1^T \\ \bs x_2^T \\ \vdots \\ \bs x_m^T}, \;\; \bs y = \pmatrix{y_1 \\ y_2 \\ \vdots \\ y_m}$$</p>
 </li>
 <li><p>We want to find a factor loading vector $\bs \beta$ so that the linear function $\hat y = \bs x^T \bs \beta$ best approximate the observed inputs/outputs.</p>
@@ -11923,17 +13302,15 @@ $(document).ready(function(){
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Pseudo-inverse:">Pseudo inverse:<a class="anchor-link" href="#Pseudo-inverse:">&#182;</a></h2>$$ \bs \beta^* = \text{argmin}_{\bs {\beta}} \Vert X \bs{\beta - y} \Vert_2$$<p>Which can be easily solved using Matrix calculus:</p>
 $$\begin{eqnarray}
-\Vert X \bs{\beta - y} \Vert_2^2 &=& (X \bs{\beta - y})^T (X \bs{\beta - y}) \\
-&=& \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T\bs y\\
-\frac{\partial}{\partial \bs \beta^T} \Vert X \bs{\beta - y} \Vert_2^2 &=& 2 X^TX \bs \beta  - 2X^T \bs y  = \bs 0 \\
-\bs \beta^* &=& (X^TX)^{-1}X^T\bs y
+\Vert X \bs{\beta - y} \Vert_2^2 &amp;=&amp; (X \bs{\beta - y})^T (X \bs{\beta - y}) \\
+&amp;=&amp; \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T\bs y\\
+\frac{\partial}{\partial \bs \beta^T} \Vert X \bs{\beta - y} \Vert_2^2 &amp;=&amp; 2 X^TX \bs \beta  - 2X^T \bs y  = \bs 0 \\
+\bs \beta^* &amp;=&amp; (X^TX)^{-1}X^T\bs y
 \end{eqnarray}$$<ul>
 <li>The solution is equivalent to linear regression, but the later requires stronger assumptions for forecasting.</li>
 <li>$X^+ = (X^TX)^{-1}X^T$ is also known as the psuedo inverse of $X$ because $X^+X = I$<ul>
@@ -11945,10 +13322,8 @@ $$\begin{eqnarray}
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Condition-number-of-non-square-matrix">Condition number of non-square matrix<a class="anchor-link" href="#Condition-number-of-non-square-matrix">&#182;</a></h2><p>We already proved that an invertable matrix $A$'s condition number is</p>
 $$k(A) = \Vert A \Vert \Vert A^{-1} \Vert$$<p>We can extend this to non-square matrix using pseudo-inverse, following the same proof.</p>
@@ -11956,19 +13331,17 @@ $$k(A) = \Vert A \Vert \Vert A^{+} \Vert$$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Ridge-regression">Ridge regression<a class="anchor-link" href="#Ridge-regression">&#182;</a></h2><p>The $\bs \beta$ that solves the least square problem may have large magnitude:</p>
 <ul>
 <li>often cause problems in practice</li>
 </ul>
 <p>Ridge regression adds a magnitude penalty to the objective function of least square:</p>
-$$\begin{eqnarray} l(\bs \beta) &=& \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_2^2 \\ &=&  \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T \bs y + \lambda \bs \beta^T W^TW \bs \beta \\
-\frac{\partial l}{\partial \bs \beta^T} &=& 2X^TX \bs \beta   - 2X^T \bs y + 2 \lambda W^T W \bs \beta = \bs 0 \\
-\bs \beta &=& (X^TX + \lambda W^TW)^{-1}X^T\bs y
+$$\begin{eqnarray} l(\bs \beta) &amp;=&amp; \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \Vert W \bs \beta \Vert_2^2 \\ &amp;=&amp;  \bs{\beta}^T X^T X \bs{\beta} - 2 \bs{\beta}^TX^T\bs y + \bs y^T \bs y + \lambda \bs \beta^T W^TW \bs \beta \\
+\frac{\partial l}{\partial \bs \beta^T} &amp;=&amp; 2X^TX \bs \beta   - 2X^T \bs y + 2 \lambda W^T W \bs \beta = \bs 0 \\
+\bs \beta &amp;=&amp; (X^TX + \lambda W^TW)^{-1}X^T\bs y
 \end{eqnarray}$$<ul>
 <li>$W$ is a diagonal weighting matrix for the elements in $\bs \beta$, e.g. $W = I$ is often a good start</li>
 <li>$\lambda$ is a scaler penalty rate</li>
@@ -11977,10 +13350,8 @@ $$\begin{eqnarray} l(\bs \beta) &=& \Vert X \bs{\beta - y} \Vert_2^2 + \lambda \
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Ridge-regression-example">Ridge regression example<a class="anchor-link" href="#Ridge-regression-example">&#182;</a></h2><p>We draw many pairs of $x, y, z$ from the following linear model:</p>
 $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
@@ -12021,7 +13392,7 @@ $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;4g&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12032,7 +13403,9 @@ $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -12071,10 +13444,8 @@ $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
 </div>
 
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>ridge regression is more robust, it works even if $X$ is not fully ranked (colinearity)</li>
@@ -12084,10 +13455,8 @@ $$  y = 2x + 0.1z + 5 + \epsilon $$<ul>
 </div>
 </div>
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Regularization">Regularization<a class="anchor-link" href="#Regularization">&#182;</a></h2><p>Ridge regression is an example of regularization. Two other popular regularizations are:</p>
 <ul>
@@ -12105,20 +13474,16 @@ $$<p>Both LASSO and Elasticnet are equivalent to support vector machine (SVM).</
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Eigenvalues-and-Eigenvectors">Eigenvalues and Eigenvectors<a class="anchor-link" href="#Eigenvalues-and-Eigenvectors">&#182;</a></h1><p>eigen-: characteristic, origin: German</p>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Definitions">Definitions<a class="anchor-link" href="#Definitions">&#182;</a></h2><p>For a square matrix $A$ of size $n \times n$, if there exists a vector $\bs {v \ne 0}$ and a scalar $\lambda \ne 0$ so that:</p>
 $$ A \bs v = \lambda \bs v $$<ul>
@@ -12130,10 +13495,8 @@ $$ A \bs v = \lambda \bs v $$<ul>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Eigen-vector/value-conventions">Eigen vector/value conventions<a class="anchor-link" href="#Eigen-vector/value-conventions">&#182;</a></h2>$$ A \bs v = \lambda \bs v $$<p>Eigenvectors are usually specified as unit L2 vectors of $\Vert \bs v \Vert_2^2 = \bs v^T \bs v = 1$.</p>
 <ul>
@@ -12148,10 +13511,8 @@ $$ A \bs v = \lambda \bs v $$<ul>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Characteristic-equation">Characteristic equation<a class="anchor-link" href="#Characteristic-equation">&#182;</a></h2><p>Rewrite the equation as:</p>
 $$ (A - \lambda I) \bs {v = 0}$$<p>It has non-zero solution if and only if:</p>
@@ -12161,10 +13522,8 @@ $$ \det(A - \lambda I) = 0$$<p></p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Properties-of-eigenvalues">Properties of eigenvalues<a class="anchor-link" href="#Properties-of-eigenvalues">&#182;</a></h2><p>For matrix $A$ of size $n \times n$:</p>
 <ul>
@@ -12181,19 +13540,17 @@ $$ \det(A - \lambda I) = 0$$<p></p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Independence-of-eigenvectors">Independence of eigenvectors<a class="anchor-link" href="#Independence-of-eigenvectors">&#182;</a></h2><p>Eigen vectors of distinct eigen values are linearly independent.</p>
 <ul>
 <li>proof: suppose the first k-1 eigen vectors are independent, but not the k-th:</li>
 </ul>
 $$\begin{array} \\
-   \bs{v_k} &= \sum_{i=1}^{k-1}c_i\bs{v_i} \\
-   \lambda_k \bs{v_k} &= \sum_{i=1}^{k-1}c_i\lambda_i\bs{v_i} =  \lambda_k \sum_{i=1}^{k-1}c_i\bs{v_i} \\
-\bs 0  &= \sum_{i=1}^{k-1}c_i(\lambda_i - \lambda_k) \bs{v_i} 
+   \bs{v_k} &amp;= \sum_{i=1}^{k-1}c_i\bs{v_i} \\
+   \lambda_k \bs{v_k} &amp;= \sum_{i=1}^{k-1}c_i\lambda_i\bs{v_i} =  \lambda_k \sum_{i=1}^{k-1}c_i\bs{v_i} \\
+\bs 0  &amp;= \sum_{i=1}^{k-1}c_i(\lambda_i - \lambda_k) \bs{v_i} 
    \end{array}
    $$<p>this leads to contradiction.</p>
 <ul>
@@ -12203,10 +13560,8 @@ $$\begin{array} \\
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Properties-of-eigenvectors">Properties of eigenvectors<a class="anchor-link" href="#Properties-of-eigenvectors">&#182;</a></h2><p>If $A$ has $n$ distinct eigen values, we can write:</p>
 $$ A R = R \Lambda$$<ul>
@@ -12214,16 +13569,14 @@ $$ A R = R \Lambda$$<ul>
 </ul>
 <p>$R$ is invertible because eigen vectors are all independent:</p>
 $$\begin{array} \\
-R^{-1} A &= \Lambda R^{-1} \\
- A^*(R^{-1})^* &= (R^{-1})^* \Lambda^* \\
+R^{-1} A &amp;= \Lambda R^{-1} \\
+ A^*(R^{-1})^* &amp;= (R^{-1})^* \Lambda^* \\
 \end{array}$$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Eigenvalue-decomposition">Eigenvalue decomposition<a class="anchor-link" href="#Eigenvalue-decomposition">&#182;</a></h2>$$A R = R\Lambda \iff A^*(R^{-1})^* = (R^{-1})^* \Lambda^* $$<p>If $A$ is real and symmetric: $A^* = A$:</p>
 <ul>
@@ -12240,10 +13593,8 @@ R^{-1} A &= \Lambda R^{-1} \\
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Eigenvectors-and-maximization">Eigenvectors and maximization<a class="anchor-link" href="#Eigenvectors-and-maximization">&#182;</a></h2><p>If $A$ is real and symmetric:</p>
 <ul>
@@ -12251,8 +13602,8 @@ R^{-1} A &= \Lambda R^{-1} \\
 </ul>
 <p>Apply Lagrange multiplier:</p>
 $$\begin{array}
-\\ l &= \bs u^T A \bs u - \gamma (\bs u^T \bs u - 1) \\
-\frac{\partial l}{\partial \bs u^T} &= 2 A \bs u - 2\gamma \bs u = \bs 0 \iff A \bs u = \gamma \bs u
+\\ l &amp;= \bs u^T A \bs u - \gamma (\bs u^T \bs u - 1) \\
+\frac{\partial l}{\partial \bs u^T} &amp;= 2 A \bs u - 2\gamma \bs u = \bs 0 \iff A \bs u = \gamma \bs u
 \end{array}$$<ul>
 <li>the solution must be an eigenvector </li>
 <li>since $\bs v_i^T A \bs v_i = \lambda_i$, $\bs v_1$ is the solution because $\lambda_1$ is the largest</li>
@@ -12261,10 +13612,8 @@ $$\begin{array}
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This process can be repeated to find all eigenvalues and vectors:</p>
 <ul>
@@ -12276,10 +13625,8 @@ $$\begin{array}
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Matrix-similarity">Matrix similarity<a class="anchor-link" href="#Matrix-similarity">&#182;</a></h2><p>Square matrix $B$ and $A$ are similar if $B = PAP^{-1}$:</p>
 <ul>
@@ -12294,10 +13641,8 @@ $$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$<p></p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solving-eigenvalues">Solving eigenvalues<a class="anchor-link" href="#Solving-eigenvalues">&#182;</a></h2><p>It is very challenging to solve eigen values for large matrices.</p>
 <ul>
@@ -12314,20 +13659,16 @@ $$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$<p></p>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="QR-Decomposition">QR Decomposition<a class="anchor-link" href="#QR-Decomposition">&#182;</a></h1><p>Nassim Taleb: Decomposition, for most, starts when they leave the free, social, and uncorrupted college life for the solitary confinement of professions and nuclear families.</p>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="QR-decomposition">QR decomposition<a class="anchor-link" href="#QR-decomposition">&#182;</a></h2><p>Any real matrix $A$ can be decomposed into $A = QR$:</p>
 <ul>
@@ -12342,36 +13683,34 @@ $$ AR = P^{-1}BP R = R \Lambda \iff B (PR) = (PR) \Lambda $$<p></p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 $$
 \overbrace{\pmatrix{
-* & * & * & * \\  
-* & * & * & * \\  
-* & * & * & * \\  
-* & * & * & * \\  
-* & * & * & * \\  
-* & * & * & * 
+* &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * 
 }}^A = 
 \overbrace{\pmatrix{
-* & * & * & * & * & * \\  
-* & * & * & * & * & * \\  
-* & * & * & * & * & * \\  
-* & * & * & * & * & * \\  
-* & * & * & * & * & * \\
-* & * & * & * & * & *
+* &amp; * &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * &amp; * \\  
+* &amp; * &amp; * &amp; * &amp; * &amp; * \\
+* &amp; * &amp; * &amp; * &amp; * &amp; *
 }}^Q 
 \;\;
 \overbrace{\pmatrix{
-* & * & * & *\\ 
-0 & * & * & *\\ 
-0 & 0 & * & * \\
-0 & 0 & 0 & * \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0
+* &amp; * &amp; * &amp; *\\ 
+0 &amp; * &amp; * &amp; *\\ 
+0 &amp; 0 &amp; * &amp; * \\
+0 &amp; 0 &amp; 0 &amp; * \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
 }}^R$$<p>If $A$ is not fully ranked:</p>
 <ul>
 <li>$Q$ remains full rank (as all orthogonal matrices)</li>
@@ -12381,10 +13720,8 @@ $$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="QR-algorithm-for-solving-eigenvalues">QR algorithm for solving eigenvalues<a class="anchor-link" href="#QR-algorithm-for-solving-eigenvalues">&#182;</a></h2><p>QR algorithm is one of the most important numerical methods of the 20th century <a href=https://www.siam.org/pdf/news/637.pdf>link</a></p>
 <p>Start with $A_0 = A$, then iterate:</p>
@@ -12403,10 +13740,8 @@ $$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example-of-QR-algorithm">Example of QR algorithm<a class="anchor-link" href="#Example-of-QR-algorithm">&#182;</a></h2><p>Find the eigenvalues of the following matrix:</p>
 
@@ -12432,7 +13767,7 @@ $$
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">tiny &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12443,7 +13778,9 @@ $$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12457,10 +13794,8 @@ $$\tiny  A=\left(\begin{matrix}5.0 & 4.0 & -3.0 & 2.0\\4.0 & 4.0 & 2.0 & -1.0\\-
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>QR decomposition of $A_0 = A$:</p>
 
@@ -12477,7 +13812,7 @@ $$\tiny  A=\left(\begin{matrix}5.0 & 4.0 & -3.0 & 2.0\\4.0 & 4.0 & 2.0 & -1.0\\-
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">pre</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">tiny &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12488,7 +13823,9 @@ $$\tiny  A=\left(\begin{matrix}5.0 & 4.0 & -3.0 & 2.0\\4.0 & 4.0 & 2.0 & -1.0\\-
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12502,10 +13839,8 @@ $$\tiny  Q=\left(\begin{matrix}-0.68 & -0.297 & -0.611 & 0.276\\-0.544 & -0.406 
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$A$ at the start of the next iteration, and after 20 iterations:</p>
 
@@ -12527,7 +13862,7 @@ $$\tiny  Q=\left(\begin{matrix}-0.68 & -0.297 & -0.611 & 0.276\\-0.544 & -0.406 
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">An</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">tiny &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12538,7 +13873,9 @@ $$\tiny  Q=\left(\begin{matrix}-0.68 & -0.297 & -0.611 & 0.276\\-0.544 & -0.406 
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12552,10 +13889,8 @@ $$\tiny  A_{1}=\left(\begin{matrix}8.04 & 1.98 & 2.19 & 0.163\\1.98 & 3.1 & -3.8
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Householder-transformation">Householder transformation<a class="anchor-link" href="#Householder-transformation">&#182;</a></h2><p>An orthogonal transformation representing reflection over a hyper plane, with a normal vector $\hat {\bs u}$ with unit L-2 norm:</p>
 $$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 \bs{\hat u} (\hat{\bs u}^T \bs x)  $$<p>Household transformation can reflect an arbitrary vector $\bs x$ to $ \Vert \bs x \Vert_2 \hat{\bs e}_1$, where $\hat{\bs e}_1$ can be any unit vector.</p>
@@ -12566,10 +13901,8 @@ $$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 \bs{\hat u} (\hat{\
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="QR-decomposition-using-Householder">QR decomposition using Householder<a class="anchor-link" href="#QR-decomposition-using-Householder">&#182;</a></h2><p>We show how to use Householder transformation to perform QR decomposition of the $A$ in previous example.</p>
 <ul>
@@ -12617,7 +13950,7 @@ $$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 \bs{\hat u} (\hat{\
                 <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">tiny &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12628,7 +13961,9 @@ $$ H \bs x = (I - {2\bs{\hat u \hat u}^T}) \bs x = \bs x - 2 \bs{\hat u} (\hat{\
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12639,7 +13974,9 @@ $$\tiny  A=\left(\begin{matrix}5.0 & 4.0 & -3.0 & 2.0\\4.0 & 4.0 & 2.0 & -1.0\\-
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12650,7 +13987,9 @@ $$ \;$$
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12664,10 +14003,8 @@ $$\tiny  H_{1}=\left(\begin{matrix}0.68 & 0.544 & -0.408 & 0.272\\0.544 & 0.073 
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>continue to zero out the lower triangle</p>
 
@@ -12694,7 +14031,7 @@ $$\tiny  H_{1}=\left(\begin{matrix}0.68 & 0.544 & -0.408 & 0.272\\0.544 & 0.073 
                 <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">H3</span><span class="o">*</span><span class="n">H2</span><span class="o">*</span><span class="n">H1</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">tiny &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12705,7 +14042,9 @@ $$\tiny  H_{1}=\left(\begin{matrix}0.68 & 0.544 & -0.408 & 0.272\\0.544 & 0.073 
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12716,7 +14055,9 @@ $$\tiny  H_{2}=\left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.912 & 0.371 & 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12727,7 +14068,9 @@ $$ \;$$
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12741,10 +14084,8 @@ $$\tiny  H_{3}=\left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>the final results are therefore $Q = (H_3H_2H_1)^T, R = Q^T A$:</p>
 
@@ -12764,7 +14105,7 @@ $$\tiny  H_{3}=\left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayMath</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">fmt</span><span class="o">.</span><span class="n">joinMath</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">3</span><span class="p">))),</span> <span class="n">pre</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">tiny &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12775,7 +14116,9 @@ $$\tiny  H_{3}=\left(\begin{matrix}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12789,22 +14132,20 @@ $$\tiny  Q=\left(\begin{matrix}0.68 & 0.297 & -0.611 & 0.276\\0.544 & 0.406 & 0.
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="QR-decomposition-for-least-square">QR decomposition for least square<a class="anchor-link" href="#QR-decomposition-for-least-square">&#182;</a></h2>$$ \min_{\bs {\beta}} \Vert X \bs{\beta - y} \Vert_2$$<p>given the QR decomposition of $X = QR$:</p>
 $$ \min_{\bs {\beta}} \Vert X \bs{\beta - y} \Vert_2 = \min_{\bs {\beta}} \Vert Q^T X \bs \beta - Q^T \bs y \Vert_2 = \min_{\bs {\beta}} \Vert R \bs \beta - \bs y'\Vert_2$$<p>note that $R$ is right trangular, the vector whose norm is to be minimized looks like:</p>
 $$\scriptsize \begin{pmatrix}
-r_{11} & r_{12} & \cdots & r_{1n} \\
-0 & r_{22} & \cdots & r_{2n} \\
-\vdots & \ddots & \ddots & \vdots \\
-0  & \cdots\ & 0 & r_{nn} \\
+r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
+0 &amp; r_{22} &amp; \cdots &amp; r_{2n} \\
+\vdots &amp; \ddots &amp; \ddots &amp; \vdots \\
+0  &amp; \cdots\ &amp; 0 &amp; r_{nn} \\
 \hline
-0 & 0 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
-0 & 0 & \cdots & 0 
+0 &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; 0 
 \end{pmatrix} 
 \begin{pmatrix}
 \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n
@@ -12817,10 +14158,8 @@ $$<p>therefore, the solution is the $\bs \beta$ that zero out the first $n$ elem
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Top-10-numerical-algorithm-in-the-20th-century">Top 10 numerical algorithm in the 20th century<a class="anchor-link" href="#Top-10-numerical-algorithm-in-the-20th-century">&#182;</a></h2><p>By <a href="https://www.siam.org/pdf/news/637.pdf">SIAM</a>:</p>
 <ol>
@@ -12839,20 +14178,16 @@ $$<p>therefore, the solution is the $\bs \beta$ that zero out the first $n$ elem
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Why single out the 20th century?</p>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Original-mobile-computing-devices">Original mobile computing devices<a class="anchor-link" href="#Original-mobile-computing-devices">&#182;</a></h2><p>Slide rule:</p>
 <p><img src=https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6XOdwLqDUf2PYIaP09qAMNH5RL0RAh9mA7PxPoGgKke2X6s4UAw width=400></p>
@@ -12862,10 +14197,8 @@ $$<p>therefore, the solution is the $\bs \beta$ that zero out the first $n$ elem
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Principal-Component-Analysis">Principal Component Analysis<a class="anchor-link" href="#Principal-Component-Analysis">&#182;</a></h1><p>Mahatma Gandhi: action expresses priorities.
 $\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
@@ -12873,10 +14206,8 @@ $\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Principal-component">Principal component<a class="anchor-link" href="#Principal-component">&#182;</a></h2><p>The principal component (PC):</p>
 <ul>
@@ -12923,7 +14254,7 @@ $\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Principal Components of 2-D Data&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12934,7 +14265,9 @@ $\renewcommand{bt}[1]{\tilde{\bs #1}}$</p>
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -13174,10 +14507,8 @@ l2RL3u/cogAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Link-to-eigenvectors">Link to eigenvectors<a class="anchor-link" href="#Link-to-eigenvectors">&#182;</a></h2><p>The projection $\hat{\bs u}^T \bt r$ is a random scalar:</p>
 <ul>
@@ -13193,10 +14524,8 @@ l2RL3u/cogAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Variance-explained">Variance explained<a class="anchor-link" href="#Variance-explained">&#182;</a></h2><p>The total variance of is sum of variance of in all $n$ elements of the random vector, which equals:</p>
 <ol>
@@ -13208,10 +14537,8 @@ l2RL3u/cogAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Application-in-interest-rates">Application in interest rates<a class="anchor-link" href="#Application-in-interest-rates">&#182;</a></h2><p>CMT rates are constant maturity treasury bond yield that are published daily by <a href=http://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield>U. S. Treasury</a>.</p>
 
@@ -13229,7 +14556,7 @@ l2RL3u/cogAAAABJRU5ErkJggg==
 <span class="n">cmt_rates</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Historical CMT yield&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13240,7 +14567,9 @@ l2RL3u/cogAAAABJRU5ErkJggg==
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -14035,10 +15364,8 @@ rkJggg==
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Covariance-matrix">Covariance matrix<a class="anchor-link" href="#Covariance-matrix">&#182;</a></h2><ul>
 <li>Covariance matrix between CMT rates at different maturities</li>
@@ -14058,7 +15385,7 @@ rkJggg==
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayDF</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span> <span class="s2">&quot;4g&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14069,7 +15396,9 @@ rkJggg==
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -14207,10 +15536,8 @@ rkJggg==
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="IR-PCA-components">IR PCA components<a class="anchor-link" href="#IR-PCA-components">&#182;</a></h2><p>The eigenvectors and percentage explained,</p>
 <ul>
@@ -14239,7 +15566,7 @@ rkJggg==
                             <span class="s1">&#39;Eigenvalues&#39;</span><span class="p">:</span><span class="n">xcv</span><span class="p">,</span> <span class="s1">&#39;Cumulative Var(%)&#39;</span><span class="p">:</span> <span class="n">pct_v</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;P/C&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;2f&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14250,7 +15577,9 @@ rkJggg==
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -14326,7 +15655,7 @@ rkJggg==
 <span class="n">legend</span><span class="p">(</span><span class="n">flab</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14337,7 +15666,9 @@ rkJggg==
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -15132,10 +16463,8 @@ QmCC
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Dimension-reduction-in-MC">Dimension reduction in MC<a class="anchor-link" href="#Dimension-reduction-in-MC">&#182;</a></h2><p>Given a generic $n$-dimensional SDE in vector form:</p>
 $$\renewcommand{Sigma}{\mathcal{S}} d \bs x = \bs u dt + A \Sigma d \bs w, \;\;\; d\bs w d\bs w^T = C dt$$<ul>
@@ -15155,10 +16484,8 @@ $$<ul>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Dimension-reduction-with-PCA">Dimension reduction with PCA<a class="anchor-link" href="#Dimension-reduction-with-PCA">&#182;</a></h2><p>Use the PCA of the covariance matrix: 
 $$
@@ -15183,10 +16510,8 @@ $$</p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="PCA-is-scale-variant">PCA is scale variant<a class="anchor-link" href="#PCA-is-scale-variant">&#182;</a></h2><p>Given the EVDs on covariance and correlation matrices:</p>
 $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$$<p>Are they equivalent?</p>
@@ -15194,10 +16519,8 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>$\Sigma R_C \Lambda_C R_C^T \Sigma = (\Sigma R_C) \Lambda_C (\Sigma R_C)^T$<ul>
@@ -15209,10 +16532,8 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>$\Sigma R_C \Lambda_C R_C^T \Sigma = R_C (\Sigma \Lambda_C \Sigma) R_C^T$<ul>
@@ -15224,10 +16545,8 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 </div>
 </div>
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>However, neiher is true because:</p>
 <ul>
@@ -15245,10 +16564,8 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Orthogonality-depends-on-scale">Orthogonality depends on scale<a class="anchor-link" href="#Orthogonality-depends-on-scale">&#182;</a></h2><p>The PCs are no longer orthogonal after stretching horizontally.</p>
 
@@ -15288,7 +16605,7 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scaled&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15299,7 +16616,9 @@ $$R_V \Lambda_V R_V^T = V = \Sigma C \Sigma = \Sigma R_C \Lambda_C R_C^T \Sigma$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -15681,10 +17000,8 @@ kjr7L7W1QiJvL/MKAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Before-applying-PCA">Before applying PCA<a class="anchor-link" href="#Before-applying-PCA">&#182;</a></h2><p>PCA is a powerful technique, however, beware of its limitations:</p>
 <ul>
@@ -15708,10 +17025,8 @@ kjr7L7W1QiJvL/MKAAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="PCA-vs.-least-square">PCA vs. least square<a class="anchor-link" href="#PCA-vs.-least-square">&#182;</a></h2><p>The PCA analysis has some similarity to the least square problem, both of them can be viewed as minimizing the L2 norm of residual errors.</p>
 
@@ -15763,7 +17078,7 @@ kjr7L7W1QiJvL/MKAAAAAElFTkSuQmCC
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Least Square&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15774,7 +17089,9 @@ kjr7L7W1QiJvL/MKAAAAAElFTkSuQmCC
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -16221,10 +17538,8 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="PCA-or-regression?">PCA or regression?<a class="anchor-link" href="#PCA-or-regression?">&#182;</a></h2><p>The main differences between PCA and least square (regression):</p>
 <table>
@@ -16257,10 +17572,8 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-variable-to-apply-PCA">What variable to apply PCA<a class="anchor-link" href="#What-variable-to-apply-PCA">&#182;</a></h2><p>It is important to choose the right variable to apply PCA. The main considerations are:</p>
 <ul>
@@ -16282,10 +17595,8 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Spurious-correlation---equity-price">Spurious correlation - equity price<a class="anchor-link" href="#Spurious-correlation---equity-price">&#182;</a></h2><p>Spurious correlation: variables can appear to be significantly correlated, but it is just an illusion:</p>
 
@@ -16304,7 +17615,7 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 <span class="n">fmt</span><span class="o">.</span><span class="n">displayDFs</span><span class="p">(</span><span class="n">f3</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Price Correlation&#39;</span><span class="p">,</span> <span class="s1">&#39;Return Correlation&#39;</span><span class="p">],</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;4g&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16315,7 +17626,9 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -16386,10 +17699,8 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Spurious-correlation---spot-rates">Spurious correlation - spot rates<a class="anchor-link" href="#Spurious-correlation---spot-rates">&#182;</a></h2><p>The correlation between 9Y and 10Y spot rates and forward rates:</p>
 
@@ -16426,7 +17737,7 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Corr(9Y Spot, 9-10Y Forward) = </span><span class="si">%.4f</span><span class="s1">&#39;</span><span class="o">%</span> <span class="n">fc</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16437,7 +17748,9 @@ ERERkYj9f9j8ECP/e+sKAAAAAElFTkSuQmCC
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -16936,14 +18249,12 @@ IiIiKVCgLSIiIiKSgv8P/uvDQS1bDtEAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 $$\begin{eqnarray}
-\exp(-10 r_{10}) &=& \exp(-9 r_9)\exp(-(10-9) f(9, 10) )  \\
-r_{10} &=& 0.9r_9 + 0.1f(9, 10) 
+\exp(-10 r_{10}) &amp;=&amp; \exp(-9 r_9)\exp(-(10-9) f(9, 10) )  \\
+r_{10} &amp;=&amp; 0.9r_9 + 0.1f(9, 10) 
 \end{eqnarray}$$<ul>
 <li>the $f(9, 10)$ is the 9Y to 10Y forward rate.</li>
 <li>of course $r_{10} = f(0, 10)$</li>
@@ -16952,10 +18263,8 @@ r_{10} &=& 0.9r_9 + 0.1f(9, 10)
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Correlated-by-construction">Correlated by construction<a class="anchor-link" href="#Correlated-by-construction">&#182;</a></h2>$$ r_{10} = 0.9r_9 + 0.1f(9, 10) $$<ul>
 <li>The high correlation between spot rates to similar tenors are by construction</li>
@@ -16970,22 +18279,18 @@ r_{10} &=& 0.9r_9 + 0.1f(9, 10)
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">&#182;</a></h1><p>rotate, stretch and rotate, then you get back to square one, that's pretty much the life in a bank.</p>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Definition">Definition<a class="anchor-link" href="#Definition">&#182;</a></h2><p>For any real matrix $M$, $\sigma > 0$ is a singular value if there exists two vectors $\bs {u, v}$ such that:</p>
+<h2 id="Definition">Definition<a class="anchor-link" href="#Definition">&#182;</a></h2><p>For any real matrix $M$, $\sigma &gt; 0$ is a singular value if there exists two vectors $\bs {u, v}$ such that:</p>
 <ol>
 <li>$M \bs v = \sigma \bs u$ </li>
 <li>$M^T \bs u = \sigma \bs v$</li>
@@ -17003,10 +18308,8 @@ r_{10} &=& 0.9r_9 + 0.1f(9, 10)
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Singular-vectors-and-maximization">Singular vectors and maximization<a class="anchor-link" href="#Singular-vectors-and-maximization">&#182;</a></h2><p>Consider $\bs u^T M \bs v$ for real matrix $M$:</p>
 <ul>
@@ -17014,9 +18317,9 @@ r_{10} &=& 0.9r_9 + 0.1f(9, 10)
 </ul>
 <p>Apply the Lagrange multiplier, with constraints $\bs u^T  \bs u = \bs v^T  \bs v = 1$:</p>
 $$\small \begin{array} 
-\\l &= \bs u^T M \bs v - \lambda_1 (\bs u^T  \bs u - 1) - \lambda_2 (\bs v^T  \bs v - 1) \\
-\frac{\partial l}{\partial{\bs u^T}} &= M \bs v - 2 \lambda_1 \bs u = \bs 0 \iff \bs u^T M \bs v - 2 \lambda_1 = \bs 0\\
-\frac{\partial l}{\partial{\bs v}} &= \bs u^T M  - 2\lambda_2 \bs v^T = \bs 0^T \iff \bs u^T M \bs v- 2\lambda_2 = \bs 0
+\\l &amp;= \bs u^T M \bs v - \lambda_1 (\bs u^T  \bs u - 1) - \lambda_2 (\bs v^T  \bs v - 1) \\
+\frac{\partial l}{\partial{\bs u^T}} &amp;= M \bs v - 2 \lambda_1 \bs u = \bs 0 \iff \bs u^T M \bs v - 2 \lambda_1 = \bs 0\\
+\frac{\partial l}{\partial{\bs v}} &amp;= \bs u^T M  - 2\lambda_2 \bs v^T = \bs 0^T \iff \bs u^T M \bs v- 2\lambda_2 = \bs 0
 \end{array}$$<p>Therefore,
 $$ 2\lambda_1 = \small \bs u^T M \bs v  = 2\lambda_2 $$
 $$M \bs v = \sigma \bs u \;,\; M^T\bs u = \sigma \bs v $$</p>
@@ -17024,10 +18327,8 @@ $$M \bs v = \sigma \bs u \;,\; M^T\bs u = \sigma \bs v $$</p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Orthogonality-of-Singular-Vectors">Orthogonality of Singular Vectors<a class="anchor-link" href="#Orthogonality-of-Singular-Vectors">&#182;</a></h2><p>Given $\bs{u_1, v_1}$ are the first singular vectors of $M$:</p>
 $$\bs x^T \bs v_1 = 0  \iff (M \bs x)^T \bs u_1 = 0 \iff \bs u_1^T M \bs x  = 0 $$<p>because:</p>
@@ -17040,10 +18341,8 @@ $$ (M \bs x)^T \bs u_1 = \bs x^T M^T \bs u_1 = \bs x^T \sigma_1 \bs v_1  = 0 $$<
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Singular-value-decmposition">Singular value decmposition<a class="anchor-link" href="#Singular-value-decmposition">&#182;</a></h2><p>We can write all singular vectors and singular values in matrix format, which is the singular value decomposition (SVD):</p>
 $$
@@ -17089,20 +18388,16 @@ $$<table>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Graphical-representation-of-SVD">Graphical representation of SVD<a class="anchor-link" href="#Graphical-representation-of-SVD">&#182;</a></h2><p>Illustration from wikipedia:</p>
 <center> <img src="img/svd.png" width=500 height=500></center>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Link-between-SVD-and-EVD">Link between SVD and EVD<a class="anchor-link" href="#Link-between-SVD-and-EVD">&#182;</a></h2>$$
 M = U \Sigma V^T
@@ -17123,28 +18418,24 @@ $$<p>SVD and eigenvalue decomposition (EVD) are closely related to each other:</
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="SVD-of-pseudo-inverse">SVD of pseudo inverse<a class="anchor-link" href="#SVD-of-pseudo-inverse">&#182;</a></h2><p>Given the SVD decomposition $X = U\Sigma V^T$, the SVD of $X$'s pseudo inverse is:</p>
 $$X^+ = (X^TX)^{-1}X^T = V \Sigma^+ U^T$$<p>where $\Sigma^+$ is the pseudo inverse of $\Sigma$, whose diagonal elements are the reciprocals of those in $\Sigma$.</p>
 <p>Proof: the last equation is obviously true, and every step is reversible:</p>
-$$\begin{array}&(X^TX)^{-1}X^T &= V\Sigma^+ U^T \\
-(V \Sigma^T \Sigma V^T)^{-1} V\Sigma^TU^T &= V\Sigma^+ U^T \\
-(V \Sigma^T \Sigma V^T)^{-1} V\Sigma^T\Sigma &= V \Sigma^+\Sigma \\
-(V \Sigma^T \Sigma V^T)^{-1} V\Sigma^T\Sigma &= V \\
-(V \Sigma^T \Sigma V^T)^{-1} (V\Sigma^T\Sigma V^T) &= I 
+$$\begin{array}&amp;(X^TX)^{-1}X^T &amp;= V\Sigma^+ U^T \\
+(V \Sigma^T \Sigma V^T)^{-1} V\Sigma^TU^T &amp;= V\Sigma^+ U^T \\
+(V \Sigma^T \Sigma V^T)^{-1} V\Sigma^T\Sigma &amp;= V \Sigma^+\Sigma \\
+(V \Sigma^T \Sigma V^T)^{-1} V\Sigma^T\Sigma &amp;= V \\
+(V \Sigma^T \Sigma V^T)^{-1} (V\Sigma^T\Sigma V^T) &amp;= I 
 \end{array}$$<p>SVD is another way to solve the least square problem.</p>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="L2-norm-and-condition-number">L2 norm and condition number<a class="anchor-link" href="#L2-norm-and-condition-number">&#182;</a></h2><p>Consider a real matrix $A$, its L2 norm is defined as the maximum of $\frac{\Vert A \bs x \Vert_2}{\Vert \bs x \Vert_2}$:</p>
 $$
@@ -17164,10 +18455,8 @@ $$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="SVD-and-condition-number">SVD and condition number<a class="anchor-link" href="#SVD-and-condition-number">&#182;</a></h2><p>SVD offers clear intuitions in understanding the L-2 condition number of a Matrix $A$.</p>
 <p>For a linear system $\bs y = A \bs x$, consider a perturbation $\delta \bs x$ to the input $\bs x$:</p>
@@ -17186,10 +18475,8 @@ $$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Spot-the-trouble">Spot the trouble<a class="anchor-link" href="#Spot-the-trouble">&#182;</a></h2><p>When working with near singular matrix,  SVD can identify ill-conditioned area:</p>
 <ul>
@@ -17203,10 +18490,8 @@ $$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rank-deficiency-and-reduction">Rank deficiency and reduction<a class="anchor-link" href="#Rank-deficiency-and-reduction">&#182;</a></h2><p>Singular matrix are those that are not fully ranked</p>
 <ul>
@@ -17225,31 +18510,27 @@ $$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Condition-number-for-EVD">Condition number for EVD<a class="anchor-link" href="#Condition-number-for-EVD">&#182;</a></h2><p>What is the change in $\lambda_i$ if we perturb the symmetric matrix $A$?</p>
 $$ A \bs v_i = \lambda_i \bs v_i$$<p>Apply the perturbation analysis: $\delta A = \dot{A} \epsilon, \delta \lambda_i = \dot{\lambda_i} \epsilon, 
 \delta \bs v_i = \dot{\bs v_i} \epsilon$, the first order terms of $\epsilon$:</p>
 $$\begin{array} 
-\\ (A + \dot{A}\epsilon )(\bs v_i + \dot{\bs v_i}\epsilon) &= (\lambda_i + \dot{\lambda_i}\epsilon) (\bs v_i + \dot{\bs v_i} \epsilon) \\
-\dot{A}\bs v_i + A \dot{\bs v_i} &= \lambda_i \dot{\bs v_i} + \dot{\lambda_i}\bs v_i \\
-\bs v_i^T\dot{A}\bs v_i + \bs v_i^T A \dot{\bs v_i} &= \bs v_i^T \lambda_i \dot{\bs v_i} + \bs v_i^T \dot{\lambda_i}\bs v_i \\
-\bs v_i^T\dot{A}\bs v_i &= \dot{\lambda_i}
+\\ (A + \dot{A}\epsilon )(\bs v_i + \dot{\bs v_i}\epsilon) &amp;= (\lambda_i + \dot{\lambda_i}\epsilon) (\bs v_i + \dot{\bs v_i} \epsilon) \\
+\dot{A}\bs v_i + A \dot{\bs v_i} &amp;= \lambda_i \dot{\bs v_i} + \dot{\lambda_i}\bs v_i \\
+\bs v_i^T\dot{A}\bs v_i + \bs v_i^T A \dot{\bs v_i} &amp;= \bs v_i^T \lambda_i \dot{\bs v_i} + \bs v_i^T \dot{\lambda_i}\bs v_i \\
+\bs v_i^T\dot{A}\bs v_i &amp;= \dot{\lambda_i}
 \end{array}$$
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Therefore:
 $$\begin{array}
-\\ \frac{ | \delta \lambda_i |}{| \lambda_i |} &= \frac{\Vert \bs v_i^T\delta A \bs v_i\Vert_2}{|\lambda_i|}
+\\ \frac{ | \delta \lambda_i |}{| \lambda_i |} &amp;= \frac{\Vert \bs v_i^T\delta A \bs v_i\Vert_2}{|\lambda_i|}
 \le \frac{\Vert \delta A \Vert_2}{|\lambda_i|} = \frac{\Vert A\Vert_2}{|\lambda_i|} \frac{\Vert \delta A \Vert_2}{\Vert A \Vert_2}
  = \left\vert \frac{\lambda_1}{\lambda_i}\right\vert \frac{\Vert \delta A \Vert_2}{\Vert A \Vert_2} 
  \end{array}$$</p>
@@ -17261,10 +18542,8 @@ $$\begin{array}
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Decomposition-summary">Decomposition summary<a class="anchor-link" href="#Decomposition-summary">&#182;</a></h2><p>For real matrix $A$:</p>
 <table>
@@ -17318,10 +18597,8 @@ $$\begin{array}
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Assignment">Assignment<a class="anchor-link" href="#Assignment">&#182;</a></h1><p>Requried reading:</p>
 <ul>
@@ -17363,8 +18640,7 @@ require(
             progress: true,
             history: true,
 
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+            transition: "slide",
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
@@ -17384,13 +18660,25 @@ require(
 
         Reveal.addEventListener('slidechanged', update);
 
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
+        function setScrollingSlide() {
+            var scroll = false
+            if (scroll === true) {
+              var h = $('.reveal').height() * 0.95;
+              $('section.present').find('section')
+                .filter(function() {
+                  return $(this).height() > h;
+                })
+                .css('height', 'calc(95vh)')
+                .css('overflow-y', 'scroll')
+                .css('margin-top', '20px');
+            }
+        }
 
-        Reveal.addEventListener('slidechanged', update_scroll);
+        // check and set the scrolling slide every time the slide change
+        Reveal.addEventListener('slidechanged', setScrollingSlide);
 
     }
+
 );
 </script>
 
