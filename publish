@@ -1,0 +1,15 @@
+git pull
+git add -u
+git commit -m %1
+git push
+python bs.py
+mv *.html ../gh-pages
+
+cd ../gh-pages
+git pull
+git add -u
+git commit -m %1
+git push
+
+cd ../master
+
