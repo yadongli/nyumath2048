@@ -13864,7 +13864,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <th style="text-align:right">Fraction</th>
 <th style="text-align:right">Exponent</th>
 <th style="text-align:right">$p$</th>
-<th style="text-align:center">Exponent Range</th>
+<th style="text-align:center">(Exponent-p) range</th>
 </tr>
 </thead>
 <tbody>
@@ -14878,7 +14878,7 @@ true value of 1-cos(1e-08) = 6.0499999999999997e-17
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Dramatic precision loss when subtracting numbers that are very similar <ul>
-<li>All the identical leading significants cancels</li>
+<li>Most leading significant digits cancel</li>
 <li>The result has much fewer number of significant digits</li>
 </ul>
 </li>
@@ -14948,7 +14948,8 @@ $$\text{Var}[r_t | r_0] = \frac{r_0\sigma^2}{\kappa}(e^{-\kappa t} - e^{-2\kappa
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Bump-Size-for-Delta">Bump Size for Delta<a class="anchor-link" href="#Bump-Size-for-Delta">&#182;</a></h2><p>How to choose the $h$ so that the following finite difference approximation is the most accurate?</p>
 $$ f'(x) \approx \frac{1}{h}(f(x+h) - f(x)) $$<p>The best $h$ is when truncation error equals to the rounding error:</p>
-$$ \frac{1}{2} f''(x) h^2 = f(x) \epsilon_m $$<p>Thus the optimal $h^* = \sqrt{\frac{2 f(x)\epsilon_m}{f''(x)}} $. But in reality, it is often better off to simply use central difference:</p>
+$$ \frac{1}{2} f''(x) h^2 = f(x) \epsilon_m $$<p>Thus the optimal $h^* = \sqrt{\frac{2 f(x)\epsilon_m}{f''(x)}} $.</p>
+<p>It is however better off to simply use central difference:</p>
 $$ f'(x) \approx \frac{1}{2h}\left(f(x+h) - f(x-h)\right) $$
 </div>
 </div>
