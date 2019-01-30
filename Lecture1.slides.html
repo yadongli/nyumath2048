@@ -13476,17 +13476,17 @@ a.anchor-link {
 <td style="text-align:center">RAM</td>
 <td style="text-align:right">15GB/s</td>
 <td style="text-align:right">60-100 ns</td>
-<td style="text-align:right">2 - 128GB</td>
+<td style="text-align:right">~TB</td>
 </tr>
 <tr>
-<td style="text-align:center">Disk</td>
-<td style="text-align:right">50MB/s</td>
-<td style="text-align:right">~5ms</td>
+<td style="text-align:center">SDD</td>
+<td style="text-align:right">up to 4GB/s</td>
+<td style="text-align:right">~0.1ms</td>
 <td style="text-align:right">$\infty$</td>
 </tr>
 <tr>
 <td style="text-align:center">Network</td>
-<td style="text-align:right">vary</td>
+<td style="text-align:right">up to 12GB/s</td>
 <td style="text-align:right">much longer</td>
 <td style="text-align:right">$\infty$</td>
 </tr>
@@ -13516,8 +13516,8 @@ a.anchor-link {
 </ul>
 </li>
 <li>Premature optimization for speed is the root of all evil<ul>
-<li>Simplicity and generality of the code are often sacrificed</li>
-<li>Execution speed is usually not the most critical factor in practice</li>
+<li>Simplicity, generality and scalability of the code are often sacrificed</li>
+<li>Execution speed is often not the most critical factor in most circumstances</li>
 </ul>
 </li>
 </ul>
@@ -13566,8 +13566,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conventional-wisdom-for-programming">Conventional wisdom for programming<a class="anchor-link" href="#Conventional-wisdom-for-programming">&#182;</a></h2><p>Typical advice includes:</p>
-<ul>
+<h2 id="Conventional-advice-for-programming">Conventional advice for programming<a class="anchor-link" href="#Conventional-advice-for-programming">&#182;</a></h2><ul>
 <li>Choose good names for your variables and functions</li>
 <li>Write comments and documents</li>
 <li>Write good tests</li>
@@ -13660,8 +13659,6 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Eric Raymond, "How to Become a Hacker":</p>
 <p>"Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot."</p>
-<p>Greenspun's tenth rule of programming:</p>
-<p>"Any sufficiently complicated C or Fortran program contains an ad-hoc, informally-specified, bug-ridden, slow implementation of half of Common Lisp."</p>
 <ul>
 <li>Clojure is a modern implementation of Lisp</li>
 <li>Julia is a very promising new language, heavily influenced by Lisp</li>
@@ -13673,7 +13670,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="We-use-Python">We use Python<a class="anchor-link" href="#We-use-Python">&#182;</a></h2><p>Python</p>
+<h2 id="We-use-Python-for-this-class">We use Python for this class<a class="anchor-link" href="#We-use-Python-for-this-class">&#182;</a></h2><p>Python</p>
 <ul>
 <li>a powerful dynamic and strongly typed scripting language </li>
 <li>extremely popular in scientific computing</li>
@@ -13842,7 +13839,7 @@ a.anchor-link {
 <li>The vast majority of general purpose CPUs are IEEE 754 compliant</li>
 <li>Software is more complicated  <ul>
 <li>Compiled language like C++ depends on the hardware's implementation.</li>
-<li>Some software may have their own behaviours, e.g., the Java strictfp flag</li>
+<li>Some software implemented their own special behaviours, e.g., the Java strictfp flag</li>
 </ul>
 </li>
 </ul>
@@ -13867,6 +13864,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <th style="text-align:right">Fraction</th>
 <th style="text-align:right">Exponent</th>
 <th style="text-align:right">$p$</th>
+<th style="text-align:center">Exponent Range</th>
 </tr>
 </thead>
 <tbody>
@@ -13876,6 +13874,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <td style="text-align:right">23</td>
 <td style="text-align:right">8</td>
 <td style="text-align:right">127</td>
+<td style="text-align:center">1 to 245</td>
 </tr>
 <tr>
 <td style="text-align:center">IEEE 754 - 64 bit</td>
@@ -13883,6 +13882,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <td style="text-align:right">52</td>
 <td style="text-align:right">11</td>
 <td style="text-align:right">1023</td>
+<td style="text-align:center">1 to 2046</td>
 </tr>
 </tbody>
 </table>
@@ -14882,7 +14882,7 @@ true value of 1-cos(1e-08) = 6.0499999999999997e-17
 <li>The result has much fewer number of significant digits</li>
 </ul>
 </li>
-<li>Catestrophic cancellation could happen in practice <ul>
+<li>Catestrophic cancellation could easily happen in practice <ul>
 <li>Deltas are often computed by bump and re-value</li>
 <li>Very small bump sizes should be avoided</li>
 </ul>
