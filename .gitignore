@@ -52,5 +52,3 @@ Temporary Items
 # class specific ignore
 *-solution.*
 Final*.*
-*.pyc
-swap.py
