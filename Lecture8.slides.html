@@ -11908,7 +11908,7 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lecture-8:-Optimization">Lecture 8: Optimization<a class="anchor-link" href="#Lecture-8:-Optimization">&#182;</a></h1><h2 id="Topics">Topics<a class="anchor-link" href="#Topics">&#182;</a></h2><ul>
-<li><p>Introduction</p>
+<li><p>I. Introduction</p>
 <ul>
 <li>Formulation</li>
 <li>Types of Optimization Problems</li>
@@ -11926,7 +11926,7 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>Unconstrained Optimization</p>
+<li><p>II. Unconstrained Optimization</p>
 <ul>
 <li>Optimality Characterization</li>
 <li>Solution Methods<ul>
@@ -11946,7 +11946,7 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Constrained Optimization<ul>
+<li>III. Constrained Optimization<ul>
 <li>General framework</li>
 <li>Duality</li>
 <li>Optimality conditions<ul>
@@ -11965,7 +11965,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>Optimization exists in every field, particularly in finance: most activities in finance revolve around some goals that needed to be optimized, e.g. maximizing profits, minimizing risk, maximizing utility, and minimizing costs etc.</p>
+<h1 id="I.-Introduction">I. Introduction<a class="anchor-link" href="#I.-Introduction">&#182;</a></h1><p>Optimization exists in every field, particularly in finance: most activities in finance revolve around some goals that needed to be optimized, e.g. maximizing profits, minimizing risk, maximizing utility, and minimizing costs etc.</p>
 
 </div>
 </div>
@@ -12145,9 +12145,9 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>Finding a global minimum is considerably harder than a local minimum --- imaging the difference in the difficulties of getting to the top of your neighborhood hill top vs getting to the top of Mt. Everest.</p>
+<li><p>Finding the global minimum is considerably harder than a local minimum --- imaging the difference in the difficulties of getting to the top of your neighborhood hill top vs getting to the top of Mt. Everest.</p>
 </li>
-<li><p>With one exception: for convex problems, the local minimum is the also global solution.</p>
+<li><p>With one exception: for convex problems, any local minimum is also globally optimal (homework).</p>
 </li>
 </ul>
 
@@ -12173,7 +12173,7 @@ $$</p>
 <p>$$
 \min_{\bx}\left[ f(\bx)^T f(\bx)\right],
 $$</p>
-<p>(although this is rarely advised --- doing anything through square or higher power is generally a bad idea --- it  makes the problem harder to solve).</p>
+<p>(although this is normally ill-advised --- doing anything through square or higher power when you can avoid it is generally a bad idea --- it makes the problem harder to solve, think ill-conditioning as a starter).</p>
 <ul>
 <li>But this shows the root searching problem and the optimization problem are closely related.</li>
 </ul>
@@ -12197,7 +12197,7 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>If $f(\bx)$ is twice-differentiable (i.e. second derivatives exist), then a <strong>sufficent condition</strong> for a local minimizer is, in addition to being a critical point,  the <strong>Hessian</strong> at $\bx^*$ is positive definite</li>
+<li>If $f(\bx)$ is twice-differentiable (i.e. second derivatives exist), then a <strong>sufficient condition</strong> for a local minimizer is, in addition to being a critical point,  the <strong>Hessian</strong> at $\bx^*$ is positive definite</li>
 </ul>
 <p>$$
 {\bs H} (\bx^*) = {\bs\nabla^2} _\bx f(\bx^*)  \succ 0
@@ -12272,7 +12272,7 @@ where $\sigma(S,t) &gt; 0$ is the volatility value at the surface point $(S,t)$,
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Unconstrained-Optimization">Unconstrained Optimization<a class="anchor-link" href="#Unconstrained-Optimization">&#182;</a></h1><ul>
+<h1 id="II.-Unconstrained-Optimization">II. Unconstrained Optimization<a class="anchor-link" href="#II.-Unconstrained-Optimization">&#182;</a></h1><ul>
 <li>Unconstrained means:</li>
 </ul>
 <p>$$
@@ -12547,7 +12547,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Constrained-Optimization">Constrained Optimization<a class="anchor-link" href="#Constrained-Optimization">&#182;</a></h1><ul>
+<h1 id="III.-Constrained-Optimization">III. Constrained Optimization<a class="anchor-link" href="#III.-Constrained-Optimization">&#182;</a></h1><ul>
 <li><p>Now add  constraints.</p>
 </li>
 <li><p>Constrainted problems are much harder: even a seemingly simple Integer Programming problem is <strong>NP-Complete</strong> (i.e. can't be solved in polynomial time).</p>
@@ -12647,7 +12647,7 @@ s.t. &amp;\bld \succeq 0
 \end{array}
 $$</p>
 <ul>
-<li>If $(\bmu^*, \bld^*)$ is a solution to the  <strong>Dual Problem</strong>, it's clear that <strong>the weak duality</strong> holds,</li>
+<li>If $(\bmu^*, \bld^*)$ is a solution to the  <strong>Dual Problem</strong>, it's straightforward (homework) that <strong>the weak duality</strong> holds,</li>
 </ul>
 <p>$$
 \df(\bmu^*, \bld^*) \leq f(\bx^*).
@@ -12667,9 +12667,6 @@ $$
 $$</p>
 <p>which implies the primal and the dual problems are equivalent.</p>
 </li>
-</ul>
-<ul>
-<li>In the <strong>Maximum Entropy Method</strong> lecture later, this will be explored in greater details.</li>
 </ul>
 
 </div>
@@ -12791,7 +12788,10 @@ $$</p>
 <li>Best way to visualize the conditions 1 and 4 above is through the following example, where</li>
 </ul>
 <p>$$ f(\bx^*) = (x_1 -2)^2 + (x_2 -2)^2, \;\;\; g(\bx^*) = x_1^2 + x_2^2 - 1$$</p>
-<center><img src = "img/KKT_cond_4.PNG" height=700 width=700></center>
+<center><img src = "img/KKT_cond_4.PNG" height=700 width=700></center><ul>
+<li>with $ \bld &gt; 0 $.</li>
+</ul>
+
 </div>
 </div>
 </div></section><section>
