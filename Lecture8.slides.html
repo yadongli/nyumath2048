@@ -12048,7 +12048,7 @@ $$</li>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>If $f(\bx)$ is linear and $\Psi$ is a polyhedron, then <strong>Linear Programming</strong>, otherwise, <strong>Nonlinear Programming</strong></li>
+<li>If $f(\bx)$ is linear and $\Psi$ is a polyhedron, then <strong>Linear Programming</strong>, otherwise, <strong>Nonlinear Programming</strong>. (Polyhedron is defined as intersection of finite number of halfspaces and hyperplanes.)</li>
 </ul>
 
 </div>
@@ -12787,7 +12787,7 @@ $$</p>
 <ul>
 <li>Best way to visualize the conditions 1 and 4 above is through the following example, where</li>
 </ul>
-<p>$$ f(\bx^*) = (x_1 -2)^2 + (x_2 -2)^2, \;\;\; g(\bx^*) = x_1^2 + x_2^2 - 1$$</p>
+<p>$$ f(\bx^*) = (x_1 -2)^2 + (x_2 + 2)^2, \;\;\; g(\bx^*) = x_1^2 + x_2^2 - 1$$</p>
 <center><img src = "img/KKT_cond_4.PNG" height=700 width=700></center><ul>
 <li>with $ \bld &gt; 0 $.</li>
 </ul>
@@ -12800,7 +12800,12 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution-Methods">Solution Methods<a class="anchor-link" href="#Solution-Methods">&#182;</a></h2><ul>
-<li>The solution method for the constrained optimization problems are generally an extension of those for unconstrained version. We are not going into great details, but will use the Sequential Quadratic Programming (<strong>SQP</strong>) method as an example.</li>
+<li>There are two main competing approaches to solve the constrained optimization problems:<ul>
+<li>Sequential Quadratic Programming (SQP): BFGS, NLOPT, SNOPT</li>
+<li>Interior Point Method (IPT): IPOPT, KNITRO, LOQO</li>
+</ul>
+</li>
+<li>We are not going into great details, but will expand the SQP method slightly (and will get into IPT method later).</li>
 </ul>
 
 </div>
@@ -12826,6 +12831,15 @@ $$</p>
 <ul>
 <li>This is a constrained quadratic programming problem, which is "slightly" easier to deal with than the original problem.</li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="References:">References:<a class="anchor-link" href="#References:">&#182;</a></h1><p>S. Boyd and L. Vandenberghe (2004), Convex Optimization, Cambridge University Press.</p>
 
 </div>
 </div>
