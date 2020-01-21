@@ -1,6 +1,6 @@
 git pull
 git add -u
-git commit -m %1
+git commit -m $1
 git push
 python bs.py
 cp *.html ../gh-pages
@@ -8,7 +8,7 @@ cp *.html ../gh-pages
 cd ../gh-pages
 git pull
 git add -u
-git commit -m %1
+git commit -m $1
 git push
 
 cd ../master
