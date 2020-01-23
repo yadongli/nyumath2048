@@ -9,7 +9,6 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-
 <title>Lecture1 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -59,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -256,6 +255,7 @@ th {
   *:before,
   *:after {
     background: transparent !important;
+    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6800,15 +6800,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6865,19 +6865,6 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
-.fa-pull-left {
-  float: left;
-}
-.fa-pull-right {
-  float: right;
-}
-.fa.fa-pull-left {
-  margin-right: .3em;
-}
-.fa.fa-pull-right {
-  margin-left: .3em;
-}
-/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6893,10 +6880,6 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
-}
-.fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
-  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6919,31 +6902,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7428,7 +7411,6 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
-.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7441,7 +7423,6 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
-.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8079,8 +8060,7 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before,
-.fa-gratipay:before {
+.fa-gittip:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8184,7 +8164,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper-pp:before {
+.fa-pied-piper:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8310,7 +8290,6 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
-.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8324,8 +8303,6 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
-.fa-y-combinator-square:before,
-.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8493,657 +8470,6 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
-}
-.fa-buysellads:before {
-  content: "\f20d";
-}
-.fa-connectdevelop:before {
-  content: "\f20e";
-}
-.fa-dashcube:before {
-  content: "\f210";
-}
-.fa-forumbee:before {
-  content: "\f211";
-}
-.fa-leanpub:before {
-  content: "\f212";
-}
-.fa-sellsy:before {
-  content: "\f213";
-}
-.fa-shirtsinbulk:before {
-  content: "\f214";
-}
-.fa-simplybuilt:before {
-  content: "\f215";
-}
-.fa-skyatlas:before {
-  content: "\f216";
-}
-.fa-cart-plus:before {
-  content: "\f217";
-}
-.fa-cart-arrow-down:before {
-  content: "\f218";
-}
-.fa-diamond:before {
-  content: "\f219";
-}
-.fa-ship:before {
-  content: "\f21a";
-}
-.fa-user-secret:before {
-  content: "\f21b";
-}
-.fa-motorcycle:before {
-  content: "\f21c";
-}
-.fa-street-view:before {
-  content: "\f21d";
-}
-.fa-heartbeat:before {
-  content: "\f21e";
-}
-.fa-venus:before {
-  content: "\f221";
-}
-.fa-mars:before {
-  content: "\f222";
-}
-.fa-mercury:before {
-  content: "\f223";
-}
-.fa-intersex:before,
-.fa-transgender:before {
-  content: "\f224";
-}
-.fa-transgender-alt:before {
-  content: "\f225";
-}
-.fa-venus-double:before {
-  content: "\f226";
-}
-.fa-mars-double:before {
-  content: "\f227";
-}
-.fa-venus-mars:before {
-  content: "\f228";
-}
-.fa-mars-stroke:before {
-  content: "\f229";
-}
-.fa-mars-stroke-v:before {
-  content: "\f22a";
-}
-.fa-mars-stroke-h:before {
-  content: "\f22b";
-}
-.fa-neuter:before {
-  content: "\f22c";
-}
-.fa-genderless:before {
-  content: "\f22d";
-}
-.fa-facebook-official:before {
-  content: "\f230";
-}
-.fa-pinterest-p:before {
-  content: "\f231";
-}
-.fa-whatsapp:before {
-  content: "\f232";
-}
-.fa-server:before {
-  content: "\f233";
-}
-.fa-user-plus:before {
-  content: "\f234";
-}
-.fa-user-times:before {
-  content: "\f235";
-}
-.fa-hotel:before,
-.fa-bed:before {
-  content: "\f236";
-}
-.fa-viacoin:before {
-  content: "\f237";
-}
-.fa-train:before {
-  content: "\f238";
-}
-.fa-subway:before {
-  content: "\f239";
-}
-.fa-medium:before {
-  content: "\f23a";
-}
-.fa-yc:before,
-.fa-y-combinator:before {
-  content: "\f23b";
-}
-.fa-optin-monster:before {
-  content: "\f23c";
-}
-.fa-opencart:before {
-  content: "\f23d";
-}
-.fa-expeditedssl:before {
-  content: "\f23e";
-}
-.fa-battery-4:before,
-.fa-battery:before,
-.fa-battery-full:before {
-  content: "\f240";
-}
-.fa-battery-3:before,
-.fa-battery-three-quarters:before {
-  content: "\f241";
-}
-.fa-battery-2:before,
-.fa-battery-half:before {
-  content: "\f242";
-}
-.fa-battery-1:before,
-.fa-battery-quarter:before {
-  content: "\f243";
-}
-.fa-battery-0:before,
-.fa-battery-empty:before {
-  content: "\f244";
-}
-.fa-mouse-pointer:before {
-  content: "\f245";
-}
-.fa-i-cursor:before {
-  content: "\f246";
-}
-.fa-object-group:before {
-  content: "\f247";
-}
-.fa-object-ungroup:before {
-  content: "\f248";
-}
-.fa-sticky-note:before {
-  content: "\f249";
-}
-.fa-sticky-note-o:before {
-  content: "\f24a";
-}
-.fa-cc-jcb:before {
-  content: "\f24b";
-}
-.fa-cc-diners-club:before {
-  content: "\f24c";
-}
-.fa-clone:before {
-  content: "\f24d";
-}
-.fa-balance-scale:before {
-  content: "\f24e";
-}
-.fa-hourglass-o:before {
-  content: "\f250";
-}
-.fa-hourglass-1:before,
-.fa-hourglass-start:before {
-  content: "\f251";
-}
-.fa-hourglass-2:before,
-.fa-hourglass-half:before {
-  content: "\f252";
-}
-.fa-hourglass-3:before,
-.fa-hourglass-end:before {
-  content: "\f253";
-}
-.fa-hourglass:before {
-  content: "\f254";
-}
-.fa-hand-grab-o:before,
-.fa-hand-rock-o:before {
-  content: "\f255";
-}
-.fa-hand-stop-o:before,
-.fa-hand-paper-o:before {
-  content: "\f256";
-}
-.fa-hand-scissors-o:before {
-  content: "\f257";
-}
-.fa-hand-lizard-o:before {
-  content: "\f258";
-}
-.fa-hand-spock-o:before {
-  content: "\f259";
-}
-.fa-hand-pointer-o:before {
-  content: "\f25a";
-}
-.fa-hand-peace-o:before {
-  content: "\f25b";
-}
-.fa-trademark:before {
-  content: "\f25c";
-}
-.fa-registered:before {
-  content: "\f25d";
-}
-.fa-creative-commons:before {
-  content: "\f25e";
-}
-.fa-gg:before {
-  content: "\f260";
-}
-.fa-gg-circle:before {
-  content: "\f261";
-}
-.fa-tripadvisor:before {
-  content: "\f262";
-}
-.fa-odnoklassniki:before {
-  content: "\f263";
-}
-.fa-odnoklassniki-square:before {
-  content: "\f264";
-}
-.fa-get-pocket:before {
-  content: "\f265";
-}
-.fa-wikipedia-w:before {
-  content: "\f266";
-}
-.fa-safari:before {
-  content: "\f267";
-}
-.fa-chrome:before {
-  content: "\f268";
-}
-.fa-firefox:before {
-  content: "\f269";
-}
-.fa-opera:before {
-  content: "\f26a";
-}
-.fa-internet-explorer:before {
-  content: "\f26b";
-}
-.fa-tv:before,
-.fa-television:before {
-  content: "\f26c";
-}
-.fa-contao:before {
-  content: "\f26d";
-}
-.fa-500px:before {
-  content: "\f26e";
-}
-.fa-amazon:before {
-  content: "\f270";
-}
-.fa-calendar-plus-o:before {
-  content: "\f271";
-}
-.fa-calendar-minus-o:before {
-  content: "\f272";
-}
-.fa-calendar-times-o:before {
-  content: "\f273";
-}
-.fa-calendar-check-o:before {
-  content: "\f274";
-}
-.fa-industry:before {
-  content: "\f275";
-}
-.fa-map-pin:before {
-  content: "\f276";
-}
-.fa-map-signs:before {
-  content: "\f277";
-}
-.fa-map-o:before {
-  content: "\f278";
-}
-.fa-map:before {
-  content: "\f279";
-}
-.fa-commenting:before {
-  content: "\f27a";
-}
-.fa-commenting-o:before {
-  content: "\f27b";
-}
-.fa-houzz:before {
-  content: "\f27c";
-}
-.fa-vimeo:before {
-  content: "\f27d";
-}
-.fa-black-tie:before {
-  content: "\f27e";
-}
-.fa-fonticons:before {
-  content: "\f280";
-}
-.fa-reddit-alien:before {
-  content: "\f281";
-}
-.fa-edge:before {
-  content: "\f282";
-}
-.fa-credit-card-alt:before {
-  content: "\f283";
-}
-.fa-codiepie:before {
-  content: "\f284";
-}
-.fa-modx:before {
-  content: "\f285";
-}
-.fa-fort-awesome:before {
-  content: "\f286";
-}
-.fa-usb:before {
-  content: "\f287";
-}
-.fa-product-hunt:before {
-  content: "\f288";
-}
-.fa-mixcloud:before {
-  content: "\f289";
-}
-.fa-scribd:before {
-  content: "\f28a";
-}
-.fa-pause-circle:before {
-  content: "\f28b";
-}
-.fa-pause-circle-o:before {
-  content: "\f28c";
-}
-.fa-stop-circle:before {
-  content: "\f28d";
-}
-.fa-stop-circle-o:before {
-  content: "\f28e";
-}
-.fa-shopping-bag:before {
-  content: "\f290";
-}
-.fa-shopping-basket:before {
-  content: "\f291";
-}
-.fa-hashtag:before {
-  content: "\f292";
-}
-.fa-bluetooth:before {
-  content: "\f293";
-}
-.fa-bluetooth-b:before {
-  content: "\f294";
-}
-.fa-percent:before {
-  content: "\f295";
-}
-.fa-gitlab:before {
-  content: "\f296";
-}
-.fa-wpbeginner:before {
-  content: "\f297";
-}
-.fa-wpforms:before {
-  content: "\f298";
-}
-.fa-envira:before {
-  content: "\f299";
-}
-.fa-universal-access:before {
-  content: "\f29a";
-}
-.fa-wheelchair-alt:before {
-  content: "\f29b";
-}
-.fa-question-circle-o:before {
-  content: "\f29c";
-}
-.fa-blind:before {
-  content: "\f29d";
-}
-.fa-audio-description:before {
-  content: "\f29e";
-}
-.fa-volume-control-phone:before {
-  content: "\f2a0";
-}
-.fa-braille:before {
-  content: "\f2a1";
-}
-.fa-assistive-listening-systems:before {
-  content: "\f2a2";
-}
-.fa-asl-interpreting:before,
-.fa-american-sign-language-interpreting:before {
-  content: "\f2a3";
-}
-.fa-deafness:before,
-.fa-hard-of-hearing:before,
-.fa-deaf:before {
-  content: "\f2a4";
-}
-.fa-glide:before {
-  content: "\f2a5";
-}
-.fa-glide-g:before {
-  content: "\f2a6";
-}
-.fa-signing:before,
-.fa-sign-language:before {
-  content: "\f2a7";
-}
-.fa-low-vision:before {
-  content: "\f2a8";
-}
-.fa-viadeo:before {
-  content: "\f2a9";
-}
-.fa-viadeo-square:before {
-  content: "\f2aa";
-}
-.fa-snapchat:before {
-  content: "\f2ab";
-}
-.fa-snapchat-ghost:before {
-  content: "\f2ac";
-}
-.fa-snapchat-square:before {
-  content: "\f2ad";
-}
-.fa-pied-piper:before {
-  content: "\f2ae";
-}
-.fa-first-order:before {
-  content: "\f2b0";
-}
-.fa-yoast:before {
-  content: "\f2b1";
-}
-.fa-themeisle:before {
-  content: "\f2b2";
-}
-.fa-google-plus-circle:before,
-.fa-google-plus-official:before {
-  content: "\f2b3";
-}
-.fa-fa:before,
-.fa-font-awesome:before {
-  content: "\f2b4";
-}
-.fa-handshake-o:before {
-  content: "\f2b5";
-}
-.fa-envelope-open:before {
-  content: "\f2b6";
-}
-.fa-envelope-open-o:before {
-  content: "\f2b7";
-}
-.fa-linode:before {
-  content: "\f2b8";
-}
-.fa-address-book:before {
-  content: "\f2b9";
-}
-.fa-address-book-o:before {
-  content: "\f2ba";
-}
-.fa-vcard:before,
-.fa-address-card:before {
-  content: "\f2bb";
-}
-.fa-vcard-o:before,
-.fa-address-card-o:before {
-  content: "\f2bc";
-}
-.fa-user-circle:before {
-  content: "\f2bd";
-}
-.fa-user-circle-o:before {
-  content: "\f2be";
-}
-.fa-user-o:before {
-  content: "\f2c0";
-}
-.fa-id-badge:before {
-  content: "\f2c1";
-}
-.fa-drivers-license:before,
-.fa-id-card:before {
-  content: "\f2c2";
-}
-.fa-drivers-license-o:before,
-.fa-id-card-o:before {
-  content: "\f2c3";
-}
-.fa-quora:before {
-  content: "\f2c4";
-}
-.fa-free-code-camp:before {
-  content: "\f2c5";
-}
-.fa-telegram:before {
-  content: "\f2c6";
-}
-.fa-thermometer-4:before,
-.fa-thermometer:before,
-.fa-thermometer-full:before {
-  content: "\f2c7";
-}
-.fa-thermometer-3:before,
-.fa-thermometer-three-quarters:before {
-  content: "\f2c8";
-}
-.fa-thermometer-2:before,
-.fa-thermometer-half:before {
-  content: "\f2c9";
-}
-.fa-thermometer-1:before,
-.fa-thermometer-quarter:before {
-  content: "\f2ca";
-}
-.fa-thermometer-0:before,
-.fa-thermometer-empty:before {
-  content: "\f2cb";
-}
-.fa-shower:before {
-  content: "\f2cc";
-}
-.fa-bathtub:before,
-.fa-s15:before,
-.fa-bath:before {
-  content: "\f2cd";
-}
-.fa-podcast:before {
-  content: "\f2ce";
-}
-.fa-window-maximize:before {
-  content: "\f2d0";
-}
-.fa-window-minimize:before {
-  content: "\f2d1";
-}
-.fa-window-restore:before {
-  content: "\f2d2";
-}
-.fa-times-rectangle:before,
-.fa-window-close:before {
-  content: "\f2d3";
-}
-.fa-times-rectangle-o:before,
-.fa-window-close-o:before {
-  content: "\f2d4";
-}
-.fa-bandcamp:before {
-  content: "\f2d5";
-}
-.fa-grav:before {
-  content: "\f2d6";
-}
-.fa-etsy:before {
-  content: "\f2d7";
-}
-.fa-imdb:before {
-  content: "\f2d8";
-}
-.fa-ravelry:before {
-  content: "\f2d9";
-}
-.fa-eercast:before {
-  content: "\f2da";
-}
-.fa-microchip:before {
-  content: "\f2db";
-}
-.fa-snowflake-o:before {
-  content: "\f2dc";
-}
-.fa-superpowers:before {
-  content: "\f2dd";
-}
-.fa-wpexplorer:before {
-  content: "\f2de";
-}
-.fa-meetup:before {
-  content: "\f2e0";
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-}
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
 }
 /*!
 *
@@ -9424,10 +8750,6 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
-div.traceback-wrapper pre.traceback {
-  max-height: 600px;
-  overflow: auto;
-}
 /**
  * Primary styles
  *
@@ -9453,10 +8775,6 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -9488,16 +8806,13 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+@media (max-width: 991px) {
+  #ipython_notebook {
+    margin-left: 10px;
+  }
+}
 [dir="rtl"] #ipython_notebook {
-  margin-right: 10px;
-  margin-left: 0;
-}
-[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
-  float: right;
-}
-.flex-spacer {
-  flex: 1;
 }
 #noscript {
   width: auto;
@@ -9532,14 +8847,8 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
-span#kernel_logo_widget {
-  margin: 0 10px;
-}
 span#login_widget {
   float: right;
-}
-[dir="rtl"] span#login_widget {
-  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -9655,9 +8964,6 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
-.modal-header {
-  cursor: move;
-}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -9678,19 +8984,6 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
-[dir="rtl"] .center-nav form.pull-left {
-  float: right !important;
-  float: right;
-}
-[dir="rtl"] .center-nav .navbar-text {
-  float: right;
-}
-[dir="rtl"] .navbar-inner {
-  text-align: right;
-}
-[dir="rtl"] div.text-left {
-  text-align: right;
-}
 /*!
 *
 * IPython tree view
@@ -9707,42 +9000,34 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  display: inline;
   opacity: 0;
   z-index: 2;
-}
-.alternate_upload .btn-xs > input.fileinput {
-  margin: -1px -5px;
+  width: 12ex;
+  margin-right: -12ex;
 }
 .alternate_upload .btn-upload {
-  position: relative;
   height: 22px;
-}
-::-webkit-file-upload-button {
-  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
-}
-[dir="rtl"] ul#tabs.nav-tabs > li {
-  float: right;
-}
-[dir="rtl"] ul#tabs.nav.nav-tabs {
-  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9762,13 +9047,15 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
+[dir="rtl"] .list_toolbar .tree-buttons {
   float: left !important;
-  float: left;
 }
-[dir="rtl"] .list_toolbar .col-sm-4,
-[dir="rtl"] .list_toolbar .col-sm-8 {
-  float: right;
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9824,7 +9111,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: text-bottom;
+  vertical-align: baseline;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9834,9 +9121,6 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
-}
-[dir="rtl"] .list_item > div input {
-  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9852,14 +9136,6 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
-}
-.item_modified {
-  margin-right: 7px;
-  margin-left: 7px;
-}
-[dir="rtl"] .item_modified.pull-right {
-  float: left !important;
-  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9888,14 +9164,6 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
-[dir="rtl"] .item_buttons.pull-right {
-  float: left !important;
-  float: left;
-}
-[dir="rtl"] .item_buttons .kernel-name {
-  margin-left: 7px;
-  float: right;
-}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9921,32 +9189,18 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
-.sort_button {
-  display: inline-block;
-  padding-left: 7px;
-}
-[dir="rtl"] .sort_button.pull-right {
-  float: left !important;
-  float: left;
-}
 #tree-selector {
   padding-right: 0px;
+}
+[dir="rtl"] #tree-selector a {
+  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
-[dir="rtl"] #button-select-all.btn {
-  float: right ;
-}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
-  margin-top: 2px;
-  height: 16px;
-}
-[dir="rtl"] #select-all.pull-left {
-  float: right !important;
-  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9964,12 +9218,6 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
-.folder_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.folder_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9986,12 +9234,6 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
-}
-.notebook_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.notebook_icon:before.fa-pull-right {
-  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -10011,12 +9253,6 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
-.running_notebook_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.running_notebook_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10034,12 +9270,6 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
-.file_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.file_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10054,11 +9284,8 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-#new-menu .dropdown-header {
-  font-size: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0 0 3px;
-  margin: -3px 20px 0;
+[dir="rtl"] #new-menu {
+  text-align: right;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -10105,6 +9332,9 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
+}
 .delete-button {
   display: none;
 }
@@ -10112,12 +9342,6 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
-  display: none;
-}
-.move-button {
-  display: none;
-}
-.download-button {
   display: none;
 }
 .shutdown-button {
@@ -10160,12 +9384,6 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
-.dirty-indicator.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator.fa-pull-right {
-  margin-left: .3em;
-}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -10180,12 +9398,6 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
-}
-.dirty-indicator-dirty.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator-dirty.fa-pull-right {
-  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -10202,12 +9414,6 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
-.dirty-indicator-clean.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator-clean.fa-pull-right {
-  margin-left: .3em;
-}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -10222,12 +9428,6 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
-}
-.dirty-indicator-clean:before.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator-clean:before.fa-pull-right {
-  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -10273,132 +9473,14 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
-.CodeMirror-dialog {
-  background-color: #fff;
-}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -10477,20 +9559,12 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -10503,39 +9577,27 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
   border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
+  div.cell.selected {
     border-color: transparent;
   }
 }
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -10731,9 +9793,7 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
+  padding: 0.4em;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -10743,24 +9803,11 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
   border: 0;
   border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
 }
 /*
 
@@ -11014,9 +10061,6 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
-div.output_area .mglyph > img {
-  max-width: none;
-}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -11055,7 +10099,7 @@ div.output_area .mglyph > img {
 }
 div.output_area pre {
   margin: 0;
-  padding: 1px 0 1px 0;
+  padding: 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -11215,35 +10259,39 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
 .rendered_html ul {
   list-style: disc;
+  margin: 0em 2em;
+  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin-top: 0;
+  margin: 0em 2em;
 }
 .rendered_html ul ul ul {
   list-style: circle;
+  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
+  margin: 0em 2em;
+  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin-top: 0;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
+  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -11257,23 +10305,14 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
-  padding: 0px;
-  background-color: #fff;
-}
-.rendered_html code {
-  background-color: #eff0f1;
-}
-.rendered_html p code {
-  padding: 1px 5px;
-}
-.rendered_html pre code {
-  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
+  background-color: #fff;
   color: #000;
   font-size: 100%;
+  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -11281,36 +10320,24 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: none;
+  border: 1px solid black;
   border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  text-align: right;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 1em 2em;
+}
+.rendered_html td,
+.rendered_html th {
+  text-align: left;
   vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
+  padding: 4px;
 }
 .rendered_html th {
   font-weight: bold;
-}
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -11337,15 +10364,6 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
-}
-.rendered_html .alert {
-  margin-bottom: initial;
-}
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] .rendered_html p {
-  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -11400,17 +10418,8 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered .rendered_html td {
-  max-width: none;
-}
 .text_cell.unrendered .text_cell_render {
   display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -11547,28 +10556,6 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.jupyter-keybindings {
-  padding: 1px;
-  line-height: 24px;
-  border-bottom: 1px solid gray;
-}
-.jupyter-keybindings input {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.jupyter-keybindings i {
-  padding: 6px;
-}
-.well code {
-  background-color: #ffffff;
-  border-color: #ababab;
-  border-width: 1px;
-  border-style: solid;
-  padding: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -11701,152 +10688,6 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
-.tags_button_container {
-  width: 100%;
-  display: flex;
-}
-.tag-container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
-}
-.tag-container > * {
-  margin: 0 4px;
-}
-.remove-tag-btn {
-  margin-left: 4px;
-}
-.tags-input {
-  display: flex;
-}
-.cell-tag:last-child:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  /* Fade to background color of cell toolbar */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
-}
-.tags-input > * {
-  margin-left: 4px;
-}
-.cell-tag,
-.tags-input input,
-.tags-input button {
-  display: block;
-  width: 100%;
-  height: 32px;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  height: 30px;
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 1px;
-  box-shadow: none;
-  width: inherit;
-  font-size: inherit;
-  height: 22px;
-  line-height: 22px;
-  padding: 0px 4px;
-  display: inline-block;
-}
-.cell-tag:focus,
-.tags-input input:focus,
-.tags-input button:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-.cell-tag::-moz-placeholder,
-.tags-input input::-moz-placeholder,
-.tags-input button::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-.cell-tag:-ms-input-placeholder,
-.tags-input input:-ms-input-placeholder,
-.tags-input button:-ms-input-placeholder {
-  color: #999;
-}
-.cell-tag::-webkit-input-placeholder,
-.tags-input input::-webkit-input-placeholder,
-.tags-input button::-webkit-input-placeholder {
-  color: #999;
-}
-.cell-tag::-ms-expand,
-.tags-input input::-ms-expand,
-.tags-input button::-ms-expand {
-  border: 0;
-  background-color: transparent;
-}
-.cell-tag[disabled],
-.tags-input input[disabled],
-.tags-input button[disabled],
-.cell-tag[readonly],
-.tags-input input[readonly],
-.tags-input button[readonly],
-fieldset[disabled] .cell-tag,
-fieldset[disabled] .tags-input input,
-fieldset[disabled] .tags-input button {
-  background-color: #eeeeee;
-  opacity: 1;
-}
-.cell-tag[disabled],
-.tags-input input[disabled],
-.tags-input button[disabled],
-fieldset[disabled] .cell-tag,
-fieldset[disabled] .tags-input input,
-fieldset[disabled] .tags-input button {
-  cursor: not-allowed;
-}
-textarea.cell-tag,
-textarea.tags-input input,
-textarea.tags-input button {
-  height: auto;
-}
-select.cell-tag,
-select.tags-input input,
-select.tags-input button {
-  height: 30px;
-  line-height: 30px;
-}
-textarea.cell-tag,
-textarea.tags-input input,
-textarea.tags-input button,
-select[multiple].cell-tag,
-select[multiple].tags-input input,
-select[multiple].tags-input button {
-  height: auto;
-}
-.cell-tag,
-.tags-input button {
-  padding: 0px 4px;
-}
-.cell-tag {
-  background-color: #fff;
-  white-space: nowrap;
-}
-.tags-input input[type=text]:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #ccc;
-}
 .completions {
   position: absolute;
   z-index: 110;
@@ -11872,28 +10713,16 @@ select[multiple].tags-input button {
 .completions select option.context {
   color: #286090;
 }
+#kernel_logo_widget {
+  float: right !important;
+  float: right;
+}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
-}
-[dir="rtl"] #kernel_logo_widget {
-  float: left !important;
-  float: left;
-}
-.modal .modal-body .move-path {
-  display: flex;
-  flex-direction: row;
-  justify-content: space;
-  align-items: center;
-}
-.modal .modal-body .move-path .server-root {
-  padding-right: 20px;
-}
-.modal .modal-body .move-path .path-input {
-  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -11915,41 +10744,11 @@ select[multiple].tags-input button {
 #menubar .navbar-collapse {
   clear: left;
 }
-[dir="rtl"] #menubar .navbar-toggle {
-  float: right;
-}
-[dir="rtl"] #menubar .navbar-collapse {
-  clear: right;
-}
-[dir="rtl"] #menubar .navbar-nav {
-  float: right;
-}
-[dir="rtl"] #menubar .nav {
-  padding-right: 0px;
-}
-[dir="rtl"] #menubar .navbar-nav > li {
-  float: right;
-}
-[dir="rtl"] #menubar .navbar-right {
-  float: left !important;
-}
-[dir="rtl"] ul.dropdown-menu {
-  text-align: right;
-  left: auto;
-}
-[dir="rtl"] ul#new-menu.dropdown-menu {
-  right: auto;
-  left: 0;
-}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
-}
-[dir="rtl"] i.menu-icon.pull-right {
-  float: left !important;
-  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -11957,17 +10756,6 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
-}
-[dir="rtl"] ul#help_menu li a {
-  padding-left: 2.2em;
-}
-[dir="rtl"] ul#help_menu li a i {
-  margin-right: 0;
-  margin-left: -1.2em;
-}
-[dir="rtl"] ul#help_menu li a i.pull-right {
-  float: left !important;
-  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -11977,10 +10765,6 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
-}
-[dir="rtl"] .dropdown-submenu > .dropdown-menu {
-  right: 100%;
-  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -11999,23 +10783,11 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
-.dropdown-submenu > a:after.fa-pull-left {
-  margin-right: .3em;
-}
-.dropdown-submenu > a:after.fa-pull-right {
-  margin-left: .3em;
-}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
-}
-[dir="rtl"] .dropdown-submenu > a:after {
-  float: left;
-  content: "\f0d9";
-  margin-right: 0;
-  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -12032,10 +10804,6 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
-[dir="rtl"] #notification_area {
-  float: left !important;
-  float: left;
-}
 .indicator_area {
   float: right !important;
   float: right;
@@ -12046,10 +10814,6 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
-}
-[dir="rtl"] .indicator_area {
-  float: left !important;
-  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -12067,12 +10831,6 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
-[dir="rtl"] #kernel_indicator {
-  float: left !important;
-  float: left;
-  border-left: 0;
-  border-right: 1px solid;
-}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -12083,10 +10841,6 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
-}
-[dir="rtl"] #modal_indicator {
-  float: left !important;
-  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -12117,12 +10871,6 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
-.edit_mode .modal_indicator:before.fa-pull-left {
-  margin-right: .3em;
-}
-.edit_mode .modal_indicator:before.fa-pull-right {
-  margin-left: .3em;
-}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -12137,12 +10885,6 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
-}
-.command_mode .modal_indicator:before.fa-pull-left {
-  margin-right: .3em;
-}
-.command_mode .modal_indicator:before.fa-pull-right {
-  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -12159,12 +10901,6 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
-.kernel_idle_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_idle_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -12179,12 +10915,6 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
-}
-.kernel_busy_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_busy_icon:before.fa-pull-right {
-  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -12201,12 +10931,6 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
-.kernel_dead_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_dead_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -12221,12 +10945,6 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
-}
-.kernel_disconnected_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_disconnected_icon:before.fa-pull-right {
-  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -12617,46 +11335,27 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  height: 30px;
-  margin-top: 4px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  width: 50%;
-  flex: 1;
+  margin-top: 6px;
 }
 span.save_widget span.filename {
-  height: 100%;
+  height: 1em;
   line-height: 1em;
+  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
-[dir="rtl"] span.save_widget.pull-left {
-  float: right !important;
-  float: right;
-}
-[dir="rtl"] span.save_widget span.filename {
-  margin-left: 0;
-  margin-right: 16px;
-}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
-  white-space: nowrap;
-  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
-    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -12700,9 +11399,6 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
-.toolbar-btn-label {
-  margin-left: 6px;
-}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -12722,10 +11418,6 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
-}
-[dir="rtl"] .btn-group > .btn,
-.btn-group-vertical > .btn {
-  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -12876,10 +11568,6 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
-[dir="rtl"] ul.typeahead-list i {
-  margin-left: 0;
-  margin-right: -10px;
-}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -12888,13 +11576,6 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
-}
-ul.typeahead-list  > li > a.pull-right {
-  float: left !important;
-  float: left;
-}
-[dir="rtl"] .typeahead-list {
-  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -12906,19 +11587,10 @@ ul.typeahead-list  > li > a.pull-right {
   outline: none;
 }
 .no-shortcut {
-  min-width: 20px;
-  color: transparent;
-}
-[dir="rtl"] .no-shortcut.pull-right {
-  float: left !important;
-  float: left;
-}
-[dir="rtl"] .command-shortcut.pull-right {
-  float: left !important;
-  float: left;
+  display: none;
 }
 .command-shortcut:before {
-  content: "(command mode)";
+  content: "(command)";
   padding-right: 3px;
   color: #777777;
 }
@@ -12927,10 +11599,6 @@ ul.typeahead-list  > li > a.pull-right {
   padding-right: 3px;
   color: #777777;
 }
-[dir="rtl"] .edit-shortcut.pull-right {
-  float: left !important;
-  float: left;
-}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -12938,12 +11606,6 @@ ul.typeahead-list  > li > a.pull-right {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
-}
-[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
-  border-left: none;
-}
-[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
-  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -13233,6 +11895,26 @@ a.anchor-link {
 </head>
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style type="text/css">
+//div.output_wrapper {
+//  margin-top: 0px;
+//}
+.input_hidden {
+  display: none;
+//  margin-top: 5px;
+}
+</style>
+
+<!-- script>
+$(document).ready(function(){
+  $(".output_wrapper").click(function(){
+      $(this).prev('.input_hidden').slideToggle();
+  });
+})
+</script -->
+
 
 
 <body>
@@ -13242,10 +11924,11 @@ a.anchor-link {
 <div class="slides">
 <section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Scientific-Computing-in-Finance">Scientific Computing in Finance<a class="anchor-link" href="#Scientific-Computing-in-Finance">&#182;</a></h1><ul>
-<li>MATH-GA 2048, Spring 2019</li>
+<li>MATH-GA 2048, Spring 2020</li>
 <li>Courant Institute of Mathematical Sciences, New York University</li>
 </ul>
 
@@ -13253,12 +11936,12 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Instructors">Instructors<a class="anchor-link" href="#Instructors">&#182;</a></h2><h4 id="Yadong-Li">Yadong Li<a class="anchor-link" href="#Yadong-Li">&#182;</a></h4><ul>
-<li>MD, Head of Trading Central, Quantitative Analytics, Barclays</li>
-<li>Ph.D. in Physics, M.S. in Computer Sciences, University of Wisconsin-Madison</li>
-<li>Master of Financial Engineering, University of California, Berkeley </li>
+<h2 id="Instructors">Instructors<a class="anchor-link" href="#Instructors">&#182;</a></h2><h4 id="Wujiang-Lou">Wujiang Lou<a class="anchor-link" href="#Wujiang-Lou">&#182;</a></h4><ul>
+<li>Senior trader, Global Fixed Income, HSBC</li>
+<li>Ph.D. in Aeronautics and Astronautics, Nanjing University</li>
 </ul>
 <h4 id="Hongwei-Cheng">Hongwei Cheng<a class="anchor-link" href="#Hongwei-Cheng">&#182;</a></h4><ul>
 <li>Chief Risk Officer, Head of Research, Mill Hill Capital</li>
@@ -13269,11 +11952,12 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lecture-1:-Introduction">Lecture 1: Introduction<a class="anchor-link" href="#Lecture-1:-Introduction">&#182;</a></h1><h2 id="Topics">Topics<a class="anchor-link" href="#Topics">&#182;</a></h2><ul>
 <li>Introduction</li>
-<li>Software development pratices</li>
+<li>Software development practices</li>
 <li>Errors and floating point computation</li>
 </ul>
 
@@ -13281,7 +11965,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objectives-of-this-class">Objectives of this class<a class="anchor-link" href="#Objectives-of-this-class">&#182;</a></h2><ul>
 <li>Teach fundamental principles of scientific computing</li>
@@ -13294,7 +11979,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="We-expect-you">We expect you<a class="anchor-link" href="#We-expect-you">&#182;</a></h2><ul>
 <li>Know basic calculus and linear algebra</li>
@@ -13307,7 +11993,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Main-fields-of-quantitative-finance">Main fields of quantitative finance<a class="anchor-link" href="#Main-fields-of-quantitative-finance">&#182;</a></h2><ul>
 <li>Derivative pricing and hedging</li>
@@ -13322,7 +12009,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Main-topics-in-this-class">Main topics in this class<a class="anchor-link" href="#Main-topics-in-this-class">&#182;</a></h2><p>A rough schedule of the class:</p>
 <table>
@@ -13389,7 +12077,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Text-book">Text book<a class="anchor-link" href="#Text-book">&#182;</a></h2><p>D Bindel and J Goodman, 2009</p>
 <ul>
@@ -13397,8 +12086,8 @@ a.anchor-link {
 </ul>
 <h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p>L Anderson and V. Piterbarg, 2010</p>
 <ul>
-<li>Interest rate modelling, volume I: Foundations and Vanilla Models </li>
-<li>Interest rate modelling, volume II: Vanilla Models</li>
+<li>Interest rate modeling, volume I: Foundations and Vanilla Models </li>
+<li>Interest rate modeling, volume II: Vanilla Models</li>
 </ul>
 <p>P. Glasserman 2010</p>
 <ul>
@@ -13409,7 +12098,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Lecture-notes-and-homework">Lecture notes and homework<a class="anchor-link" href="#Lecture-notes-and-homework">&#182;</a></h2><p>Available online at: <a href="http://yadongli.github.io/nyumath2048">http://yadongli.github.io/nyumath2048</a></p>
 <h2 id="Grading">Grading<a class="anchor-link" href="#Grading">&#182;</a></h2><ul>
@@ -13426,7 +12116,8 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Software-Development-Practices">Software Development Practices<a class="anchor-link" href="#Software-Development-Practices">&#182;</a></h1><p>Roberto Waltman: In the one and only true way. The object-oriented version of "Spaghetti code" is, of course, "Lasagna code".</p>
 
@@ -13434,7 +12125,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Modern-hardware">Modern hardware<a class="anchor-link" href="#Modern-hardware">&#182;</a></h2><ul>
 <li>Processor speed/throughput continues to grow at an impressive rate<ul>
@@ -13497,7 +12189,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="On-high-performance-computing">On high performance computing<a class="anchor-link" href="#On-high-performance-computing">&#182;</a></h2><ul>
 <li>Understand if the problem is computation or bandwidth bound<ul>
@@ -13526,7 +12219,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Before-optimizing-for-speed">Before optimizing for speed<a class="anchor-link" href="#Before-optimizing-for-speed">&#182;</a></h2><ul>
 <li>Correctness<ul>
@@ -13544,7 +12238,7 @@ a.anchor-link {
 </ul>
 </li>
 <li>Other desirable features:<ul>
-<li>Scalability, robustness, Easy support and maintenanc etc.</li>
+<li>Scalability, robustness, Easy support and maintenance etc.</li>
 </ul>
 </li>
 </ul>
@@ -13553,7 +12247,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In practice, what often trumps everything else is:</p>
 <h2 id="Time-to-market-!!">Time to market !!<a class="anchor-link" href="#Time-to-market-!!">&#182;</a></h2><ul>
@@ -13564,7 +12259,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conventional-advice-for-programming">Conventional advice for programming<a class="anchor-link" href="#Conventional-advice-for-programming">&#182;</a></h2><ul>
 <li>Choose good names for your variables and functions</li>
@@ -13577,7 +12273,8 @@ a.anchor-link {
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These are good advice, but quite superficial.</p>
 <ul>
@@ -13589,7 +12286,8 @@ a.anchor-link {
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Best-advice-for-the-real-world:">Best advice for the real world:<a class="anchor-link" href="#Best-advice-for-the-real-world:">&#182;</a></h2><p>by Paul Phillips "We're doing it all wrong":</p>
 <p>(quoting George Orwell's 1984)</p>
@@ -13598,7 +12296,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="War-is-peace">War is peace<a class="anchor-link" href="#War-is-peace">&#182;</a></h4><ul>
 <li>Fight your war at the boundary so that you can have peace within</li>
@@ -13620,7 +12319,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Less-is-more">Less is more<a class="anchor-link" href="#Less-is-more">&#182;</a></h2><p>Sun Tzu (孙子): "the supreme art of quant modeling is to solve problems without coding"</p>
 
@@ -13628,11 +12328,12 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Choose-the-right-programming-tools">Choose the right programming tools<a class="anchor-link" href="#Choose-the-right-programming-tools">&#182;</a></h2><ul>
 <li>Programming paradigm: procedural, OOP, functional</li>
-<li>Expressivity: fewer lines of code for the same functionaltiy</li>
+<li>Expressivity: fewer lines of code for the same functionality</li>
 <li>Ecosystem: library, tools, community, industry support</li>
 </ul>
 <p>There is no single right answer</p>
@@ -13645,9 +12346,11 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Expressivity">Expressivity<a class="anchor-link" href="#Expressivity">&#182;</a></h2>$$ $$<center>
+<h2 id="Expressivity">Expressivity<a class="anchor-link" href="#Expressivity">&#182;</a></h2><p>$$ $$</p>
+<center>
 <img src="img/proglang.png" width=500 height=500>
 </center><p>When you have the opportunity, choose the more expressive language for the job.</p>
 
@@ -13655,7 +12358,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Eric Raymond, "How to Become a Hacker":</p>
 <p>"Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot."</p>
@@ -13668,7 +12372,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="We-use-Python-for-this-class">We use Python for this class<a class="anchor-link" href="#We-use-Python-for-this-class">&#182;</a></h2><p>Python</p>
 <ul>
@@ -13690,7 +12395,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python resources</p>
 <ul>
@@ -13700,7 +12406,7 @@ a.anchor-link {
 </ul>
 <p>Python version:</p>
 <ul>
-<li><strong> Python 3.6.x or higher </strong> : python is not backward compatible, do not use Python 2</li>
+<li><strong> Python 3.6.x only ( version 3.7.x is not supported currently) </strong> : python is not backward compatible, do not use Python 2</li>
 <li>With the latest Jupyter notebook, numpy/pandas/scipy etc.</li>
 <li>either 32bit or 64bit version works</li>
 </ul>
@@ -13713,7 +12419,8 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Errors-and-floating-point-computation">Errors and floating point computation<a class="anchor-link" href="#Errors-and-floating-point-computation">&#182;</a></h1><p>James Gosling: "95% of the folks out there are completely clueless about floating-point"</p>
 
@@ -13721,7 +12428,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Absolute-and-relative-error">Absolute and relative error<a class="anchor-link" href="#Absolute-and-relative-error">&#182;</a></h2><p>If the true value $a$ is approximated by $\hat{a}$:</p>
 <ul>
@@ -13737,7 +12445,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Sources-of-error">Sources of error<a class="anchor-link" href="#Sources-of-error">&#182;</a></h2><p>Imprecision in the theory or model itself</p>
 <ul>
@@ -13764,7 +12473,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="IEEE-754-in-a-nutshell">IEEE 754 in a nutshell<a class="anchor-link" href="#IEEE-754-in-a-nutshell">&#182;</a></h2><p>First published in 1985, the IEEE 754 standard includes:</p>
 <ul>
@@ -13790,7 +12500,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rounding-under-IEEE754">Rounding under IEEE754<a class="anchor-link" href="#Rounding-under-IEEE754">&#182;</a></h2><p>Default rule: round to the nearest, ties to even digit</p>
 <ul>
@@ -13811,7 +12522,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Importance-of-IEEE-754">Importance of IEEE 754<a class="anchor-link" href="#Importance-of-IEEE-754">&#182;</a></h2><p>IEEE 754 is a tremendously successful standard:</p>
 <ul>
@@ -13832,7 +12544,8 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The IEEE 754 standard is widely adopted in modern hardware and software,</p>
 <ul>
@@ -13848,13 +12561,16 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="IEEE-754-floating-point-number-format">IEEE 754 floating point number format<a class="anchor-link" href="#IEEE-754-floating-point-number-format">&#182;</a></h2><ul>
 <li>IEEE floating point number standard</li>
 </ul>
-$$\underbrace{*}_{\text{sign bit}}\;\underbrace{********}_{\text{exponent}}\overbrace{\;1.\;}^{\text{implicit}}\;\underbrace{***********************}_{\text{fraction}}
-$$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
+<p>$$\underbrace{*}_{\text{sign bit}}\;\underbrace{********}_{\text{exponent}}\overbrace{\;1.\;}^{\text{implicit}}\;\underbrace{***********************}_{\text{fraction}}
+$$</p>
+<p>$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$</p>
+<ul>
 <li>32 bit vs. 64 bit format</li>
 </ul>
 <table>
@@ -13895,14 +12611,16 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples-of-floating-numbers">Examples of floating numbers<a class="anchor-link" href="#Examples-of-floating-numbers">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>f2parts takes a floating number and its bit length (32 or 64) and shows the three parts.</p>
 
@@ -13910,6 +12628,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
@@ -13917,8 +12636,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="mf">10.7</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -13927,7 +12648,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -13965,6 +12686,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
@@ -13972,8 +12694,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">23445.25</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -13982,7 +12706,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14020,10 +12744,11 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Range-and-precision">Range and precision<a class="anchor-link" href="#Range-and-precision">&#182;</a></h2><ul>
-<li>The range of floating point number are usually adequte in practice<ul>
+<li>The range of floating point number are usually adequate in practice<ul>
 <li>the whole universe only have $10^{80}$ protons ...</li>
 </ul>
 </li>
@@ -14037,6 +12762,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
@@ -14051,8 +12777,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
                            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Min&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Machine Precision&quot;</span><span class="p">,</span> <span class="s2">&quot;# of Significant Digits&quot;</span><span class="p">]),</span> <span class="s2">&quot;5g&quot;</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14061,7 +12789,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14102,13 +12830,15 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples-of-floating-point-representations">Examples of floating point representations<a class="anchor-link" href="#Examples-of-floating-point-representations">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
@@ -14116,8 +12846,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14126,7 +12858,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14164,6 +12896,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
@@ -14171,8 +12904,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14181,7 +12916,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14219,6 +12954,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
@@ -14226,8 +12962,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">Inf</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14236,7 +12974,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14274,6 +13012,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
@@ -14281,8 +13020,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-43</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14291,7 +13032,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14329,13 +13070,15 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Floating-point-computing-is-NOT-exact">Floating point computing is NOT exact<a class="anchor-link" href="#Floating-point-computing-is-NOT-exact">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
@@ -14347,8 +13090,10 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b - c = </span><span class="si">{:e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">c</span><span class="p">))</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14357,7 +13102,7 @@ $$$$(-1)^{\text{sign}}(\text{1 + fraction})2^{\text{exponent} - p}$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14372,6 +13117,7 @@ b - c = -1.110223e-16
 
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
@@ -14379,8 +13125,10 @@ b - c = -1.110223e-16
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14389,7 +13137,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14427,6 +13175,7 @@ b - c = -1.110223e-16
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
@@ -14434,8 +13183,10 @@ b - c = -1.110223e-16
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2parts</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14444,7 +13195,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14482,13 +13233,15 @@ b - c = -1.110223e-16
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Can't-handle-numbers-too-large-or-small">Can't handle numbers too large or small<a class="anchor-link" href="#Can't-handle-numbers-too-large-or-small">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
@@ -14497,8 +13250,10 @@ b - c = -1.110223e-16
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inverse of </span><span class="si">{:e}</span><span class="s2"> is </span><span class="si">{:e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14507,7 +13262,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14521,6 +13276,7 @@ b - c = -1.110223e-16
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
@@ -14529,8 +13285,10 @@ b - c = -1.110223e-16
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inverse of </span><span class="si">{:e}</span><span class="s2"> is </span><span class="si">{:e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14539,7 +13297,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14553,7 +13311,8 @@ b - c = -1.110223e-16
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Limited-precision">Limited precision<a class="anchor-link" href="#Limited-precision">&#182;</a></h2><ul>
 <li>Small number (in relative sense) is lost in addition and subtraction</li>
@@ -14563,6 +13322,7 @@ b - c = -1.110223e-16
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
@@ -14570,8 +13330,10 @@ b - c = -1.110223e-16
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="mf">1e-16</span> <span class="o">==</span> <span class="mf">1.</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14580,7 +13342,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14594,6 +13356,7 @@ b - c = -1.110223e-16
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
@@ -14601,8 +13364,10 @@ b - c = -1.110223e-16
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="mf">1e-16</span> <span class="o">==</span> <span class="mf">1.</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14611,7 +13376,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14625,6 +13390,7 @@ b - c = -1.110223e-16
 
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
@@ -14642,8 +13408,10 @@ b - c = -1.110223e-16
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b - </span><span class="si">{:d}</span><span class="s2"> == b ?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">largeint</span><span class="p">),</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">largeint</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14652,7 +13420,7 @@ b - c = -1.110223e-16
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14672,14 +13440,16 @@ b - 4294967295 == b ? True
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Subtle-errors">Subtle errors<a class="anchor-link" href="#Subtle-errors">&#182;</a></h2><p>The limited precision can cause subtle errors that are puzzling even for experiened programmers.</p>
+<h2 id="Subtle-errors">Subtle errors<a class="anchor-link" href="#Subtle-errors">&#182;</a></h2><p>The limited precision can cause subtle errors that are puzzling even for experienced programmers.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
@@ -14689,8 +13459,10 @@ b - 4294967295 == b ? True
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a/3 = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14699,7 +13471,7 @@ b - 4294967295 == b ? True
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14714,6 +13486,7 @@ a/3 =  [0.         0.33333333]
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
@@ -14722,8 +13495,10 @@ a/3 =  [0.         0.33333333]
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14732,7 +13507,7 @@ a/3 =  [0.         0.33333333]
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14746,7 +13521,8 @@ a/3 =  [0.         0.33333333]
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Avoid-equality-test">Avoid equality test<a class="anchor-link" href="#Avoid-equality-test">&#182;</a></h2><p>Equality test in floating point number is <strong>always</strong> a bad idea:</p>
 <ul>
@@ -14766,13 +13542,15 @@ a/3 =  [0.         0.33333333]
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Catastrophic-cancellation">Catastrophic cancellation<a class="anchor-link" href="#Catastrophic-cancellation">&#182;</a></h2><p>Dramatic loss of precision can happen when very similar numbers are subtracted</p>
 <ul>
-<li>Value the follwing function around 0: </li>
+<li>Value the following function around 0: </li>
 </ul>
-$$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
+<p>$$f(x) = \frac{1}{x^2}(1-\cos(x))$$</p>
+<ul>
 <li>Mathematically: $\lim_{x\rightarrow 0}f(x) = \frac{1}{2}$</li>
 </ul>
 
@@ -14780,7 +13558,8 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The straight forward implementation failed spectacularly for small $x$.</p>
 
@@ -14788,6 +13567,7 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
@@ -14803,8 +13583,10 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14813,7 +13595,7 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14831,13 +13613,15 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="How-did-it-happen?">How did it happen?<a class="anchor-link" href="#How-did-it-happen?">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
@@ -14848,8 +13632,10 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;true value of 1-cos(</span><span class="si">{:.0e}</span><span class="s2">) = </span><span class="si">{:.16e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14858,7 +13644,7 @@ $$f(x) = \frac{1}{x^2}(1-\cos(x))$$<ul>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14874,7 +13660,8 @@ true value of 1-cos(1e-08) = 6.0499999999999997e-17
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Dramatic precision loss when subtracting numbers that are very similar <ul>
@@ -14882,7 +13669,7 @@ true value of 1-cos(1e-08) = 6.0499999999999997e-17
 <li>The result has much fewer number of significant digits</li>
 </ul>
 </li>
-<li>Catestrophic cancellation could easily happen in practice <ul>
+<li>Catastrophic cancellation could easily happen in practice <ul>
 <li>Deltas are often computed by bump and re-value</li>
 <li>Very small bump sizes should be avoided</li>
 </ul>
@@ -14893,17 +13680,21 @@ true value of 1-cos(1e-08) = 6.0499999999999997e-17
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="A-real-example-in-Finance">A real example in Finance<a class="anchor-link" href="#A-real-example-in-Finance">&#182;</a></h2><p>the CIR process is widely used in quant finance, eg, in the short rate and Heston model:</p>
-$$ dr_t = \kappa(\mu - r) dt + \sigma \sqrt{r_t} dW_t
-$$<p>the variance of $r_t$ at $t &gt; 0$:</p>
-$$\text{Var}[r_t | r_0] = \frac{r_0\sigma^2}{\kappa}(e^{-\kappa t} - e^{-2\kappa t}) + \frac{\mu\sigma^2}{2\kappa}(1-e^{-\kappa t})^2$$<p>how the catastrophic cancellation arises?</p>
+<p>$$ dr_t = \kappa(\mu - r) dt + \sigma \sqrt{r_t} dW_t
+$$</p>
+<p>the variance of $r_t$ at $t &gt; 0$:</p>
+<p>$$\text{Var}[r_t | r_0] = \frac{r_0\sigma^2}{\kappa}(e^{-\kappa t} - e^{-2\kappa t}) + \frac{\mu\sigma^2}{2\kappa}(1-e^{-\kappa t})^2$$</p>
+<p>how the catastrophic cancellation arises?</p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
@@ -14916,8 +13707,10 @@ $$\text{Var}[r_t | r_0] = \frac{r_0\sigma^2}{\kappa}(e^{-\kappa t} - e^{-2\kappa
 <span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\kappa$&#39;</span><span class="p">);</span>
 </pre></div>
 
-    </div>
 </div>
+</div>
+</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -14926,7 +13719,7 @@ $$\text{Var}[r_t | r_0] = \frac{r_0\sigma^2}{\kappa}(e^{-\kappa t} - e^{-2\kappa
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
@@ -14944,18 +13737,23 @@ $$\text{Var}[r_t | r_0] = \frac{r_0\sigma^2}{\kappa}(e^{-\kappa t} - e^{-2\kappa
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Bump-Size-for-Delta">Bump Size for Delta<a class="anchor-link" href="#Bump-Size-for-Delta">&#182;</a></h2><p>How to choose the $h$ so that the following finite difference approximation is the most accurate?</p>
-$$ f'(x) \approx \frac{1}{h}(f(x+h) - f(x)) $$<p>The best $h$ is when truncation error equals to the rounding error:</p>
-$$ \frac{1}{2} f''(x) h^2 = f(x) \epsilon_m $$<p>Thus the optimal $h^* = \sqrt{\frac{2 f(x)\epsilon_m}{f''(x)}} $.</p>
+<p>$$ f'(x) \approx \frac{1}{h}(f(x+h) - f(x)) $$</p>
+<p>The best $h$ is when truncation error equals to the rounding error:</p>
+<p>$$ \frac{1}{2} f''(x) h^2 = f(x) \epsilon_m $$</p>
+<p>Thus the optimal $h^* = \sqrt{\frac{2 f(x)\epsilon_m}{f''(x)}} $.</p>
 <p>It is however better off to simply use central difference:</p>
-$$ f'(x) \approx \frac{1}{2h}\left(f(x+h) - f(x-h)\right) $$
+<p>$$ f'(x) \approx \frac{1}{2h}\left(f(x+h) - f(x-h)\right) $$</p>
+
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="An-Example-of-Numerical-Delta">An Example of Numerical Delta<a class="anchor-link" href="#An-Example-of-Numerical-Delta">&#182;</a></h2><p>For $f(x) = e^x$ at $x=1$:</p>
 <center><img src = "img/bumpsize.png", height = 600, width = 600></center>
@@ -14963,19 +13761,22 @@ $$ f'(x) \approx \frac{1}{2h}\left(f(x+h) - f(x-h)\right) $$
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Condition-number">Condition number<a class="anchor-link" href="#Condition-number">&#182;</a></h2><p>Consider the relative error of a function with multiple arguments: $f = f(x_1, ..., x_n)$:</p>
-$$
+<p>$$
 \small
 df = \sum_i \frac{\partial f}{\partial x_i} dx_i \iff
 \frac{df}{f} = \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \frac{dx_i}{x_i}
-$$<p>Assuming input argument's relative errors are $\epsilon_i$ (could be negative):</p>
-$$
+$$</p>
+<p>Assuming input argument's relative errors are $\epsilon_i$ (could be negative):</p>
+<p>$$
 \small
 \left| \frac{\Delta f}{f} \right| = \left| \sum_i \frac{x_i}{f}\frac{\partial f}{\partial x_i} \epsilon_i \right|
 \le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \left|\epsilon_i\right| \le \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right| \epsilon_m \equiv k(f) \epsilon_m
-$$<p>where $\epsilon_m$ is the maximum relative error of all inputs.</p>
+$$</p>
+<p>where $\epsilon_m$ is the maximum relative error of all inputs.</p>
 <ul>
 <li>$k(f) = \sum_i \left| \frac{x_i}{f}\frac{\partial f}{\partial x_i} \right|$ is defined as the condition number of a function, </li>
 <li>it is the maximum growth factor of the relative error.</li>
@@ -14986,12 +13787,13 @@ $$<p>where $\epsilon_m$ is the maximum relative error of all inputs.</p>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Well-posed-and-ill-posed-problems">Well-posed and ill-posed problems<a class="anchor-link" href="#Well-posed-and-ill-posed-problems">&#182;</a></h2><p>Condition number is the systematic approach to detect potential numerical problems:</p>
 <ul>
 <li><p>$f(x_1, x_2) = x_1 - x_2$</p>
-<p>$k(f) = \frac{|x_1| + |x_2|}{|x_1 - x_2|}$, ill conditioned when $x_1 \approx x_2$, catestrophic cancellation</p>
+<p>$k(f) = \frac{|x_1| + |x_2|}{|x_1 - x_2|}$, ill conditioned when $x_1 \approx x_2$, catastrophic cancellation</p>
 </li>
 <li><p>$f(x_1, x_2) = x_1 x_2$</p>
 <p>$k(f) = 2$, the multiplication is well conditioned</p>
@@ -15007,12 +13809,14 @@ $$<p>where $\epsilon_m$ is the maximum relative error of all inputs.</p>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Well-posed-problem-can-be-unstable">Well-posed problem can be unstable<a class="anchor-link" href="#Well-posed-problem-can-be-unstable">&#182;</a></h2><p>Consider the previous example of $f(x) = \frac{1}{x^2}(1-\cos(x))$:</p>
-$$
+<p>$$
 k(f) = \left| 2 + \frac{x \sin{\left (x \right )}}{\cos{\left (x \right )} - 1}  \right|
-$$<ul>
+$$</p>
+<ul>
 <li>$k(f) \rightarrow \infty$ near $x = 2\pi$, it is ill-posed near $x = 2\pi$ due to catastrophic cancellation.</li>
 <li>$k(f) \rightarrow 0$ near $x = 0$, it is well-posed near $x = 0$.</li>
 </ul>
@@ -15030,7 +13834,8 @@ $$<ul>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Ill-posed-numerical-algorithm">Ill-posed numerical algorithm<a class="anchor-link" href="#Ill-posed-numerical-algorithm">&#182;</a></h1><p>Ill-posed problem are generally not suitable for numerical solutions.</p>
 <p>The Mandelbrot set is a famous example:</p>
@@ -15045,14 +13850,16 @@ $$<ul>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center><img src = "img/mandelbrot.jpg", height = 400, width = 400></center>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rules-of-engagement-for-floats">Rules of engagement for floats<a class="anchor-link" href="#Rules-of-engagement-for-floats">&#182;</a></h2><ul>
 <li>Always allow errors when comparing numbers</li>
@@ -15079,7 +13886,8 @@ $$<ul>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Portability">Portability<a class="anchor-link" href="#Portability">&#182;</a></h2><ul>
 <li>Floating point computation is usually not reproducible across different platforms</li>
@@ -15095,7 +13903,8 @@ $$<ul>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Assignments">Assignments<a class="anchor-link" href="#Assignments">&#182;</a></h2><p>Required Reading:</p>
 <ul>
@@ -15186,6 +13995,7 @@ require(
 
 
 
+
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
@@ -15214,7 +14024,7 @@ Reveal.initialize({
     controls: false,
 
     // Display a presentation progress bar
-    //progress: true,
+    progress: false,
 
     // Push each slide change to the browser history
     history: false,
@@ -15224,7 +14034,7 @@ Reveal.initialize({
     slideNumber: true,
 
     // Enable touch events for navigation
-    //touch: true,
+    touch: true,
 
     // Enable the slide overview mode
     //overview: true,
@@ -15244,7 +14054,7 @@ Reveal.initialize({
     //autoSlide: 0,
 
     // Enable slide navigation via mouse wheel
-    //mouseWheel: false,
+    mouseWheel: false,
 
     // Transition style
     // transition: 'concave', // default/cube/page/concave/zoom/linear/fade/none
@@ -15270,7 +14080,6 @@ Reveal.configure({
     27: 'left'
   }
 });
-
 
 </script>
 
