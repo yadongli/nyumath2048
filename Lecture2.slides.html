@@ -15496,7 +15496,12 @@ $$ \left(\begin{matrix}1.0 & 2.0\\2.0 & 4.002\end{matrix}\right) x=\left(\begin{
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Matrix-norms">Matrix norms<a class="anchor-link" href="#Matrix-norms">&#182;</a></h2><p>Defined to be the largest amount the linear transformation can stretch a vector:</p>
+<h2 id="Matrix-norms">Matrix norms<a class="anchor-link" href="#Matrix-norms">&#182;</a></h2><ul>
+<li>Elementwise: based on looking at matrix as an elongated vector</li>
+<li>Shatten norms: based on singular values</li>
+<li>Vector norm induced: most common and introduced below</li>
+</ul>
+<p>Defined to be the largest amount the linear transformation can stretch a vector:</p>
 <p>$$\Vert A\Vert  = \max_{\bs u \ne 0}\frac{\Vert A\bs u\Vert }{\Vert \bs u\Vert }$$</p>
 <p>The matrix norm definition depends on the vector norms. Only L1 and L$\infty$ matrix norm have analytical formula:</p>
 <ul>
